@@ -15,7 +15,9 @@
         <h1 class="custom-title">Space Runner</h1>
         <button class="btn-start" onclick="beginAdventure()">Mode Aventure</button>
         <button class="btn-start" onclick="resetAventure()">Recommencer</button>
+        <button class="btn-start" onclick="goScore()">Scores</button>
         <button class="btn-start" onclick="displayCredits()">Crédit</button>
+        
     </div>
 </body>
 
@@ -26,6 +28,10 @@
     
     function beginAdventure() {
         window.location.href='selectchar.html';
+    }
+
+    function goScore() {
+        window.location.href='highScore.html';
     }
 
     

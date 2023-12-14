@@ -46,6 +46,7 @@
             </div>
 
             <div class="page" id="page6" >
+                <p id="your_score"></p>
                 <div class="custom-title">Planète Felucia complétée !</div>
                 <div class="game-description">
                     <p>Félicitations ! Vous avez débloqué 4 nouveaux personnages :</p>
@@ -73,6 +74,9 @@
                 </div>
             </div>
         </div>
+        <div class="timer">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
     </div>
 
 
@@ -86,6 +90,12 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    var intervalId;
+
+    var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
     var fromleft = 0; // horizontal position // var fromleft = 0;
@@ -93,6 +103,7 @@
     var chara = "p0";
     var inpause = false;
     retrievePlayer()
+    startTimer();
     var found_b1;
     var found_b0;
     var found_b2;
@@ -136,6 +147,7 @@
             else if (e.keyCode == '39') { // going rigth
                 dest_rigthward();
             }
+            nbCoups++;
             playWallHit()
             checkIsGaz();
             let chara = document.getElementById('character'+actual_board);
@@ -295,12 +307,15 @@
             goNext(actual_board+1);
             construct_board(actual_board+2);
         } else {
+            stopTimer();
             playEndLevel() 
             UnlockThirdChar()
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
+            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
+            setHighScorePlanet5();
         }
     }
 
@@ -374,6 +389,69 @@
     function closePause() {
         document.getElementById('pause').style.display = 'none';
         inpause = false;
+    }
+
+    function setHighScorePlanet5() {
+        var storedData = localStorage.getItem('felucia');
+        if (storedData !== null) {
+            var terre = JSON.parse(storedData);
+            let newcoups;
+            let newtemps;
+            if( terre.coups > nbCoups ){
+                newcoups = nbCoups;
+            } else {
+                newcoups = terre.coups;
+            }
+            if(terre.temps > totalSeconds){
+                newtemps = totalSeconds;
+            }else{
+                newtemps = terre.temps;
+            }
+            var terre = {
+                coups: newcoups,
+                temps: newtemps
+            };
+            var dataString = JSON.stringify(terre);
+            localStorage.setItem('felucia', dataString);
+        } else {
+            var terre = {
+                coups: nbCoups,
+                temps: totalSeconds
+            };
+            var dataString = JSON.stringify(terre);
+            localStorage.setItem('felucia', dataString);
+        }   
+    }
+
+
+    function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+    }
+
+    function startTimer() {
+    
+        intervalId = setInterval(() => {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        }, 1000); // run the function every second (1000 milliseconds)
+
+    }
+
+    function stopTimer() {
+        clearInterval(intervalId);
+    }
+
+
+    function resetTimer(){
+        secondsLabel.innerHTML = pad(0);
+        minutesLabel.innerHTML = pad(0);
+        totalSeconds = 0;
     }
     
 

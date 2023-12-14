@@ -76,7 +76,7 @@ body {
 
 .img_of_laby {
     width: 5vw; 
-    height: 8vh;
+    height: 7vh;
 }
 
 .game-part {
@@ -126,3 +126,24 @@ body {
 #showmenu{
     z-index: 9;
 }
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #95ff64;
+    border-color: #000000;
+    height: 40px;
+    width: 180px;
+    border-radius: 10px;
+    font-size: 32px;
+    text-shadow: 1px 1px #000;
+    font-family: 'Press Start 2P', cursive;
+    position :fixed;
+    top:5px;
+    right:5px;
+  }
+  
+  .timer span {
+    margin: 0 10px;
+  }
