@@ -6,6 +6,22 @@ function retrievePlayer() {
     }
 }
 
+function retrieveLevel() {
+    var storedData = localStorage.getItem('level');
+    if (storedData !== null) {
+        var level = JSON.parse(storedData);
+        lvl = level.num;
+    }
+}
+
+function retrieveAchievements() {
+    var storedData = localStorage.getItem('playerData');
+    if (storedData !== null) {
+        var playerData = JSON.parse(storedData);
+        nbPlayerUnlocked = playerData.playerUnlock;
+    }
+}
+
 function retrievePlanet1() {
     var storedData = localStorage.getItem('terre');
     if (storedData !== null) {
@@ -58,5 +74,27 @@ function retrievePlanet5() {
         temps5 = terre.temps;
     }else{
         document.getElementById("p5").innerHTML = "???";
+    }
+}
+
+function retrievePlanet6() {
+    var storedData = localStorage.getItem('fantomia');
+    if (storedData !== null) {
+        var terre = JSON.parse(storedData);
+        coups6 = terre.coups;
+        temps6 = terre.temps;
+    }else{
+        document.getElementById("p6").innerHTML = "???";
+    }
+}
+
+function retrievePlanet7() {
+    var storedData = localStorage.getItem('sabliereR');
+    if (storedData !== null) {
+        var terre = JSON.parse(storedData);
+        coups7 = terre.coups;
+        temps7 = terre.temps;
+    }else{
+        document.getElementById("p7").innerHTML = "???";
     }
 }

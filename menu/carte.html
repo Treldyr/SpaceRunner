@@ -41,29 +41,32 @@
             <img id="imgplanet5" src="../images/planet5.png" alt="Planète 5">
         </a>
     </div>
-    <button class="btn btn-outline-light" onclick="returnToMainPage()">&larr;</button>
-</body>
+    <button class="btn btn-outline-light btn-back" onclick="returnToMainPage()">&larr;</button>
+    <button class="btn btn-outline-light btn-next" id="universe2" onclick="changeUniverse()">Prochain Système Solaire &rarr;</button>
 
+</body>
+<script src="../common_functions/get_data.js"></script>
+<script src="../common_functions/unlocks.js"></script>
 <script>
     var lvl = 1;
     retrieveLevel();
-    
 
-    if(lvl==1){
-        document.getElementById('planet2').style.display = "none";
-        document.getElementById('planet3').style.display = "none";
-        document.getElementById('planet4').style.display = "none";
-        document.getElementById('planet5').style.display = "none";
-    }else if(lvl==2){
-        document.getElementById('planet3').style.display = "none";
-        document.getElementById('planet4').style.display = "none";
-        document.getElementById('planet5').style.display = "none";
-    }else if(lvl==3){
-        document.getElementById('planet4').style.display = "none";
-        document.getElementById('planet5').style.display = "none";
-    }else if(lvl==4){
+    if(lvl<=5){
+        document.getElementById('universe2').style.display = "none";
+    }
+    if(lvl<=4){
         document.getElementById('planet5').style.display = "none";
     }
+    if(lvl<=3){
+        document.getElementById('planet4').style.display = "none";
+    }
+    if(lvl<=2){
+        document.getElementById('planet3').style.display = "none";
+    }
+    if(lvl==1){
+        document.getElementById('planet2').style.display = "none";
+    }
+
 
     function returnToMainPage() {
         window.location.href='main.html';
@@ -89,36 +92,9 @@
         window.location.href='../planet5/main_poison.html';
     }
 
-
-    function retrieveLevel() {
-        var storedData = localStorage.getItem('level');
-        if (storedData !== null) {
-            var level = JSON.parse(storedData);
-            lvl = level.num;
-        }
+    function changeUniverse(){
+        window.location.href='carte2.html';
     }
-
-    function UnlockPlanet5() {
-        var storedData = localStorage.getItem('level');
-        if (storedData !== null) {
-            var level = JSON.parse(storedData);
-            if( level.num < 5){
-                var level = {
-                    num: 5
-                };
-                var dataString = JSON.stringify(level);
-                localStorage.setItem('level', dataString);
-            }
-        } else {
-            var level = {
-                num: 5
-            };
-            var dataString = JSON.stringify(level);
-            localStorage.setItem('level', dataString);
-        }   
-    }
-
-
    
 </script>
 </html>

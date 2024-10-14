@@ -2,6 +2,10 @@ function returnToMapFromPlanet() {
     window.location.href='../menu/carte.html';
 }
 
+function returnToMap2FromPlanet() {
+    window.location.href='../menu/carte2.html';
+}
+
 function beginTerre() {
     window.location.href='laby_terre.html';
 }
@@ -20,4 +24,12 @@ function beginRoche() {
 
 function beginPoison() {
     window.location.href='laby_poison.html';
+}
+
+function beginFantom() {
+    window.location.href='laby_fantom.html';
+}
+
+function beginRouge() {
+    window.location.href='laby_rouge.html';
 }

@@ -104,3 +104,93 @@ function construct_board_with_gaz(numboard){
     create_character(numboard);
     place_gaz(numboard);
 }
+
+// --------------------------------------------------//
+//                                                   //
+// CONSTRUCTION OF THE GHOST BOARD FOR NORMAL PLANETS//
+//                                                   //
+// --------------------------------------------------//
+
+function construct_board_with_ghost(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    create_ghost(numboard);
+}
+
+function create_ghost(numboard){
+    let ghost = document.createElement('img');
+    ghost.setAttribute('src', "../images/fantom.png");
+    ghost.setAttribute('style', "position: fixed;top : 5vh;left : 5vw;");
+    ghost.className = "img_of_laby";
+    ghost.setAttribute('id', "ghost" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(ghost);
+    ghostTop = 0;
+    ghostLeft = 0;
+}
+
+
+// --------------------------------------------------------//
+//                                                         //
+// CONSTRUCTION OF THE BOARD OF 2 GHOSTS FOR NORMAL PLANETS//
+//                                                         //
+// --------------------------------------------------------//
+
+
+function construct_board_with_2_ghosts(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    create_ghosts(numboard)
+}
+
+function create_big_character(numboard) {
+    let the_image = document.createElement('img');
+    the_image.setAttribute('src', "../images/" + chara + "down.png");
+    the_image.setAttribute('style', "position: fixed;top : " + (3 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin[numboard - 1][1] + 5) + "vw;");
+    the_image.className = "img_of_laby";
+    the_image.setAttribute('id', "character" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(the_image);
+    fromtop = coords_begin[numboard - 1][0];
+    fromleft = coords_begin[numboard - 1][1];
+}
+
+function construct_big_line(line,numline,numboard){
+    for(let j= 0; j < line.length; j++)
+    {
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"img"+line[j]+".png");
+        the_image.setAttribute('style', "position: fixed;top : " + (3 * numline + 5) + "vh;left : " + (2 * j + 5) + "vw;");
+        the_image.className = "img_of_laby";
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+}
+
+
+function create_ghosts(numboard){
+    var ghost = document.createElement('img');
+    ghost.setAttribute('src', "../images/fantom.png");
+    ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_1[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_1[numboard - 1][1] + 5) + "vw;");
+    ghost.className = "img_of_laby";
+    ghost.setAttribute('id', "ghost" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(ghost);
+    ghostTop1 = coords_begin_ghost_1[numboard - 1][0];
+    ghostLeft1 = coords_begin_ghost_1[numboard - 1][1];
+
+
+    var ghost2 = document.createElement('img');
+    ghost2.setAttribute('src', "../images/fantom.png");
+    ghost2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_2[numboard - 1][1] + 5) + "vw;");
+    ghost2.className = "img_of_laby";
+    ghost2.setAttribute('id', "ghost2_" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(ghost2);
+    ghostTop2 = coords_begin_ghost_2[numboard - 1][0];
+    ghostLeft2 = coords_begin_ghost_2[numboard - 1][1];
+
+}

@@ -23,3 +23,8 @@ function playSuccess() {
     var audio = new Audio('../sons/mario_success.wav');
     audio.play();
 }
+
+function playSoundButton() {
+    var audio = new Audio('../sons/bright.wav');
+    audio.play();
+}

@@ -116,7 +116,69 @@ function UnlockThirdChar() {
         }
     } else {
         var playerData = {
-            playerUnlock: 2
+            playerUnlock: 3
+        };
+        var dataString = JSON.stringify(playerData);
+        localStorage.setItem('playerData', dataString);
+    }   
+}
+
+function UnlockPlanet6() {
+    var storedData = localStorage.getItem('level');
+    if (storedData !== null) {
+        var level = JSON.parse(storedData);
+        if( level.num < 6){
+            var level = {
+                num: 6
+            };
+            var dataString = JSON.stringify(level);
+            localStorage.setItem('level', dataString);
+        }
+    } else {
+        var level = {
+            num: 6
+        };
+        var dataString = JSON.stringify(level);
+        localStorage.setItem('level', dataString);
+    }   
+}
+
+
+function UnlockPlanet7() {
+    var storedData = localStorage.getItem('level');
+    if (storedData !== null) {
+        var level = JSON.parse(storedData);
+        if( level.num < 7){
+            var level = {
+                num: 7
+            };
+            var dataString = JSON.stringify(level);
+            localStorage.setItem('level', dataString);
+        }
+    } else {
+        var level = {
+            num: 7
+        };
+        var dataString = JSON.stringify(level);
+        localStorage.setItem('level', dataString);
+    }   
+}
+
+
+function UnlockFourthChar() {
+    var storedData = localStorage.getItem('playerData');
+    if (storedData !== null) {
+        var playerData = JSON.parse(storedData);
+        if( playerData.playerUnlock < 4){
+            var playerData = {
+                playerUnlock: 4
+            };
+            var dataString = JSON.stringify(playerData);
+            localStorage.setItem('playerData', dataString);
+        }
+    } else {
+        var playerData = {
+            playerUnlock: 4
         };
         var dataString = JSON.stringify(playerData);
         localStorage.setItem('playerData', dataString);

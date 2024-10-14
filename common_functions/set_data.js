@@ -159,3 +159,68 @@ function setHighScorePlanet5() {
         localStorage.setItem('felucia', dataString);
     }   
 }
+
+
+function setHighScorePlanet6() {
+    var storedData = localStorage.getItem('fantomia');
+    if (storedData !== null) {
+        var terre = JSON.parse(storedData);
+        let newcoups;
+        let newtemps;
+        if( terre.coups > nbCoups ){
+            newcoups = nbCoups;
+        } else {
+            newcoups = terre.coups;
+        }
+        if(terre.temps > totalSeconds){
+            newtemps = totalSeconds;
+        }else{
+            newtemps = terre.temps;
+        }
+        var terre = {
+            coups: newcoups,
+            temps: newtemps
+        };
+        var dataString = JSON.stringify(terre);
+        localStorage.setItem('fantomia', dataString);
+    } else {
+        var terre = {
+            coups: nbCoups,
+            temps: totalSeconds
+        };
+        var dataString = JSON.stringify(terre);
+        localStorage.setItem('fantomia', dataString);
+    }   
+}
+
+function setHighScorePlanet7() {
+    var storedData = localStorage.getItem('sabliereR');
+    if (storedData !== null) {
+        var terre = JSON.parse(storedData);
+        let newcoups;
+        let newtemps;
+        if( terre.coups > nbCoups ){
+            newcoups = nbCoups;
+        } else {
+            newcoups = terre.coups;
+        }
+        if(terre.temps > totalSeconds){
+            newtemps = totalSeconds;
+        }else{
+            newtemps = terre.temps;
+        }
+        var terre = {
+            coups: newcoups,
+            temps: newtemps
+        };
+        var dataString = JSON.stringify(terre);
+        localStorage.setItem('sabliereR', dataString);
+    } else {
+        var terre = {
+            coups: nbCoups,
+            temps: totalSeconds
+        };
+        var dataString = JSON.stringify(terre);
+        localStorage.setItem('sabliereR', dataString);
+    }   
+}

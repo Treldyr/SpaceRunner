@@ -47,12 +47,23 @@
                     <td id="c5"> - </td>
                     <td id="t5"> - : - </td>
                 </tr>
+                <tr>
+                    <td id="p6">Fantomia</td>
+                    <td id="c6"> - </td>
+                    <td id="t6"> - : - </td>
+                </tr>
+                <tr>
+                    <td id="p7">Sablière rouge</td>
+                    <td id="c7"> - </td>
+                    <td id="t7"> - : - </td>
+                </tr>
             </tbody>
         </table>
         <button class="btn-start" onclick="returnToMainPage()">Retour</button>
     </div>
 </body>
 <script src="../common_functions/get_data.js"></script>
+<script src="../common_functions/timer.js"></script>
 <script>
     var coups1 = " - ";
     var temps1;
@@ -64,31 +75,30 @@
     var temps4;
     var coups5 = " - ";
     var temps5;
+    var coups6 = " - ";
+    var temps6;
+    var coups7 = " - ";
+    var temps7;
 
     retrievePlanet1();
     retrievePlanet2();
     retrievePlanet3();
     retrievePlanet4();
     retrievePlanet5();
+    retrievePlanet6();
+    retrievePlanet7();
 
     setValeurTerre();
     setValeurTatooine();
     setValeurHoth();
     setValeurKamino();
     setValeurFelucia();
+    setValeurFantomia();
+    setValeurSabliereRouge();
 
 
     function returnToMainPage() {
         window.location.href='main.html';
-    }
-
-    function pad(val) {
-        var valString = val + "";
-        if (valString.length < 2) {
-            return "0" + valString;
-        } else {
-            return valString;
-        }
     }
 
     function setValeurTerre(){
@@ -144,6 +154,28 @@
         }
         document.getElementById("c5").innerHTML = coups5;
         document.getElementById("t5").innerHTML = stringTemps;  
+    }
+
+    function setValeurFantomia(){
+        let stringTemps;
+        if(temps6==null){
+            stringTemps = " - : - ";
+        }else {
+            stringTemps = pad(parseInt(temps6 / 60)) + " : "+pad(temps6 % 60);
+        }
+        document.getElementById("c6").innerHTML = coups6;
+        document.getElementById("t6").innerHTML = stringTemps;  
+    }
+
+    function setValeurSabliereRouge(){
+        let stringTemps;
+        if(temps7==null){
+            stringTemps = " - : - ";
+        }else {
+            stringTemps = pad(parseInt(temps7 / 60)) + " : "+pad(temps7 % 60);
+        }
+        document.getElementById("c7").innerHTML = coups7;
+        document.getElementById("t7").innerHTML = stringTemps;  
     }
 
 
