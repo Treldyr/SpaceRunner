@@ -1,19 +1,20 @@
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Empêche le défilement de la page */
+/* Style pour les images */
+.img-char {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place l'image en arrière-plan */
-    /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/Fond2.png') no-repeat center center fixed;
-    background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
+/* Style pour l'image sélectionnée */
+.selected {
+    border: 5px solid #f39c12;
+    box-shadow: 0 0 10px #f39c12;
+    transform: scale(1.1);
+}
+.img-char:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #f39c12;
 }
 
 /* Le contenu de votre site va ici */
@@ -25,6 +26,19 @@ body {
     color: white;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+.img-thumbnail {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
+}
 .btn-start {
     display: block;
     margin: auto;
@@ -43,6 +57,20 @@ body {
 .btn-start:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px #f39c12;
+}
+
+
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place l'image en arrière-plan */
+    /* Assurez-vous de spécifier le chemin correct de votre image */
+    background: url('../../images/Fond2.png') no-repeat center center fixed;
+    background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
 
 

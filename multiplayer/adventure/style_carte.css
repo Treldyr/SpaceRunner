@@ -2,6 +2,26 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Empêche le défilement de la page */
+    /* cursor: url('../images/vaisseau.jpg') 25 25, auto; */
+}
+
+.planet {
+    width: 80px;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#planet1 { top: 10vh; left: 10vw; }
+
+.planet:hover {
+    transform: scale(1.2); /* Effet d'agrandissement au survol */
+}
+
+
+#imgplanet1 {
+    width: 110px; 
+    height: 80px; 
 }
 
 .background-image {
@@ -12,7 +32,7 @@ body {
     height: 100%;
     z-index: -1; /* Place l'image en arrière-plan */
     /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/Fond2.png') no-repeat center center fixed;
+    background: url('../../images/Fond2.png') no-repeat center center fixed;
     background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
 
@@ -76,3 +96,9 @@ body {
 .custom-title::after {
     right: -160px;
 }
+
+.btn-outline-light {
+    position: fixed;
+    top : 5px;
+    left : 5px;
+  }

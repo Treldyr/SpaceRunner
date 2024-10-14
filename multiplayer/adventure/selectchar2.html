@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Runner</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Lien vers Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Lien vers jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Lien vers Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style_select.css">
+	<link rel="icon" href="../../images/p1down.png">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <h1 class="custom-title">Space Runner</h1>
+        <h1 >Choisissez le joueur 2</h1>
+        <div class="container">
+            <div class="row" id="listChar1">
+                <div class="col-md-3">
+                    <img src="../../images/p1down.png" class="img-thumbnail selected" id='p1' onclick="selectImage('p1')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p2down.png" class="img-thumbnail" id='p2' onclick="selectImage('p2')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p3down.png" class="img-thumbnail" id='p3' onclick="selectImage('p3')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p4down.png" class="img-thumbnail" id='p4' onclick="selectImage('p4')">
+                </div>
+            </div>
+
+            <div class="row" id="listChar2">
+                <div class="col-md-3">
+                    <img src="../../images/p5down.png" class="img-thumbnail" id='p5' onclick="selectImage('p5')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p6down.png" class="img-thumbnail" id='p6' onclick="selectImage('p6')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p7down.png" class="img-thumbnail" id='p7' onclick="selectImage('p7')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p8down.png" class="img-thumbnail" id='p8' onclick="selectImage('p8')">
+                </div>
+            </div>
+
+            <div class="row" id="listChar3">
+                <div class="col-md-3">
+                    <img src="../../images/p9down.png" class="img-thumbnail" id='p9' onclick="selectImage('p9')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p10down.png" class="img-thumbnail" id='p10' onclick="selectImage('p10')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p11down.png" class="img-thumbnail" id='p11' onclick="selectImage('p11')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p12down.png" class="img-thumbnail" id='p12' onclick="selectImage('p12')">
+                </div>
+            </div>
+
+            <div class="row" id="listChar4">
+                <div class="col-md-3">
+                    <img src="../../images/p13down.png" class="img-thumbnail" id='p13' onclick="selectImage('p13')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p14down.png" class="img-thumbnail" id='p14' onclick="selectImage('p14')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p15down.png" class="img-thumbnail" id='p15' onclick="selectImage('p15')">
+                </div>
+                <div class="col-md-3">
+                    <img src="../../images/p16down.png" class="img-thumbnail" id='p16' onclick="selectImage('p16')">
+                </div>
+            </div>
+            <!-- Champ caché pour stocker l'image sélectionnée -->
+            <input type="hidden" id="selected-image" name="selected-image">
+        </div>
+        <button class="btn-start" onclick="acceptPlayer()">Commencer</button>
+    </div>
+	<script>
+        var char = "p1"
+        nbPlayerUnlocked = 1;
+        retrieveAchievements();
+
+        if(nbPlayerUnlocked<2){
+            document.getElementById('listChar2').style.display = "none";
+        }
+        if(nbPlayerUnlocked<3){
+            document.getElementById('listChar3').style.display = "none";
+        }
+        if(nbPlayerUnlocked<4){
+            document.getElementById('listChar4').style.display = "none";
+        }
+
+		// Fonction pour sélectionner une image
+		function selectImage(imageId) {
+            playSoundButton()
+			// Désélectionne toutes les images
+			$('.img-thumbnail').removeClass('selected');
+			// Sélectionne l'image cliquée
+			$('#' + imageId).addClass('selected');
+			// Stocke l'ID
+            $('#selected-image').val(imageId);
+            // stocke dans la balise p l'image
+            char = imageId
+		}
+
+        function playSoundButton() {
+            var audio = new Audio('../../sons/bright.wav');
+            audio.play();
+        }
+
+        function retrieveAchievements() {
+            var storedData = localStorage.getItem('playerData');
+            if (storedData !== null) {
+                var playerData = JSON.parse(storedData);
+                nbPlayerUnlocked = playerData.playerUnlock;
+            }
+        }
+
+        function acceptPlayer() {
+            var charChosen = {
+                char: char
+            };
+            var dataString = JSON.stringify(charChosen);
+            localStorage.setItem('charChosen2', dataString);
+            window.location.href = 'carte.html'
+        }
+
+	</script>
+</body>
+</html>

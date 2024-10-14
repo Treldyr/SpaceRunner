@@ -224,3 +224,20 @@ function setHighScorePlanet7() {
         localStorage.setItem('sabliereR', dataString);
     }   
 }
+
+
+function resetAventure() {
+    var playerData = {
+        playerUnlock: 1
+    };
+    var dataString = JSON.stringify(playerData);
+    localStorage.setItem('playerData', dataString);
+
+    var level = {
+        num: 1
+    };
+    var dataString = JSON.stringify(level);
+    localStorage.setItem('level', dataString);
+
+    window.location.href='selectchar.html';
+}

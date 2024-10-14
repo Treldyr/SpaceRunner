@@ -14,7 +14,7 @@
     <div class="content">
         <h1 class="custom-title">Space Runner</h1>
         <button class="btn-start" onclick="beginAdventure()">Mode Aventure</button>
-        <button class="btn-start" onclick="resetAventure()">Recommencer</button>
+        <button class="btn-start" onclick="twoPlayers()">2 joueurs</button>
         <button class="btn-start" onclick="goScore()">Scores</button>
         <button class="btn-start" onclick="displayCredits()">Crédit</button>
         
@@ -22,12 +22,16 @@
 </body>
 
 
-
+<script src="../common_functions/set_data.js"></script>
 <script>
     
     
     function beginAdventure() {
         window.location.href='selectchar.html';
+    }
+
+    function twoPlayers() {
+        window.location.href='../multiplayer/index.html';
     }
 
     function goScore() {
@@ -37,23 +41,6 @@
     
     function displayCredits() {
         window.location.href='credits.html';
-    }
-
-
-    function resetAventure() {
-        var playerData = {
-            playerUnlock: 1
-        };
-        var dataString = JSON.stringify(playerData);
-        localStorage.setItem('playerData', dataString);
-
-        var level = {
-            num: 1
-        };
-        var dataString = JSON.stringify(level);
-        localStorage.setItem('level', dataString);
-
-        window.location.href='selectchar.html';
     }
 
 </script>
