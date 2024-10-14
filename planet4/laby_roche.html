@@ -17,7 +17,7 @@
         <div class="content">
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
-                <button class="btn-start" onclick="returnToMainPage()">Carte</button>
+                <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
                 <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
 
             </div>
@@ -56,7 +56,7 @@
                     <br>
                     <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="nextLvl()">Continuer</button>
-                    <button class="btn btn-outline-light" onclick="returnMap()">Carte</button>
+                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
             </div>
@@ -76,6 +76,16 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../common_functions/build.js"></script>
+<script src="../common_functions/get_data.js"></script>
+<script src="../common_functions/movements.js"></script>
+<script src="../common_functions/navigation.js"></script>
+<script src="../common_functions/pause.js"></script>
+<script src="../common_functions/set_data.js"></script>
+<script src="../common_functions/sounds.js"></script>
+<script src="../common_functions/timer.js"></script>
+<script src="../common_functions/unlocks.js"></script>
+<script src="../common_functions/checks.js"></script>
 <script>
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
@@ -101,7 +111,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board(1)
+    construct_board_with_gaz(1)
     
 
 
@@ -145,126 +155,11 @@
         }
     }
 
-    // construction of the labyrinth
-
-    function construct_board(numboard){
-        actual_board = numboard-1;
-        for(let i= 0; i < boards[numboard-1].length; i++)
-        {
-            construct_line(boards[numboard-1][i],i,numboard);
-        }
-        create_character(numboard);
-        place_gaz(numboard);
-    }
-
-    function construct_line(line,numline,numboard){
-        for(let j= 0; j < line.length; j++)
-        {
-            let the_image = document.createElement('img');
-            the_image.setAttribute('src',"img"+line[j]+".png");
-            the_image.setAttribute('style', "position: fixed;top : " + (5 * numline + 5) + "vh;left : " + (3.5 * j + 5) + "vw;");
-            the_image.className = "img_of_laby";
-            document.getElementById('laby'+numboard).appendChild(the_image);
-        }
-    }
-
-    function create_character(numboard) {
-        let the_image = document.createElement('img');
-        the_image.setAttribute('src', "../images/" + chara + "down.png");
-        the_image.setAttribute('style', "position: fixed;top : " + (5 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin[numboard - 1][1] + 5) + "vw;");
-        the_image.className = "img_of_laby";
-        the_image.setAttribute('id', "character" + actual_board);
-        document.getElementById('laby' + numboard).appendChild(the_image);
-        fromtop = coords_begin[numboard - 1][0];
-        fromleft = coords_begin[numboard - 1][1];
-    }
-
-    function place_gaz(numboard){
-        for(let j= 0; j < gaz[numboard-1].length; j++)
-        {
-            let idGaz = j + (numboard-1)*4
-            let the_image = document.createElement('img');
-            the_image.setAttribute('src',"../images/gaz_bottle2.png");
-            the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
-            the_image.className = "img_of_laby";
-            the_image.setAttribute('id',"gaz"+idGaz);
-            document.getElementById('laby'+numboard).appendChild(the_image);
-        }
-        found_b1 = false;
-        found_b2 = false;
-        found_b0 = false;
-    }
-
-    function checkIsGaz(){
-        if((gaz[actual_board][0][0]==fromtop)&&(gaz[actual_board][0][1]==fromleft)&&(!found_b0)){
-            idGaz = (actual_board)*4
-            found_b0 = true;
-            document.getElementById("gaz"+idGaz).style.display = "none";
-            playSuccess()
-        }
-        if((gaz[actual_board][1][0]==fromtop)&&(gaz[actual_board][1][1]==fromleft)&&(!found_b1)){
-            idGaz = (actual_board)*4 + 1
-            found_b1 = true;
-            document.getElementById("gaz"+idGaz).style.display = "none";
-            playSuccess()
-        }
-        if((gaz[actual_board][2][0]==fromtop)&&(gaz[actual_board][2][1]==fromleft)&&(!found_b2)){
-            idGaz = (actual_board)*4 + 2
-            found_b2 = true;
-            document.getElementById("gaz"+idGaz).style.display = "none";
-            playSuccess()
-        }
-    }
-
-
-    function dest_upward(){
-        if(boards[actual_board][fromtop-1][fromleft]!=2){
-            fromtop--;
-            playMove();
-        }else{
-            playWallHit();
-        }
-        document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"up.png");
-    }
-
-    function dest_downward(){
-        if(boards[actual_board][fromtop+1][fromleft]!=2){
-            fromtop++;
-            playMove();
-        }else{
-            playWallHit();
-        }
-        document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"down.png");
-    }
-
-
-    function dest_leftward(){
-        if(boards[actual_board][fromtop][fromleft-1]!=2){
-            fromleft--;
-            playMove();
-        }else{
-            playWallHit();
-        }
-        document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"left.png");
-    }
-
-
-
-    function dest_rigthward(){
-        if(boards[actual_board][fromtop][fromleft+1]!=2){
-            fromleft++;
-            playMove();
-        }else{
-            playWallHit();
-        }
-        document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"right.png");
-    }
-
     function finish_labyrinth(){
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_board(actual_board+2);
+            construct_board_with_gaz(actual_board+2);
         } else {
             stopTimer();
             playEndLevel() 
@@ -278,10 +173,6 @@
         }
     }
 
-    function returnToMainPage() {
-        window.location.href='../menu/carte.html';
-    }
-
     function rebegin() {
         window.location.href='main_roche.html';
     }
@@ -289,139 +180,6 @@
     function nextLvl() {
         window.location.href='../planet5/main_poison.html';
     }
-
-
-    function returnMap() {
-        window.location.href='../menu/carte.html';
-    }
-
-
-    function playMove() {
-        var audio = new Audio('../sons/mario_move.wav');
-        audio.play();
-    }
-
-    function playEndLevel() {
-        var audio = new Audio('../sons/mario_endplanet.wav');
-        audio.play();
-    }
-
-    function playEndLaby() {
-        var audio = new Audio('../sons/mario_endlaby.wav');
-        audio.play();
-    }
-
-
-    function playWallHit() {
-        var audio = new Audio('../sons/wallhit.wav');
-        audio.play();
-    }
-
-    function playSuccess() {
-        var audio = new Audio('../sons/mario_success.wav');
-        audio.play();
-    }
-
-    function retrievePlayer() {
-        var storedData = localStorage.getItem('charChosen');
-        if (storedData !== null) {
-            var charChosen = JSON.parse(storedData);
-            chara = charChosen.char;
-        }
-    }
-
-    function UnlockPlanet5() {
-        var storedData = localStorage.getItem('level');
-        if (storedData !== null) {
-            var level = JSON.parse(storedData);
-            if( level.num < 5){
-                var level = {
-                    num: 5
-                };
-                var dataString = JSON.stringify(level);
-                localStorage.setItem('level', dataString);
-            }
-        } else {
-            var level = {
-                num: 5
-            };
-            var dataString = JSON.stringify(level);
-            localStorage.setItem('level', dataString);
-        }   
-    }
-
-    function showPause() {
-        document.getElementById('pause').style.display = 'block';
-        inpause = true;
-    }
-
-    function closePause() {
-        document.getElementById('pause').style.display = 'none';
-        inpause = false;
-    }
-
-    function setHighScorePlanet4() {
-        var storedData = localStorage.getItem('kamino');
-        if (storedData !== null) {
-            var terre = JSON.parse(storedData);
-            let newcoups;
-            let newtemps;
-            if( terre.coups > nbCoups ){
-                newcoups = nbCoups;
-            } else {
-                newcoups = terre.coups;
-            }
-            if(terre.temps > totalSeconds){
-                newtemps = totalSeconds;
-            }else{
-                newtemps = terre.temps;
-            }
-            var terre = {
-                coups: newcoups,
-                temps: newtemps
-            };
-            var dataString = JSON.stringify(terre);
-            localStorage.setItem('kamino', dataString);
-        } else {
-            var terre = {
-                coups: nbCoups,
-                temps: totalSeconds
-            };
-            var dataString = JSON.stringify(terre);
-            localStorage.setItem('kamino', dataString);
-        }   
-    }
-
-    function pad(val) {
-            var valString = val + "";
-            if (valString.length < 2) {
-                return "0" + valString;
-            } else {
-                return valString;
-            }
-    }
-
-    function startTimer() {
-    
-        intervalId = setInterval(() => {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds % 60);
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-        }, 1000); // run the function every second (1000 milliseconds)
-
-    }
-
-    function stopTimer() {
-        clearInterval(intervalId);
-    }
-
-
-    function resetTimer(){
-        secondsLabel.innerHTML = pad(0);
-        minutesLabel.innerHTML = pad(0);
-        totalSeconds = 0;
-    }
-    
 
 </script>
 </body>

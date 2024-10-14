@@ -9,7 +9,7 @@
     <link rel="icon" href="../images/p1down.png">
 </head>
 <body>
-    <button class="btn btn-outline-dark" onclick="returnToMainPage()">&larr;</button>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
         <div class="custom-title">Bienvenu sur la planète Kamino</div>
@@ -25,17 +25,6 @@
             <button class="btn btn-outline-light" onclick="beginRoche()">Commencer</button>
         </div>
     </div>
-
-    <script>
-
-        function returnToMainPage() {
-            window.location.href='../menu/carte.html';
-        }
-
-        function beginRoche() {
-            window.location.href='laby_roche.html';
-        }
-    </script>
-
+    <script src="../common_functions/navigation.js"></script>
 </body>
 </html>
