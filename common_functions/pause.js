@@ -1,3 +1,5 @@
+var inpause = false;
+
 function showPause() {
     document.getElementById('pause').style.display = 'block';
     inpause = true;

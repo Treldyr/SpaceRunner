@@ -96,20 +96,13 @@
 <script src="../common_functions/unlocks.js"></script>
 <script src="../common_functions/checks.js"></script>
 <script>
-    var minutesLabel = document.getElementById("minutes");
-    var secondsLabel = document.getElementById("seconds");
-    var totalSeconds = 0;
-    var intervalId;
 
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
     var fromleft = 0; // horizontal position // var fromleft = 0;
     var actual_board = 0;
-    var chara = "p0";
-    var inpause = false;
     retrievePlayer()
-    startTimer();
     var found_b1;
     var found_b0;
     var found_b2;
@@ -121,15 +114,6 @@
     document.getElementById('page1').style.display = "block";
     
     construct_board_with_gaz(1)
-    
-
-
-
-    function goNext(number){
-        number2 = number+1;
-        document.getElementById('page'+number).style.display = "none";
-        document.getElementById('page'+number2).style.display = "block";
-    }
 
 
     function checkKey(e) {

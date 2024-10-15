@@ -1,3 +1,5 @@
+var chara = "p0";
+
 function retrievePlayer() {
     var storedData = localStorage.getItem('charChosen');
     if (storedData !== null) {

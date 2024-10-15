@@ -101,10 +101,6 @@
 <script src="../common_functions/checks.js"></script>
 <script src="../common_functions/ghost.js"></script>
 <script>
-    var minutesLabel = document.getElementById("minutes");
-    var secondsLabel = document.getElementById("seconds");
-    var totalSeconds = 0;
-    var intervalId;
     var ghostId;
     var nbTourGhost = 0;
 
@@ -117,10 +113,7 @@
     var ghostTop2 = 0;
     var ghostLeft2 = 0;
     var actual_board = 0;
-    var chara = "p0";
-    var inpause = false;
     retrievePlayer()
-    startTimer();
     moveGhost();
 
 
@@ -131,15 +124,6 @@
     
     construct_board_with_2_ghosts(1)
     
-
-
-
-    function goNext(number){
-        number2 = number+1;
-        document.getElementById('page'+number).style.display = "none";
-        document.getElementById('page'+number2).style.display = "block";
-        moveGhost()
-    }
 
 
     function checkKey(e) {
@@ -277,6 +261,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
+            moveGhost()
             construct_board_with_2_ghosts(actual_board+2);
         } else {
             stopTimer();

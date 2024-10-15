@@ -1,3 +1,17 @@
+
+// --------------------------------------------------//
+//                                                   //
+//          THE FUNCTION THAT CHANGE THE PAGE        //
+//                                                   //
+// --------------------------------------------------//
+
+function goNext(number){
+    let number2 = number+1;
+    document.getElementById('page'+number).style.display = "none";
+    document.getElementById('page'+number2).style.display = "block";
+}
+
+
 // --------------------------------------------------//
 //                                                   //
 //   CONSTRUCTION OF THE BOARD FOR THE TINY PLANETS  //

@@ -1,3 +1,31 @@
+// --------------------------------------------------//
+//                                                   //
+//             VARIABLE INITIALIZATION               //
+//                                                   //
+// --------------------------------------------------//
+
+
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+var intervalId;
+
+// --------------------------------------------------//
+//                                                   //
+//                  TO START THE TIMER               //
+//                                                   //
+// --------------------------------------------------//
+
+
+startTimer();
+
+
+// --------------------------------------------------//
+//                                                   //
+//              THE FUNCTION OF THE TIMER            //
+//                                                   //
+// --------------------------------------------------//
+
 function pad(val) {
     var valString = val + "";
     if (valString.length < 2) {
@@ -19,12 +47,13 @@ intervalId = setInterval(() => {
 }
 
 function stopTimer() {
-clearInterval(intervalId);
+    clearInterval(intervalId);
 }
 
 
 function resetTimer(){
-secondsLabel.innerHTML = pad(0);
-minutesLabel.innerHTML = pad(0);
-totalSeconds = 0;
+    secondsLabel.innerHTML = pad(0);
+    minutesLabel.innerHTML = pad(0);
+    totalSeconds = 0;
 }
+
