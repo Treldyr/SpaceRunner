@@ -18,7 +18,7 @@
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
                 <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
 
             </div>
             <div class="page" id="page1">
@@ -54,8 +54,8 @@
         
                     <p>Bonne continuation !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="nextLvl()">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet4()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet5()">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -155,14 +155,6 @@
             document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
             setHighScorePlanet4();
         }
-    }
-
-    function rebegin() {
-        window.location.href='main_roche.html';
-    }
-
-    function nextLvl() {
-        window.location.href='../planet5/main_poison.html';
     }
 
 </script>

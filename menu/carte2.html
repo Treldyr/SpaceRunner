@@ -26,12 +26,13 @@
     </div>
 
     
-    <button class="btn btn-outline-light btn-back" onclick="returnToMainPage()">&larr;</button>
-    <button class="btn btn-outline-light btn-previous" id="universe2" onclick="goMap1()">&larr; Précédent Système Solaire</button>
+    <button class="btn btn-outline-light btn-back" onclick="returnToMenu()">&larr;</button>
+    <button class="btn btn-outline-light btn-previous" id="universe2" onclick="returnToMapFromPlanet()">&larr; Précédent Système Solaire</button>
 
 </body>
 <script src="../common_functions/get_data.js"></script>
 <script src="../common_functions/unlocks.js"></script>
+<script src="../common_functions/navigation.js"></script>
 <script>
     var lvl = 1;
     retrieveLevel();
@@ -42,22 +43,6 @@
     }
     if(lvl<=5){
         document.getElementById('planet6').style.display = "none";
-    }
-
-    function returnToMainPage() {
-        window.location.href='main.html';
-    }
-
-    function goPlanet6() {
-        window.location.href='../planet6/main_fantom.html';
-    }
-
-    function goPlanet7() {
-        window.location.href='../planet7/main_rouge.html';
-    }
-
-    function goMap1(){
-        window.location.href='carte.html';
     }
    
 </script>

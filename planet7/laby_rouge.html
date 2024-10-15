@@ -18,7 +18,7 @@
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
                 <button class="btn-start" onclick="returnToMap2FromPlanet()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -49,7 +49,7 @@
                 <div class="custom-title">Planète Sablière Rouge complétée !</div>
                 <div class="game-description">
                     <p id="your_score"></p>
-                    <p>Vous avez terminé le jeu.</p>
+                    <p>Vous avez terminé le jeu</p>
         
                     <p>Voici votre récompens : 4 nouveaux personnages exclusifs<p>
                     
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet7()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMap2FromPlanet()">Carte</button>
                     
                 </div>
@@ -274,10 +274,6 @@
             setHighScorePlanet7()
             UnlockFourthChar()
         }
-    }
-
-    function rebegin() {
-        window.location.href='main_rouge.html';
     }
 
 </script>

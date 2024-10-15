@@ -59,11 +59,12 @@
                 </tr>
             </tbody>
         </table>
-        <button class="btn-start" onclick="returnToMainPage()">Retour</button>
+        <button class="btn-start" onclick="returnToMenu()">Retour</button>
     </div>
 </body>
 <script src="../common_functions/get_data.js"></script>
 <script src="../common_functions/timer.js"></script>
+<script src="../common_functions/navigation.js"></script>
 <script>
     var coups1 = " - ";
     var temps1;
@@ -95,11 +96,6 @@
     setValeurFelucia();
     setValeurFantomia();
     setValeurSabliereRouge();
-
-
-    function returnToMainPage() {
-        window.location.href='main.html';
-    }
 
     function setValeurTerre(){
         let stringTemps;

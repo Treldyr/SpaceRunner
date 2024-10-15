@@ -40,12 +40,13 @@
             <img id="imgplanet5" src="../images/planet5.png" alt="Planète 5">
         </a>
     </div>
-    <button class="btn btn-outline-light btn-back" onclick="returnToMainPage()">&larr;</button>
-    <button class="btn btn-outline-light btn-next" id="universe2" onclick="changeUniverse()">Prochain Système Solaire &rarr;</button>
+    <button class="btn btn-outline-light btn-back" onclick="returnToMenu()">&larr;</button>
+    <button class="btn btn-outline-light btn-next" id="universe2" onclick="returnToMap2FromPlanet()">Prochain Système Solaire &rarr;</button>
 
 </body>
 <script src="../common_functions/get_data.js"></script>
 <script src="../common_functions/unlocks.js"></script>
+<script src="../common_functions/navigation.js"></script>
 <script>
     var lvl = 1;
     retrieveLevel();
@@ -64,35 +65,6 @@
     }
     if(lvl==1){
         document.getElementById('planet2').style.display = "none";
-    }
-
-
-    function returnToMainPage() {
-        window.location.href='main.html';
-    }
-
-    function goPlanet1() {
-        window.location.href='../planet1/main_terre.html';
-    }
-
-    function goPlanet2() {
-        window.location.href='../planet2/main_sable.html';
-    }
-
-    function goPlanet3() {
-        window.location.href='../planet3/main_glace.html';
-    }
-
-    function goPlanet4() {
-        window.location.href='../planet4/main_roche.html';
-    }
-
-    function goPlanet5() {
-        window.location.href='../planet5/main_poison.html';
-    }
-
-    function changeUniverse(){
-        window.location.href='carte2.html';
     }
    
 </script>

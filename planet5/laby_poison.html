@@ -18,7 +18,7 @@
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
                 <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -68,7 +68,8 @@
         
                     <p>Vous avez terminé cet univers ! Félicitations ! Vous pouvez passer au suivant...</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet5()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet6()">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -167,10 +168,6 @@
             setHighScorePlanet5();
         }
     }
-
-    function rebegin() {
-        window.location.href='main_poison.html';
-    } 
 
 </script>
 </body>

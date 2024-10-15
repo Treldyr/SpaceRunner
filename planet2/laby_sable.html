@@ -18,7 +18,7 @@
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
                 <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -53,8 +53,8 @@
         
                     <p>Bonne continuation !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="nextLvl()">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet2()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet3()">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -64,11 +64,6 @@
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
-
-
-
-
-      
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -150,15 +145,6 @@
             setHighScorePlanet2();
         }
     }
-
-    function rebegin() {
-        window.location.href='main_sable.html';
-    }
-
-    function nextLvl() {
-        window.location.href='../planet3/main_glace.html';
-    }
-
 </script>
 </body>
 </html>

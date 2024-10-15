@@ -18,7 +18,7 @@
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
                 <button class="btn-start" onclick="returnToMap2FromPlanet()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../menu/main.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -53,8 +53,8 @@
         
                     <p>Bonne continuation !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="nextLvl()">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet6()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet7()">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMap2FromPlanet()">Carte</button>
                     
                 </div>
@@ -158,14 +158,6 @@
             document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
             setHighScorePlanet6();
         }
-    }
-
-    function rebegin() {
-        window.location.href='main_fantom.html';
-    }
-
-    function nextLvl() {
-        window.location.href='../planet7/main_rouge.html';
     }
 
 </script>
