@@ -21,10 +21,10 @@
         <div class="container">
             <div class="row" id="listChar1">
                 <div class="col-md-6">
-                    <img src="../../images/fantom0.png" class="img-thumbnail selected" id='p0' onclick="selectImage('p0')">
+                    <img src="../../images/fantomp0.png" class="img-thumbnail selected" id='p0' onclick="selectImage('p0')">
                 </div>
                 <div class="col-md-6">
-                    <img src="../../images/fantom1.png" class="img-thumbnail" id='p1' onclick="selectImage('p1')">
+                    <img src="../../images/fantomp1.png" class="img-thumbnail" id='p1' onclick="selectImage('p1')">
                 </div>
             </div>
             <!-- Champ caché pour stocker l'image sélectionnée -->
@@ -51,6 +51,15 @@
         function playSoundButton() {
             var audio = new Audio('../../sons/bright.wav');
             audio.play();
+        }
+
+        function acceptPlayer() {
+            var charChosen = {
+                char: char
+            };
+            var dataString = JSON.stringify(charChosen);
+            localStorage.setItem('charChosen2', dataString);
+            window.location.href = 'carte.html'
         }
 
 	</script>
