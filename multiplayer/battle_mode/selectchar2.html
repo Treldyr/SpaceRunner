@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Runner</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Lien vers Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Lien vers jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Lien vers Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/style_select.css">
+	<link rel="icon" href="../../images/p1down.png">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <h1 class="custom-title">Space Runner</h1>
+        <h1 >Choisissez le joueur 2</h1>
+        <div class="container">
+            <div class="row" id="listChar1">
+                <div class="col-md-6">
+                    <img src="../../images/fantom0.png" class="img-thumbnail selected" id='p0' onclick="selectImage('p0')">
+                </div>
+                <div class="col-md-6">
+                    <img src="../../images/fantom1.png" class="img-thumbnail" id='p1' onclick="selectImage('p1')">
+                </div>
+            </div>
+            <!-- Champ caché pour stocker l'image sélectionnée -->
+            <input type="hidden" id="selected-image" name="selected-image">
+        </div>
+        <button class="btn-start" onclick="acceptPlayer()">Commencer</button>
+    </div>
+	<script>
+        var char = "p0"
+
+		// Fonction pour sélectionner une image
+		function selectImage(imageId) {
+            playSoundButton()
+			// Désélectionne toutes les images
+			$('.img-thumbnail').removeClass('selected');
+			// Sélectionne l'image cliquée
+			$('#' + imageId).addClass('selected');
+			// Stocke l'ID
+            $('#selected-image').val(imageId);
+            // stocke dans la balise p l'image
+            char = imageId
+		}
+
+        function playSoundButton() {
+            var audio = new Audio('../../sons/bright.wav');
+            audio.play();
+        }
+
+	</script>
+</body>
+</html>
