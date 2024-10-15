@@ -1,4 +1,4 @@
-function moveGhost() {
+function moveGhost(planet_id) {
     ghostId = setInterval(() => {
         let diffLeft;
         let diffTop;
@@ -20,7 +20,7 @@ function moveGhost() {
             moveGhostVertically();
         }
 
-        checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
+        checkGhost(ghostLeft,fromleft,ghostTop,fromtop,planet_id);
     }, 500);
 }
 
@@ -28,10 +28,19 @@ function moveGhost() {
         clearInterval(ghostId);
     }
 
-    function checkGhost(ghostLeft,fromleft,ghostTop,fromtop){
+    function checkGhost(ghostLeft,fromleft,ghostTop,fromtop,planet_id){
         if ((ghostLeft == fromleft) && (ghostTop == fromtop)){
             stopGhost()
-            rebegin()
+            switch(planet_id){
+                case 6:
+                    window.location.href='../planet6/main_fantom.html';
+                break;
+                case 7:
+                    window.location.href='../planet7/main_rouge.html';
+                break;
+                default:
+                    console.log('erreur id planet')
+            }
         }
     }
 

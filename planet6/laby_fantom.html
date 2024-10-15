@@ -96,7 +96,7 @@
     var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
-    moveGhost();
+    moveGhost(6);
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -135,7 +135,7 @@
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft,fromleft,ghostTop,fromtop)
+            checkGhost(ghostLeft,fromleft,ghostTop,fromtop,6)
         }
     }
     

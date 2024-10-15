@@ -137,7 +137,7 @@ function construct_board_with_ghost(numboard){
 
 function create_ghost(numboard){
     let ghost = document.createElement('img');
-    ghost.setAttribute('src', "../images/fantom.png");
+    ghost.setAttribute('src', "../images/fantom0.png");
     ghost.setAttribute('style', "position: fixed;top : 5vh;left : 5vw;");
     ghost.className = "img_of_laby";
     ghost.setAttribute('id', "ghost" + actual_board);
@@ -189,7 +189,7 @@ function construct_big_line(line,numline,numboard){
 
 function create_ghosts(numboard){
     var ghost = document.createElement('img');
-    ghost.setAttribute('src', "../images/fantom.png");
+    ghost.setAttribute('src', "../images/fantom0.png");
     ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_1[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_1[numboard - 1][1] + 5) + "vw;");
     ghost.className = "img_of_laby";
     ghost.setAttribute('id', "ghost" + actual_board);
@@ -199,7 +199,7 @@ function create_ghosts(numboard){
 
 
     var ghost2 = document.createElement('img');
-    ghost2.setAttribute('src', "../images/fantom.png");
+    ghost2.setAttribute('src', "../images/fantom0.png");
     ghost2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_2[numboard - 1][1] + 5) + "vw;");
     ghost2.className = "img_of_laby";
     ghost2.setAttribute('id', "ghost2_" + actual_board);

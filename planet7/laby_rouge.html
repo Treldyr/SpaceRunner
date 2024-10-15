@@ -154,8 +154,8 @@
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop);
-            checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop);
+            checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
+            checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
         }
     }
 
@@ -167,9 +167,9 @@
         }else{
             moveSecondGhost()
         }
-        checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop);
-        checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop);
-    }, 500);
+        checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
+        checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
+    }, 300);
 }
 
     function moveFirstGhost(){
