@@ -145,6 +145,7 @@
         the_image.setAttribute('src', "../../../images/" + chara + "down.png");
         the_image.setAttribute('style', "position: fixed;top : " + (5 * coords_begin_1[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin_1[numboard - 1][1] + 5) + "vw;");
         the_image.setAttribute('id', "character" + actual_board);
+        the_image.className = "img_of_laby";
         document.getElementById('laby' + numboard).appendChild(the_image);
         fromtop1 = coords_begin_1[numboard - 1][0];
         fromleft1 = coords_begin_1[numboard - 1][1];
