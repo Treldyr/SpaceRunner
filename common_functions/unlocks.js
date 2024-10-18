@@ -184,3 +184,66 @@ function UnlockFourthChar() {
         localStorage.setItem('playerData', dataString);
     }   
 }
+
+
+function UnlockFourthGhost() {
+    var storedData = localStorage.getItem('ghostData');
+    if (storedData !== null) {
+        var playerData = JSON.parse(storedData);
+        if( playerData.ghostUnlock < 4){
+            var playerData = {
+                ghostUnlock: 4
+            };
+            var dataString = JSON.stringify(playerData);
+            localStorage.setItem('ghostData', dataString);
+        }
+    } else {
+        var playerData = {
+            ghostUnlock: 4
+        };
+        var dataString = JSON.stringify(playerData);
+        localStorage.setItem('ghostData', dataString);
+    }   
+}
+
+
+function UnlockThirdGhost() {
+    var storedData = localStorage.getItem('ghostData');
+    if (storedData !== null) {
+        var playerData = JSON.parse(storedData);
+        if( playerData.ghostUnlock < 3){
+            var playerData = {
+                ghostUnlock: 3
+            };
+            var dataString = JSON.stringify(playerData);
+            localStorage.setItem('ghostData', dataString);
+        }
+    } else {
+        var playerData = {
+            ghostUnlock: 3
+        };
+        var dataString = JSON.stringify(playerData);
+        localStorage.setItem('ghostData', dataString);
+    }   
+}
+
+
+function UnlockSecondGhost() {
+    var storedData = localStorage.getItem('ghostData');
+    if (storedData !== null) {
+        var playerData = JSON.parse(storedData);
+        if( playerData.ghostUnlock < 2){
+            var playerData = {
+                ghostUnlock: 2
+            };
+            var dataString = JSON.stringify(playerData);
+            localStorage.setItem('ghostData', dataString);
+        }
+    } else {
+        var playerData = {
+            ghostUnlock: 2
+        };
+        var dataString = JSON.stringify(playerData);
+        localStorage.setItem('ghostData', dataString);
+    }   
+}

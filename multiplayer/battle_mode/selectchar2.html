@@ -28,13 +28,53 @@
                     <img src="../../images/fantomp1.png" class="img-thumbnail" id='p1' onclick="selectImage('p1')">
                 </div>
             </div>
+
+            <div class="row" id="listChar2">
+                <div class="col-md-6">
+                    <img src="../../images/fantomp2.png" class="img-thumbnail" id='p2' onclick="selectImage('p2')">
+                </div>
+                <div class="col-md-6">
+                    <img src="../../images/fantomp3.png" class="img-thumbnail" id='p3' onclick="selectImage('p3')">
+                </div>
+            </div>
+
+            <div class="row" id="listChar3">
+                <div class="col-md-6">
+                    <img src="../../images/fantomp4.png" class="img-thumbnail" id='p4' onclick="selectImage('p4')">
+                </div>
+                <div class="col-md-6">
+                    <img src="../../images/fantomp5.png" class="img-thumbnail" id='p5' onclick="selectImage('p5')">
+                </div>
+            </div>
+
+            <div class="row" id="listChar4">
+                <div class="col-md-6">
+                    <img src="../../images/fantomp6.png" class="img-thumbnail" id='p6' onclick="selectImage('p6')">
+                </div>
+                <div class="col-md-6">
+                    <img src="../../images/fantomp7.png" class="img-thumbnail" id='p7' onclick="selectImage('p7')">
+                </div>
+            </div>
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
         <button class="btn-start" onclick="acceptPlayer()">Commencer</button>
     </div>
+    <script src="../../common_functions/unlocks.js"></script>
 	<script>
         var char = "p0"
+        var lvlGhost = 1;
+        retrieveAchievements();
+
+        if(lvlGhost<2){
+            document.getElementById('listChar2').style.display = "none";
+        }
+        if(lvlGhost<3){
+            document.getElementById('listChar3').style.display = "none";
+        }
+        if(lvlGhost<4){
+            document.getElementById('listChar4').style.display = "none";
+        }
 
 		// Fonction pour sélectionner une image
 		function selectImage(imageId) {
@@ -56,11 +96,19 @@
 
         function acceptPlayer() {
             var charChosen = {
-                char: char
+                ghost : char
             };
             var dataString = JSON.stringify(charChosen);
-            localStorage.setItem('charChosen2', dataString);
+            localStorage.setItem('ghostChosen', dataString);
             window.location.href = 'carte.html'
+        }
+
+        function retrieveAchievements() {
+            var storedData = localStorage.getItem('ghostData');
+            if (storedData !== null) {
+                var ghostData = JSON.parse(storedData);
+                lvlGhost = ghostData.ghostUnlock;
+            }
         }
 
 	</script>
