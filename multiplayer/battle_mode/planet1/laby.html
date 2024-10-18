@@ -50,6 +50,7 @@
 <script src="../../../common_functions/pause.js"></script>
 
 <script>
+    var game_ended = false
     var ghostId;
     var nbTourGhost = 0;
     var nbvictoryP1 = 0;
@@ -108,13 +109,16 @@
             else if (e.keyCode == '68') { // D key for going right for p2
                 dest_rigthward_p2();
             }
-            if(boards[actual_board][fromtop1][fromleft1]==0)
-            {
-                finish_labyrinth(true);
+            if(!game_ended){
+                if(boards[actual_board][fromtop1][fromleft1]==0)
+                {
+                    finish_labyrinth(true);
+                }
+                if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){
+                    finish_labyrinth(false);
+                }
             }
-            if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){
-                finish_labyrinth(false);
-            }
+            
         }
     }
 
@@ -263,14 +267,15 @@
     // end labyrinth
 
     function finish_labyrinth(dop1won){
+        game_ended = true
         document.getElementById('page1').style.display = "none";
         document.getElementById('page2').style.display = "block";
         if(dop1won){
             nbvictoryP1++;
-            document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 1";
+            document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 1 <img src='../../../images/"+chara +"down.png' width='40px' class='img-thumbnail'>";
         } else {
             nbvictoryP2++
-            document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 2";
+            document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 2 <img src='../../../images/fantom"+charap2 +".png' width='40px' class='img-thumbnail'>" ;
         }
         document.getElementById('score_p1').innerHTML = "J1 : "+nbvictoryP1;
         document.getElementById('score_p2').innerHTML = "J2 : "+nbvictoryP2;
@@ -280,7 +285,13 @@
 
 
     function rebegin() {
-        window.location.href='main.html';
+        game_ended = false;
+        document.getElementById('page2').style.display = "none";
+        document.getElementById('page1').style.display = "block";
+        document.getElementById('ghost'+actual_board).remove();
+        document.getElementById('character'+actual_board).remove();
+        create_character(1);
+        
     }
 
     function returnMap() {
