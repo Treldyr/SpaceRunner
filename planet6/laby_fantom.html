@@ -50,6 +50,12 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Fantomia complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué 2 nouveaux skins pour le mode battle :
+                        <br>
+                        <img src='../images/fantomp4.png' width='50px' class='img-thumbnail'>
+                        <img src='../images/fantomp5.png' width='50px' class='img-thumbnail'>
+                        <br>
+                    </p>
                     <p id="your_score"></p>
                     <p>La planète Sablière et ses 5 niveaux sont maintenant disponibles.</p>
         
@@ -152,6 +158,7 @@
         } else {
             stopTimer();
             playEndLevel()
+            UnlockThirdGhost();
             UnlockPlanet7()
             let number = actual_board+1;
             let number2 = actual_board+2

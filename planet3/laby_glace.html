@@ -50,6 +50,13 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Hoth complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué 2 nouveaux skins pour le mode battle :
+                        <br>
+                        <img src='../images/fantomp2.png' width='50px' class='img-thumbnail'>
+                        <img src='../images/fantomp3.png' width='50px' class='img-thumbnail'>
+                        <br>
+                    </p>
+
                     <p id="your_score"></p>
                     <p>La planète Kamino et ses 5 niveaux sont maintenant disponibles.</p>
         
@@ -142,6 +149,7 @@
             playEndLaby()
             goNext(actual_board+1);
             construct_board(actual_board+2);
+            UnlockSecondGhost();
         } else {
             stopTimer();
             playEndLevel()
