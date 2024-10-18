@@ -89,45 +89,48 @@
         }else{
             showPause()
         }
-        }else {
-            if (e.keyCode == '38'){ // going up p1
-                dest_upward_p1();
-            }
-            else if (e.keyCode == '40'){ // going down p1
-                dest_downward_p1();
-            }
-            else if (e.keyCode == '37'){ // going left p1
-                dest_leftward_p1();
-            }
-            else if (e.keyCode == '39') { // going rigth p1
-                dest_rigthward_p1();
-            }
-            else if (e.keyCode == '90') { // Z key for going up for p2
-                dest_upward_p2();
-            } 
-            else if (e.keyCode == '83') { // S key for going down for p2
-                dest_downward_p2();
-            } 
-            else if (e.keyCode == '81') { // Q key for going left for p2
-                dest_leftward_p2();
-            } 
-            else if (e.keyCode == '68') { // D key for going right for p2
-                dest_rigthward_p2();
-            }
-            if(!game_ended){
-                if(countdownFinished){
-                    finish_labyrinth(false);
-                }
-                if(boards[actual_board][fromtop1][fromleft1]==0)
-                {
-                    finish_labyrinth(true)
-                }
-                if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){
-                    finish_labyrinth(false)
-                }
-            }
-            
+    }else {
+        if (((e.keyCode == '32')||(e.keyCode == '13'))&&(game_ended)) { // Space key or Enter key
+            rebegin();
         }
+        if (e.keyCode == '38'){ // going up p1
+            dest_upward_p1();
+        }
+        else if (e.keyCode == '40'){ // going down p1
+            dest_downward_p1();
+        }
+        else if (e.keyCode == '37'){ // going left p1
+            dest_leftward_p1();
+        }
+        else if (e.keyCode == '39') { // going rigth p1
+            dest_rigthward_p1();
+        }
+        else if (e.keyCode == '90') { // Z key for going up for p2
+            dest_upward_p2();
+        } 
+        else if (e.keyCode == '83') { // S key for going down for p2
+            dest_downward_p2();
+        } 
+        else if (e.keyCode == '81') { // Q key for going left for p2
+            dest_leftward_p2();
+        } 
+        else if (e.keyCode == '68') { // D key for going right for p2
+            dest_rigthward_p2();
+        }
+        if(!game_ended){
+            if(countdownFinished){
+                finish_labyrinth(false);
+            }
+            if(boards[actual_board][fromtop1][fromleft1]==0)
+            {
+                finish_labyrinth(true)
+            }
+            if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){
+                finish_labyrinth(false)
+            }
+        } 
+    }
+
     }
 
     // construction of the labyrinth

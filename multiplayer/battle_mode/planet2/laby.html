@@ -90,6 +90,9 @@
             showPause()
         }
         }else {
+            if (((e.keyCode == '32')||(e.keyCode == '13'))&&(game_ended)) { // Space key or Enter key
+                rebegin();
+            }
             if (e.keyCode == '38'){ // going up p1
                 dest_upward_p1();
             }
