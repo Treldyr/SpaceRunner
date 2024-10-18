@@ -128,16 +128,16 @@
                 showPause()
             }
         }else {
-            if (e.keyCode == '38') { // going up
+            if (e.keyCode == '38' || e.keyCode == '90') { // going up
                 dest_upward_sliding();
             }
-            else if (e.keyCode == '40') { // going down
+            else if (e.keyCode == '40' || e.keyCode == '83') { // going down
                 dest_downward_sliding();
             }
-            else if (e.keyCode == '37') { // going left
+            else if (e.keyCode == '37' || e.keyCode == '81') { // going left
                 dest_leftward_sliding();
             }
-            else if (e.keyCode == '39') { // going rigth
+            else if (e.keyCode == '39' || e.keyCode == '68') { // going rigth
                 dest_rigthward_sliding();
             }
             nbCoups++;
