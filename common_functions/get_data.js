@@ -8,6 +8,19 @@ function retrievePlayer() {
     }
 }
 
+function retrieveBattlePlayers() {
+    var storedData = localStorage.getItem('charChosen');
+    if (storedData !== null) {
+        var charChosen = JSON.parse(storedData);
+        chara = charChosen.char;
+    }
+    storedData = localStorage.getItem('ghostChosen');
+    if (storedData !== null) {
+        var charChosen = JSON.parse(storedData);
+        charap2 = charChosen.ghost;
+    }
+}
+
 function retrieveLevel() {
     var storedData = localStorage.getItem('level');
     if (storedData !== null) {
