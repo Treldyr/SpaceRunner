@@ -6,7 +6,7 @@
     height: 100%;
     z-index: -1; /* Place l'image en arrière-plan */
     /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/planete_terre.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_terre.jpg') no-repeat center center fixed;
     background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
 

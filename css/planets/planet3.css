@@ -6,12 +6,13 @@
     height: 100%;
     z-index: -1; /* Place l'image en arrière-plan */
     /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/planete_roche.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_glace.jpg') no-repeat center center fixed;
     background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
 
+
 .btn-outline-dark {
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(113, 161, 220);
     border-color: #000000;
     position: fixed;
     top : 5px;
@@ -25,7 +26,6 @@
 }
 
 .btn-start {
-    z-index: 9;
     display: block;
     margin: auto;
     margin-top: 2%;
@@ -33,7 +33,7 @@
     font-size: 2rem;
     border-radius: 50px;
     color: #fff;
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(113, 161, 220);
     border: none;
     outline: none;
     cursor: pointer;
@@ -42,7 +42,7 @@
 }
 .btn-start:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgb(195, 125, 34);
+    box-shadow: 0 0 10px rgb(113, 161, 220);
 }
 
 
@@ -50,7 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(113, 161, 220);
     border-color: #000000;
     height: 40px;
     width: 180px;
@@ -61,4 +61,4 @@
     position :fixed;
     top:5px;
     right:5px;
-}
+}  

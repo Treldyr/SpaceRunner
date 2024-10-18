@@ -6,26 +6,20 @@
     height: 100%;
     z-index: -1; /* Place l'image en arrière-plan */
     /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/planete_fantome.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_poison.jpg') no-repeat center center fixed;
     background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
 
 
 .btn-outline-dark {
-    background-color: rgb(58, 114, 49);
-    border-color: #000000;
+    background-color: rgb(103, 75, 116);
+    border-color: #281717;
     position: fixed;
     top : 5px;
     left : 5px;
-}
+  }
 
-
-.img_of_laby {
-    width: 3.5vw;
-    height: 5vh;
-}
-
-.btn-start {
+  .btn-start {
     z-index: 9;
     display: block;
     margin: auto;
@@ -34,7 +28,7 @@
     font-size: 2rem;
     border-radius: 50px;
     color: #fff;
-    background-color: rgb(58, 114, 49);
+    background-color: rgb(103, 75, 116);
     border: none;
     outline: none;
     cursor: pointer;
@@ -43,7 +37,13 @@
 }
 .btn-start:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgb(58, 114, 49);
+    box-shadow: 0 0 10px rgb(103, 75, 116);
+}
+
+
+.img_of_laby {
+    width: 3.5vw;
+    height: 5vh;
 }
 
 
@@ -51,7 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(58, 114, 49);
+    background-color: rgb(103, 75, 116);
     border-color: #000000;
     height: 40px;
     width: 180px;

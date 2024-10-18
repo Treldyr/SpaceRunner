@@ -6,10 +6,9 @@
     height: 100%;
     z-index: -1; /* Place l'image en arrière-plan */
     /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/planete_desert.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_roche.jpg') no-repeat center center fixed;
     background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
 }
-
 
 .btn-outline-dark {
     background-color: rgb(195, 125, 34);
@@ -19,31 +18,32 @@
     left : 5px;
   }
 
+
 .img_of_laby {
     width: 3.5vw;
     height: 5vh;
 }
 
 .btn-start {
-  display: block;
-  margin: auto;
-  margin-top: 2%;
-  padding: 15px 30px;
-  font-size: 2rem;
-  border-radius: 50px;
-  color: #fff;
-  background-color: rgb(195, 125, 34);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-shadow: 0 0 5px #fff;
+    z-index: 9;
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+    padding: 15px 30px;
+    font-size: 2rem;
+    border-radius: 50px;
+    color: #fff;
+    background-color: rgb(195, 125, 34);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 0 0 5px #fff;
 }
 .btn-start:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgb(195, 125, 34);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgb(195, 125, 34);
 }
-
 
 
 .timer {
@@ -61,5 +61,4 @@
     position :fixed;
     top:5px;
     right:5px;
-  }
-  
+}
