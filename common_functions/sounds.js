@@ -28,21 +28,3 @@ function playSoundButton() {
     var audio = new Audio('../../sons/bright.wav');
     audio.play();
 }
-
-
-function playMove2PMode() {
-    var audio = new Audio('../../../sons/mario_move.wav');
-    audio.play();
-}
-
-
-function playWallHit2PMode() {
-    var audio = new Audio('../../../sons/wallhit.wav');
-    audio.play();
-}
-
-
-function playSoundButton2PMode() {
-    var audio = new Audio('../../sons/bright.wav');
-    audio.play();
-}

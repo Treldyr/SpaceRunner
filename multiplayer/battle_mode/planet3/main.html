@@ -10,7 +10,7 @@
     <link rel="icon" href="../../../images/p1down.png">
 </head>
 <body>
-    <button class="btn btn-outline-dark" onclick="returnToMainPage()">&larr;</button>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
         <div class="custom-title">Bienvenu sur la planète Hoth</div>
@@ -32,28 +32,10 @@
 
             <p>Bonne chance !</p>
             <br>
-            <button class="btn btn-outline-light" onclick="beginTerre()">Commencer</button>
+            <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
         </div>
     </div>
-
-<script>
-    document.onkeydown = checkKey;
-
-    function checkKey(e) {
-        e = e || window.event;
-        if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
-            beginTerre();
-        }
-    }
-
-    function returnToMainPage() {
-        window.location.href='../carte.html';
-    }
-
-    function beginTerre() {
-        window.location.href='laby.html';
-    }
-</script>
-
+    <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
 </body>
 </html>
