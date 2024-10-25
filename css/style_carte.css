@@ -5,58 +5,29 @@
     transition: transform 0.2s ease-in-out;
 }
 
-#planet1 { top: 10vh; left: 10vw; }
-#planet2 { top: 30vh; left: 20vw; }
-#planet3 { top: 20vh; left: 40vw; }
-#planet4 { top: 40vh; left: 50vw; }
-#planet5 { top: 30vh; left: 70vw; }
-#planet6 { top: 10vh; left: 10vw; }
-#planet7 { top: 30vh; left: 20vw; }
-#planet8 {top: 20vh; left: 40vw;  }
+#planet1 { top: 10px; left: 100px; }
+#planet2 { top: 300px; left: 250px; }
+#planet3 { top: 250px; left: 450px; }
+#planet4 { top: 120px; left: 680px; }
+#planet5 { top: 410px; left: 800px; }
+#planet6 { top: 200px; left: 980px; }
+#planet7 { top: 460px; left: 1180px; }
+#planet8 {top: 340px; left: 1390px;  }
 
 .planet:hover {
     transform: scale(1.2); /* Effet d'agrandissement au survol */
 }
 
 
-#imgplanet1 {
+#imgplanet1, #imgplanet2, #imgplanet4, #imgplanet6, #imgplanet7, #imgplanet8 {
     width: 110px; 
     height: 80px; 
+
 }
 
-#imgplanet2 {
-    width: 110px; 
-    height: 80px;
-}
-
-#imgplanet3 {
+#imgplanet3, #imgplanet5 {
     width: 160px; 
     height: 90px; 
-}
-
-#imgplanet4 {
-    width: 110px; 
-    height: 80px; 
-}
-
-#imgplanet5 {
-    width: 160px; 
-    height: 90px;  
-}
-
-#imgplanet6 {
-    width: 110px; 
-    height: 80px; 
-}
-
-#imgplanet7 {
-    width: 110px; 
-    height: 80px;
-}
-
-#imgplanet8 {
-    width: 110px; 
-    height: 80px;
 }
 
 .btn-back {
@@ -65,15 +36,14 @@
     left : 5px;
 }
 
-
-.btn-next {
-    position: fixed;
-    top : 50%;
-    right : 5px;
+.map-container {
+    width: 2000px; /* Largeur plus grande pour inclure toutes les planètes */
+    height: 100vh;
+    position: relative;
+    overflow-x: scroll; /* Autorise le défilement horizontal */
+    white-space: nowrap; /* Assure que le contenu ne se casse pas en plusieurs lignes */
 }
 
-.btn-previous {
-    position: fixed;
-    top : 50%;
-    left : 5px;
+body{
+    overflow-y:hidden;
 }

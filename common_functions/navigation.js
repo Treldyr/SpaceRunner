@@ -2,18 +2,6 @@ function returnToMapFromPlanet() {
     window.location.href='../carte.html';
 }
 
-function returnToMap2FromPlanet() {
-    window.location.href='../carte2.html';
-}
-
-function goMap2() {
-    window.location.href='carte2.html';
-}
-
-function goMap1() {
-    window.location.href='carte.html';
-}
-
 function returnLastIndexPage() {
     window.location.href='../index.html';
 }

@@ -12,37 +12,56 @@
 </head>
 <body>
     <div class="background-image"></div>
-    <div id="planet1" class="planet">
-        <a onclick="goPlanet1FromMap()">
-            <img id="imgplanet1" src="../../images/planet1.png" alt="Planète 1">
-        </a>
-    </div>
+    <div class="map-container">
+        <div id="planet1" class="planet">
+            <a onclick="goPlanet1FromMap()">
+                <img id="imgplanet1" src="../../images/planet1.png" alt="Planète 1">
+            </a>
+        </div>
 
-    <div id="planet2" class="planet">
-        <a onclick="goPlanet2FromMap()">
-            <img id="imgplanet2" src="../../images/planet2.png" alt="Planète 2">
-        </a>
-    </div>
+        <div id="planet2" class="planet">
+            <a onclick="goPlanet2FromMap()">
+                <img id="imgplanet2" src="../../images/planet2.png" alt="Planète 2">
+            </a>
+        </div>
 
-    <div id="planet3" class="planet">
-        <a onclick="goPlanet3FromMap()">
-            <img id="imgplanet3" src="../../images/planet3.png" alt="Planète 3">
-        </a>
-    </div>
+        <div id="planet3" class="planet">
+            <a onclick="goPlanet3FromMap()">
+                <img id="imgplanet3" src="../../images/planet3.png" alt="Planète 3">
+            </a>
+        </div>
 
-    <div id="planet4" class="planet">
-        <a onclick="goPlanet4FromMap()">
-            <img id="imgplanet4" src="../../images/planet4.png" alt="Planète 4">
-        </a>
-    </div>
+        <div id="planet4" class="planet">
+            <a onclick="goPlanet4FromMap()">
+                <img id="imgplanet4" src="../../images/planet4.png" alt="Planète 4">
+            </a>
+        </div>
 
-    <div id="planet5" class="planet">
-        <a onclick="goPlanet5FromMap()">
-            <img id="imgplanet5" src="../../images/planet5.png" alt="Planète 5">
-        </a>
+        <div id="planet5" class="planet">
+            <a onclick="goPlanet5FromMap()">
+                <img id="imgplanet5" src="../../images/planet5.png" alt="Planète 5">
+            </a>
+        </div>
+
+        <div id="planet6" class="planet">
+            <a onclick="goPlanet6FromMap()">
+                <img id="imgplanet6" src="../../images/planet6.png" alt="Planète 6">
+            </a>
+        </div>
+    
+        <div id="planet7" class="planet">
+            <a onclick="goPlanet7FromMap()">
+                <img id="imgplanet7" src="../../images/planet7.png" alt="Planète 7">
+            </a>
+        </div>
+    
+        <div id="planet8" class="planet">
+            <a onclick="goPlanet8FromMap()">
+                <img id="imgplanet8" src="../../images/planet8.png" alt="Planète 8">
+            </a>
+        </div>
     </div>
     <button class="btn btn-outline-light btn-back" onclick="returnLastIndexPage()">&larr;</button>
-    <button class="btn btn-outline-light btn-next" id="universe2" onclick="goMap2()">Prochain Système Solaire &rarr;</button>
 
 </body>
 <script src="../../common_functions/get_data.js"></script>
@@ -52,8 +71,14 @@
     var lvl = 1;
     retrieveLevel();
 
+    if(lvl<=7){
+        document.getElementById('planet8').style.display = "none";
+    }
+    if(lvl<=6){
+        document.getElementById('planet7').style.display = "none";
+    }
     if(lvl<=5){
-        document.getElementById('universe2').style.display = "none";
+        document.getElementById('planet6').style.display = "none";
     }
     if(lvl<=4){
         document.getElementById('planet5').style.display = "none";

@@ -66,10 +66,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place l'image en arrière-plan */
-    /* Assurez-vous de spécifier le chemin correct de votre image */
-    background: url('../images/Fond2.png') no-repeat center center fixed;
-    background-size: cover; /* Redimensionne l'image pour couvrir toute la fenêtre */
+    width: 100vw;           /* Utilise 100% de la largeur de la fenêtre */
+    height: 100vh;          /* Utilise 100% de la hauteur de la fenêtre */
+    z-index: -1;            /* Place l'image en arrière-plan */
+    background: url('../images/Fond2.png') no-repeat center center;
+    background-size: cover; /* Couvre toute la fenêtre */
+    overflow: hidden;       /* Empêche tout débordement */
 }
