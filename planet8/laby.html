@@ -6,7 +6,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/planets/planet7.css">
+    <link rel="stylesheet" href="../css/planets/planet8.css">
     <link rel="stylesheet" href="../css/planets/default.css">
     <link rel="stylesheet" href="../css/planets/board_large.css">
     <link rel="icon" href="../images/p1down.png">
@@ -48,32 +48,17 @@
             </div>
 
             <div class="page" id="page6" >
-                <div class="custom-title">Planète Sablière Rouge complétée !</div>
+                <div class="custom-title">Planète Léviathe complétée !</div>
                 <div class="game-description">
                     <p id="your_score"></p>
-        
-                    <p>Voici votre récompense : 4 nouveaux personnages exclusifs<p>
-                    
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="../images/p13down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../images/p14down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../images/p15down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../images/p16down.png" class="img-thumbnail">
-                        </div>
-                    </div>
-                    <p>La planète Léviathe et ses 5 niveaux sont maintenant disponibles.</p>
-        
-                    <p>Bonne continuation !</p>
-                    <br>
-                    <button class="btn btn-outline-light" onclick="goPlanet7()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="goPlanet8()">Continuer</button>
+                    <p>Vous avez terminé le jeu</p>
+                    <p>Félicitations ! Vous avez débloqué 2 nouveaux skins pour le mode battle :
+                        <br>
+                        <img src='../images/fantomp6.png' width='50px' class='img-thumbnail'>
+                        <img src='../images/fantomp7.png' width='50px' class='img-thumbnail'>
+                        <br>
+                    </p>
+                    <button class="btn btn-outline-light" onclick="goPlanet8()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMap2FromPlanet()">Carte</button>
                     
                 </div>
@@ -98,14 +83,14 @@
 <script src="../common_functions/get_data.js"></script>
 <script src="../common_functions/movements.js"></script>
 <script src="../common_functions/navigation.js"></script>
+<script src="../common_functions/countdown.js"></script>
 <script src="../common_functions/pause.js"></script>
 <script src="../common_functions/set_data.js"></script>
 <script src="../common_functions/sounds.js"></script>
-<script src="../common_functions/timer.js"></script>
 <script src="../common_functions/unlocks.js"></script>
 <script src="../common_functions/checks.js"></script>
-<script src="../common_functions/ghost.js"></script>
 <script>
+    var CountDownSeconds = 20
     var ghostId;
     var nbTourGhost = 0;
 
@@ -113,13 +98,10 @@
     document.onkeydown = checkKey;
     var fromtop =0;
     var fromleft = 0;
-    var ghostTop1 = 0;
-    var ghostLeft1 = 0;
-    var ghostTop2 = 0;
-    var ghostLeft2 = 0;
     var actual_board = 0;
     retrievePlayer()
-    moveGhost();
+
+    startCountDown(CountDownSeconds)
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -127,7 +109,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_2_ghosts(1)
+    construct_large_board_with_gaz(1)
     
 
 
@@ -153,132 +135,36 @@
                 dest_rigthward();
             }
             nbCoups++;
+            checkIsAir();
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            if(countdownFinished){
+                goPlanet8();
+            }
             if(boards[actual_board][fromtop][fromleft]==0)
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
-            checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
         }
     }
 
-    function moveGhost() {
-    ghostId = setInterval(() => {
-        nbTourGhost++;
-        if(nbTourGhost%2==0){
-            moveFirstGhost();
-        }else{
-            moveSecondGhost()
-        }
-        checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
-        checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
-    }, 300);
-}
-
-    function moveFirstGhost(){
-        let diffLeft;
-        let diffTop;
-        if (ghostLeft1 > fromleft) {
-            diffLeft = ghostLeft1 - fromleft;
-        } else {
-            diffLeft = fromleft - ghostLeft1;
-        }
-        if (ghostTop1 > fromtop) {
-            diffTop = ghostTop1 - fromtop;
-        } else {
-            diffTop = fromtop - ghostTop1;
-        }
-        if (diffLeft > diffTop) {
-            moveGhostHorizontally1();
-        } else {
-            moveGhostVertically1();
-        }
-    }
-
-
-    function moveSecondGhost(){
-        let diffLeft;
-        let diffTop;
-        if (ghostLeft2 > fromleft) {
-            diffLeft = ghostLeft2 - fromleft;
-        } else {
-            diffLeft = fromleft - ghostLeft2;
-        }
-        if (ghostTop2 > fromtop) {
-            diffTop = ghostTop2 - fromtop;
-        } else {
-            diffTop = fromtop - ghostTop2;
-        }
-        if (diffLeft < diffTop) {
-            moveGhostVertically2();
-        } else {
-            moveGhostHorizontally2();
-        }
-    }
-    
-
-    function moveGhostHorizontally1(){
-        if(ghostLeft1 > fromleft){
-            ghostLeft1--; 
-        }else{
-            ghostLeft1++;
-        }
-        let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop1+5)+"vh;left : "+(2*ghostLeft1+5)+"vw;");
-    }
-
-    function moveGhostHorizontally2(){
-        if(ghostLeft2 > fromleft){
-            ghostLeft2--; 
-        }else{
-            ghostLeft2++;
-        }
-        let ghost = document.getElementById('ghost2_'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop2+5)+"vh;left : "+(2*ghostLeft2+5)+"vw;");
-    }
-
-
-    function moveGhostVertically1(){
-        if(ghostTop1 > fromtop){
-            ghostTop1--; 
-        }else{
-            ghostTop1++;
-        }
-        let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop1+5)+"vh;left : "+(2*ghostLeft1+5)+"vw;");
-    }
-
-    function moveGhostVertically2(){
-        if(ghostTop2 > fromtop){
-            ghostTop2--; 
-        }else{
-            ghostTop2++;
-        }
-        let ghost = document.getElementById('ghost2_'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop2+5)+"vh;left : "+(2*ghostLeft2+5)+"vw;");
-    }
-    
 
     function finish_labyrinth(){
-        stopGhost();
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            moveGhost()
-            construct_board_with_2_ghosts(actual_board+2);
+            construct_large_board_with_gaz(actual_board+2);
+            stopCountDown()
+            startCountDown(CountDownSeconds)
         } else {
-            stopTimer();
+            stopCountDown();
             playEndLevel()
+            UnlockFourthGhost();
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
-            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
-            setHighScorePlanet7()
-            UnlockFourthChar()
-            UnlockPlanet8()
+            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups.";
         }
     }
 

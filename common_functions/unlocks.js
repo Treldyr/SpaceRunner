@@ -247,3 +247,23 @@ function UnlockSecondGhost() {
         localStorage.setItem('ghostData', dataString);
     }   
 }
+
+function UnlockPlanet8() {
+    var storedData = localStorage.getItem('level');
+    if (storedData !== null) {
+        var level = JSON.parse(storedData);
+        if( level.num < 8){
+            var level = {
+                num: 8
+            };
+            var dataString = JSON.stringify(level);
+            localStorage.setItem('level', dataString);
+        }
+    } else {
+        var level = {
+            num: 8
+        };
+        var dataString = JSON.stringify(level);
+        localStorage.setItem('level', dataString);
+    }   
+}

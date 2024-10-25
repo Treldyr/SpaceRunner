@@ -12,6 +12,7 @@
 #planet5 { top: 30vh; left: 70vw; }
 #planet6 { top: 10vh; left: 10vw; }
 #planet7 { top: 30vh; left: 20vw; }
+#planet8 {top: 20vh; left: 40vw;  }
 
 .planet:hover {
     transform: scale(1.2); /* Effet d'agrandissement au survol */
@@ -53,21 +54,26 @@
     height: 80px;
 }
 
+#imgplanet8 {
+    width: 110px; 
+    height: 80px;
+}
+
 .btn-back {
     position: fixed;
     top : 5px;
     left : 5px;
-  }
+}
 
 
 .btn-next {
-position: fixed;
-top : 50%;
-right : 5px;
+    position: fixed;
+    top : 50%;
+    right : 5px;
 }
 
 .btn-previous {
     position: fixed;
     top : 50%;
     left : 5px;
-    }
+}

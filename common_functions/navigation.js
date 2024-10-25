@@ -38,6 +38,10 @@ function beginRouge() {
     window.location.href='laby_rouge.html';
 }
 
+function beginMaze() {
+    window.location.href='laby.html';
+}
+
 function goPlanet1() {
     window.location.href='../planet1/main_terre.html';
 }
@@ -64,4 +68,8 @@ function goPlanet6() {
 
 function goPlanet7() {
     window.location.href='../planet7/main_rouge.html';
+}
+
+function goPlanet8() {
+    window.location.href='../planet8/main.html';
 }

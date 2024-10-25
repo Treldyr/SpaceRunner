@@ -26,6 +26,12 @@
         </a>
     </div>
 
+    <div id="planet8" class="planet">
+        <a onclick="goPlanet8()">
+            <img id="imgplanet8" src="../images/planet8.png" alt="Planète 8">
+        </a>
+    </div>
+
     
     <button class="btn btn-outline-light btn-back" onclick="returnToMenu()">&larr;</button>
     <button class="btn btn-outline-light btn-previous" id="universe2" onclick="returnToMapFromPlanet()">&larr; Précédent Système Solaire</button>
@@ -37,8 +43,10 @@
 <script>
     var lvl = 1;
     retrieveLevel();
-    
 
+    if(lvl<=7){
+        document.getElementById('planet8').style.display = "none";
+    }
     if(lvl<=6){
         document.getElementById('planet7').style.display = "none";
     }

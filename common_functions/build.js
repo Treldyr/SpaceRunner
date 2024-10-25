@@ -206,5 +206,41 @@ function create_ghosts(numboard){
     document.getElementById('laby' + numboard).appendChild(ghost2);
     ghostTop2 = coords_begin_ghost_2[numboard - 1][0];
     ghostLeft2 = coords_begin_ghost_2[numboard - 1][1];
+}
 
+
+
+// --------------------------------------------------------//
+//                                                         //
+// CONSTRUCTION OF THE BOARD WITH BOTTLE OF AIR + BIG SIZE //
+//                                                         //
+// --------------------------------------------------------//
+
+function construct_large_board_with_gaz(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    place_air(numboard);
+}
+
+
+function place_air(numboard){
+    for(let j= 0; j < gaz[numboard-1].length; j++)
+    {
+        let idGaz = j + (numboard-1)*10
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"../images/gaz_bottle2.png");
+        the_image.setAttribute('style',"position: fixed;top : "+(3*gaz[numboard-1][j][0]+5) + "vh;left : " +(2*gaz[numboard-1][j][1]+5)+ "vw;");
+        the_image.className = "img_of_laby";
+        the_image.setAttribute('id',"air"+idGaz);
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+    found_b1 = false;
+    found_b2 = false;
+    found_b0 = false;
+    found_b4 = false;
+    found_b3 = false;
 }
