@@ -33,10 +33,10 @@ function moveGhost(planet_id) {
             stopGhost()
             switch(planet_id){
                 case 6:
-                    window.location.href='../planet6/main_fantom.html';
+                    window.location.href='../planet6/main.html';
                 break;
                 case 7:
-                    window.location.href='../planet7/main_rouge.html';
+                    window.location.href='../planet7/main.html';
                 break;
                 default:
                     console.log('erreur id planet')

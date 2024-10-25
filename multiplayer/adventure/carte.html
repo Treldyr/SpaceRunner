@@ -14,22 +14,11 @@
 <body>
     <div class="background-image"></div>
     <div id="planet1" class="planet">
-        <a onclick="goPlanet1()">
+        <a onclick="goPlanet1FromMap()">
             <img id="imgplanet1" src="../../images/planet1.png" alt="Planète 1">
         </a>
     </div>
-    <button class="btn btn-outline-light" onclick="returnToMainPage()">&larr;</button>
+    <button class="btn btn-outline-light" onclick="returnLastIndexPage()">&larr;</button>
 </body>
-
-<script>
-
-    function returnToMainPage() {
-        window.location.href='../index.html';
-    }
-
-    function goPlanet1() {
-        window.location.href='planet1/main.html'
-    }
-   
-</script>
+<script src="../../common_functions/navigation.js"></script>
 </html>

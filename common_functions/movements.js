@@ -12,7 +12,7 @@ function dest_downward(){
     }else{
         playWallHit()
     }
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"down.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
 
 
@@ -23,7 +23,7 @@ function dest_leftward(){
     }else{
         playWallHit()
     }
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"left.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
 
 
@@ -34,7 +34,7 @@ function dest_upward(){
     }else{
         playWallHit()
     }
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"up.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
 
 
@@ -45,7 +45,7 @@ function dest_rigthward(){
     }else{
         playWallHit()
     }
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"right.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
 
 
@@ -68,7 +68,7 @@ function dest_upward_sliding(){
         pos_top--;
     }
     fromtop = pos_top+2;
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"up.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
 
 function dest_downward_sliding(){
@@ -83,7 +83,7 @@ function dest_downward_sliding(){
         pos_top++;
     }
     fromtop = pos_top-2;
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"down.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
 
 
@@ -99,7 +99,7 @@ function dest_leftward_sliding(){
         pos_left--;
     }
     fromleft = pos_left+2;
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"left.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
 
 
@@ -116,5 +116,5 @@ function dest_rigthward_sliding(){
         pos_left++;
     }
     fromleft = pos_left-2;
-    document.getElementById('character'+actual_board).setAttribute('src',"../images/"+chara+"right.png");
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }

@@ -39,7 +39,7 @@ function construct_tiny_line(line, numline, numboard) {
 
 function create_tiny_character(numboard) {
     let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../images/" + chara + "down.png");
+    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
     the_image.setAttribute('style', "position: fixed;top : " + (7 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (5 * coords_begin[numboard - 1][1] + 5) + "vw;");
     the_image.className = "img_of_laby";
     the_image.setAttribute('id', "character" + actual_board);
@@ -77,7 +77,7 @@ function construct_line(line,numline,numboard){
 
 function create_character(numboard) {
     let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../images/" + chara + "down.png");
+    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
     the_image.setAttribute('style', "position: fixed;top : " + (5 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin[numboard - 1][1] + 5) + "vw;");
     the_image.className = "img_of_laby";
     the_image.setAttribute('id', "character" + actual_board);
@@ -97,7 +97,7 @@ function place_gaz(numboard){
     {
         let idGaz = j + (numboard-1)*4
         let the_image = document.createElement('img');
-        the_image.setAttribute('src',"../images/gaz_bottle2.png");
+        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
         the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"gaz"+idGaz);
@@ -137,7 +137,7 @@ function construct_board_with_ghost(numboard){
 
 function create_ghost(numboard){
     let ghost = document.createElement('img');
-    ghost.setAttribute('src', "../images/fantomp0.png");
+    ghost.setAttribute('src', "../../../images/fantomp0.png");
     ghost.setAttribute('style', "position: fixed;top : 5vh;left : 5vw;");
     ghost.className = "img_of_laby";
     ghost.setAttribute('id', "ghost" + actual_board);
@@ -166,7 +166,7 @@ function construct_board_with_2_ghosts(numboard){
 
 function create_big_character(numboard) {
     let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../images/" + chara + "down.png");
+    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
     the_image.setAttribute('style', "position: fixed;top : " + (3 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin[numboard - 1][1] + 5) + "vw;");
     the_image.className = "img_of_laby";
     the_image.setAttribute('id', "character" + actual_board);
@@ -189,7 +189,7 @@ function construct_big_line(line,numline,numboard){
 
 function create_ghosts(numboard){
     var ghost = document.createElement('img');
-    ghost.setAttribute('src', "../images/fantomp0.png");
+    ghost.setAttribute('src', "../../../images/fantomp0.png");
     ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_1[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_1[numboard - 1][1] + 5) + "vw;");
     ghost.className = "img_of_laby";
     ghost.setAttribute('id', "ghost" + actual_board);
@@ -199,7 +199,7 @@ function create_ghosts(numboard){
 
 
     var ghost2 = document.createElement('img');
-    ghost2.setAttribute('src', "../images/fantomp0.png");
+    ghost2.setAttribute('src', "../../../images/fantomp0.png");
     ghost2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_2[numboard - 1][1] + 5) + "vw;");
     ghost2.className = "img_of_laby";
     ghost2.setAttribute('id', "ghost2_" + actual_board);
@@ -232,7 +232,7 @@ function place_air(numboard){
     {
         let idGaz = j + (numboard-1)*10
         let the_image = document.createElement('img');
-        the_image.setAttribute('src',"../images/gaz_bottle2.png");
+        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
         the_image.setAttribute('style',"position: fixed;top : "+(3*gaz[numboard-1][j][0]+5) + "vh;left : " +(2*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"air"+idGaz);
