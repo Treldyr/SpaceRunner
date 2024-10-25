@@ -93,13 +93,29 @@
         retrieveAchievements();
 
         if(nbPlayerUnlocked<2){
-            document.getElementById('listChar2').style.display = "none";
+            lockImage("p5")
+            lockImage("p6")
+            lockImage("p7")
+            lockImage("p8")
         }
         if(nbPlayerUnlocked<3){
-            document.getElementById('listChar3').style.display = "none";
+            lockImage("p9")
+            lockImage("p10")
+            lockImage("p11")
+            lockImage("p12")
         }
         if(nbPlayerUnlocked<4){
-            document.getElementById('listChar4').style.display = "none";
+            lockImage("p13")
+            lockImage("p14")
+            lockImage("p15")
+            lockImage("p16")
+        }
+
+        function lockImage(imageId) {
+            var image = document.getElementById(imageId);
+            image.classList.add('locked');               // Ajoute la classe de verrouillage
+            image.onclick = null;                        // Désactive le clic
+            image.src = "../images/locked.png";          // Ajoute l'image de cadenas
         }
 
 		// Fonction pour sélectionner une image

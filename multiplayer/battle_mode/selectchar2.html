@@ -21,40 +21,35 @@
         <h1 >Choisissez le joueur 2</h1>
         <div class="container">
             <div class="row" id="listChar1">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp0.png" class="img-thumbnail selected" id='p0' onclick="selectImage('p0')">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp1.png" class="img-thumbnail" id='p1' onclick="selectImage('p1')">
                 </div>
-            </div>
-
-            <div class="row" id="listChar2">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp2.png" class="img-thumbnail" id='p2' onclick="selectImage('p2')">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp3.png" class="img-thumbnail" id='p3' onclick="selectImage('p3')">
                 </div>
             </div>
 
-            <div class="row" id="listChar3">
-                <div class="col-md-6">
+            <div class="row" id="listChar2">
+                <div class="col-md-3">
                     <img src="../../images/fantomp4.png" class="img-thumbnail" id='p4' onclick="selectImage('p4')">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp5.png" class="img-thumbnail" id='p5' onclick="selectImage('p5')">
                 </div>
-            </div>
-
-            <div class="row" id="listChar4">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp6.png" class="img-thumbnail" id='p6' onclick="selectImage('p6')">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img src="../../images/fantomp7.png" class="img-thumbnail" id='p7' onclick="selectImage('p7')">
                 </div>
             </div>
+
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
@@ -65,16 +60,7 @@
         var char = "p0"
         var lvlGhost = 1;
         retrieveAchievements();
-
-        if(lvlGhost<2){
-            document.getElementById('listChar2').style.display = "none";
-        }
-        if(lvlGhost<3){
-            document.getElementById('listChar3').style.display = "none";
-        }
-        if(lvlGhost<4){
-            document.getElementById('listChar4').style.display = "none";
-        }
+        lockUnusableGhosts();
 
 		// Fonction pour sélectionner une image
 		function selectImage(imageId) {
@@ -109,6 +95,28 @@
                 var ghostData = JSON.parse(storedData);
                 lvlGhost = ghostData.ghostUnlock;
             }
+        }
+
+        function lockUnusableGhosts(){
+            if(lvlGhost<2){
+                lockImage("p2")
+                lockImage("p3")
+            }
+            if(lvlGhost<3){
+                lockImage("p4")
+                lockImage("p5")
+            }
+            if(lvlGhost<4){
+                lockImage("p6")
+                lockImage("p7")
+            }
+        }
+
+        function lockImage(imageId) {
+            var image = document.getElementById(imageId);
+            image.classList.add('locked');               // Ajoute la classe de verrouillage
+            image.onclick = null;                        // Désactive le clic
+            image.src = "../../images/locked.png";          // Ajoute l'image de cadenas
         }
 
 	</script>

@@ -40,3 +40,9 @@ function playWallHit2PMode() {
     var audio = new Audio('../../../sons/wallhit.wav');
     audio.play();
 }
+
+
+function playSoundButton2PMode() {
+    var audio = new Audio('../../sons/bright.wav');
+    audio.play();
+}
