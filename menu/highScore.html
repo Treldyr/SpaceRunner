@@ -64,6 +64,7 @@
     </div>
 </body>
 <script src="../common_functions/get_data.js"></script>
+<script src="../common_functions/basic.js"></script>
 <script src="../common_functions/navigation.js"></script>
 <script>
     var coups1 = " - ";
@@ -96,15 +97,6 @@
     setValeurFelucia();
     setValeurFantomia();
     setValeurSabliereRouge();
-
-    function pad(val) {
-        var valString = val + "";
-        if (valString.length < 2) {
-            return "0" + valString;
-        } else {
-            return valString;
-        }
-    }
 
     function setValeurTerre(){
         let stringTemps;

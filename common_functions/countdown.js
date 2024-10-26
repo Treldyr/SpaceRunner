@@ -1,3 +1,5 @@
+// This file require basic.js to use the Pad function !!!
+
 // --------------------------------------------------//
 //                                                   //
 //             VARIABLE INITIALIZATION               //
@@ -18,27 +20,18 @@ var intervalId;
 //                                                   //
 // --------------------------------------------------//
 
-function pad(val) {
-    var valString = val + "";
-    if (valString.length < 2) {
-        return "0" + valString;
-    } else {
-        return valString;
-    }
-}
-
 function startCountDown(nbseconds) {
-countdownFinished = false
-totalSeconds = nbseconds
-// Update the timer display every second
-intervalId = setInterval(() => {
-    --totalSeconds;
-    secondsLabel.innerHTML = pad(totalSeconds % 60);
-    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-    if(totalSeconds===0){
-        stopCountDown()
-        countdownFinished = true
-    }
+    countdownFinished = false
+    totalSeconds = nbseconds
+    // Update the timer display every second
+    intervalId = setInterval(() => {
+        --totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        if(totalSeconds===0){
+            stopCountDown()
+            countdownFinished = true
+        }
 }, 1000); // run the function every second (1000 milliseconds)
 
 }
