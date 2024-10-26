@@ -54,7 +54,7 @@
               <h6 style="color: #ff0000;">Touche R/X</h6>
             </div>
             <div class="power-item" id="pouv3">
-                <img src="../../../images/powstop.png" alt="Pouvoir 3">
+                <img src="../../../images/powswitch.png" alt="Pouvoir 3">
                 <h6 style="color: #ffffff;">Touche M</h6>
               </div>
             <div class="power-item" id="pouv4">
@@ -83,7 +83,7 @@
         // reactivate powers
         enablePowerItem("pouv1","powcontrols","#ff0000");
         enablePowerItem("pouv2","powinvisible","#ff0000");
-        enablePowerItem("pouv3","powstop","#ffffff");
+        enablePowerItem("pouv3","powswitch","#ffffff");
         enablePowerItem("pouv4","powteleportation","#ffffff");
         pow3_used = false
         pow1_used = false
@@ -100,7 +100,7 @@
     }
 
     function launchPow3(){
-        startStop(3);
+        doSwitch(3);
     }
 
     function launchPow4(){
