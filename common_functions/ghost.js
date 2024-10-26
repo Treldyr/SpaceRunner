@@ -15,9 +15,9 @@ function moveGhost(planet_id) {
 
 
         if (diffLeft > diffTop) {
-            moveGhostHorizontally();
+            moveGhostHorizontally(planet_id);
         } else {
-            moveGhostVertically();
+            moveGhostVertically(planet_id);
         }
 
         checkGhost(ghostLeft,fromleft,ghostTop,fromtop,planet_id);
@@ -44,23 +44,42 @@ function moveGhost(planet_id) {
         }
     }
 
-    function moveGhostHorizontally(){
+    function moveGhostHorizontally(planet_id){
         if(ghostLeft > fromleft){
             ghostLeft--; 
         }else{
             ghostLeft++;
         }
         let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+        switch(planet_id){
+            case 6:
+                ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+            break;
+            case 7:
+                ghost.setAttribute('style', "position: fixed;top : " + (3*ghostTop+5) + "vh;left : " + (2*ghostLeft+5) + "vw;");
+            break;
+            default:
+                console.log('erreur id planet')
+        }
+        
     }
 
 
-    function moveGhostVertically(){
+    function moveGhostVertically(planet_id){
         if(ghostTop > fromtop){
             ghostTop--; 
         }else{
             ghostTop++;
         }
         let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+        switch(planet_id){
+            case 6:
+                ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+            break;
+            case 7:
+                ghost.setAttribute('style', "position: fixed;top : " + (3*ghostTop+5) + "vh;left : " + (2 *ghostLeft+5) + "vw;");
+            break;
+            default:
+                console.log('erreur id planet')
+        }
     }

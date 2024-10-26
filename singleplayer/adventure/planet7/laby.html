@@ -113,13 +113,11 @@
     document.onkeydown = checkKey;
     var fromtop =0;
     var fromleft = 0;
-    var ghostTop1 = 0;
-    var ghostLeft1 = 0;
-    var ghostTop2 = 0;
-    var ghostLeft2 = 0;
+    var ghostTop = 0;
+    var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
-    moveGhost();
+    moveGhost(7);
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -127,7 +125,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_2_ghosts(1)
+    construct_large_board_with_ghost(1)
     
 
 
@@ -159,115 +157,17 @@
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
-            checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
+            checkGhost(ghostLeft,fromleft,ghostTop,fromtop,7);
         }
     }
-
-    function moveGhost() {
-    ghostId = setInterval(() => {
-        nbTourGhost++;
-        if(nbTourGhost%2==0){
-            moveFirstGhost();
-        }else{
-            moveSecondGhost()
-        }
-        checkGhost(ghostLeft1,fromleft,ghostTop1,fromtop,7);
-        checkGhost(ghostLeft2,fromleft,ghostTop2,fromtop,7);
-    }, 300);
-}
-
-    function moveFirstGhost(){
-        let diffLeft;
-        let diffTop;
-        if (ghostLeft1 > fromleft) {
-            diffLeft = ghostLeft1 - fromleft;
-        } else {
-            diffLeft = fromleft - ghostLeft1;
-        }
-        if (ghostTop1 > fromtop) {
-            diffTop = ghostTop1 - fromtop;
-        } else {
-            diffTop = fromtop - ghostTop1;
-        }
-        if (diffLeft > diffTop) {
-            moveGhostHorizontally1();
-        } else {
-            moveGhostVertically1();
-        }
-    }
-
-
-    function moveSecondGhost(){
-        let diffLeft;
-        let diffTop;
-        if (ghostLeft2 > fromleft) {
-            diffLeft = ghostLeft2 - fromleft;
-        } else {
-            diffLeft = fromleft - ghostLeft2;
-        }
-        if (ghostTop2 > fromtop) {
-            diffTop = ghostTop2 - fromtop;
-        } else {
-            diffTop = fromtop - ghostTop2;
-        }
-        if (diffLeft < diffTop) {
-            moveGhostVertically2();
-        } else {
-            moveGhostHorizontally2();
-        }
-    }
-    
-
-    function moveGhostHorizontally1(){
-        if(ghostLeft1 > fromleft){
-            ghostLeft1--; 
-        }else{
-            ghostLeft1++;
-        }
-        let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop1+5)+"vh;left : "+(2*ghostLeft1+5)+"vw;");
-    }
-
-    function moveGhostHorizontally2(){
-        if(ghostLeft2 > fromleft){
-            ghostLeft2--; 
-        }else{
-            ghostLeft2++;
-        }
-        let ghost = document.getElementById('ghost2_'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop2+5)+"vh;left : "+(2*ghostLeft2+5)+"vw;");
-    }
-
-
-    function moveGhostVertically1(){
-        if(ghostTop1 > fromtop){
-            ghostTop1--; 
-        }else{
-            ghostTop1++;
-        }
-        let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop1+5)+"vh;left : "+(2*ghostLeft1+5)+"vw;");
-    }
-
-    function moveGhostVertically2(){
-        if(ghostTop2 > fromtop){
-            ghostTop2--; 
-        }else{
-            ghostTop2++;
-        }
-        let ghost = document.getElementById('ghost2_'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop2+5)+"vh;left : "+(2*ghostLeft2+5)+"vw;");
-    }
-    
 
     function finish_labyrinth(){
         stopGhost();
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            moveGhost()
-            construct_board_with_2_ghosts(actual_board+2);
+            moveGhost(7)
+            construct_large_board_with_ghost(actual_board+2);
         } else {
             stopTimer();
             playEndLevel()

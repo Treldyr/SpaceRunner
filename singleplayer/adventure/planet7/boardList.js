@@ -170,18 +170,10 @@ var coords_begin = [
     [5,5],
 ]
 
-var coords_begin_ghost_1 = [
+var coords_begin_ghost = [
     [21,20],
     [1,9],
     [11,8],
     [4,8],
-    [0,0],
-]
-
-var coords_begin_ghost_2 = [
-    [20,21],
-    [2,9],
-    [5,11],
-    [10,1],
     [16,16],
 ]

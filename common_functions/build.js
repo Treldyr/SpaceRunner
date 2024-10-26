@@ -149,7 +149,7 @@ function create_ghost(numboard){
 
 // --------------------------------------------------------//
 //                                                         //
-// CONSTRUCTION OF THE BOARD OF 2 GHOSTS FOR NORMAL PLANETS//
+// CONSTRUCTION OF THE BOARD OF 2 GHOSTS FOR LARGE PLANET  //
 //                                                         //
 // --------------------------------------------------------//
 
@@ -208,6 +208,33 @@ function create_ghosts(numboard){
     ghostLeft2 = coords_begin_ghost_2[numboard - 1][1];
 }
 
+
+// --------------------------------------------------------//
+//                                                         //
+// CONSTRUCTION OF THE BOARD OF 1 GHOST FOR LARGE PLANET   //
+//                                                         //
+// --------------------------------------------------------//
+
+function construct_large_board_with_ghost(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    create_big_ghost(numboard)
+}
+
+function create_big_ghost(numboard){
+    var ghost = document.createElement('img');
+    ghost.setAttribute('src', "../../../images/fantomp0.png");
+    ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost[numboard - 1][1] + 5) + "vw;");
+    ghost.className = "img_of_laby";
+    ghost.setAttribute('id', "ghost" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(ghost);
+    ghostTop = coords_begin_ghost[numboard - 1][0];
+    ghostLeft = coords_begin_ghost[numboard - 1][1];
+}
 
 
 // --------------------------------------------------------//
