@@ -144,7 +144,7 @@
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft,fromleft,ghostTop,fromtop,6)
+            checkGhost(ghostLeft,fromleft,ghostTop,fromtop)
         }
     }
     
@@ -154,7 +154,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            moveGhost()
+            moveGhost(6)
             construct_board_with_ghost(actual_board+2);
         } else {
             stopTimer();

@@ -136,14 +136,16 @@ function construct_board_with_ghost(numboard){
 }
 
 function create_ghost(numboard){
+    ghostTop = coords_begin_ghost[numboard - 1][0];
+    ghostLeft = coords_begin_ghost[numboard - 1][1];
     let ghost = document.createElement('img');
     ghost.setAttribute('src', "../../../images/fantomp0.png");
-    ghost.setAttribute('style', "position: fixed;top : 5vh;left : 5vw;");
+    ghost.setAttribute('style', "position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
     ghost.className = "img_of_laby";
     ghost.setAttribute('id', "ghost" + actual_board);
     document.getElementById('laby' + numboard).appendChild(ghost);
-    ghostTop = 0;
-    ghostLeft = 0;
+    
+    
 }
 
 

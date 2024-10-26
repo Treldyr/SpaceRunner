@@ -20,7 +20,7 @@ function moveGhost(planet_id) {
             moveGhostVertically(planet_id);
         }
 
-        checkGhost(ghostLeft,fromleft,ghostTop,fromtop,planet_id);
+        checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
     }, 500);
 }
 
@@ -28,19 +28,10 @@ function moveGhost(planet_id) {
         clearInterval(ghostId);
     }
 
-    function checkGhost(ghostLeft,fromleft,ghostTop,fromtop,planet_id){
+    function checkGhost(ghostLeft,fromleft,ghostTop,fromtop){
         if ((ghostLeft == fromleft) && (ghostTop == fromtop)){
             stopGhost()
-            switch(planet_id){
-                case 6:
-                    window.location.href='../planet6/main.html';
-                break;
-                case 7:
-                    window.location.href='../planet7/main.html';
-                break;
-                default:
-                    console.log('erreur id planet')
-            }
+            window.location.href='main.html';
         }
     }
 
