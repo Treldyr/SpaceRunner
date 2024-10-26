@@ -13,6 +13,8 @@ var pow1_used = false
 var pow2_used = false
 var pow3_used = false
 var pow4_used = false
+var fromtopBomb = 0
+var fromleftBomb = 0
 
 document.onkeydown = checkKey;
 var fromtop1 =0;
@@ -103,14 +105,17 @@ if (e.keyCode == '27'){ // touche echap
             launchPow4()
         }
         if(!game_ended){
-            if(countdownFinished){
+            if(countdownFinished){ // the countdown turn to 0
                 finish_labyrinth(false);
             }
-            if(boards[actual_board][fromtop1][fromleft1]==0)
+            if(boards[actual_board][fromtop1][fromleft1]==0) // the player touch the arrival
             {
                 finish_labyrinth(true)
             }
-            if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){
+            if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){ // the player touch the ghost
+                finish_labyrinth(false)
+            }
+            if((fromtop1==fromtopBomb)&&(fromleft1==fromleftBomb)){ // the player touch the bomb
                 finish_labyrinth(false)
             }
         }
@@ -288,5 +293,7 @@ function rebegin() {
     create_character(1);
     startCountDown(CountDownSeconds)
     game_ended = false;
+    fromleftBomb = 0;
+    fromtopBomb = 0;
     reactivate_all_powers()
 }

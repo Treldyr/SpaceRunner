@@ -50,7 +50,7 @@
                 <h6 style="color: #ff0000;">Touche E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
-              <img src="../../../images/powinvisible.png" alt="Pouvoir 2">
+              <img src="../../../images/powbomb.png" alt="Pouvoir 2">
               <h6 style="color: #ff0000;">Touche R/X</h6>
             </div>
             <div class="power-item" id="pouv3">
@@ -82,13 +82,14 @@
     function reactivate_all_powers(){
         // reactivate powers
         enablePowerItem("pouv1","powcontrols","#ff0000");
-        enablePowerItem("pouv2","powinvisible","#ff0000");
+        enablePowerItem("pouv2","powbomb","#ff0000");
         enablePowerItem("pouv3","powswitch","#ffffff");
         enablePowerItem("pouv4","powteleportation","#ffffff");
         pow3_used = false
         pow1_used = false
         pow2_used = false
         pow4_used = false
+        delete_bomb()
     }
 
     function launchPow1(){
@@ -96,7 +97,7 @@
     }
 
     function launchPow2(){
-        startInvisible(2);
+        doBomb(2);
     }
 
     function launchPow3(){
