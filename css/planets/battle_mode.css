@@ -1,0 +1,43 @@
+.power-bottom-bar {
+    position: fixed;
+    bottom: 10px;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    opacity: 90%;
+    padding: 10px 0;
+    z-index: 1000;
+    color: white;
+    border-radius: 10px;
+  }
+
+  /* Style des images */
+  .power-bottom-bar div {
+    width: 5vw;
+    height: 8vh;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .power-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Style des images */
+  .power-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  /* Style du texte */
+  .power-item h6 {
+    margin: 5px 0 0;
+    font-size: 12px;
+    text-align: center;
+  }

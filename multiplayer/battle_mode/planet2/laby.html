@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../css/planets/planet2.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/battle_mode.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -43,6 +44,24 @@
         <div class="timer">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
+        <div class="power-bottom-bar">
+            <div class="power-item" id="pouv1">
+                <img src="../../../images/powcontrols.png" alt="Pouvoir 1">
+                <h6 style="color: #ff0000;">Touche E/W</h6>
+              </div>
+            <div class="power-item" id="pouv2">
+              <img src="../../../images/powinvisible.png" alt="Pouvoir 2">
+              <h6 style="color: #ff0000;">Touche R/X</h6>
+            </div>
+            <div class="power-item" id="pouv3">
+                <img src="../../../images/powstop.png" alt="Pouvoir 3">
+                <h6 style="color: #ffffff;">Touche M</h6>
+              </div>
+            <div class="power-item" id="pouv4">
+                <img src="../../../images/powteleportation.png" alt="Pouvoir 4">
+                <h6 style="color: #ffffff;">Touche L</h6>
+            </div>
+        </div>
     </div>
 
 
@@ -57,6 +76,6 @@
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
-<script src="../interactions.js"></script>
+<script src="../interactions_with_powers.js"></script>
 </body>
 </html>
