@@ -6,3 +6,7 @@ function pad(val) {
         return valString;
     }
 }
+
+function getRandomIntMax6() {
+    return Math.floor(Math.random()*6);
+}

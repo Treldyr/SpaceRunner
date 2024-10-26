@@ -76,6 +76,36 @@
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
-<script src="../interactions_with_powers.js"></script>
+<script src="../../../common_functions/powers.js"></script>
+<script src="../interactions.js"></script>
+<script>
+    function reactivate_all_powers(){
+        // reactivate powers
+        enablePowerItem("pouv1","powcontrols","#ff0000");
+        enablePowerItem("pouv2","powinvisible","#ff0000");
+        enablePowerItem("pouv3","powstop","#ffffff");
+        enablePowerItem("pouv4","powteleportation","#ffffff");
+        pow3_used = false
+        pow1_used = false
+        pow2_used = false
+        pow4_used = false
+    }
+
+    function launchPow1(){
+        startReverse(1);
+    }
+
+    function launchPow2(){
+        startInvisible(2);
+    }
+
+    function launchPow3(){
+        startStop(3);
+    }
+
+    function launchPow4(){
+        doTeleportation(4);
+    }
+</script>
 </body>
 </html>
