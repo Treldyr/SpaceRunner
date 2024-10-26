@@ -8,5 +8,9 @@ function pad(val) {
 }
 
 function getRandomIntMax6() {
-    return Math.floor(Math.random()*6);
+    return Math.floor(Math.random()*7);
+}
+
+function getRandomIntMax2() {
+    return Math.floor(Math.random()*3);
 }
