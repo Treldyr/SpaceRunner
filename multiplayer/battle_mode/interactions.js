@@ -9,6 +9,7 @@ var nbvictoryP2 = 0;
 var isReverse = false
 var isStop = false
 var isInvisible = false
+var isFast = false
 var pow1_used = false
 var pow2_used = false
 var pow3_used = false
@@ -58,29 +59,53 @@ if (e.keyCode == '27'){ // touche echap
         if (e.keyCode == '38'){ // going up p1
             if(!isReverse){
                 dest_upward_p1();
+                if(isFast){
+                    dest_upward_p1();
+                }
             }else{
                 dest_downward_p1();
+                if(isFast){
+                    dest_downward_p1();
+                }
             }
         }
         else if (e.keyCode == '40'){ // going down p1
             if(!isReverse){
                 dest_downward_p1();
+                if(isFast){
+                    dest_downward_p1();
+                }
             }else{
                 dest_upward_p1();
+                if(isFast){
+                    dest_upward_p1();
+                }
             }
         }
         else if (e.keyCode == '37'){ // going left p1
             if(!isReverse){
                 dest_leftward_p1();
+                if(isFast){
+                    dest_leftward_p1();
+                }
             }else{
                 dest_rigthward_p1();
+                if(isFast){
+                    dest_rigthward_p1();
+                }
             }
         }
         else if (e.keyCode == '39') { // going rigth p1
             if(!isReverse){
                 dest_rigthward_p1();
+                if(isFast){
+                    dest_rigthward_p1();
+                }
             }else{
                 dest_leftward_p1();
+                if(isFast){
+                    dest_leftward_p1();
+                }
             }
         }
         else if ((e.keyCode == '90')&&(!isStop)) { // Z key for going up for p2

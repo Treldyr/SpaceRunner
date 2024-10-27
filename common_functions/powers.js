@@ -4,6 +4,7 @@ var powReverseId;
 var powInvisibleId;
 var powClonesId;
 var powshurikenId;
+var powspeedId;
 
 // functions to disable and enable power items
 function disablePowerItem(powerid){
@@ -272,4 +273,14 @@ function delete_shuriken() {
     if(shuri!==null){
         shuri.remove()
     } 
+}
+
+function startSpeed(numberPower) {
+    isFast = true
+    turnTruePowUsed(numberPower)
+    powspeedId = setInterval(() => {
+        isFast = false
+        clearInterval(powspeedId);
+    }, 2000); // stop the function after two seconds (2000 milliseconds)
+    disablePowerItem("pouv"+numberPower)
 }
