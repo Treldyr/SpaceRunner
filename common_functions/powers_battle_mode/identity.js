@@ -11,6 +11,6 @@ function startIdentity(numberPower){
         document.getElementById('ghost'+actual_board).setAttribute('src', "../../../images/fantom" + charap2 + ".png");
         updateImageCharacter("down")
         clearInterval(powIdentityId);
-    }, 6000); // run the function for 6 second (6000 milliseconds)
+    }, 3000); // run the function for 3 second
     disablePowerItem("pouv"+numberPower)
 }
