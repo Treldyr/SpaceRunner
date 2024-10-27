@@ -18,7 +18,7 @@ function dest_upward_p2(){
     }else{
         playWallHit() 
     }
-    updateImageGhost()
+    updateImageGhost("up")
 }
 
 function dest_downward_p1(){
@@ -40,7 +40,7 @@ function dest_downward_p2(){
     }else{
         playWallHit() 
     }
-    updateImageGhost()
+    updateImageGhost("down")
 }
 
 
@@ -63,7 +63,7 @@ function dest_leftward_p2(){
     }else{
         playWallHit() 
     }
-    updateImageGhost()
+    updateImageGhost("left")
 }
 
 function dest_rigthward_p1(){
@@ -85,5 +85,28 @@ function dest_rigthward_p2(){
     }else{
         playWallHit() 
     }
-    updateImageGhost()
+    updateImageGhost("right")
+}
+
+
+// update the images of the players
+
+function updateImageGhost(direction){
+    if(!isInvisible){
+        let chara2 = document.getElementById('ghost'+actual_board);
+        chara2.setAttribute('style',"position: fixed;top : "+(5*fromtop2+5)+"vh;left : "+(3.5*fromleft2+5)+"vw;");
+        if(isChangedIdentity){
+            chara2.setAttribute('src',"../../../images/"+chara+direction+".png");
+        }
+    }
+}
+
+function updateImageCharacter(direction){
+    let chara1 = document.getElementById('character'+actual_board);
+    chara1.setAttribute('style',"position: fixed;top : "+(5*fromtop1+5)+"vh;left : "+(3.5*fromleft1+5)+"vw;");
+    if(isChangedIdentity){
+        chara1.setAttribute('src', "../../../images/fantom" + charap2 + ".png");
+    } else {
+        chara1.setAttribute('src',"../../../images/"+chara+direction+".png");
+    }
 }

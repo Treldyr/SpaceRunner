@@ -58,7 +58,7 @@
                 <h6 style="color: #ffffff;">M</h6>
               </div>
             <div class="power-item" id="pouv4">
-                <img src="../../../images/powteleportation.png" alt="Pouvoir 4">
+                <img src="../../../images/powidentity.png" alt="Pouvoir 4">
                 <h6 style="color: #ffffff;">L</h6>
             </div>
         </div>
@@ -80,7 +80,7 @@
 <script src="../../../common_functions/powers_battle_mode/reverse.js"></script>
 <script src="../../../common_functions/powers_battle_mode/bomb.js"></script>
 <script src="../../../common_functions/powers_battle_mode/switch.js"></script>
-<script src="../../../common_functions/powers_battle_mode/teleportation.js"></script>
+<script src="../../../common_functions/powers_battle_mode/identity.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/build.js"></script>
 <script src="../javascript/interactions.js"></script>
@@ -90,7 +90,7 @@
         enablePowerItem("pouv1","powcontrols","#ff0000");
         enablePowerItem("pouv2","powbomb","#ff0000");
         enablePowerItem("pouv3","powswitch","#ffffff");
-        enablePowerItem("pouv4","powteleportation","#ffffff");
+        enablePowerItem("pouv4","powidentity","#ffffff");
         pow3_used = false
         pow1_used = false
         pow2_used = false
@@ -111,7 +111,7 @@
     }
 
     function launchPow4(){
-        doTeleportation(4);
+        startIdentity(4);
     }
 </script>
 </body>

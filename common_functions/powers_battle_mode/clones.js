@@ -39,7 +39,6 @@ function doClones(numberPower) {
             clearInterval(powClonesId);
         }
     }, 300); // run the function after 0.3 seconds (300 milliseconds)
-    updateImageGhost()
     updateImageCharacter("down")
 }
 

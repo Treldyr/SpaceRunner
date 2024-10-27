@@ -12,6 +12,7 @@ var isInvisible = false
 var isFast = false
 var isTrans = false
 var isBrained = false
+var isChangedIdentity = false
 var pow1_used = false
 var pow2_used = false
 var pow3_used = false
@@ -234,21 +235,6 @@ function checkShuriken(){
     if((fromtop1==fromtopShuriken)&&(fromleft1==fromleftShuriken)){
         finish_labyrinth(false)
     }
-}
-
-// update the images of the players
-
-function updateImageGhost(){
-    if(!isInvisible){
-        let chara2 = document.getElementById('ghost'+actual_board);
-        chara2.setAttribute('style',"position: fixed;top : "+(5*fromtop2+5)+"vh;left : "+(3.5*fromleft2+5)+"vw;");
-    }
-}
-
-function updateImageCharacter(direction){
-    let chara1 = document.getElementById('character'+actual_board);
-    chara1.setAttribute('src',"../../../images/"+chara+direction+".png");
-    chara1.setAttribute('style',"position: fixed;top : "+(5*fromtop1+5)+"vh;left : "+(3.5*fromleft1+5)+"vw;");
 }
 
 // end labyrinth

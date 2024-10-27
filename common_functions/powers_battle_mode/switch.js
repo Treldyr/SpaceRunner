@@ -7,6 +7,6 @@ function doSwitch(numberPower) {
     temp = fromleft1;
     fromleft1 = fromleft2 
     fromleft2 = temp
-    updateImageGhost()
+    updateImageGhost("down")
     updateImageCharacter("down")
 }
