@@ -10,6 +10,7 @@ var isReverse = false
 var isStop = false
 var isInvisible = false
 var isFast = false
+var isTrans = false
 var pow1_used = false
 var pow2_used = false
 var pow3_used = false
@@ -218,7 +219,7 @@ function dest_upward_p1(){
 }
 
 function dest_upward_p2(){
-    if((boards[actual_board][fromtop2-1][fromleft2]!=2)&&(boards[actual_board][fromtop2-1][fromleft2]!=4)){
+    if(((boards[actual_board][fromtop2-1][fromleft2]!=2)&&(boards[actual_board][fromtop2-1][fromleft2]!=4))||(isTrans)){
         fromtop2--;
         playMove()
     }else{
@@ -239,7 +240,7 @@ function dest_downward_p1(){
 
 
 function dest_downward_p2(){
-    if((boards[actual_board][fromtop2+1][fromleft2]!=2)&&(boards[actual_board][fromtop2+1][fromleft2]!=4)){
+    if(((boards[actual_board][fromtop2+1][fromleft2]!=2)&&(boards[actual_board][fromtop2+1][fromleft2]!=4))||(isTrans)){
         fromtop2++;
         playMove()
     }else{
@@ -261,7 +262,7 @@ function dest_leftward_p1(){
 
 
 function dest_leftward_p2(){
-    if((boards[actual_board][fromtop2][fromleft2-1]!=2)&&(boards[actual_board][fromtop2][fromleft2-1]!=4)){
+    if(((boards[actual_board][fromtop2][fromleft2-1]!=2)&&(boards[actual_board][fromtop2][fromleft2-1]!=4))||(isTrans)){
         fromleft2--;
         playMove()
     }else{
@@ -282,7 +283,7 @@ function dest_rigthward_p1(){
 
 
 function dest_rigthward_p2(){
-    if((boards[actual_board][fromtop2][fromleft2+1]!=2)&&(boards[actual_board][fromtop2][fromleft2+1]!=4)){
+    if(((boards[actual_board][fromtop2][fromleft2+1]!=2)&&(boards[actual_board][fromtop2][fromleft2+1]!=4))||(isTrans)){
         fromleft2++;
         playMove()
     }else{

@@ -50,7 +50,7 @@
                 <h6 style="color: #ff0000;">Touche E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
-              <img src="../../../images/powbomb.png" alt="Pouvoir 2">
+              <img src="../../../images/powtranscendance.png" alt="Pouvoir 2">
               <h6 style="color: #ff0000;">Touche R/X</h6>
             </div>
             <div class="power-item" id="pouv3">
@@ -82,7 +82,7 @@
     function reactivate_all_powers(){
         // reactivate powers
         enablePowerItem("pouv1","powshuriken","#ff0000");
-        enablePowerItem("pouv2","powbomb","#ff0000");
+        enablePowerItem("pouv2","powtranscendance","#ff0000");
         enablePowerItem("pouv3","powswitch","#ffffff");
         enablePowerItem("pouv4","powspeed","#ffffff");
         pow3_used = false
@@ -97,7 +97,7 @@
     }
 
     function launchPow2(){
-        doBomb(2);
+        startTranscendance(2);
     }
 
     function launchPow3(){

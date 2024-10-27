@@ -5,6 +5,7 @@ var powInvisibleId;
 var powClonesId;
 var powshurikenId;
 var powspeedId;
+var powtransId;
 
 // functions to disable and enable power items
 function disablePowerItem(powerid){
@@ -281,6 +282,16 @@ function startSpeed(numberPower) {
     powspeedId = setInterval(() => {
         isFast = false
         clearInterval(powspeedId);
+    }, 2000); // stop the function after two seconds (2000 milliseconds)
+    disablePowerItem("pouv"+numberPower)
+}
+
+function startTranscendance(numberPower) {
+    isTrans = true
+    turnTruePowUsed(numberPower)
+    powtransId = setInterval(() => {
+        isTrans = false
+        clearInterval(powtransId);
     }, 2000); // stop the function after two seconds (2000 milliseconds)
     disablePowerItem("pouv"+numberPower)
 }
