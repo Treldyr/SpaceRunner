@@ -60,144 +60,40 @@ if (e.keyCode == '27'){ // touche echap
             rebegin();
         }
         if (e.keyCode == '38'){ // going up p1
-
-            if(isBrained){
-                if(!isReverse){
-                    dest_upward_p2();
-                    if(isFast){
-                        dest_upward_p2();
-                    }
-                }else{
-                    dest_downward_p2();
-                    if(isFast){
-                        dest_downward_p2();
-                    }
-                }
-            } else {
-                if(!isReverse){
-                    dest_upward_p1();
-                    if(isFast){
-                        dest_upward_p1();
-                    }
-                }else{
-                    dest_downward_p1();
-                    if(isFast){
-                        dest_downward_p1();
-                    }
-                }
-            }  
+            go_up_p1() 
+            if(isFast){
+                go_up_p1();
+            } 
         }
         else if (e.keyCode == '40'){ // going down p1
-
-            if(isBrained){
-                if(!isReverse){
-                    dest_downward_p2();
-                    if(isFast){
-                        dest_downward_p2();
-                    }
-                }else{
-                    dest_upward_p2();
-                    if(isFast){
-                        dest_upward_p2();
-                    }
-                }
-            } else {
-                if(!isReverse){
-                    dest_downward_p1();
-                    if(isFast){
-                        dest_downward_p1();
-                    }
-                }else{
-                    dest_upward_p1();
-                    if(isFast){
-                        dest_upward_p1();
-                    }
-                }
-            }
-
+            go_down_p1() 
+            if(isFast){
+                go_down_p1();
+            } 
         }
         else if (e.keyCode == '37'){ // going left p1
-
-            if(isBrained){
-                if(!isReverse){
-                    dest_leftward_p2();
-                    if(isFast){
-                        dest_leftward_p2();
-                    }
-                }else{
-                    dest_rigthward_p2();
-                    if(isFast){
-                        dest_rigthward_p2();
-                    }
-                }
-            } else {
-                if(!isReverse){
-                    dest_leftward_p1();
-                    if(isFast){
-                        dest_leftward_p1();
-                    }
-                }else{
-                    dest_rigthward_p1();
-                    if(isFast){
-                        dest_rigthward_p1();
-                    }
-                }
-            }
+            go_left_p1() 
+            if(isFast){
+                go_left_p1();
+            } 
         }
         else if (e.keyCode == '39') { // going rigth p1
-            if(isBrained){
-                if(!isReverse){
-                    dest_rigthward_p2();
-                    if(isFast){
-                        dest_rigthward_p2();
-                    }
-                }else{
-                    dest_leftward_p2();
-                    if(isFast){
-                        dest_leftward_p2();
-                    }
-                }
-            } else {
-                if(!isReverse){
-                    dest_rigthward_p1();
-                    if(isFast){
-                        dest_rigthward_p1();
-                    }
-                }else{
-                    dest_leftward_p1();
-                    if(isFast){
-                        dest_leftward_p1();
-                    }
-                }
-        }
+            go_rigth_p1()
+            if(isFast){
+                go_rigth_p1();
+            }
         }
         else if ((e.keyCode == '90')&&(!isStop)) { // Z key for going up for p2
-            if(!isBrained){
-                dest_upward_p2();
-            } else {
-                dest_upward_p1();
-            }
+            go_up_p2()
         } 
         else if ((e.keyCode == '83')&&(!isStop)) { // S key for going down for p2
-            if(!isBrained){
-                dest_downward_p2();
-            } else {
-                dest_downward_p1();
-            }
+            go_down_p2()
         } 
         else if ((e.keyCode == '81')&&(!isStop)) { // Q key for going left for p2
-            if(!isBrained){
-                dest_leftward_p2();
-            } else {
-                dest_leftward_p1();
-            }
+            go_left_p2()
         } 
         else if ((e.keyCode == '68')&&(!isStop)) { // D key for going right for p2
-            if(!isBrained){
-                dest_rigthward_p2();
-            } else {
-                dest_rigthward_p1();
-            }
+            go_right_p2()
         }
         else if (((e.keyCode ==  '87')||(e.keyCode ==  '69'))&&(!pow1_used)){ // W or E key for power 1
             launchPow1()

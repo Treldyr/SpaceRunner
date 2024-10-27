@@ -1,5 +1,106 @@
 // movements of players
 
+function go_up_p1(){
+    if(isBrained){
+        if(!isReverse){
+            dest_upward_p2();
+        }else{
+            dest_downward_p2();
+        }
+    } else {
+        if(!isReverse){
+            dest_upward_p1();
+        }else{
+            dest_downward_p1();
+        }
+    }
+}
+
+
+function go_down_p1(){
+    if(isBrained){
+        if(!isReverse){
+            dest_downward_p2();
+        }else{
+            dest_upward_p2();
+        }
+    } else {
+        if(!isReverse){
+            dest_downward_p1();
+        }else{
+            dest_upward_p1();
+        }
+    }
+}
+
+function go_left_p1(){
+    if(isBrained){
+        if(!isReverse){
+            dest_leftward_p2();
+        }else{
+            dest_rigthward_p2();
+        }
+    } else {
+        if(!isReverse){
+            dest_leftward_p1();
+        }else{
+            dest_rigthward_p1();
+        }
+    }
+}
+
+function go_rigth_p1(){
+    if(isBrained){
+        if(!isReverse){
+            dest_rigthward_p2();
+        }else{
+            dest_leftward_p2();
+        }
+    } else {
+        if(!isReverse){
+            dest_rigthward_p1();
+        }else{
+            dest_leftward_p1();
+        }
+    }
+}
+
+
+function go_up_p2(){
+    if(!isBrained){
+        dest_upward_p2();
+    } else {
+        dest_upward_p1();
+    }
+}
+
+function go_down_p2(){
+    if(!isBrained){
+        dest_downward_p2();
+    } else {
+        dest_downward_p1();
+    }
+}
+
+function go_left_p2(){
+    if(!isBrained){
+        dest_leftward_p2();
+    } else {
+        dest_leftward_p1();
+    }
+}
+
+function go_right_p2(){
+    if(!isBrained){
+        dest_rigthward_p2();
+    } else {
+        dest_rigthward_p1();
+    }
+}
+
+
+// shift for players
+
 function dest_upward_p1(){
     if((boards[actual_board][fromtop1-1][fromleft1]!=3)&&(boards[actual_board][fromtop1-1][fromleft1]!=4)){
         fromtop1--;
