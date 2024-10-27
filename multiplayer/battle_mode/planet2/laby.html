@@ -46,7 +46,7 @@
         </div>
         <div class="power-bottom-bar">
             <div class="power-item" id="pouv1">
-                <img src="../../../images/powcontrols.png" alt="Pouvoir 1">
+                <img src="../../../images/powbrain.png" alt="Pouvoir 1">
                 <h6 style="color: #ff0000;">E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
@@ -77,15 +77,17 @@
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/powers_battle_mode/default.js"></script>
-<script src="../../../common_functions/powers_battle_mode/reverse.js"></script>
+<script src="../../../common_functions/powers_battle_mode/brain.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../../../common_functions/powers_battle_mode/stop.js"></script>
 <script src="../../../common_functions/powers_battle_mode/clones.js"></script>
-<script src="../interactions.js"></script>
+<script src="../javascript/movements.js"></script>
+<script src="../javascript/build.js"></script>
+<script src="../javascript/interactions.js"></script>
 <script>
     function reactivate_all_powers(){
         // reactivate powers
-        enablePowerItem("pouv1","powcontrols","#ff0000");
+        enablePowerItem("pouv1","powbrain","#ff0000");
         enablePowerItem("pouv2","powshuriken","#ff0000");
         enablePowerItem("pouv3","powstop","#ffffff");
         enablePowerItem("pouv4","powclones","#ffffff");
@@ -96,7 +98,7 @@
     }
 
     function launchPow1(){
-        startReverse(1);
+        startBrain(1)
     }
 
     function launchPow2(){

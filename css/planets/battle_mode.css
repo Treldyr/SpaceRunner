@@ -23,7 +23,7 @@
 
   .power-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -40,4 +40,5 @@
     margin: 5px 0 0;
     font-size: 12px;
     text-align: center;
+    padding:20px
   }

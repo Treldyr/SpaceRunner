@@ -11,6 +11,7 @@ var isStop = false
 var isInvisible = false
 var isFast = false
 var isTrans = false
+var isBrained = false
 var pow1_used = false
 var pow2_used = false
 var pow3_used = false
@@ -58,72 +59,144 @@ if (e.keyCode == '27'){ // touche echap
             rebegin();
         }
         if (e.keyCode == '38'){ // going up p1
-            if(!isReverse){
-                dest_upward_p1();
-                if(isFast){
+
+            if(isBrained){
+                if(!isReverse){
+                    dest_upward_p2();
+                    if(isFast){
+                        dest_upward_p2();
+                    }
+                }else{
+                    dest_downward_p2();
+                    if(isFast){
+                        dest_downward_p2();
+                    }
+                }
+            } else {
+                if(!isReverse){
                     dest_upward_p1();
-                }
-            }else{
-                dest_downward_p1();
-                if(isFast){
+                    if(isFast){
+                        dest_upward_p1();
+                    }
+                }else{
                     dest_downward_p1();
+                    if(isFast){
+                        dest_downward_p1();
+                    }
                 }
-            }
+            }  
         }
         else if (e.keyCode == '40'){ // going down p1
-            if(!isReverse){
-                dest_downward_p1();
-                if(isFast){
-                    dest_downward_p1();
+
+            if(isBrained){
+                if(!isReverse){
+                    dest_downward_p2();
+                    if(isFast){
+                        dest_downward_p2();
+                    }
+                }else{
+                    dest_upward_p2();
+                    if(isFast){
+                        dest_upward_p2();
+                    }
                 }
-            }else{
-                dest_upward_p1();
-                if(isFast){
+            } else {
+                if(!isReverse){
+                    dest_downward_p1();
+                    if(isFast){
+                        dest_downward_p1();
+                    }
+                }else{
                     dest_upward_p1();
+                    if(isFast){
+                        dest_upward_p1();
+                    }
                 }
             }
+
         }
         else if (e.keyCode == '37'){ // going left p1
-            if(!isReverse){
-                dest_leftward_p1();
-                if(isFast){
-                    dest_leftward_p1();
+
+            if(isBrained){
+                if(!isReverse){
+                    dest_leftward_p2();
+                    if(isFast){
+                        dest_leftward_p2();
+                    }
+                }else{
+                    dest_rigthward_p2();
+                    if(isFast){
+                        dest_rigthward_p2();
+                    }
                 }
-            }else{
-                dest_rigthward_p1();
-                if(isFast){
+            } else {
+                if(!isReverse){
+                    dest_leftward_p1();
+                    if(isFast){
+                        dest_leftward_p1();
+                    }
+                }else{
                     dest_rigthward_p1();
+                    if(isFast){
+                        dest_rigthward_p1();
+                    }
                 }
             }
         }
         else if (e.keyCode == '39') { // going rigth p1
-            if(!isReverse){
-                dest_rigthward_p1();
-                if(isFast){
+            if(isBrained){
+                if(!isReverse){
+                    dest_rigthward_p2();
+                    if(isFast){
+                        dest_rigthward_p2();
+                    }
+                }else{
+                    dest_leftward_p2();
+                    if(isFast){
+                        dest_leftward_p2();
+                    }
+                }
+            } else {
+                if(!isReverse){
                     dest_rigthward_p1();
-                }
-            }else{
-                dest_leftward_p1();
-                if(isFast){
+                    if(isFast){
+                        dest_rigthward_p1();
+                    }
+                }else{
                     dest_leftward_p1();
+                    if(isFast){
+                        dest_leftward_p1();
+                    }
                 }
-            }
+        }
         }
         else if ((e.keyCode == '90')&&(!isStop)) { // Z key for going up for p2
-            dest_upward_p2();
-            lastmMoveByFantom = "u"
+            if(!isBrained){
+                dest_upward_p2();
+            } else {
+                dest_upward_p1();
+            }
         } 
         else if ((e.keyCode == '83')&&(!isStop)) { // S key for going down for p2
-            dest_downward_p2();
-            lastmMoveByFantom = "d"
+            if(!isBrained){
+                dest_downward_p2();
+            } else {
+                dest_downward_p1();
+            }
         } 
         else if ((e.keyCode == '81')&&(!isStop)) { // Q key for going left for p2
-            dest_leftward_p2();
-            lastmMoveByFantom = "l"
+            if(!isBrained){
+                dest_leftward_p2();
+            } else {
+                dest_leftward_p1();
+            }
         } 
         else if ((e.keyCode == '68')&&(!isStop)) { // D key for going right for p2
-            dest_rigthward_p2();
-            lastmMoveByFantom = "r"
+            if(!isBrained){
+                dest_rigthward_p2();
+            } else {
+                dest_rigthward_p1();
+            }
         }
         else if (((e.keyCode ==  '87')||(e.keyCode ==  '69'))&&(!pow1_used)){ // W or E key for power 1
             launchPow1()
@@ -153,143 +226,14 @@ if (e.keyCode == '27'){ // touche echap
             }
             checkShuriken()  // the player touch the shuriken
         }
-        
     }
 }
 
+// this is part of the interactions because we check it when the character move ! 
 function checkShuriken(){
     if((fromtop1==fromtopShuriken)&&(fromleft1==fromleftShuriken)){
         finish_labyrinth(false)
     }
-}
-
-// construction of the labyrinth
-
-function construct_board(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_line(boards[numboard-1][i],i,numboard);
-    }
-    create_character(numboard);
-}
-
-function construct_line(line,numline,numboard){
-    for(let j= 0; j < line.length; j++)
-    {
-        let the_image = document.createElement('img');
-        the_image.setAttribute('src',"img"+line[j]+".png");
-        the_image.setAttribute('style', "position: fixed;top : " + (5 * numline + 5) + "vh;left : " + (3.5 * j + 5) + "vw;");
-        the_image.className = "img_of_laby";
-        document.getElementById('laby'+numboard).appendChild(the_image);
-    }
-}
-
-function create_character(numboard) {
-    let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
-    the_image.setAttribute('style', "position: fixed;top : " + (5 * coords_begin_1[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin_1[numboard - 1][1] + 5) + "vw;");
-    the_image.setAttribute('id', "character" + actual_board);
-    the_image.className = "img_of_laby";
-    document.getElementById('laby' + numboard).appendChild(the_image);
-    fromtop1 = coords_begin_1[numboard - 1][0];
-    fromleft1 = coords_begin_1[numboard - 1][1];
-
-
-    let the_image2 = document.createElement('img');
-    the_image2.setAttribute('src', "../../../images/fantom" + charap2 + ".png");
-    the_image2.setAttribute('style', "position: fixed;top : " + (5 * coords_begin_2[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin_2[numboard - 1][1] + 5) + "vw;");
-    the_image2.className = "img_of_laby";
-    the_image2.setAttribute('id', "ghost" + actual_board);
-    document.getElementById('laby' + numboard).appendChild(the_image2);
-    fromtop2 = coords_begin_2[numboard - 1][0];
-    fromleft2 = coords_begin_2[numboard - 1][1];
-}
-
-// movements of players
-
-function dest_upward_p1(){
-    if((boards[actual_board][fromtop1-1][fromleft1]!=3)&&(boards[actual_board][fromtop1-1][fromleft1]!=4)){
-        fromtop1--;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageCharacter("up")
-}
-
-function dest_upward_p2(){
-    if(((boards[actual_board][fromtop2-1][fromleft2]!=2)&&(boards[actual_board][fromtop2-1][fromleft2]!=4))||(isTrans)){
-        fromtop2--;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageGhost()
-}
-
-function dest_downward_p1(){
-    if((boards[actual_board][fromtop1+1][fromleft1]!=3)&&(boards[actual_board][fromtop1+1][fromleft1]!=4)){
-        fromtop1++;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageCharacter("down")
-}
-
-
-function dest_downward_p2(){
-    if(((boards[actual_board][fromtop2+1][fromleft2]!=2)&&(boards[actual_board][fromtop2+1][fromleft2]!=4))||(isTrans)){
-        fromtop2++;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageGhost()
-}
-
-
-function dest_leftward_p1(){
-    if((boards[actual_board][fromtop1][fromleft1-1]!=3)&&(boards[actual_board][fromtop1][fromleft1-1]!=4)){
-        fromleft1--;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageCharacter("left")
-}
-
-
-function dest_leftward_p2(){
-    if(((boards[actual_board][fromtop2][fromleft2-1]!=2)&&(boards[actual_board][fromtop2][fromleft2-1]!=4))||(isTrans)){
-        fromleft2--;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageGhost()
-}
-
-function dest_rigthward_p1(){
-    if((boards[actual_board][fromtop1][fromleft1+1]!=3)&&(boards[actual_board][fromtop1][fromleft1+1]!=4)){
-        fromleft1++;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageCharacter("right")
-}
-
-
-function dest_rigthward_p2(){
-    if(((boards[actual_board][fromtop2][fromleft2+1]!=2)&&(boards[actual_board][fromtop2][fromleft2+1]!=4))||(isTrans)){
-        fromleft2++;
-        playMove()
-    }else{
-        playWallHit() 
-    }
-    updateImageGhost()
 }
 
 // update the images of the players

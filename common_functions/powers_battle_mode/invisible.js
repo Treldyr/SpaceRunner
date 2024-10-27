@@ -8,6 +8,6 @@ function startInvisible(numberPower){
     powInvisibleId = setInterval(() => {
         isInvisible = false
         clearInterval(powInvisibleId);
-    }, 2000); // run the function after two second (5000 milliseconds)
+    }, 2000); // run the function after two second (2000 milliseconds)
     disablePowerItem("pouv"+numberPower)
 }
