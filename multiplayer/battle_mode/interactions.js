@@ -15,6 +15,9 @@ var pow3_used = false
 var pow4_used = false
 var fromtopBomb = 0
 var fromleftBomb = 0
+var fromtopShuriken = 0
+var fromleftShuriken = 0
+var lastmMoveByFantom = "u"
 
 document.onkeydown = checkKey;
 var fromtop1 =0;
@@ -82,15 +85,19 @@ if (e.keyCode == '27'){ // touche echap
         }
         else if ((e.keyCode == '90')&&(!isStop)) { // Z key for going up for p2
             dest_upward_p2();
+            lastmMoveByFantom = "u"
         } 
         else if ((e.keyCode == '83')&&(!isStop)) { // S key for going down for p2
             dest_downward_p2();
+            lastmMoveByFantom = "d"
         } 
         else if ((e.keyCode == '81')&&(!isStop)) { // Q key for going left for p2
             dest_leftward_p2();
+            lastmMoveByFantom = "l"
         } 
         else if ((e.keyCode == '68')&&(!isStop)) { // D key for going right for p2
             dest_rigthward_p2();
+            lastmMoveByFantom = "r"
         }
         else if (((e.keyCode ==  '87')||(e.keyCode ==  '69'))&&(!pow1_used)){ // W or E key for power 1
             launchPow1()
@@ -118,8 +125,15 @@ if (e.keyCode == '27'){ // touche echap
             if((fromtop1==fromtopBomb)&&(fromleft1==fromleftBomb)){ // the player touch the bomb
                 finish_labyrinth(false)
             }
+            checkShuriken()  // the player touch the shuriken
         }
         
+    }
+}
+
+function checkShuriken(){
+    if((fromtop1==fromtopShuriken)&&(fromleft1==fromleftShuriken)){
+        finish_labyrinth(false)
     }
 }
 
@@ -295,5 +309,7 @@ function rebegin() {
     game_ended = false;
     fromleftBomb = 0;
     fromtopBomb = 0;
+    fromleftShuriken = 0;
+    fromtopShuriken = 0;
     reactivate_all_powers()
 }

@@ -50,7 +50,7 @@
                 <h6 style="color: #ff0000;">Touche E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
-              <img src="../../../images/powinvisible.png" alt="Pouvoir 2">
+              <img src="../../../images/powshuriken.png" alt="Pouvoir 2">
               <h6 style="color: #ff0000;">Touche R/X</h6>
             </div>
             <div class="power-item" id="pouv3">
@@ -82,7 +82,7 @@
     function reactivate_all_powers(){
         // reactivate powers
         enablePowerItem("pouv1","powcontrols","#ff0000");
-        enablePowerItem("pouv2","powinvisible","#ff0000");
+        enablePowerItem("pouv2","powshuriken","#ff0000");
         enablePowerItem("pouv3","powstop","#ffffff");
         enablePowerItem("pouv4","powclones","#ffffff");
         pow3_used = false
@@ -96,7 +96,7 @@
     }
 
     function launchPow2(){
-        startInvisible(2);
+        launchShuriken(2);
     }
 
     function launchPow3(){
