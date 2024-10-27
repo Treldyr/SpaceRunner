@@ -46,20 +46,20 @@
         </div>
         <div class="power-bottom-bar">
             <div class="power-item" id="pouv1">
-                <img src="../../../images/powswitch.png" alt="Pouvoir 1">
+                <img src="../../../images/powshuriken.png" alt="Pouvoir 1">
                 <h6 style="color: #ff0000;">E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
-              <img src="../../../images/powswitch.png" alt="Pouvoir 2">
+              <img src="../../../images/powtranscendance.png" alt="Pouvoir 2">
               <h6 style="color: #ff0000;">R/X</h6>
             </div>
-            <div class="power-item" id="pouv3">
-                <img src="../../../images/powswitch.png" alt="Pouvoir 3">
-                <h6 style="color: #ffffff;">M</h6>
-              </div>
-              <div class="power-item" id="pouv4">
-                <img src="../../../images/powswitch.png" alt="Pouvoir 4">
+            <div class="power-item" id="pouv4">
+                <img src="../../../images/powspeed.png" alt="Pouvoir 4">
                 <h6 style="color: #ffffff;">L</h6>
+            </div>
+            <div class="power-item" id="pouv3">
+                <img src="../../../images/powteleportation.png" alt="Pouvoir 3">
+                <h6 style="color: #ffffff;">M</h6>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
 <script src="../../../common_functions/powers_battle_mode/default.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../../../common_functions/powers_battle_mode/transcendance.js"></script>
-<script src="../../../common_functions/powers_battle_mode/switch.js"></script>
+<script src="../../../common_functions/powers_battle_mode/teleportation.js"></script>
 <script src="../../../common_functions/powers_battle_mode/speed.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/build.js"></script>
@@ -87,10 +87,10 @@
 <script>
     function reactivate_all_powers(){
         // reactivate powers
-        enablePowerItem("pouv1","powswitch","#ff0000");
-        enablePowerItem("pouv2","powswitch","#ff0000");
-        enablePowerItem("pouv3","powswitch","#ffffff");
-        enablePowerItem("pouv4","powswitch","#ffffff");
+        enablePowerItem("pouv1","powshuriken","#ff0000");
+        enablePowerItem("pouv2","powtranscendance","#ff0000");
+        enablePowerItem("pouv3","powteleportation","#ffffff");
+        enablePowerItem("pouv4","powspeed","#ffffff");
         pow3_used = false
         pow1_used = false
         pow2_used = false
@@ -98,19 +98,19 @@
     }
 
     function launchPow1(){
-        doSwitch(1);
+        launchShuriken(1);
     }
 
     function launchPow2(){
-        doSwitch(2);
+        startTranscendance(2);
     }
 
     function launchPow3(){
-        doSwitch(3);
+        doTeleportation(3);
     }
 
     function launchPow4(){
-        doSwitch(4);
+        startSpeed(4);
     }
 </script>
 </body>

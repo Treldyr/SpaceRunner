@@ -50,11 +50,11 @@
                 <h6 style="color: #ff0000;">E/W</h6>
               </div>
             <div class="power-item" id="pouv2">
-              <img src="../../../images/powtranscendance.png" alt="Pouvoir 2">
+              <img src="../../../images/powbomb.png" alt="Pouvoir 2">
               <h6 style="color: #ff0000;">R/X</h6>
             </div>
             <div class="power-item" id="pouv4">
-                <img src="../../../images/powspeed.png" alt="Pouvoir 4">
+                <img src="../../../images/powclones.png" alt="Pouvoir 4">
                 <h6 style="color: #ffffff;">L</h6>
             </div>
             <div class="power-item" id="pouv3">
@@ -80,7 +80,7 @@
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../../../common_functions/powers_battle_mode/transcendance.js"></script>
 <script src="../../../common_functions/powers_battle_mode/switch.js"></script>
-<script src="../../../common_functions/powers_battle_mode/speed.js"></script>
+<script src="../../../common_functions/powers_battle_mode/clones.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/build.js"></script>
 <script src="../javascript/interactions.js"></script>
@@ -88,13 +88,14 @@
     function reactivate_all_powers(){
         // reactivate powers
         enablePowerItem("pouv1","powshuriken","#ff0000");
-        enablePowerItem("pouv2","powtranscendance","#ff0000");
+        enablePowerItem("pouv2","powbomb","#ff0000");
         enablePowerItem("pouv3","powswitch","#ffffff");
-        enablePowerItem("pouv4","powspeed","#ffffff");
+        enablePowerItem("pouv4","powclones","#ffffff");
         pow3_used = false
         pow1_used = false
         pow2_used = false
         pow4_used = false
+        delete_bomb()
     }
 
     function launchPow1(){
@@ -102,7 +103,7 @@
     }
 
     function launchPow2(){
-        startTranscendance(2);
+        doBomb(2);
     }
 
     function launchPow3(){
@@ -110,7 +111,7 @@
     }
 
     function launchPow4(){
-        startSpeed(4);
+        doClones(4);
     }
 </script>
 </body>
