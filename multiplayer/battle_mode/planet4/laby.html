@@ -58,7 +58,7 @@
                 <h6 style="color: #ffffff;">L</h6>
             </div>
             <div class="power-item" id="pouv3">
-                <img src="../../../images/powswitch.png" alt="Pouvoir 3">
+                <img src="../../../images/powbrain.png" alt="Pouvoir 3">
                 <h6 style="color: #ffffff;">M</h6>
             </div>
         </div>
@@ -78,8 +78,8 @@
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/powers_battle_mode/default.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
-<script src="../../../common_functions/powers_battle_mode/transcendance.js"></script>
-<script src="../../../common_functions/powers_battle_mode/switch.js"></script>
+<script src="../../../common_functions/powers_battle_mode/bomb.js"></script>
+<script src="../../../common_functions/powers_battle_mode/brain.js"></script>
 <script src="../../../common_functions/powers_battle_mode/clones.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/build.js"></script>
@@ -89,7 +89,7 @@
         // reactivate powers
         enablePowerItem("pouv1","powshuriken","#ff0000");
         enablePowerItem("pouv2","powbomb","#ff0000");
-        enablePowerItem("pouv3","powswitch","#ffffff");
+        enablePowerItem("pouv3","powbrain","#ffffff");
         enablePowerItem("pouv4","powclones","#ffffff");
         pow3_used = false
         pow1_used = false
@@ -107,7 +107,7 @@
     }
 
     function launchPow3(){
-        doSwitch(3);
+        startBrain(3);
     }
 
     function launchPow4(){

@@ -62,24 +62,28 @@ if (e.keyCode == '27'){ // touche echap
         if (e.keyCode == '38'){ // going up p1
             go_up_p1() 
             if(isFast){
+                checkVictoryConditions();
                 go_up_p1();
             } 
         }
         else if (e.keyCode == '40'){ // going down p1
             go_down_p1() 
             if(isFast){
+                checkVictoryConditions();
                 go_down_p1();
             } 
         }
         else if (e.keyCode == '37'){ // going left p1
             go_left_p1() 
             if(isFast){
+                checkVictoryConditions();
                 go_left_p1();
             } 
         }
         else if (e.keyCode == '39') { // going rigth p1
             go_rigth_p1()
             if(isFast){
+                checkVictoryConditions();
                 go_rigth_p1();
             }
         }
@@ -107,22 +111,7 @@ if (e.keyCode == '27'){ // touche echap
         else if ((e.keyCode ==  '76')&&(!pow4_used)){ // L key for power 4 
             launchPow4()
         }
-        if(!game_ended){
-            if(countdownFinished){ // the countdown turn to 0
-                finish_labyrinth(false);
-            }
-            if(boards[actual_board][fromtop1][fromleft1]==0) // the player touch the arrival
-            {
-                finish_labyrinth(true)
-            }
-            if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){ // the player touch the ghost
-                finish_labyrinth(false)
-            }
-            if((fromtop1==fromtopBomb)&&(fromleft1==fromleftBomb)){ // the player touch the bomb
-                finish_labyrinth(false)
-            }
-            checkShuriken()  // the player touch the shuriken
-        }
+        checkVictoryConditions();
     }
 }
 
@@ -130,6 +119,26 @@ if (e.keyCode == '27'){ // touche echap
 function checkShuriken(){
     if((fromtop1==fromtopShuriken)&&(fromleft1==fromleftShuriken)){
         finish_labyrinth(false)
+    }
+}
+
+// check conditions of victory
+function checkVictoryConditions(){
+    if(!game_ended){
+        if(countdownFinished){ // the countdown turn to 0
+            finish_labyrinth(false);
+        }
+        if(boards[actual_board][fromtop1][fromleft1]==0) // the player touch the arrival
+        {
+            finish_labyrinth(true)
+        }
+        if((fromtop1==fromtop2)&&(fromleft1==fromleft2)){ // the player touch the ghost
+            finish_labyrinth(false)
+        }
+        if((fromtop1==fromtopBomb)&&(fromleft1==fromleftBomb)){ // the player touch the bomb
+            finish_labyrinth(false)
+        }
+        checkShuriken()  // the player touch the shuriken
     }
 }
 
