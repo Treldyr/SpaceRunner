@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/planets/default.css">
+    <link rel="stylesheet" href="../css/style_regles.css">
+    <link rel="icon" href="../images/p1down.png">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="page" id="page1">
+            <div class="custom-title">1 contre 1</div>
+            <div class="game-description">
+                <h3><u>But des joueurs</u></h3>
+                <p>Vous incarnez un personnage principal et un fantome qui sont en affrontement</p>
+                <p>Le joueur 1 (personnage principal) doit atteindre l'arrivée</p>
+                <p>Le joueur 2 (fantome) doit l'en empêcher, en le touchant</p>
+                <p>Attention, vous n'avez pas accèes aux mêmes chemins !</p>
+                <p>Chacun de vous possède deux pouvoirs. 
+                    Le fantôme active ses pouvoirs en appuyant sur les touches "E (ou X)", ainsi que "R (ou W)".
+                    Le joueur principal active ses pouvoirs en appuyant sur les touches "L" ainsi que "M" </p>
+                <br>
+            </div>
+
+            <div class="game-description">
+                <h3><u>Pouvoirs communs</u></h3>
+                <p>Voici les pouvoirs que chacuns des joueurs peuvent obtenir :</p>
+                <p> Le pouvoir <img src="../images/powbrain.png" width="40px" class="img-thumbnail"> s'apelle "cerveau" </p> 
+                <p> Le pouvoir "cerveau" permet aux deux joueurs de contrôler l'autre pendant un court instant </p>
+                <p> Le pouvoir <img src="../images/powidentity.png" width="40px" class="img-thumbnail"> s'apelle "changement d'identité" </p>
+                <p> Le pouvoir "changement d'identité" permet aux deux joueurs de prendre l'apparence de l'autre pendant un moyen instant </p>
+                <p> Le pouvoir <img src="../images/powswitch.png" width="40px" class="img-thumbnail"> s'apelle "remplacement" </p>
+                <p> Le pouvoir "remplacement" permet aux deux joueurs d'échanger de position</p>
+            </div>
+
+            <div class="game-description">
+                <h3><u>Pouvoir du personnage principal</u></h3>
+                <p>Voici les pouvoirs que seul le personnage principal peut obtenir : </p>
+                <p> Le pouvoir <img src="../images/powclones.png" width="40px" class="img-thumbnail"> s'apelle "clone" </p>
+                <p> Le pouvoir "clone" permet au personnage principal d'invoquer temporairement 4 clones pour troubler l'adversaire</p>
+                <p> Le pouvoir <img src="../images/powspeed.png" width="40px" class="img-thumbnail"> s'apelle "super vitesse" </p>
+                <p> Le pouvoir "super vitesse" permet au personnage principal de doubler sa vitesse de déplacement pendant un court instant</p>
+                <p> Le pouvoir <img src="../images/powstop.png" width="40px" class="img-thumbnail"> s'apelle "stop" </p>
+                <p> Le pouvoir "stop" permet au personnage principal de stopper les déplacements du fantômes pendant un court instant</p>
+                <p> Le pouvoir <img src="../images/powteleportation.png" width="40px" class="img-thumbnail"> s'apelle "téléportation" </p>
+                <p> Le pouvoir "téléportation" permet au personnage principal de se téléporter sur une courte distance</p>
+            </div>
+
+            <div class="game-description">
+                <h3><u>Pouvoirs du fantôme</u></h3>
+                <p>Voici les pouvoirs que seul le fantôme peut obtenir :</p>
+                <p> Le pouvoir <img src="../images/powbomb.png" width="40px" class="img-thumbnail"> s'apelle "bombe" </p>
+                <p> Le pouvoir "bombe" permet de placer une bombe sur sa case courante du fantôme. 
+                    Si le personnage principal marche sur cette case ultérieurement, il explose et perds la partie </p>
+                <p> Le pouvoir <img src="../images/powcontrols.png" width="40px" class="img-thumbnail"> s'apelle "inversement des contrôles" </p>
+                <p> Le pouvoir "inversement des contrôles" permet au fantôme d'inverser les contrôles du personnage principal pendant un court instant</p>
+                <p> Le pouvoir <img src="../images/powinvisible.png" width="40px" class="img-thumbnail"> s'apelle "invisibilité" </p>
+                <p> Le pouvoir "invisibilité" permet au fantôme de devenir invisible pendant un court instant</p>
+                <p> Le pouvoir <img src="../images/powshuriken.png" width="40px" class="img-thumbnail"> s'apelle "shuriken" </p>
+                <p> Le pouvoir "shuriken" permet au fantôme de lancer un shuriken, qui se déplace en ligne droite.
+                    La trajectoire du shuriken suit l'orientation du fantôme.
+                    Si le joueur touche le shuriken, il meurt et perds la partie immédiatement
+                </p>
+                <p> Le pouvoir <img src="../images/powtranscendance.png" width="40px" class="img-thumbnail"> s'apelle "transcendance" </p>
+                <p> Le pouvoir "transcendance" permet au fantôme de traverser n'importe quel mur pendant un court instant
+                    Attention ! Tous les murs ne sont pas bons à franchir ! Il ne faudrait pas que vous sortiez de la carte...
+                </p>
+            </div>
+
+            
+
+            <div class="game-description">
+                <button class="btn btn-outline-light" onclick="goPage(2,1)">Règles : Aventure</button>
+            </div>
+        </div>
+
+        <div class="page" id="page2" >
+            <div class="custom-title">Aventure</div>
+            <div class="game-description">
+                <p>Vous devez réussir 5 niveaux de chaque planètes pour pouvoir passer à la suivante.</p>
+                <p>Sur chacune des planètes, des règles différentes seront mises en place</p>
+                <p>Jouez ensemble ! Si l'un des deux joueurs perd, les deux perdent</p>
+                <p>Le temps passé sur la planète est commun</p>
+                <button class="btn btn-outline-light" onclick="goPage(1,2)">Règles : 1 contre 1</button>
+            </div>
+        </div>
+        <br>
+        <button class="btn-start" onclick="returnCurrentIndexPage()">Retour</button>
+    </div>
+    <script src="../common_functions/navigation.js"></script>
+    <script src="../common_functions/index_planet.js"></script>
+    <script>
+    function goPage(pageto,pagefrom){
+        document.getElementById('page'+pagefrom).style.display = "none";
+        document.getElementById('page'+pageto).style.display = "block";
+    }
+
+    for (i=0;i<document.getElementsByClassName("page").length;i++){
+        document.getElementsByClassName("page")[i].style.display = "none";
+    }
+    document.getElementById('page1').style.display = "block";
+
+    </script>
+</body>
+</html>

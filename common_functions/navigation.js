@@ -6,6 +6,10 @@ function returnLastIndexPage() {
     window.location.href='../index.html';
 }
 
+function returnCurrentIndexPage() {
+    window.location.href='index.html';
+}
+
 function returnToMenu() {
     window.location.href='../../index.html';
 }
