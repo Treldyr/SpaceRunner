@@ -13,6 +13,7 @@
 #planet6 { top: 200px; left: 980px; }
 #planet7 { top: 460px; left: 1180px; }
 #planet8 {top: 340px; left: 1390px;  }
+#planet9 {top: 160px; left: 1600px;  }
 
 .planet:hover {
     transform: scale(1.2); /* Effet d'agrandissement au survol */
@@ -25,7 +26,7 @@
 
 }
 
-#imgplanet3, #imgplanet5 {
+#imgplanet3, #imgplanet5, #imgplanet9 {
     width: 160px; 
     height: 90px; 
 }

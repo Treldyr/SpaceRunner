@@ -1,0 +1,23 @@
+.background-image {
+    background: url('../../images/planet_defaillante.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(128, 16, 189);
+}
+
+
+.btn-start {
+    background-color: rgb(128, 16, 189);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(128, 16, 189);
+}
+
+
+.timer {
+    background-color: rgb(128, 16, 189);
+}

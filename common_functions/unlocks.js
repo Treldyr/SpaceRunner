@@ -267,3 +267,23 @@ function UnlockPlanet8() {
         localStorage.setItem('level', dataString);
     }   
 }
+
+function UnlockPlanet9() {
+    var storedData = localStorage.getItem('level');
+    if (storedData !== null) {
+        var level = JSON.parse(storedData);
+        if( level.num < 9){
+            var level = {
+                num: 9
+            };
+            var dataString = JSON.stringify(level);
+            localStorage.setItem('level', dataString);
+        }
+    } else {
+        var level = {
+            num:9
+        };
+        var dataString = JSON.stringify(level);
+        localStorage.setItem('level', dataString);
+    }   
+}

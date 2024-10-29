@@ -273,3 +273,19 @@ function place_air(numboard){
     found_b4 = false;
     found_b3 = false;
 }
+
+
+// --------------------------------------------------------//
+//                                                         //
+//             CONSTRUCTION OF A LARGE BOARD               //
+//                                                         //
+// --------------------------------------------------------//
+
+function construct_large_board(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+}

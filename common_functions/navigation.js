@@ -50,6 +50,10 @@ function goPlanet8() {
     window.location.href='../planet8/main.html';
 }
 
+function goPlanet9() {
+    window.location.href='../planet9/main.html';
+}
+
 function goPlanet1FromMap() {
     window.location.href='planet1/main.html'
 }
@@ -80,4 +84,8 @@ function goPlanet7FromMap() {
 
 function goPlanet8FromMap() {
     window.location.href='planet8/main.html';
+}
+
+function goPlanet9FromMap() {
+    window.location.href='planet9/main.html';
 }
