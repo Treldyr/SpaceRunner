@@ -11,21 +11,11 @@ function goNext(number){
     document.getElementById('page'+number2).style.display = "block";
 }
 
-
 // --------------------------------------------------//
 //                                                   //
-//   CONSTRUCTION OF THE BOARD FOR THE TINY PLANETS  //
+//          THE FUNCTION THAT CONSTRUCT LINES        //
 //                                                   //
 // --------------------------------------------------//
-
-function construct_tiny_board(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_tiny_line(boards[numboard-1][i],i,numboard);
-    }
-    create_tiny_character(numboard);
-}
 
 function construct_tiny_line(line, numline, numboard) {
     for (let j = 0; j < line.length; j++) {
@@ -35,33 +25,6 @@ function construct_tiny_line(line, numline, numboard) {
         the_image.className = "img_of_laby";
         document.getElementById('laby' + numboard).appendChild(the_image);
     }
-}
-
-function create_tiny_character(numboard) {
-    let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
-    the_image.setAttribute('style', "position: fixed;top : " + (7 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (5 * coords_begin[numboard - 1][1] + 5) + "vw;");
-    the_image.className = "img_of_laby";
-    the_image.setAttribute('id', "character" + actual_board);
-    document.getElementById('laby' + numboard).appendChild(the_image);
-    fromtop = coords_begin[numboard - 1][0];
-    fromleft = coords_begin[numboard - 1][1];
-}
-
-// --------------------------------------------------//
-//                                                   //
-//  CONSTRUCTION OF THE BOARD FOR THE NORMAL PLANETS //
-//                                                   //
-// --------------------------------------------------//
-
-
-function construct_board(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_line(boards[numboard-1][i],i,numboard);
-    }
-    create_character(numboard);
 }
 
 function construct_line(line,numline,numboard){
@@ -75,6 +38,34 @@ function construct_line(line,numline,numboard){
     }
 }
 
+function construct_big_line(line,numline,numboard){
+    for(let j= 0; j < line.length; j++)
+    {
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"img"+line[j]+".png");
+        the_image.setAttribute('style', "position: fixed;top : " + (3 * numline + 5) + "vh;left : " + (2 * j + 5) + "vw;");
+        the_image.className = "img_of_laby";
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+}
+
+// --------------------------------------------------//
+//                                                   //
+//      THE FUNCTION THAT CONSTRUCT CHARACTERS       //
+//                                                   //
+// --------------------------------------------------//
+
+function create_tiny_character(numboard) {
+    let the_image = document.createElement('img');
+    the_image.setAttribute('src', "../../../images/" + chara + "down.png");
+    the_image.setAttribute('style', "position: fixed;top : " + (7 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (5 * coords_begin[numboard - 1][1] + 5) + "vw;");
+    the_image.className = "img_of_laby";
+    the_image.setAttribute('id', "character" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(the_image);
+    fromtop = coords_begin[numboard - 1][0];
+    fromleft = coords_begin[numboard - 1][1];
+}
+
 function create_character(numboard) {
     let the_image = document.createElement('img');
     the_image.setAttribute('src', "../../../images/" + chara + "down.png");
@@ -84,86 +75,6 @@ function create_character(numboard) {
     document.getElementById('laby' + numboard).appendChild(the_image);
     fromtop = coords_begin[numboard - 1][0];
     fromleft = coords_begin[numboard - 1][1];
-}
-
-// --------------------------------------------------//
-//                                                   //
-//  CONSTRUCTION OF THE GAZ BOARD FOR NORMAL PLANETS //
-//                                                   //
-// --------------------------------------------------//
-
-function place_gaz(numboard){
-    for(let j= 0; j < gaz[numboard-1].length; j++)
-    {
-        let idGaz = j + (numboard-1)*4
-        let the_image = document.createElement('img');
-        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
-        the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
-        the_image.className = "img_of_laby";
-        the_image.setAttribute('id',"gaz"+idGaz);
-        document.getElementById('laby'+numboard).appendChild(the_image);
-    }
-    found_b1 = false;
-    found_b2 = false;
-    found_b0 = false;
-}
-
-
-function construct_board_with_gaz(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_line(boards[numboard-1][i],i,numboard);
-    }
-    create_character(numboard);
-    place_gaz(numboard);
-}
-
-// --------------------------------------------------//
-//                                                   //
-// CONSTRUCTION OF THE GHOST BOARD FOR NORMAL PLANETS//
-//                                                   //
-// --------------------------------------------------//
-
-function construct_board_with_ghost(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_line(boards[numboard-1][i],i,numboard);
-    }
-    create_character(numboard);
-    create_ghost(numboard);
-}
-
-function create_ghost(numboard){
-    ghostTop = coords_begin_ghost[numboard - 1][0];
-    ghostLeft = coords_begin_ghost[numboard - 1][1];
-    let ghost = document.createElement('img');
-    ghost.setAttribute('src', "../../../images/fantomp0.png");
-    ghost.setAttribute('style', "position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
-    ghost.className = "img_of_laby";
-    ghost.setAttribute('id', "ghost" + actual_board);
-    document.getElementById('laby' + numboard).appendChild(ghost);
-    
-    
-}
-
-
-// --------------------------------------------------------//
-//                                                         //
-// CONSTRUCTION OF THE BOARD OF 2 GHOSTS FOR LARGE PLANET  //
-//                                                         //
-// --------------------------------------------------------//
-
-
-function construct_board_with_2_ghosts(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_big_line(boards[numboard-1][i],i,numboard);
-    }
-    create_big_character(numboard);
-    create_ghosts(numboard)
 }
 
 function create_big_character(numboard) {
@@ -177,15 +88,66 @@ function create_big_character(numboard) {
     fromleft = coords_begin[numboard - 1][1];
 }
 
-function construct_big_line(line,numline,numboard){
-    for(let j= 0; j < line.length; j++)
+
+// --------------------------------------------------//
+//                                                   //
+//       CONSTRUCTION OF THE BOARD FOR GHOSTS        //
+//                                                   //
+// --------------------------------------------------//
+
+function create_ghosts_and_characters(numboard) {
     {
         let the_image = document.createElement('img');
-        the_image.setAttribute('src',"img"+line[j]+".png");
-        the_image.setAttribute('style', "position: fixed;top : " + (3 * numline + 5) + "vh;left : " + (2 * j + 5) + "vw;");
+        the_image.setAttribute('src', "../../../images/" + chara + "down.png");
+        the_image.setAttribute('style', "position: fixed;top : " + (3 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin[numboard - 1][1] + 5) + "vw;");
         the_image.className = "img_of_laby";
-        document.getElementById('laby'+numboard).appendChild(the_image);
+        the_image.setAttribute('id', "character" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(the_image);
+        fromtop1 = coords_begin[numboard - 1][0];
+        fromleft1 = coords_begin[numboard - 1][1];
+
+
+        let the_image2 = document.createElement('img');
+        the_image2.setAttribute('src', "../../../images/" + charap2 + "down.png");
+        the_image2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin2[numboard - 1][1] + 5) + "vw;");
+        the_image2.className = "img_of_laby";
+        the_image2.setAttribute('id', "characterp2" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(the_image2);
+        fromtop2 = coords_begin2[numboard - 1][0];
+        fromleft2 = coords_begin2[numboard - 1][1];
+
+
+        let ghost = document.createElement('img');
+        ghost.setAttribute('src', "../../../images/fantomp0.png");
+        ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_1[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_1[numboard - 1][1] + 5) + "vw;");
+        ghost.className = "img_of_laby";
+        ghost.setAttribute('id', "ghost" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(ghost);
+        ghostTop1 = coords_begin_ghost_1[numboard - 1][0];
+        ghostLeft1 = coords_begin_ghost_1[numboard - 1][1];
+
+
+        let ghost2 = document.createElement('img');
+        ghost2.setAttribute('src', "../../../images/fantomp0.png");
+        ghost2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_2[numboard - 1][1] + 5) + "vw;");
+        ghost2.className = "img_of_laby";
+        ghost2.setAttribute('id', "ghost2_" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(ghost2);
+        ghostTop2 = coords_begin_ghost_2[numboard - 1][0];
+        ghostLeft2 = coords_begin_ghost_2[numboard - 1][1];
     }
+}
+
+
+function create_ghost(numboard){
+    ghostTop = coords_begin_ghost[numboard - 1][0];
+    ghostLeft = coords_begin_ghost[numboard - 1][1];
+    let ghost = document.createElement('img');
+    ghost.setAttribute('src', "../../../images/fantomp0.png");
+    ghost.setAttribute('style', "position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+    ghost.className = "img_of_laby";
+    ghost.setAttribute('id', "ghost" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(ghost);
 }
 
 
@@ -211,22 +173,6 @@ function create_ghosts(numboard){
 }
 
 
-// --------------------------------------------------------//
-//                                                         //
-// CONSTRUCTION OF THE BOARD OF 1 GHOST FOR LARGE PLANET   //
-//                                                         //
-// --------------------------------------------------------//
-
-function construct_large_board_with_ghost(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
-    {
-        construct_big_line(boards[numboard-1][i],i,numboard);
-    }
-    create_big_character(numboard);
-    create_big_ghost(numboard)
-}
-
 function create_big_ghost(numboard){
     var ghost = document.createElement('img');
     ghost.setAttribute('src', "../../../images/fantomp0.png");
@@ -238,21 +184,26 @@ function create_big_ghost(numboard){
     ghostLeft = coords_begin_ghost[numboard - 1][1];
 }
 
+// --------------------------------------------------//
+//                                                   //
+//          CONSTRUCTION OF THE AIR AND GAZ          //
+//                                                   //
+// --------------------------------------------------//
 
-// --------------------------------------------------------//
-//                                                         //
-// CONSTRUCTION OF THE BOARD WITH BOTTLE OF AIR + BIG SIZE //
-//                                                         //
-// --------------------------------------------------------//
-
-function construct_large_board_with_gaz(numboard){
-    actual_board = numboard-1;
-    for(let i= 0; i < boards[numboard-1].length; i++)
+function place_gaz(numboard){
+    for(let j= 0; j < gaz[numboard-1].length; j++)
     {
-        construct_big_line(boards[numboard-1][i],i,numboard);
+        let idGaz = j + (numboard-1)*4
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
+        the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
+        the_image.className = "img_of_laby";
+        the_image.setAttribute('id',"gaz"+idGaz);
+        document.getElementById('laby'+numboard).appendChild(the_image);
     }
-    create_big_character(numboard);
-    place_air(numboard);
+    found_b1 = false;
+    found_b2 = false;
+    found_b0 = false;
 }
 
 
@@ -274,12 +225,74 @@ function place_air(numboard){
     found_b3 = false;
 }
 
+// --------------------------------------------------//
+//                                                   //
+//          CONSTRUCTION OF THE TINY BOARD           //
+//                                                   //
+// --------------------------------------------------//
 
-// --------------------------------------------------------//
-//                                                         //
-//             CONSTRUCTION OF A LARGE BOARD               //
-//                                                         //
-// --------------------------------------------------------//
+function construct_tiny_board(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_tiny_line(boards[numboard-1][i],i,numboard);
+    }
+    create_tiny_character(numboard);
+}
+
+// --------------------------------------------------//
+//                                                   //
+//        CONSTRUCTION OF THE NORMAL BOARD           //
+//                                                   //
+// --------------------------------------------------//
+
+function construct_board(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+}
+
+
+function construct_board_with_gaz(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    place_gaz(numboard);
+}
+
+
+function construct_board_with_ghost(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    create_ghost(numboard);
+}
+
+
+function construct_board_with_2_ghosts(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_ghosts_and_characters(numboard)
+}
+
+
+// --------------------------------------------------//
+//                                                   //
+//         CONSTRUCTION OF THE LARGE BOARD           //
+//                                                   //
+// --------------------------------------------------//
 
 function construct_large_board(numboard){
     actual_board = numboard-1;
@@ -288,4 +301,24 @@ function construct_large_board(numboard){
         construct_big_line(boards[numboard-1][i],i,numboard);
     }
     create_big_character(numboard);
+}
+
+function construct_large_board_with_ghost(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    create_big_ghost(numboard)
+}
+
+function construct_large_board_with_gaz(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    place_air(numboard);
 }

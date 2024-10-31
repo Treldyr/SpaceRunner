@@ -19,8 +19,8 @@
         <div class="content">
             <div id="pause">
                 <button class="btn-start" onclick="closePause()">Continuer</button>
-                <button class="btn-start" onclick="returnMap()">Carte</button>
-                <button class="btn-start" onclick="window.location.href='../../index.html'">Menu</button>
+                <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
+                <button class="btn-start" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -53,7 +53,7 @@
                     <p id="your_score"></p>
                     <p>Toutes mes félicitations !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(1)">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -76,12 +76,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../common_functions/pause.js"></script>
 <script src="../../../common_functions/basic.js"></script>
+<script src="../../../common_functions/build.js"></script>
 <script src="../../../common_functions/timer.js"></script>
+<script src="../../../common_functions/get_data.js"></script>
+<script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
 <script>
     var ghostId;
     var nbTourGhost = 0;
-
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop1 =0;
@@ -108,19 +110,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board(1)
-    
-
-    
-
-    function goNext(number){
-        number2 = number+1;
-        document.getElementById('page'+number).style.display = "none";
-        document.getElementById('page'+number2).style.display = "block";
-        p1_won = false;
-        p2_won = false;
-        moveGhost()
-    }
+    construct_board_with_2_ghosts(1)
 
 
     function checkKey(e) {
@@ -164,70 +154,6 @@
             }
             checkGhost()
         }
-    }
-
-    // construction of the labyrinth
-
-    function construct_board(numboard){
-        actual_board = numboard-1;
-        for(let i= 0; i < boards[numboard-1].length; i++)
-        {
-            construct_line(boards[numboard-1][i],i,numboard);
-        }
-        create_character(numboard);
-    }
-
-    function construct_line(line,numline,numboard){
-        for(let j= 0; j < line.length; j++)
-        {
-            let the_image = document.createElement('img');
-            the_image.setAttribute('src',"img"+line[j]+".png");
-            the_image.setAttribute('style', "position: fixed;top : " + (3 * numline + 5) + "vh;left : " + (2 * j + 5) + "vw;");
-            the_image.className = "img_of_laby";
-            document.getElementById('laby'+numboard).appendChild(the_image);
-        }
-    }
-
-    function create_character(numboard) {
-        let the_image = document.createElement('img');
-        the_image.setAttribute('src', "../../../images/" + chara + "down.png");
-        the_image.setAttribute('style', "position: fixed;top : " + (3 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin[numboard - 1][1] + 5) + "vw;");
-        the_image.className = "img_of_laby";
-        the_image.setAttribute('id', "character" + actual_board);
-        document.getElementById('laby' + numboard).appendChild(the_image);
-        fromtop1 = coords_begin[numboard - 1][0];
-        fromleft1 = coords_begin[numboard - 1][1];
-
-
-        let the_image2 = document.createElement('img');
-        the_image2.setAttribute('src', "../../../images/" + charap2 + "down.png");
-        the_image2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin2[numboard - 1][1] + 5) + "vw;");
-        the_image2.className = "img_of_laby";
-        the_image2.setAttribute('id', "characterp2" + actual_board);
-        document.getElementById('laby' + numboard).appendChild(the_image2);
-        fromtop2 = coords_begin2[numboard - 1][0];
-        fromleft2 = coords_begin2[numboard - 1][1];
-
-
-        let ghost = document.createElement('img');
-        ghost.setAttribute('src', "../../../images/fantomp0.png");
-        ghost.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_1[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_1[numboard - 1][1] + 5) + "vw;");
-        ghost.className = "img_of_laby";
-        ghost.setAttribute('id', "ghost" + actual_board);
-        document.getElementById('laby' + numboard).appendChild(ghost);
-        ghostTop1 = coords_begin_ghost_1[numboard - 1][0];
-        ghostLeft1 = coords_begin_ghost_1[numboard - 1][1];
-
-
-        let ghost2 = document.createElement('img');
-        ghost2.setAttribute('src', "../../../images/fantomp0.png");
-        ghost2.setAttribute('style', "position: fixed;top : " + (3 * coords_begin_ghost_2[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin_ghost_2[numboard - 1][1] + 5) + "vw;");
-        ghost2.className = "img_of_laby";
-        ghost2.setAttribute('id', "ghost2_" + actual_board);
-        document.getElementById('laby' + numboard).appendChild(ghost2);
-        ghostTop2 = coords_begin_ghost_2[numboard - 1][0];
-        ghostLeft2 = coords_begin_ghost_2[numboard - 1][1];
-
     }
 
     function dest_upward_p1(){
@@ -390,16 +316,16 @@
 
 
     function moveGhost() {
-    ghostId = setInterval(() => {
-        nbTourGhost++;
-        if(nbTourGhost%2==0){
-            moveFirstGhost();
-        }else{
-            moveSecondGhost()
-        }
-        checkGhost();
-    }, 500);
-}
+        ghostId = setInterval(() => {
+            nbTourGhost++;
+            if(nbTourGhost%2==0){
+                moveFirstGhost();
+            }else{
+                moveSecondGhost()
+            }
+            checkGhost();
+        }, 500);
+    }
 
     function stopGhost() {
         clearInterval(ghostId);
@@ -412,7 +338,7 @@
         || ((ghostLeft2 == fromleft2) && (ghostTop2 == fromtop2) &&(!p2_won)) )
         {
             stopGhost()
-            rebegin()
+            goPlanet(1)
         }
     }
 
@@ -505,7 +431,10 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_board(actual_board+2);
+            p1_won = false;
+            p2_won = false;
+            moveGhost()
+            construct_board_with_2_ghosts(actual_board+2)
         } else {
             stopTimer();
             playEndLevel()
@@ -514,28 +443,6 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
-        }
-    }
-
-
-    function rebegin() {
-        window.location.href='main.html';
-    }
-
-    function returnMap() {
-        window.location.href='../carte.html';
-    }
-
-    function retrievePlayers() {
-        var storedData = localStorage.getItem('charChosen');
-        if (storedData !== null) {
-            var charChosen = JSON.parse(storedData);
-            chara = charChosen.char;
-        }
-        storedData = localStorage.getItem('charChosen2');
-        if (storedData !== null) {
-            var charChosen = JSON.parse(storedData);
-            charap2 = charChosen.char;
         }
     }
 
