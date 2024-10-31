@@ -59,8 +59,8 @@
                     </p>
                     <p>Vous avez débloqué la planète Défaillance</p>
                     <p>Bonne continuation</p>
-                    <button class="btn btn-outline-light" onclick="goPlanet8()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="goPlanet9()">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(8)">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(9)">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -139,7 +139,7 @@
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(countdownFinished){
-                goPlanet8();
+                goPlanet(8);
             }
             if(boards[actual_board][fromtop][fromleft]==0)
             {
