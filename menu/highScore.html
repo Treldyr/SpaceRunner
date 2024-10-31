@@ -67,116 +67,12 @@
 <script src="../common_functions/basic.js"></script>
 <script src="../common_functions/navigation.js"></script>
 <script>
-    var coups1 = " - ";
-    var temps1;
-    var coups2 = " - ";
-    var temps2;
-    var coups3 = " - ";
-    var temps3;
-    var coups4 = " - ";
-    var temps4;
-    var coups5 = " - ";
-    var temps5;
-    var coups6 = " - ";
-    var temps6;
-    var coups7 = " - ";
-    var temps7;
-
-    retrievePlanet1();
-    retrievePlanet2();
-    retrievePlanet3();
-    retrievePlanet4();
-    retrievePlanet5();
-    retrievePlanet6();
-    retrievePlanet7();
-
-    setValeurTerre();
-    setValeurTatooine();
-    setValeurHoth();
-    setValeurKamino();
-    setValeurFelucia();
-    setValeurFantomia();
-    setValeurSabliereRouge();
-
-    function setValeurTerre(){
-        let stringTemps;
-        if(temps1==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps1 / 60)) + " : "+pad(temps1 % 60);
-        }
-        document.getElementById("c1").innerHTML = coups1;
-        document.getElementById("t1").innerHTML = stringTemps;  
-    }
-
-    function setValeurTatooine(){
-        let stringTemps;
-        if(temps2==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps2 / 60)) + " : "+pad(temps2 % 60);
-        }
-        document.getElementById("c2").innerHTML = coups2;
-        document.getElementById("t2").innerHTML = stringTemps;  
-    }
-
-    function setValeurHoth(){
-        let stringTemps;
-        if(temps3==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps3 / 60)) + " : "+pad(temps3 % 60);
-        }
-        document.getElementById("c3").innerHTML = coups3;
-        document.getElementById("t3").innerHTML = stringTemps;  
-    }
-
-    function setValeurKamino(){
-        let stringTemps;
-        if(temps4==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps4 / 60)) + " : "+pad(temps4 % 60);
-        }
-        document.getElementById("c4").innerHTML = coups4;
-        document.getElementById("t4").innerHTML = stringTemps;  
-    }
-
-    function setValeurFelucia(){
-        let stringTemps;
-        if(temps5==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps5 / 60)) + " : "+pad(temps5 % 60);
-        }
-        document.getElementById("c5").innerHTML = coups5;
-        document.getElementById("t5").innerHTML = stringTemps;  
-    }
-
-    function setValeurFantomia(){
-        let stringTemps;
-        if(temps6==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps6 / 60)) + " : "+pad(temps6 % 60);
-        }
-        document.getElementById("c6").innerHTML = coups6;
-        document.getElementById("t6").innerHTML = stringTemps;  
-    }
-
-    function setValeurSabliereRouge(){
-        let stringTemps;
-        if(temps7==null){
-            stringTemps = " - : - ";
-        }else {
-            stringTemps = pad(parseInt(temps7 / 60)) + " : "+pad(temps7 % 60);
-        }
-        document.getElementById("c7").innerHTML = coups7;
-        document.getElementById("t7").innerHTML = stringTemps;  
-    }
-
-
-    
-
+    retrievePlanet(1,'terre');
+    retrievePlanet(2,'tatooine');
+    retrievePlanet(3,'hoth');
+    retrievePlanet(4,'kamino');
+    retrievePlanet(5,'felucia');
+    retrievePlanet(6,'fantomia');
+    retrievePlanet(7,'sabliereR');  
 </script>
 </html>
