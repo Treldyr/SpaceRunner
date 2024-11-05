@@ -66,6 +66,12 @@
                 <img id="imgplanet9" src="../../images/planet9.png" alt="Planète 9">
             </a>
         </div>
+
+        <div id="planet10" class="planet">
+            <a onclick="goPlanetFromMap(10)">
+                <img id="imgplanet10" src="../../images/planet10.png" alt="Planète 10">
+            </a>
+        </div>
     </div>
     <button class="btn btn-outline-light btn-back" onclick="returnLastIndexPage()">&larr;</button>
 
@@ -79,6 +85,7 @@
 
     if(lvl<=8){
         document.getElementById('planet9').style.display = "none";
+        document.getElementById('planet10').style.display = "none";
     }
     if(lvl<=7){
         document.getElementById('planet8').style.display = "none";

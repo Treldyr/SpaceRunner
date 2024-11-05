@@ -1,0 +1,23 @@
+.background-image {
+    background: url('../../images/planete_dsn.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(115, 130, 136);
+}
+
+
+.btn-start {
+    background-color: rgb(115, 130, 136);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(115, 130, 136);
+}
+
+
+.timer {
+    background-color: rgb(115, 130, 136);
+}

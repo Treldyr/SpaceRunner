@@ -4,12 +4,12 @@
 
 
 .btn-outline-dark {
-    background-color: rgb(128, 16, 189);
+    background-color: red;
 }
 
 
 .btn-start {
-    background-color: rgb(128, 16, 189);
+    background-color: red;
 }
 
 
@@ -19,5 +19,30 @@
 
 
 .timer {
-    background-color: rgb(128, 16, 189);
+    background-color: red;
+}
+
+.dimension-marker {
+    background-color: red;
+}
+
+.dimension-marker span {
+    margin: 0 10px;
+}
+
+
+.dimension-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #000000;
+    height: 40px;
+    width: 420px;
+    border-radius: 10px;
+    font-size: 32px;
+    text-shadow: 1px 1px #000;
+    font-family: 'Press Start 2P', cursive;
+    position :fixed;
+    top:5px;
+    right:40%;
 }

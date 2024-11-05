@@ -100,7 +100,6 @@
     var fromleft = 0;
     var actual_board = 0;
     retrievePlayer()
-
     startCountDown(CountDownSeconds)
 
 
@@ -161,6 +160,8 @@
             playEndLevel()
             UnlockFourthGhost();
             UnlockPlanet9();
+            totalSeconds = totalTimePlayed;
+            setHighScorePlanet("leviathe");
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";

@@ -14,13 +14,13 @@
   </head>
 <script src="boardList.js"></script>
   <body>
-    <button class="btn btn-outline-dark" id="showmenu" onclick="showPause()">&verbar;&nbsp;&verbar;</button>
+    <button class="btn btn-outline-dark dimension-color" id="showmenu" onclick="showPause()">&verbar;&nbsp;&verbar;</button>
     <div class="background-image"></div>
         <div class="content">
             <div id="pause">
-                <button class="btn-start" onclick="closePause()">Continuer</button>
-                <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="returnToMenu()">Menu</button>
+                <button class="btn-start dimension-color" onclick="closePause()">Continuer</button>
+                <button class="btn-start dimension-color" onclick="returnToMapFromPlanet()">Carte</button>
+                <button class="btn-start dimension-color" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -58,7 +58,10 @@
                 </div>
             </div>
         </div>
-        <div class="timer">
+        <div class="dimension-marker dimension-color">
+            <span id="dimension-name">Dimension rouge : 5 swaps</span>
+        </div>
+        <div class="timer dimension-color">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
@@ -148,7 +151,26 @@
     function changeDimension(){
         isDimRed = !isDimRed
         nbChangDim--;
-        console.log("is red = ",isDimRed)
+        if(isDimRed){
+            for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+                document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "red";
+            }
+            document.getElementById('dimension-name').innerHTML = "Dimension rouge : "+nbChangDim+" swaps";
+        } else {
+            for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+                document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "blue";
+            }
+            document.getElementById('dimension-name').innerHTML = "Dimension bleue : "+nbChangDim+" swaps";
+        } 
+    }
+
+    function initializeSwaps(){
+        nbChangDim = 5
+        isDimRed = true
+        for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+            document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "red";
+        }
+        document.getElementById('dimension-name').innerHTML = "Dimension rouge : 5 swaps";
     }
 
     function finish_labyrinth(){
@@ -156,7 +178,7 @@
             playEndLaby()
             goNext(actual_board+1);
             construct_large_board(actual_board+2);
-            nbChangDim = 5
+            initializeSwaps();
         } else {
             stopTimer();
             playEndLevel()

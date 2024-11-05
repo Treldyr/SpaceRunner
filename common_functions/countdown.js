@@ -10,6 +10,7 @@
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
+var totalTimePlayed = 0;
 var countdownFinished = false
 var intervalId;
 
@@ -26,6 +27,7 @@ function startCountDown(nbseconds) {
     // Update the timer display every second
     intervalId = setInterval(() => {
         --totalSeconds;
+        ++totalTimePlayed;
         secondsLabel.innerHTML = pad(totalSeconds % 60);
         minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
         if(totalSeconds===0){
@@ -47,3 +49,8 @@ function resetCountDown(nbseconds){
     totalSeconds = nbseconds;
 }
 
+// --------------------------------------------------//
+//                                                   //
+//          THE FUNCTION OF THE TOTAL TIME           //
+//                                                   //
+// --------------------------------------------------//
