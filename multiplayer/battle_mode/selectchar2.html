@@ -53,73 +53,17 @@
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
-        <button class="btn-start" onclick="acceptPlayer()">Commencer</button>
+        <button class="btn-start" onclick="acceptGhost()">Commencer</button>
     </div>
-    <script src="../../common_functions/sounds.js"></script>
+    <script src="../../common_functions/get_data.js"></script>
     <script src="../../common_functions/unlocks.js"></script>
+    <script src="../../common_functions/sounds.js"></script>
+    <script src="../../common_functions/select_characters.js"></script>
 	<script>
         var char = "p0"
         var lvlGhost = 1;
-        retrieveAchievements();
-        lockUnusableGhosts();
-
-		// Fonction pour sélectionner une image
-		function selectImage(imageId) {
-            playSoundButton()
-			// Désélectionne toutes les images
-			$('.img-thumbnail').removeClass('selected');
-			// Sélectionne l'image cliquée
-			$('#' + imageId).addClass('selected');
-			// Stocke l'ID
-            $('#selected-image').val(imageId);
-            // stocke dans la balise p l'image
-            char = imageId
-		}
-
-        function playSoundButton() {
-            var audio = new Audio('../../sons/bright.wav');
-            audio.play();
-        }
-
-        function acceptPlayer() {
-            var charChosen = {
-                ghost : char
-            };
-            var dataString = JSON.stringify(charChosen);
-            localStorage.setItem('ghostChosen', dataString);
-            window.location.href = 'carte.html'
-        }
-
-        function retrieveAchievements() {
-            var storedData = localStorage.getItem('ghostData');
-            if (storedData !== null) {
-                var ghostData = JSON.parse(storedData);
-                lvlGhost = ghostData.ghostUnlock;
-            }
-        }
-
-        function lockUnusableGhosts(){
-            if(lvlGhost<2){
-                lockImage("p2")
-                lockImage("p3")
-            }
-            if(lvlGhost<3){
-                lockImage("p4")
-                lockImage("p5")
-            }
-            if(lvlGhost<4){
-                lockImage("p6")
-                lockImage("p7")
-            }
-        }
-
-        function lockImage(imageId) {
-            var image = document.getElementById(imageId);
-            image.classList.add('locked');               // Ajoute la classe de verrouillage
-            image.onclick = null;                        // Désactive le clic
-            image.src = "../../images/locked.png";          // Ajoute l'image de cadenas
-        }
-
+        retrieveGhostAchievements();
+        hideLockedGhosts();
 	</script>
 </body>
 </html>

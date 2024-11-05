@@ -50,6 +50,15 @@ function retrieveAchievements() {
     }
 }
 
+
+function retrieveGhostAchievements() {
+    var storedData = localStorage.getItem('ghostData');
+    if (storedData !== null) {
+        var ghostData = JSON.parse(storedData);
+        lvlGhost = ghostData.ghostUnlock;
+    }
+}
+
 function retrievePlanet(number_planet,name_planet) {
     // get the data from the local store
     let nbCoups = " - ";

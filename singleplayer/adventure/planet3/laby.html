@@ -150,11 +150,11 @@
             playEndLaby()
             goNext(actual_board+1);
             construct_board(actual_board+2);
-            UnlockSecondGhost();
+            UnlockGhost(2);
         } else {
             stopTimer();
             playEndLevel()
-            UnlockPlanet4()
+            UnlockPlanet(4)
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";

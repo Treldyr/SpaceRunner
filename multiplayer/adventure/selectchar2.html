@@ -82,75 +82,17 @@
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
-        <button class="btn-start" onclick="acceptPlayer()">Commencer</button>
+        <button class="btn-start" onclick="acceptPlayer('charChosen2','carte.html')">Commencer</button>
     </div>
+    <script src="../../common_functions/get_data.js"></script>
+    <script src="../../common_functions/unlocks.js"></script>
     <script src="../../common_functions/sounds.js"></script>
+    <script src="../../common_functions/select_characters.js"></script>
 	<script>
         var char = "p1"
         nbPlayerUnlocked = 1;
         retrieveAchievements();
-
-        if(nbPlayerUnlocked<2){
-            lockImage("p5")
-            lockImage("p6")
-            lockImage("p7")
-            lockImage("p8")
-        }
-        if(nbPlayerUnlocked<3){
-            lockImage("p9")
-            lockImage("p10")
-            lockImage("p11")
-            lockImage("p12")
-        }
-        if(nbPlayerUnlocked<4){
-            lockImage("p13")
-            lockImage("p14")
-            lockImage("p15")
-            lockImage("p16")
-        }
-
-        function lockImage(imageId) {
-            var image = document.getElementById(imageId);
-            image.classList.add('locked');               // Ajoute la classe de verrouillage
-            image.onclick = null;                        // Désactive le clic
-            image.src = "../../images/locked.png";          // Ajoute l'image de cadenas
-        }
-
-		// Fonction pour sélectionner une image
-		function selectImage(imageId) {
-            playSoundButton()
-			// Désélectionne toutes les images
-			$('.img-thumbnail').removeClass('selected');
-			// Sélectionne l'image cliquée
-			$('#' + imageId).addClass('selected');
-			// Stocke l'ID
-            $('#selected-image').val(imageId);
-            // stocke dans la balise p l'image
-            char = imageId
-		}
-
-        function playSoundButton() {
-            var audio = new Audio('../../sons/bright.wav');
-            audio.play();
-        }
-
-        function retrieveAchievements() {
-            var storedData = localStorage.getItem('playerData');
-            if (storedData !== null) {
-                var playerData = JSON.parse(storedData);
-                nbPlayerUnlocked = playerData.playerUnlock;
-            }
-        }
-
-        function acceptPlayer() {
-            var charChosen = {
-                char: char
-            };
-            var dataString = JSON.stringify(charChosen);
-            localStorage.setItem('charChosen2', dataString);
-            window.location.href = 'carte.html'
-        }
-
+        hideLockedCharacters();
 	</script>
 </body>
 </html>

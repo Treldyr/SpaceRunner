@@ -182,6 +182,8 @@
         } else {
             stopTimer();
             playEndLevel()
+            UnlockPlanet(10);
+            setHighScorePlanet("defaillance");
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
