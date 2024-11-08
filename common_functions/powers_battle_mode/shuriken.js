@@ -1,6 +1,9 @@
 // IDs for the promise
 var powshurikenId;
 
+// boolean which store when the shuriken is available for the boss 1
+var shurikenAvailable = true
+
 
 function launchShuriken(numberPower){
     directionLaunched = lastmMoveByFantom
@@ -35,7 +38,7 @@ function launchShuriken(numberPower){
             clearInterval(powshurikenId);
             delete_shuriken()
         }
-    }, 100); // run the function after 0.4 second (2000 milliseconds)
+    }, 100); // run the function after 0.1 second (100 milliseconds)
 }
 
 function updateImageShuriken(){
@@ -57,4 +60,54 @@ function delete_shuriken() {
     if(shuri!==null){
         shuri.remove()
     } 
+}
+
+
+function launchShurikenFromBoss1(directionLaunched){
+    shurikenAvailable = false
+    fromtopShuriken = boss1Top
+    fromleftShuriken = boss1Left
+    create_shuriken(fromtopShuriken,fromleftShuriken)
+
+    powshurikenId = setInterval(() => {
+        switch(directionLaunched){
+            case "u":
+                fromtopShuriken--;
+            break;
+            case "d":
+                fromtopShuriken++;
+            break;
+            case "l":
+                fromleftShuriken--;
+            break;
+            case "r":
+                fromleftShuriken++;
+            break;
+            case "ul":
+                fromtopShuriken--;
+                fromleftShuriken--;
+            break;
+            case "dl":
+                fromtopShuriken++;
+                fromleftShuriken--;
+            break;
+            case "ur":
+                fromtopShuriken--;
+                fromleftShuriken++;
+            break;
+            case "dr":
+                fromtopShuriken++;
+                fromleftShuriken++;
+            break;
+            default:
+                console.log('erreur direction')
+        }
+        updateImageShuriken()
+        checkShuriken()
+        if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
+            clearInterval(powshurikenId);
+            shurikenAvailable = true
+            delete_shuriken()
+        }
+    }, 100); // run the function after 0.1 second (100 milliseconds)
 }

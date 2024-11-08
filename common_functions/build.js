@@ -277,6 +277,16 @@ function construct_board_with_ghost(numboard){
     create_ghost(numboard);
 }
 
+function construct_board_with_boss(numboard,number_boss){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    create_boss(numboard,number_boss);
+}
+
 
 function construct_board_with_2_ghosts(numboard){
     actual_board = numboard-1;
@@ -321,4 +331,21 @@ function construct_large_board_with_gaz(numboard){
     }
     create_big_character(numboard);
     place_air(numboard);
+}
+
+// --------------------------------------------------//
+//                                                   //
+//         CONSTRUCTION OF A BOSS CHARACTER          //
+//                                                   //
+// --------------------------------------------------//
+
+function create_boss(numboard,number_boss){
+    boss1Top = coords_begin_boss[numboard - 1][0];
+    boss1Left = coords_begin_boss[numboard - 1][1];
+    let boss = document.createElement('img');
+    boss.setAttribute('src', "../../../images/p"+number_boss+"left.png");
+    boss.setAttribute('style', "position: fixed;top : "+(5*boss1Top+5)+"vh;left : "+(3.5*boss1Left+5)+"vw;");
+    boss.className = "img_of_laby";
+    boss.setAttribute('id', "boss" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(boss);
 }
