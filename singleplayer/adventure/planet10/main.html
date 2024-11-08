@@ -58,7 +58,7 @@
                 <p>Qui à fait ça ? C'est horrible !</p>
                 <p>C'est ... vous ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Commencer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
         </div>
 
@@ -67,6 +67,15 @@
                 <p>Oui c'est moi.</p>
                 <p>Et tu es le prochain.</p>
                 <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="game-description">
+                <p>Neutralisez votre adversaire en le faisant marcher sur les bombes sur le sol !</p>
+                <p>Attention ! Il peut lancer des shurikens. S'il vous touche avec, vous avez perdu.</p>
+                <p>Bonne chance !</p>
                 <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
             </div>
         </div>
@@ -105,7 +114,7 @@
         function checkKey(e) {
             e = e || window.event;
             if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
-                if(actualPage!=6){
+                if(actualPage!=7){
                     goNextPage();
                 } else {
                     beginMaze();

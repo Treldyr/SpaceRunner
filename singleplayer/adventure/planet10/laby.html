@@ -84,13 +84,6 @@
     moveBoss(11);
 
 
-
-
-
-
-
-
-
     function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '27'){ // touche echap
@@ -115,6 +108,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+            checkShuriken()
         }
     }
 
