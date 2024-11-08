@@ -19,6 +19,31 @@ function checkIsGaz(){
     }
 }
 
+function checkIsBomb(){
+    if((bomb[actual_board][0][0]==boss1Top)&&(bomb[actual_board][0][1]==boss1Left)&&(!found_b0)){
+        idGaz = (actual_board)*4
+        found_b0 = true;
+        document.getElementById("bomb"+idGaz).style.display = "none";
+        playSuccess() // TODO change to another sound
+        freezeCharacter("boss0")
+    }
+    if((bomb[actual_board][1][0]==boss1Top)&&(bomb[actual_board][1][1]==boss1Left)&&(!found_b1)){
+        idGaz = (actual_board)*4 + 1
+        found_b1 = true;
+        document.getElementById("bomb"+idGaz).style.display = "none";
+        playSuccess() // TODO
+        freezeCharacter("boss0")
+    }
+    if((bomb[actual_board][2][0]==boss1Top)&&(bomb[actual_board][2][1]==boss1Left)&&(!found_b2)){
+        idGaz = (actual_board)*4 + 2
+        found_b2 = true;
+        document.getElementById("bomb"+idGaz).style.display = "none";
+        playSuccess() // TODO
+        freezeCharacter("boss0")
+    }
+}
+
+
 function checkIsAir(){
     let time_to_add = 12
     if((gaz[actual_board][0][0]==fromtop)&&(gaz[actual_board][0][1]==fromleft)&&(!found_b0)){

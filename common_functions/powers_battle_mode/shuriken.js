@@ -60,6 +60,8 @@ function delete_shuriken() {
     if(shuri!==null){
         shuri.remove()
     } 
+    fromtopShuriken = 0
+    fromleftShuriken = 0
 }
 
 

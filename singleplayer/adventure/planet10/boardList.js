@@ -27,8 +27,8 @@ var coords_begin_boss = [
     [11,10]
 ]
 
-var coords_bombs = [
-    [11,10],
-    [12,6],
-    [1,19]
+var bomb = [
+    [
+        [6,6],[6,7],[6,8]
+    ]
 ]

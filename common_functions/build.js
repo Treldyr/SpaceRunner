@@ -186,7 +186,7 @@ function create_big_ghost(numboard){
 
 // --------------------------------------------------//
 //                                                   //
-//          CONSTRUCTION OF THE AIR AND GAZ          //
+//      CONSTRUCTION OF THE AIR AND GAZ AND BOMB     //
 //                                                   //
 // --------------------------------------------------//
 
@@ -199,6 +199,23 @@ function place_gaz(numboard){
         the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"gaz"+idGaz);
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+    found_b1 = false;
+    found_b2 = false;
+    found_b0 = false;
+}
+
+
+function place_bombs(numboard){
+    for(let j= 0; j < bomb[numboard-1].length; j++)
+    {
+        let idGaz = j + (numboard-1)*4
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"../../../images/bomb.png");
+        the_image.setAttribute('style',"position: fixed;top : "+(5*bomb[numboard-1][j][0]+5) + "vh;left : " +(3.5*bomb[numboard-1][j][1]+5)+ "vw;");
+        the_image.className = "img_of_laby";
+        the_image.setAttribute('id',"bomb"+idGaz);
         document.getElementById('laby'+numboard).appendChild(the_image);
     }
     found_b1 = false;
@@ -285,6 +302,7 @@ function construct_board_with_boss(numboard,number_boss){
     }
     create_character(numboard);
     create_boss(numboard,number_boss);
+    place_bombs(numboard)
 }
 
 

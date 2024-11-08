@@ -61,9 +61,25 @@
 <script src="../../../common_functions/timer.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
+<script src="../../../common_functions/powers_battle_mode/stop.js"></script>
 <script src="../../../common_functions/boss1.js"></script>
+<script src="../../../common_functions/checks.js"></script>
 <script>
+    // if the bombs has been activated
+    found_b0 = false
+    found_b1 = false
+    found_b2 = false
+
+    // if the boss is freeze
+    isStop = false
+
+    // if the game is endend
+    game_ended = false
+
+
     var directionLaunched; // the direction the shuriken is launched
+    var fromtopShuriken = 0
+    var fromleftShuriken = 0
     var boss1Id;
     var boss1Top = 0;
     var boss1Left = 0;
@@ -114,6 +130,7 @@
 
     function finish_labyrinth(){
         stopBoss()
+        game_ended = true
         stopTimer();
         playEndLevel()
         let number = actual_board+1;
