@@ -1,0 +1,23 @@
+.background-image {
+    background: url('../../images/planete_letranger.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(71, 113, 114);
+}
+
+
+.btn-start {
+    background-color: rgb(71, 113, 114);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(71, 113, 114);
+}
+
+
+.timer {
+    background-color: rgb(71, 113, 114);
+}
