@@ -98,8 +98,8 @@ function launchShurikenFromBoss2(directionLaunched){
 }
 
 function create_shuriken_poweritem(){
-    powerItemTop = getRandomIntMax14()+1
-    powerItemLeft = getRandomIntMax24()
+    powerItemTop = getRandomIntMax(14)+1
+    powerItemLeft = getRandomIntMax(24)
     if(boards[actual_board][powerItemTop][powerItemLeft]==2){
         powerItemLeft++;
     }

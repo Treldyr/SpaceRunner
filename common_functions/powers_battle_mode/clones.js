@@ -18,14 +18,14 @@ function doClones(numberPower) {
     turnTruePowUsed(numberPower)
     disablePowerItem("pouv"+numberPower)
     powClonesId = setInterval(() => {
-        fromtopClone1 = fromtopClone1+getRandomIntMax2() - 1
-        fromtopClone2 = fromtopClone2+getRandomIntMax2() - 1
-        fromtopClone3 = fromtopClone3+getRandomIntMax2() - 1
-        fromtopClone4 = fromtopClone4+getRandomIntMax2() - 1
-        fromleftClone1 = fromleftClone1+getRandomIntMax2() - 1
-        fromleftClone2 = fromleftClone2+getRandomIntMax2() - 1
-        fromleftClone3 = fromleftClone3+getRandomIntMax2() - 1
-        fromleftClone4 = fromleftClone4+getRandomIntMax2() - 1
+        fromtopClone1 = fromtopClone1+getRandomIntMax(3) - 1
+        fromtopClone2 = fromtopClone2+getRandomIntMax(3) - 1
+        fromtopClone3 = fromtopClone3+getRandomIntMax(3) - 1
+        fromtopClone4 = fromtopClone4+getRandomIntMax(3) - 1
+        fromleftClone1 = fromleftClone1+getRandomIntMax(3) - 1
+        fromleftClone2 = fromleftClone2+getRandomIntMax(3) - 1
+        fromleftClone3 = fromleftClone3+getRandomIntMax(3) - 1
+        fromleftClone4 = fromleftClone4+getRandomIntMax(3) - 1
         nbMoves--;
         updateImageClone(1,"up",fromtopClone1,fromleftClone1)
         updateImageClone(2,"right",fromtopClone2,fromleftClone2)
