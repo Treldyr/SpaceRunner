@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../css/planets/planet11.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/battle_mode.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -42,6 +43,23 @@
         </div>
         <div class="timer">
             <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="power-bottom-bar">
+            <div class="power-item" id="heart1">
+                <img src="../../../images/heart.png" alt="Coeur 1">
+              </div>
+            <div class="power-item" id="heart2">
+              <img src="../../../images/heart.png" alt="Coeur 2">
+            </div>
+            <div class="power-item" id="heart3">
+                <img src="../../../images/heart.png" alt="Coeur 4">
+            </div>
+            <div class="power-item" id="heart4">
+                <img src="../../../images/heart.png" alt="Coeur 3">
+            </div>
+            <div class="power-item" id="heart5">
+                <img src="../../../images/heart.png" alt="Coeur 3">
+            </div>
         </div>
     </div>
 
@@ -163,8 +181,8 @@
     function checkShuriken(){
         if((boss2Top==fromtopShuriken)&&(boss2Left==fromleftShuriken)){
             freezeCharacter("boss0")
+            hideNextHeart();
             boss2_life--
-            console.log(boss2_life) // TODO change it to make it more visual
             playSuccess();
         }
         if((boss2_life <= 0)&&(!game_ended)){
@@ -177,6 +195,10 @@
             stopBoss()
             window.location.href='main.html';
         }
+    }
+
+    function hideNextHeart(){
+        document.getElementById('heart'+boss2_life).style.display = "none";
     }
 
 </script>

@@ -24,7 +24,7 @@ var coords_begin = [
 ]
 
 var coords_begin_boss = [
-    [11,10]
+    [7,20]
 ]
 
 var bomb = [
