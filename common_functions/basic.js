@@ -17,4 +17,12 @@ function getRandomIntMax2() {
 
 function isInDiagonal(x1, y1, x2, y2){
     return Math.abs(x2 - x1) === Math.abs(y2 - y1);
-  }
+}
+
+function getRandomIntMax14() {
+    return Math.floor(Math.random()*14);
+}
+
+function getRandomIntMax24() {
+    return Math.floor(Math.random()*24);
+}

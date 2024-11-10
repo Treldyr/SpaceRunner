@@ -294,6 +294,18 @@ function construct_board_with_ghost(numboard){
     create_ghost(numboard);
 }
 
+function construct_board_with_boss_and_bombs(numboard,number_boss){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    create_boss1(numboard,number_boss);
+    place_bombs(numboard)
+}
+
+
 function construct_board_with_boss(numboard,number_boss){
     actual_board = numboard-1;
     for(let i= 0; i < boards[numboard-1].length; i++)
@@ -301,8 +313,7 @@ function construct_board_with_boss(numboard,number_boss){
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
-    create_boss(numboard,number_boss);
-    place_bombs(numboard)
+    create_boss2(numboard,number_boss);
 }
 
 
@@ -357,12 +368,22 @@ function construct_large_board_with_gaz(numboard){
 //                                                   //
 // --------------------------------------------------//
 
-function create_boss(numboard,number_boss){
+function create_boss1(numboard,number_boss){
     boss1Top = coords_begin_boss[numboard - 1][0];
     boss1Left = coords_begin_boss[numboard - 1][1];
+    create_boss_image(numboard,number_boss)
+}
+
+function create_boss2(numboard,number_boss){
+    boss2Top = coords_begin_boss[numboard - 1][0];
+    boss2Left = coords_begin_boss[numboard - 1][1];
+    create_boss_image(numboard,number_boss)
+}
+
+function create_boss_image(numboard,number_boss){
     let boss = document.createElement('img');
     boss.setAttribute('src', "../../../images/p"+number_boss+"left.png");
-    boss.setAttribute('style', "position: fixed;top : "+(5*boss1Top+5)+"vh;left : "+(3.5*boss1Left+5)+"vw;");
+    boss.setAttribute('style', "position: fixed;top : "+(5*coords_begin_boss[numboard - 1][0]+5)+"vh;left : "+(3.5*coords_begin_boss[numboard - 1][1]+5)+"vw;");
     boss.className = "img_of_laby";
     boss.setAttribute('id', "boss" + actual_board);
     document.getElementById('laby' + numboard).appendChild(boss);

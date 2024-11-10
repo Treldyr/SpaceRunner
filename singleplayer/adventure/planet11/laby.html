@@ -28,7 +28,7 @@
             </div>
 
             <div class="page" id="page2" >
-                <div class="custom-title">Station Deep Space Nine complétée !</div>
+                <div class="custom-title">Navette L'Étranger complétée !</div>
                 <div class="game-description">
                     <p id="your_score"></p>
         
@@ -62,31 +62,40 @@
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../../../common_functions/powers_battle_mode/stop.js"></script>
-<script src="../../../common_functions/boss1.js"></script>
+<script src="../../../common_functions/boss2.js"></script>
 <script src="../../../common_functions/checks.js"></script>
 <script>
-    // if the bombs has been activated
-    found_b0 = false
-    found_b1 = false
-    found_b2 = false
+    // if the game is endend
+    game_ended = false
+
+    // life of the boss
+    var boss2_life = 5
 
     // if the boss is freeze
     isStop = false
 
-    // if the game is endend
-    game_ended = false
-
-
+    // shuriken variables
     var directionLaunched; // the direction the shuriken is launched
     var fromtopShuriken = 0
     var fromleftShuriken = 0
-    var boss1Id;
-    var boss1Top = 0;
-    var boss1Left = 0;
+
+    // shuriken powerItem variables
+    var powerItemLeft = 0
+    var powerItemTop = 0
+
+    // shuriken power available
+    var shurikenAvailable = false
+
+    // boss variables
+    var boss2Id;;
+    var boss2Top = 0;
+    var boss2Left = 0;
+
+    // general variables
     var nbCoups = 0;
     document.onkeydown = checkKey;
-    var fromtop =0; // vertical position // var fromtop =0;
-    var fromleft = 0; // horizontal position // var fromleft = 0;
+    var fromtop =0; // vertical position
+    var fromleft = 0; // horizontal position
     var actual_board = 0;
     retrievePlayer()
 
@@ -96,9 +105,9 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_boss(1,11)
-    moveBoss(11);
-
+    construct_board_with_boss(1,12)
+    moveBoss(12);
+    create_shuriken_poweritem()
 
     function checkKey(e) {
     e = e || window.event;
@@ -111,20 +120,30 @@
         }else {
             if (e.keyCode == '38' || e.keyCode == '90')  { // going up
                 dest_upward();
+                directionLaunched = "u"
             }
             else if (e.keyCode == '40' || e.keyCode == '83') { // going down
                 dest_downward();
+                directionLaunched = "d"
             }
             else if (e.keyCode == '37' || e.keyCode == '81') { // going left
                 dest_leftward();
+                directionLaunched = "l"
             }
             else if (e.keyCode == '39' || e.keyCode == '68') { // going rigth
                 dest_rigthward();
+                directionLaunched = "r"
+            }
+            else if((e.keyCode ==  '87')||(e.keyCode ==  '69')||(e.keyCode ==  '76')) { // W or E or L key
+                if(shurikenAvailable){
+                    launchShurikenFromBoss2(directionLaunched);
+                }
             }
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            checkShuriken()
+            checkAlignment(boss2Left,fromleft,boss2Top,fromtop);
+            checkCharacterGettingPowerItem()
         }
     }
 
@@ -142,8 +161,21 @@
     }
 
     function checkShuriken(){
-        if(((fromtop==fromtopShuriken)&&(fromleft==fromleftShuriken))&&(!game_ended)){
-            goPlanet(11)
+        if((boss2Top==fromtopShuriken)&&(boss2Left==fromleftShuriken)){
+            freezeCharacter("boss0")
+            boss2_life--
+            console.log(boss2_life) // TODO change it to make it more visual
+            playSuccess();
+        }
+        if((boss2_life <= 0)&&(!game_ended)){
+            finish_labyrinth()
+        }
+    }
+
+    function checkAlignment(boss2Left,fromleft,boss2Top,fromtop){
+        if ((boss2Left == fromleft) && (boss2Top == fromtop)){
+            stopBoss()
+            window.location.href='main.html';
         }
     }
 

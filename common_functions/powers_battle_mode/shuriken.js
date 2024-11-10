@@ -5,6 +5,45 @@ var powshurikenId;
 var shurikenAvailable = true
 
 
+// --------------------------------------------------//
+//                                                   //
+//          COMMON FUNCTIONS FOR THE SHURIKEN        //
+//                                                   //
+// --------------------------------------------------//
+
+
+
+function updateImageShuriken(){
+    let shuri = document.getElementById('shuriken0');
+    shuri.setAttribute('style',"position: fixed;top : "+(5*fromtopShuriken+5)+"vh;left : "+(3.5*fromleftShuriken+5)+"vw;");
+}
+
+function create_shuriken(fromtopShuriken,fromleftShuriken) {
+    let the_image = document.createElement('img');
+    the_image.setAttribute('src', "../../../images/shuriken.png");
+    the_image.setAttribute('style', "position: fixed;top : " + (5 * fromtopShuriken + 5) + "vh;left : " + (3.5 * fromleftShuriken + 5) + "vw;");
+    the_image.className = "img_of_laby";
+    the_image.setAttribute('id', "shuriken" + actual_board);
+    document.getElementById('laby1').appendChild(the_image);
+}
+
+function delete_shuriken() {
+    let shuri = document.getElementById('shuriken0');
+    if(shuri!==null){
+        shuri.remove()
+    } 
+    fromtopShuriken = 0
+    fromleftShuriken = 0
+}
+
+
+// --------------------------------------------------//
+//                                                   //
+//  LAUNCH OF THE SHURIKEN FOR THE MULTIPLAYER GAME  //
+//                                                   //
+// --------------------------------------------------//
+
+
 function launchShuriken(numberPower){
     directionLaunched = lastmMoveByFantom
     fromtopShuriken = fromtop2
@@ -41,75 +80,4 @@ function launchShuriken(numberPower){
     }, 100); // run the function after 0.1 second (100 milliseconds)
 }
 
-function updateImageShuriken(){
-    let shuri = document.getElementById('shuriken0');
-    shuri.setAttribute('style',"position: fixed;top : "+(5*fromtopShuriken+5)+"vh;left : "+(3.5*fromleftShuriken+5)+"vw;");
-}
 
-function create_shuriken(fromtopShuriken,fromleftShuriken) {
-    let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../../../images/shuriken.png");
-    the_image.setAttribute('style', "position: fixed;top : " + (5 * fromtopShuriken + 5) + "vh;left : " + (3.5 * fromleftShuriken + 5) + "vw;");
-    the_image.className = "img_of_laby";
-    the_image.setAttribute('id', "shuriken" + actual_board);
-    document.getElementById('laby1').appendChild(the_image);
-}
-
-function delete_shuriken() {
-    let shuri = document.getElementById('shuriken0');
-    if(shuri!==null){
-        shuri.remove()
-    } 
-    fromtopShuriken = 0
-    fromleftShuriken = 0
-}
-
-
-function launchShurikenFromBoss1(directionLaunched){
-    shurikenAvailable = false
-    fromtopShuriken = boss1Top
-    fromleftShuriken = boss1Left
-    create_shuriken(fromtopShuriken,fromleftShuriken)
-
-    powshurikenId = setInterval(() => {
-        switch(directionLaunched){
-            case "u":
-                fromtopShuriken--;
-            break;
-            case "d":
-                fromtopShuriken++;
-            break;
-            case "l":
-                fromleftShuriken--;
-            break;
-            case "r":
-                fromleftShuriken++;
-            break;
-            case "ul":
-                fromtopShuriken--;
-                fromleftShuriken--;
-            break;
-            case "dl":
-                fromtopShuriken++;
-                fromleftShuriken--;
-            break;
-            case "ur":
-                fromtopShuriken--;
-                fromleftShuriken++;
-            break;
-            case "dr":
-                fromtopShuriken++;
-                fromleftShuriken++;
-            break;
-            default:
-                console.log('erreur direction')
-        }
-        updateImageShuriken()
-        checkShuriken()
-        if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
-            clearInterval(powshurikenId);
-            shurikenAvailable = true
-            delete_shuriken()
-        }
-    }, 100); // run the function after 0.1 second (100 milliseconds)
-}

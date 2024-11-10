@@ -35,6 +35,7 @@
                     <p>Bonne continuation !</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goPlanet(10)">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(11)">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -96,7 +97,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_boss(1,11)
+    construct_board_with_boss_and_bombs(1,11)
     moveBoss(11);
 
 
