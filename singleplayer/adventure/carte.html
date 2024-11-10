@@ -77,6 +77,11 @@
                 <img id="imgplanet11" src="../../images/planet11.png" alt="Planète 11">
             </a>
         </div>
+        <div id="planet12" class="planet">
+            <a onclick="goPlanetFromMap(12)">
+                <img id="imgplanet12" src="../../images/planet12.png" alt="Planète 12">
+            </a>
+        </div>
     </div>
     <button class="btn btn-outline-light btn-back" onclick="returnLastIndexPage()">&larr;</button>
 
@@ -88,6 +93,9 @@
     var lvl = 1;
     retrieveLevel();
 
+    if(lvl<=11){
+        document.getElementById('planet12').style.display = "none";
+    }
     if(lvl<=10){
         document.getElementById('planet11').style.display = "none";
     }
