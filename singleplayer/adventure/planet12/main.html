@@ -16,8 +16,8 @@
         <div class="custom-title">Vous êtes sur la station d'Âtrebois</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Quel est ce vaisseau ?</p>
-                <p>Tout me semble étranger ici</p>
+                <p>Encore un vaisseau abandonné...</p>
+                <p>C'est louche</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -25,8 +25,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Krrr hu Krrr Ks Krrr khhh </p>
-                <p>Kss ts ts Krrr Krrr</p>
+                <p>Space Runner. Je t'attendais.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -34,8 +33,8 @@
         
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Quoi ? Je ne comprends rien, peux tu parler ma langue ?</p>
-                <p>Quel est ce dialecte ?</p>
+                <p>Comment me connais-tu ?</p>
+                <p>Qui es-tu ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -43,8 +42,7 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>fkfkfkfk Krrr Kss</p>
-                <p>Raaaaaaah</p>
+                <p>Je suis ton pire cauchemar.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -52,16 +50,8 @@
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Aah tu m'attaques !</p>
-                <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
-            </div>
-        </div>
-
-        <div class="page" id="page6">
-            <div class="game-description">
-                <p>Neutralisez votre adversaire en lui tirant dessus  !</p>
-                <p>Attention ! S'il vous touche, vous avez perdu !</p>
+                <p>Neutralisez votre adversaire en lui tirant dessus !</p>
+                <p>Attention ! Si lui ou un de ses clones vous touche, vous avez perdu !</p>
                 <p>Bonne chance !</p>
                 <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
             </div>
@@ -91,16 +81,15 @@
         document.getElementById('page1').style.display = "block";
 
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p12")
+        setCharacterRight(2,"p13")
         setCharacterLeft(3,chara)
-        setCharacterRight(4,"p12")
-        setCharacterLeft(5,chara)
+        setCharacterRight(4,"p13")
 
 
         function checkKey(e) {
             e = e || window.event;
             if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
-                if(actualPage!=6){
+                if(actualPage!=5){
                     goNextPage();
                 } else {
                     beginMaze();
