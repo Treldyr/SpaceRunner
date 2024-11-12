@@ -134,7 +134,7 @@
                 dest_rigthward();
             }
             nbCoups++;
-            checkIsAir();
+            checkIsAir(12);
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(countdownFinished){

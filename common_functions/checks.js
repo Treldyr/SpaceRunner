@@ -44,8 +44,7 @@ function checkIsBomb(){
 }
 
 
-function checkIsAir(){
-    let time_to_add = 12
+function checkIsAir(time_to_add){
     if((gaz[actual_board][0][0]==fromtop)&&(gaz[actual_board][0][1]==fromleft)&&(!found_b0)){
         idGaz = (actual_board)*10
         found_b0 = true;

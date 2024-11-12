@@ -76,13 +76,22 @@
 <script src="../../../common_functions/pause.js"></script>
 <script src="../../../common_functions/set_data.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
-<script src="../../../common_functions/timer.js"></script>
+<script src="../../../common_functions/countdown.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
+<script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../../../common_functions/powers_battle_mode/stop.js"></script>
 <script src="../../../common_functions/boss2.js"></script>
 <script src="../../../common_functions/checks.js"></script>
 <script>
+    // countdown vars
+    var CountDownSeconds = 20
+
+    // ghost vars
+    var ghostId;
+    var ghostTop = 0;
+    var ghostLeft = 0;
+
     // if the game is endend
     game_ended = false
 
@@ -123,8 +132,10 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_boss(1,13)
+    construct_board_with_boss_and_time(1,13)
     moveBoss(13);
+    moveGhost(6);
+    startCountDown(CountDownSeconds)
     create_shuriken_poweritem()
 
     function checkKey(e) {
@@ -160,21 +171,28 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+            checkIsAir(8);
+            if(countdownFinished){
+                window.location.href='main.html';
+            }
             checkAlignment(boss2Left,fromleft,boss2Top,fromtop);
             checkCharacterGettingPowerItem()
+            checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
         }
     }
 
     function finish_labyrinth(){
         stopBoss()
+        stopGhost()
         game_ended = true
-        stopTimer();
+        stopCountDown();
         playEndLevel()
         let number = actual_board+1;
         let number2 = actual_board+2
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
+        totalSeconds = totalTimePlayed;
         setHighScorePlanet('atrebois');
     }
 

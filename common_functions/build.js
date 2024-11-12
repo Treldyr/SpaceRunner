@@ -224,13 +224,13 @@ function place_bombs(numboard){
 }
 
 
-function place_air(numboard){
+function place_air(numboard,sizetop,sizeleft){
     for(let j= 0; j < gaz[numboard-1].length; j++)
     {
         let idGaz = j + (numboard-1)*10
         let the_image = document.createElement('img');
         the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
-        the_image.setAttribute('style',"position: fixed;top : "+(3*gaz[numboard-1][j][0]+5) + "vh;left : " +(2*gaz[numboard-1][j][1]+5)+ "vw;");
+        the_image.setAttribute('style',"position: fixed;top : "+(sizetop*gaz[numboard-1][j][0]+5) + "vh;left : " +(sizeleft*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"air"+idGaz);
         document.getElementById('laby'+numboard).appendChild(the_image);
@@ -294,6 +294,23 @@ function construct_board_with_ghost(numboard){
     create_ghost(numboard);
 }
 
+
+function construct_board_with_2_ghosts(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line(boards[numboard-1][i],i,numboard);
+    }
+    create_ghosts_and_characters(numboard)
+}
+
+
+// --------------------------------------------------//
+//                                                   //
+//    CONSTRUCTION OF THE MEDIUM BOARD WITH BOS      //
+//                                                   //
+// --------------------------------------------------//
+
 function construct_board_with_boss_and_bombs(numboard,number_boss){
     actual_board = numboard-1;
     for(let i= 0; i < boards[numboard-1].length; i++)
@@ -316,16 +333,17 @@ function construct_board_with_boss(numboard,number_boss){
     create_boss2(numboard,number_boss);
 }
 
-
-function construct_board_with_2_ghosts(numboard){
+function construct_board_with_boss_and_time(numboard,number_boss){
     actual_board = numboard-1;
     for(let i= 0; i < boards[numboard-1].length; i++)
     {
-        construct_big_line(boards[numboard-1][i],i,numboard);
+        construct_line(boards[numboard-1][i],i,numboard);
     }
-    create_ghosts_and_characters(numboard)
+    create_character(numboard);
+    create_boss2(numboard,number_boss);
+    create_ghost(numboard);
+    place_air(numboard,5,3.5)
 }
-
 
 // --------------------------------------------------//
 //                                                   //
@@ -359,7 +377,7 @@ function construct_large_board_with_gaz(numboard){
         construct_big_line(boards[numboard-1][i],i,numboard);
     }
     create_big_character(numboard);
-    place_air(numboard);
+    place_air(numboard,3,2);
 }
 
 // --------------------------------------------------//

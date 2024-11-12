@@ -23,7 +23,7 @@ function moveBoss(number_boss) {
             checkAlignment(boss2Left,fromleft,boss2Top,fromtop);
             checkShuriken()
         }
-    }, 300);
+    }, 250);
 }
 
 
