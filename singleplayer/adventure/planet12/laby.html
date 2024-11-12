@@ -171,7 +171,7 @@
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
             checkIsAir(8);
             if(countdownFinished){
-                window.location.href='main.html';
+                returnToPresentation()
             }
             checkAlignment(bossLeft,fromleft,bossTop,fromtop);
             checkCharacterGettingPowerItem()
@@ -209,7 +209,7 @@
     function checkAlignment(bossLeft,fromleft,bossTop,fromtop){
         if ((bossLeft == fromleft) && (bossTop == fromtop)){
             stopBoss()
-            window.location.href='main.html';
+            returnToPresentation()
         }
     }
 

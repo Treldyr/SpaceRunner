@@ -25,3 +25,40 @@ function goPlanetFromMap(numberPlanet) {
 function goPlanet(numberPlanet) {
     window.location.href='../planet'+numberPlanet+'/main.html';
 }
+
+function returnToPresentation() {
+    window.location.href='main.html';
+}
+
+function goMultiplayer1v1(){
+    window.location.href='battle_mode/selectchar1.html'
+}
+
+function goMultiplayerAdventure(){
+    window.location.href='adventure/selectchar1.html'
+}
+
+
+function goSinglePlayerAdventure(){
+    window.location.href='adventure/selectchar.html'
+}
+
+function goRules(){
+    window.location.href='rules.html'
+}
+
+function goHighScores() {
+    window.location.href='menu/highScore.html';
+}
+
+function goTwoPlayersMode() {
+    window.location.href='multiplayer/index.html';
+}
+
+function goOnePlayer() {
+    window.location.href='singleplayer/index.html';
+}
+
+function goCredits() {
+    window.location.href='menu/credits.html';
+}
