@@ -88,7 +88,7 @@
     game_ended = false
 
     // life of the boss
-    var boss2_life = 5
+    var boss_life = 5
 
     // if the boss is freeze
     isStop = false
@@ -107,8 +107,8 @@
 
     // boss variables
     var boss2Id;;
-    var boss2Top = 0;
-    var boss2Left = 0;
+    var bossTop = 0;
+    var bossLeft = 0;
 
     // general variables
     var nbCoups = 0;
@@ -161,7 +161,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            checkAlignment(boss2Left,fromleft,boss2Top,fromtop);
+            checkAlignment(bossLeft,fromleft,bossTop,fromtop);
             checkCharacterGettingPowerItem()
         }
     }
@@ -181,26 +181,26 @@
     }
 
     function checkShuriken(){
-        if((boss2Top==fromtopShuriken)&&(boss2Left==fromleftShuriken)){
+        if((bossTop==fromtopShuriken)&&(bossLeft==fromleftShuriken)){
             freezeCharacter("boss0")
             hideNextHeart();
-            boss2_life--
+            boss_life--
             playSuccess();
         }
-        if((boss2_life <= 0)&&(!game_ended)){
+        if((boss_life <= 0)&&(!game_ended)){
             finish_labyrinth()
         }
     }
 
-    function checkAlignment(boss2Left,fromleft,boss2Top,fromtop){
-        if ((boss2Left == fromleft) && (boss2Top == fromtop)){
+    function checkAlignment(bossLeft,fromleft,bossTop,fromtop){
+        if ((bossLeft == fromleft) && (bossTop == fromtop)){
             stopBoss()
             window.location.href='main.html';
         }
     }
 
     function hideNextHeart(){
-        document.getElementById('heart'+boss2_life).style.display = "none";
+        document.getElementById('heart'+boss_life).style.display = "none";
     }
 
 </script>

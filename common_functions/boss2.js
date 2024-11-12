@@ -4,15 +4,15 @@ function moveBoss(number_boss) {
             
             let diffLeft;
             let diffTop;
-            if (boss2Left > fromleft) {
-                diffLeft = boss2Left - fromleft;
+            if (bossLeft > fromleft) {
+                diffLeft = bossLeft - fromleft;
             } else {
-                diffLeft = fromleft - boss2Left;
+                diffLeft = fromleft - bossLeft;
             }
-            if (boss2Top > fromtop) {
-                diffTop = boss2Top - fromtop;
+            if (bossTop > fromtop) {
+                diffTop = bossTop - fromtop;
             } else {
-                diffTop = fromtop - boss2Top;
+                diffTop = fromtop - bossTop;
             }
     
             if (diffLeft > diffTop) {
@@ -20,7 +20,7 @@ function moveBoss(number_boss) {
             } else {
                 moveBossVertically(number_boss);
             }
-            checkAlignment(boss2Left,fromleft,boss2Top,fromtop);
+            checkAlignment(bossLeft,fromleft,bossTop,fromtop);
             checkShuriken()
         }
     }, 250);
@@ -33,27 +33,27 @@ function stopBoss() {
 
 function moveBossHorizontally(number_boss){
     let ghost = document.getElementById('boss'+actual_board);
-    if(boss2Left > fromleft){
-        boss2Left--; 
+    if(bossLeft > fromleft){
+        bossLeft--; 
         ghost.setAttribute('src',"../../../images/p"+number_boss+"left.png");
     }else{
-        boss2Left++;
+        bossLeft++;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"right.png");
     }
-    ghost.setAttribute('style', "position: fixed;top : " + (5*boss2Top+5) + "vh;left : " + (3.5*boss2Left+5) + "vw;");
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 
 function moveBossVertically(number_boss){
     let ghost = document.getElementById('boss'+actual_board);
-    if(boss2Top > fromtop){
-        boss2Top--;
+    if(bossTop > fromtop){
+        bossTop--;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"up.png");
     }else{
-        boss2Top++;
+        bossTop++;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"down.png");
     }
-    ghost.setAttribute('style', "position: fixed;top : " + (5*boss2Top+5) + "vh;left : " + (3.5*boss2Left+5) + "vw;");
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 

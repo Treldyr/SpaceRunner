@@ -318,7 +318,7 @@ function construct_board_with_boss_and_bombs(numboard,number_boss){
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
-    create_boss1(numboard,number_boss);
+    create_boss(numboard,number_boss);
     place_bombs(numboard)
 }
 
@@ -330,7 +330,7 @@ function construct_board_with_boss(numboard,number_boss){
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
-    create_boss2(numboard,number_boss);
+    create_boss(numboard,number_boss);
 }
 
 function construct_board_with_boss_and_time(numboard,number_boss){
@@ -340,7 +340,7 @@ function construct_board_with_boss_and_time(numboard,number_boss){
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
-    create_boss2(numboard,number_boss);
+    create_boss(numboard,number_boss);
     create_ghost(numboard);
     place_air(numboard,5,3.5)
 }
@@ -386,19 +386,9 @@ function construct_large_board_with_gaz(numboard){
 //                                                   //
 // --------------------------------------------------//
 
-function create_boss1(numboard,number_boss){
-    boss1Top = coords_begin_boss[numboard - 1][0];
-    boss1Left = coords_begin_boss[numboard - 1][1];
-    create_boss_image(numboard,number_boss)
-}
-
-function create_boss2(numboard,number_boss){
-    boss2Top = coords_begin_boss[numboard - 1][0];
-    boss2Left = coords_begin_boss[numboard - 1][1];
-    create_boss_image(numboard,number_boss)
-}
-
-function create_boss_image(numboard,number_boss){
+function create_boss(numboard,number_boss){
+    bossTop = coords_begin_boss[numboard - 1][0];
+    bossLeft = coords_begin_boss[numboard - 1][1];
     let boss = document.createElement('img');
     boss.setAttribute('src', "../../../images/p"+number_boss+"left.png");
     boss.setAttribute('style', "position: fixed;top : "+(5*coords_begin_boss[numboard - 1][0]+5)+"vh;left : "+(3.5*coords_begin_boss[numboard - 1][1]+5)+"vw;");

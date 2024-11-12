@@ -1,32 +1,32 @@
 function moveBoss(number_boss) {
-    boss1Id = setInterval(() => {
+    bossId = setInterval(() => {
         // vérification si le shuriken est disponible et les personnages alignés
         if((!isStop)&&(!game_ended)){
             if(shurikenAvailable){
-                if(isInDiagonal(boss1Left,boss1Top,fromleft,fromtop)){
-                    if(boss1Left < fromleft){
-                        if(boss1Top < fromtop){
+                if(isInDiagonal(bossLeft,bossTop,fromleft,fromtop)){
+                    if(bossLeft < fromleft){
+                        if(bossTop < fromtop){
                             launchShurikenFromBoss1("dr")
                         } else {
                             launchShurikenFromBoss1("ur")
                         }
-                    } else { // if (boss1Left > fromleft)
-                        if(boss1Top < fromtop){
+                    } else { // if (bossLeft > fromleft)
+                        if(bossTop < fromtop){
                             launchShurikenFromBoss1("dl")
                         } else {
                             launchShurikenFromBoss1("ul")
                         }
                     }
                 }
-                if(boss1Left == fromleft){
-                    if(boss1Top < fromtop){
+                if(bossLeft == fromleft){
+                    if(bossTop < fromtop){
                         launchShurikenFromBoss1("d")
                     } else {
                         launchShurikenFromBoss1("u")
                     }
                 }
-                if(boss1Top == fromtop){
-                    if(boss1Left < fromleft){
+                if(bossTop == fromtop){
+                    if(bossLeft < fromleft){
                         launchShurikenFromBoss1("r")
                     } else {
                         launchShurikenFromBoss1("l")
@@ -37,15 +37,15 @@ function moveBoss(number_boss) {
     
             let diffLeft;
             let diffTop;
-            if (boss1Left > fromleft) {
-                diffLeft = boss1Left - fromleft;
+            if (bossLeft > fromleft) {
+                diffLeft = bossLeft - fromleft;
             } else {
-                diffLeft = fromleft - boss1Left;
+                diffLeft = fromleft - bossLeft;
             }
-            if (boss1Top > fromtop) {
-                diffTop = boss1Top - fromtop;
+            if (bossTop > fromtop) {
+                diffTop = bossTop - fromtop;
             } else {
-                diffTop = fromtop - boss1Top;
+                diffTop = fromtop - bossTop;
             }
     
             if (diffLeft > diffTop) {
@@ -62,32 +62,32 @@ function moveBoss(number_boss) {
 }
 
 function stopBoss() {
-    clearInterval(boss1Id);
+    clearInterval(bossId);
 }
 
 function moveBossHorizontally(number_boss){
     let ghost = document.getElementById('boss'+actual_board);
-    if(boss1Left > fromleft){
-        boss1Left--; 
+    if(bossLeft > fromleft){
+        bossLeft--; 
         ghost.setAttribute('src',"../../../images/p"+number_boss+"left.png");
     }else{
-        boss1Left++;
+        bossLeft++;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"right.png");
     }
-    ghost.setAttribute('style', "position: fixed;top : " + (5*boss1Top+5) + "vh;left : " + (3.5*boss1Left+5) + "vw;");
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 
 function moveBossVertically(number_boss){
     let ghost = document.getElementById('boss'+actual_board);
-    if(boss1Top > fromtop){
-        boss1Top--;
+    if(bossTop > fromtop){
+        bossTop--;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"up.png");
     }else{
-        boss1Top++;
+        bossTop++;
         ghost.setAttribute('src',"../../../images/p"+number_boss+"down.png");
     }
-    ghost.setAttribute('style', "position: fixed;top : " + (5*boss1Top+5) + "vh;left : " + (3.5*boss1Left+5) + "vw;");
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 
@@ -100,8 +100,8 @@ function moveBossVertically(number_boss){
 
 function launchShurikenFromBoss1(directionLaunched){
     shurikenAvailable = false
-    fromtopShuriken = boss1Top
-    fromleftShuriken = boss1Left
+    fromtopShuriken = bossTop
+    fromleftShuriken = bossLeft
     create_shuriken(fromtopShuriken,fromleftShuriken)
 
     powshurikenId = setInterval(() => {

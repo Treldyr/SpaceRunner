@@ -66,6 +66,11 @@
 <script src="../../../common_functions/boss1.js"></script>
 <script src="../../../common_functions/checks.js"></script>
 <script>
+    // vars of boss
+    var bossId;
+    var bossTop = 0;
+    var bossLeft = 0;
+
     // if the bombs has been activated
     found_b0 = false
     found_b1 = false
@@ -77,13 +82,11 @@
     // if the game is endend
     game_ended = false
 
-
+    // var for shuriken
     var directionLaunched; // the direction the shuriken is launched
     var fromtopShuriken = 0
     var fromleftShuriken = 0
-    var boss1Id;
-    var boss1Top = 0;
-    var boss1Left = 0;
+    
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
