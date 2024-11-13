@@ -187,11 +187,11 @@
         playEndLevel()
         let number = actual_board+1;
         let number2 = actual_board+2
+        totalSeconds = totalTimePlayed;
+        setHighScorePlanet('atrebois');
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
-        totalSeconds = totalTimePlayed;
-        setHighScorePlanet('atrebois');
     }
 
     function checkShuriken(){
