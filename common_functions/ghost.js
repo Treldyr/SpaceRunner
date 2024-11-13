@@ -31,7 +31,7 @@ function moveGhost(planet_id) {
     function checkGhost(ghostLeft,fromleft,ghostTop,fromtop){
         if ((ghostLeft == fromleft) && (ghostTop == fromtop)){
             stopGhost()
-            returnToPresentation()
+            goIntro()
         }
     }
 

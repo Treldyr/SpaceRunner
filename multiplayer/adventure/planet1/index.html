@@ -14,28 +14,32 @@
     <div class="background-image"></div>
     <div class="content">
         <div class="custom-title">Bienvenu sur la planète Terre</div>
-
-        <div class="game-description">
-            <p>Le joueur 1 doit atteindre l'arrivée</p>
-
-            <p>Le joueur fantome doit l'en empêcher, en le touchant</p>
-
-            <p>Attention, vous n'avez pas accès aux mêmes chemins...stratégisez pour pouvoir atteindre votre objectif</p>
-
-            <p> Le chemin <img src="img1.png" width="40px" class="img-thumbnail"> est accessible par tous. </p>
-
-            <p> Le chemin <img src="img4.png" width="40px" class="img-thumbnail"> n'est accessible par personne. </p>
-
-            <p> Le chemin <img src="img2.png" width="40px" class="img-thumbnail"> n'est accessible que par le joueur 1. </p>
-
-            <p> Le chemin <img src="img3.png" width="40px" class="img-thumbnail"> n'est accessible que par le joueur fantome. </p>
-
-            <p>Bonne chance !</p>
-            <br>
-            <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
+        <div class="page" id="page1">
+            <div class="game-description">
+                <p>Une nouvelle planète ! Super ! </p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
         </div>
+
+        <div class="page" id="page2">
+            <div class="game-description">
+                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+        
     </div>
     <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script>
+        var nbPage = 2
+        
+        setCharacterLeft(1,chara)
+        setCharacterRight(2,"p16")
+    </script>
 </body>
 </html>

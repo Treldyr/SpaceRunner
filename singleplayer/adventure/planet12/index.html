@@ -13,7 +13,7 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Vous êtes sur la station d'Âtrebois</div>
+        <div class="custom-title">Bienvenu sur la station d'Âtrebois</div>
         <div class="page" id="page1">
             <div class="game-description">
                 <p>Encore un vaisseau abandonné...</p>
@@ -44,58 +44,22 @@
             <div class="game-description">
                 <p>Je suis ton pire cauchemar.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
         </div>
-
-        <div class="page" id="page5">
-            <div class="game-description">
-                <p>Neutralisez votre adversaire en lui tirant dessus !</p>
-                <p>Attention ! Si lui ou un de ses clones vous touche, vous avez perdu !</p>
-                <p>Bonne chance !</p>
-                <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
-            </div>
-        </div>
-
         
     </div>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/get_data.js"></script>
-    <script src="../../../common_functions/build.js"></script>
     <script src="../../../common_functions/animation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        actualPage = 1
-        document.onkeydown = checkKey;
-        retrievePlayer()
-
-        function goNextPage(){
-            nextPage = actualPage+1
-            document.getElementById('page'+actualPage).style.display = "none";
-            document.getElementById('page'+nextPage).style.display = "block";
-            actualPage = nextPage
-        }
-
-        for (i=0;i<document.getElementsByClassName("page").length;i++){
-            document.getElementsByClassName("page")[i].style.display = "none";
-        }
-        document.getElementById('page1').style.display = "block";
-
+        var nbPage = 4
+        
         setCharacterLeft(1,chara)
         setCharacterRight(2,"p13")
         setCharacterLeft(3,chara)
         setCharacterRight(4,"p13")
-
-
-        function checkKey(e) {
-            e = e || window.event;
-            if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
-                if(actualPage!=5){
-                    goNextPage();
-                } else {
-                    beginMaze();
-                } 
-            }
-        }
     </script>
 </body>
 </html>

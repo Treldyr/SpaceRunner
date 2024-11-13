@@ -35,7 +35,7 @@
         
                     <p>Bonne continuation !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="goPlanet(12)">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
@@ -171,7 +171,7 @@
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
             checkIsAir(8);
             if(countdownFinished){
-                returnToPresentation()
+                goIntro()
             }
             checkAlignment(bossLeft,fromleft,bossTop,fromtop);
             checkCharacterGettingPowerItem()
@@ -209,7 +209,7 @@
     function checkAlignment(bossLeft,fromleft,bossTop,fromtop){
         if ((bossLeft == fromleft) && (bossTop == fromtop)){
             stopBoss()
-            returnToPresentation()
+            goIntro()
         }
     }
 

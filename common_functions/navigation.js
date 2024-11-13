@@ -19,15 +19,11 @@ function beginMaze() {
 }
 
 function goPlanetFromMap(numberPlanet) {
-    window.location.href='planet'+numberPlanet+'/main.html';
+    window.location.href='planet'+numberPlanet+'/index.html';
 }
 
 function goPlanet(numberPlanet) {
-    window.location.href='../planet'+numberPlanet+'/main.html';
-}
-
-function returnToPresentation() {
-    window.location.href='main.html';
+    window.location.href='../planet'+numberPlanet+'/index.html';
 }
 
 function goMultiplayer1v1(){
@@ -61,4 +57,8 @@ function goOnePlayer() {
 
 function goCredits() {
     window.location.href='menu/credits.html';
+}
+
+function goIntro(){
+    window.location.href='intro.html';
 }
