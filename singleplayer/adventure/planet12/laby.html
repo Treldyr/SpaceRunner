@@ -8,67 +8,74 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../css/planets/planet12.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
-    <link rel="stylesheet" href="../../../css/planets/board_medium.css">
-    <link rel="stylesheet" href="../../../css/planets/battle_mode.css">
+    <link rel="stylesheet" href="../../../css/planets/board_large.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
 <script src="boardList.js"></script>
   <body>
-    <button class="btn btn-outline-dark" id="showmenu" onclick="showPause()">&verbar;&nbsp;&verbar;</button>
+    <button class="btn btn-outline-dark dimension-color" id="showmenu" onclick="showPause()">&verbar;&nbsp;&verbar;</button>
     <div class="background-image"></div>
         <div class="content">
             <div id="pause">
-                <button class="btn-start" onclick="closePause()">Continuer</button>
-                <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="returnToMenu()">Menu</button>
+                <button class="btn-start dimension-color" onclick="closePause()">Continuer</button>
+                <button class="btn-start dimension-color" onclick="returnToMapFromPlanet()">Carte</button>
+                <button class="btn-start dimension-color" onclick="returnToMenu()">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
                 </div>
             </div>
 
-            <div class="page" id="page2" >
-                <div class="custom-title">Station d'Âtrebois complétée !</div>
+            <div class="page" id="page2">
+                <div id="laby2">
+                </div>
+            </div>
+            
+            <div class="page" id="page3">
+                <div id="laby3">
+                </div>
+            </div>
+
+            <div class="page" id="page4">
+                <div id="laby4">
+                </div>
+            </div>
+
+            <div class="page" id="page5">
+                <div id="laby5">
+                </div>
+            </div>
+
+            <div class="page" id="page6" >
+                <div class="custom-title">Planète Défaillance complétée !</div>
                 <div class="game-description">
                     <p id="your_score"></p>
-        
-                    <p>Bonne continuation !</p>
-                    <br>
+                    <p>Vous avez terminé le jeu</p>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
                     
                 </div>
             </div>
         </div>
-        <div class="timer">
+        <div class="dimension-marker dimension-color">
+            <span id="dimension-name">Dimension rouge : 5 swaps</span>
+        </div>
+        <div class="timer dimension-color">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
-        <div class="power-bottom-bar">
-            <div class="power-item" id="heart1">
-                <img src="../../../images/heart.png" alt="Coeur 1">
-              </div>
-            <div class="power-item" id="heart2">
-              <img src="../../../images/heart.png" alt="Coeur 2">
-            </div>
-            <div class="power-item" id="heart3">
-                <img src="../../../images/heart.png" alt="Coeur 4">
-            </div>
-            <div class="power-item" id="heart4">
-                <img src="../../../images/heart.png" alt="Coeur 3">
-            </div>
-            <div class="power-item" id="heart5">
-                <img src="../../../images/heart.png" alt="Coeur 3">
-            </div>
-        </div>
     </div>
+
+
+
+
+      
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="../../../common_functions/basic.js"></script>
 <script src="../../../common_functions/build.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/movements.js"></script>
@@ -76,51 +83,20 @@
 <script src="../../../common_functions/pause.js"></script>
 <script src="../../../common_functions/set_data.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
-<script src="../../../common_functions/countdown.js"></script>
+<script src="../../../common_functions/basic.js"></script>
+<script src="../../../common_functions/timer.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
-<script src="../../../common_functions/ghost.js"></script>
-<script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
-<script src="../../../common_functions/powers_battle_mode/stop.js"></script>
-<script src="../../../common_functions/boss2.js"></script>
 <script src="../../../common_functions/checks.js"></script>
+<script src="../../../common_functions/ghost.js"></script>
 <script>
-    // countdown vars
-    var CountDownSeconds = 20
-
-    // ghost vars
-    var ghostId;
-    var ghostTop = 0;
-    var ghostLeft = 0;
-
-    // if the game is endend
-    game_ended = false
-
-    // if the boss is freeze
-    isStop = false
-
-    // shuriken variables
-    var directionLaunched; // the direction the shuriken is launched
-    var fromtopShuriken = 0
-    var fromleftShuriken = 0
-
-    // shuriken powerItem variables
-    var powerItemLeft = 0
-    var powerItemTop = 0
-
-    // shuriken power available
-    var shurikenAvailable = false
-
-    // boss variables
-    var boss_life = 5
-    var bossId;;
-    var bossTop = 0;
-    var bossLeft = 0;
-
-    // general variables
+    var isDimRed = true
+    var nbChangDim = 5
     var nbCoups = 0;
     document.onkeydown = checkKey;
-    var fromtop =0; // vertical position
-    var fromleft = 0; // horizontal position
+    var fromtop =0;
+    var fromleft = 0;
+    var ghostTop = 0;
+    var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
 
@@ -130,11 +106,9 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_boss_and_time(1,13)
-    moveBoss(13);
-    moveGhost(6);
-    startCountDown(CountDownSeconds)
-    create_shuriken_poweritem()
+    construct_large_board(1)
+    
+
 
     function checkKey(e) {
     e = e || window.event;
@@ -146,77 +120,76 @@
         }
         }else {
             if (e.keyCode == '38' || e.keyCode == '90')  { // going up
-                dest_upward();
-                directionLaunched = "u"
+                dest_dim_up();
             }
             else if (e.keyCode == '40' || e.keyCode == '83') { // going down
-                dest_downward();
-                directionLaunched = "d"
+                dest_dim_down();
             }
             else if (e.keyCode == '37' || e.keyCode == '81') { // going left
-                dest_leftward();
-                directionLaunched = "l"
+                dest_dim_left();
             }
             else if (e.keyCode == '39' || e.keyCode == '68') { // going rigth
-                dest_rigthward();
-                directionLaunched = "r"
+                dest_dim_right();
             }
-            else if((e.keyCode ==  '87')||(e.keyCode ==  '69')||(e.keyCode ==  '76')) { // W or E or L key
-                if(shurikenAvailable){
-                    launchShurikenFromBoss2(directionLaunched);
+            else if (e.keyCode ==  '69'){
+                if(nbChangDim>0){
+                    changeDimension();
                 }
+                
             }
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
-            chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            checkIsAir(8);
-            if(countdownFinished){
-                goIntro()
+            chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            if(boards[actual_board][fromtop][fromleft]==0)
+            {
+                finish_labyrinth();
             }
-            checkAlignment(bossLeft,fromleft,bossTop,fromtop);
-            checkCharacterGettingPowerItem()
             checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
         }
     }
 
+    function changeDimension(){
+        isDimRed = !isDimRed
+        nbChangDim--;
+        if(isDimRed){
+            for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+                document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "red";
+            }
+            document.getElementById('dimension-name').innerHTML = "Dimension rouge : "+nbChangDim+" swaps";
+        } else {
+            for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+                document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "blue";
+            }
+            document.getElementById('dimension-name').innerHTML = "Dimension bleue : "+nbChangDim+" swaps";
+        } 
+    }
+
+    function initializeSwaps(){
+        nbChangDim = 5
+        isDimRed = true
+        for (i=0;i<document.getElementsByClassName("dimension-color").length;i++){
+            document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "red";
+        }
+        document.getElementById('dimension-name').innerHTML = "Dimension rouge : 5 swaps";
+    }
+
     function finish_labyrinth(){
-        stopBoss()
-        stopGhost()
-        game_ended = true
-        stopCountDown();
-        playEndLevel()
-        let number = actual_board+1;
-        let number2 = actual_board+2
-        totalSeconds = totalTimePlayed;
-        setHighScorePlanet('atrebois');
-        document.getElementById('page'+number).style.display = "none";
-        document.getElementById('page'+number2).style.display = "block";
-        document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
-    }
-
-    function checkShuriken(){
-        if((bossTop==fromtopShuriken)&&(bossLeft==fromleftShuriken)){
-            freezeCharacter("boss0")
-            hideNextHeart();
-            boss_life--
-            playSuccess();
-        }
-        if((boss_life <= 0)&&(!game_ended)){
-            finish_labyrinth()
+        if((actual_board)!=4){
+            playEndLaby()
+            goNext(actual_board+1);
+            construct_large_board(actual_board+2);
+            initializeSwaps();
+        } else {
+            stopTimer();
+            playEndLevel()
+            setHighScorePlanet("defaillance");
+            let number = actual_board+1;
+            let number2 = actual_board+2
+            document.getElementById('page'+number).style.display = "none";
+            document.getElementById('page'+number2).style.display = "block";
+            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
         }
     }
-
-    function checkAlignment(bossLeft,fromleft,bossTop,fromtop){
-        if ((bossLeft == fromleft) && (bossTop == fromtop)){
-            stopBoss()
-            goIntro()
-        }
-    }
-
-    function hideNextHeart(){
-        document.getElementById('heart'+boss_life).style.display = "none";
-    }
-
 </script>
 </body>
 </html>

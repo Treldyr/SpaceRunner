@@ -13,10 +13,12 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Kamino</div>
+        <div class="custom-title">Bienvenu sur la station Deep Space Nine</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>Que ... Que c'est-il passé ici ?</p>
+                <p>Tout semble abandonné ... Pourquoi ?</p>
+                <p>Eh ! Vous ! Qui êtes vous ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +26,46 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>Tiens tiens tiens, une nouvelle personne... </p>
+                <p>Je ne m'attendais pas à trouver des survivants</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+        
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Ouf ! Enfin quelqu'un !</p>
+                <p>Que s'est-il passé ici ? Pourquoi il n'y a personne ?</p>
+                <p>Mais ... Vous avez du sang sur les mains !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Bien vu. Les personnes qui étaient là ont été éliminés. </p>
+                <p>Ils étaient tous trop faibles.</p>
+                <p>Hahahahahaha</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>Qui à fait ça ? C'est horrible !</p>
+                <p>C'est ... vous ?</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="game-description">
+                <p>Oui c'est moi.</p>
+                <p>Et tu es le prochain.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -36,10 +77,14 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 2
+        var nbPage = 6
         
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(2,"p11")
+        setCharacterLeft(3,chara)
+        setCharacterRight(4,"p11")
+        setCharacterLeft(5,chara)
+        setCharacterRight(6,"p11")
     </script>
 </body>
 </html>

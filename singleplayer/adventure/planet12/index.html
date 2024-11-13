@@ -13,11 +13,10 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la station d'Âtrebois</div>
+        <div class="custom-title" style="color: #000000;">Bienvenu sur la planète Défaillance</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Encore un vaisseau abandonné...</p>
-                <p>C'est louche</p>
+                <p>Une nouvelle planète ! Super ! </p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -25,24 +24,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Space Runner. Je t'attendais.</p>
-                <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
-            </div>
-        </div>
-        
-        <div class="page" id="page3">
-            <div class="game-description">
-                <p>Comment me connais-tu ?</p>
-                <p>Qui es-tu ?</p>
-                <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
-            </div>
-        </div>
-
-        <div class="page" id="page4">
-            <div class="game-description">
-                <p>Je suis ton pire cauchemar.</p>
+                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -54,12 +36,10 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 4
+        var nbPage = 2
         
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p13")
-        setCharacterLeft(3,chara)
-        setCharacterRight(4,"p13")
+        setCharacterRight(2,"p16")
     </script>
 </body>
 </html>

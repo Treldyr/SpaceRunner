@@ -1,23 +1,23 @@
 .background-image {
-    background: url('../../images/planete_fantome.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_poison.jpg') no-repeat center center fixed;
 }
 
 
 .btn-outline-dark {
-    background-color: rgb(58, 114, 49);
+    background-color: rgb(103, 75, 116);
 }
 
 
 .btn-start {
-    background-color: rgb(58, 114, 49);
+    background-color: rgb(103, 75, 116);
 }
 
 
 .btn-start:hover {
-    box-shadow: 0 0 10px rgb(58, 114, 49);
+    box-shadow: 0 0 10px rgb(103, 75, 116);
 }
 
 
 .timer {
-    background-color: rgb(58, 114, 49);
+    background-color: rgb(103, 75, 116);
 }

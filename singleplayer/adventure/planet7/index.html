@@ -13,10 +13,11 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title" style="color: #000000;">Bienvenu sur la planète Sablière Rouge</div>
+        <div class="custom-title">Bienvenu sur l'Étranger</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>Quel est ce vaisseau ?</p>
+                <p>Tout me semble étranger ici</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +25,34 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>Krrr hu Krrr Ks Krrr khhh </p>
+                <p>Kss ts ts Krrr Krrr</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+        
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Quoi ? Je ne comprends rien, peux tu parler ma langue ?</p>
+                <p>Quel est ce dialecte ?</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>fkfkfkfk Krrr Kss</p>
+                <p>Raaaaaaah</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>Aah tu m'attaques !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -36,10 +64,13 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 2
+        var nbPage = 5
         
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(2,"p12")
+        setCharacterLeft(3,chara)
+        setCharacterRight(4,"p12")
+        setCharacterLeft(5,chara)
     </script>
 </body>
 </html>

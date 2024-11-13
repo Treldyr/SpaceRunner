@@ -23,13 +23,13 @@
 }
 
 
-#imgplanet1, #imgplanet2, #imgplanet4, #imgplanet6, #imgplanet7, #imgplanet8, #imgplanet10, #imgplanet11, #imgplanet12 {
+#imgplanet1, #imgplanet2, #imgplanet3, #imgplanet4, #imgplanet7, #imgplanet8, #imgplanet9, #imgplanet10, #imgplanet11 {
     width: 110px; 
     height: 80px; 
 
 }
 
-#imgplanet3, #imgplanet5, #imgplanet9 {
+#imgplanet5, #imgplanet6, #imgplanet12 {
     width: 160px; 
     height: 90px; 
 }

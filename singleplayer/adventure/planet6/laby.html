@@ -48,18 +48,10 @@
             </div>
 
             <div class="page" id="page6" >
-                <div class="custom-title">Planète Fantomia complétée !</div>
-                <div class="game-description">
-                    <p>Félicitations ! Vous avez débloqué 2 nouveaux skins pour le mode battle :
-                        <br>
-                        <img src='../../../images/fantomp4.png' width='50px' class='img-thumbnail'>
-                        <img src='../../../images/fantomp5.png' width='50px' class='img-thumbnail'>
-                        <br>
-                    </p>
-                    <p id="your_score"></p>
-                    <p>La planète Sablière et ses 5 niveaux sont maintenant disponibles.</p>
-        
-                    <p>Bonne continuation !</p>
+                <p id="your_score"></p>
+                <div class="custom-title">Planète Felucia complétée !</div>
+                <div class="game-description">        
+                    <p>Un nouvel astre est apparu dans ce système ! Il semble peu commun...</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="goPlanet(7)">Continuer</button>
@@ -72,10 +64,6 @@
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
-
-
-
-
       
 
 <!-- Optional JavaScript -->
@@ -94,18 +82,17 @@
 <script src="../../../common_functions/timer.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/checks.js"></script>
-<script src="../../../common_functions/ghost.js"></script>
 <script>
-    var ghostId;
+
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
     var fromleft = 0; // horizontal position // var fromleft = 0;
-    var ghostTop = 0;
-    var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
-    moveGhost(6);
+    var found_b1;
+    var found_b0;
+    var found_b2;
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -113,60 +100,57 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_ghost(1)
+    construct_board_with_gaz(1)
 
 
     function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '27'){ // touche echap
-        if(inpause){
-            closePause() 
-        }else{
-            showPause()
-        }
+            if(inpause){
+                closePause() 
+            }else{
+                showPause()
+            }
         }else {
-            if (e.keyCode == '38' || e.keyCode == '90')  { // going up
-                dest_upward();
+            if (e.keyCode == '38' || e.keyCode == '90') { // going up
+                dest_upward_sliding();
             }
             else if (e.keyCode == '40' || e.keyCode == '83') { // going down
-                dest_downward();
+                dest_downward_sliding();
             }
             else if (e.keyCode == '37' || e.keyCode == '81') { // going left
-                dest_leftward();
+                dest_leftward_sliding();
             }
             else if (e.keyCode == '39' || e.keyCode == '68') { // going rigth
-                dest_rigthward();
+                dest_rigthward_sliding();
             }
             nbCoups++;
+            playMove()
+            checkIsGaz();
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0)
+            if((boards[actual_board][fromtop][fromleft]==0)&&(found_b1)&&(found_b2)&&(found_b0))
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft,fromleft,ghostTop,fromtop)
         }
     }
-    
 
     function finish_labyrinth(){
-        stopGhost();
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            moveGhost(6)
-            construct_board_with_ghost(actual_board+2);
+            construct_board_with_gaz(actual_board+2);
         } else {
             stopTimer();
             playEndLevel()
-            UnlockGhost(3);
             UnlockPlanet(7)
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
-            setHighScorePlanet('fantomia');
+            setHighScorePlanet('felucia');
         }
     }
 

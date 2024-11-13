@@ -1,22 +1,23 @@
 .background-image {
-    background: url('../../images/planete_glace.jpg') no-repeat center center fixed;
+    background: url('../../images/planete_roche.jpg') no-repeat center center fixed;
 }
 
 
 .btn-outline-dark {
-    background-color: rgb(113, 161, 220);
+    background-color: rgb(195, 125, 34);
 }
 
 
 .btn-start {
-    background-color: rgb(113, 161, 220);
+    background-color: rgb(195, 125, 34);
 }
 
+
 .btn-start:hover {
-    box-shadow: 0 0 10px rgb(113, 161, 220);
+    box-shadow: 0 0 10px rgb(195, 125, 34);
 }
 
 
 .timer {
-    background-color: rgb(113, 161, 220);
-}  
+    background-color: rgb(195, 125, 34);
+}
