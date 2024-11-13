@@ -50,10 +50,11 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Hoth complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p7down.png" width="80px">
 
                     <p id="your_score"></p>
                     <p>La planète Felucia et ses 5 niveaux sont maintenant disponibles.</p>
-        
                     <p>Bonne continuation !</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
@@ -131,7 +132,7 @@
             playMove()
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0)
+            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
                 finish_labyrinth();
             }

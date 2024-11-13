@@ -19,27 +19,6 @@ function UnlockPlanet(planet_number) {
 }
 
 
-function UnlockCharacter(character_number) {
-    var storedData = localStorage.getItem('playerData');
-    if (storedData !== null) {
-        var playerData = JSON.parse(storedData);
-        if( playerData.playerUnlock < character_number){
-            var playerData = {
-                playerUnlock: character_number
-            };
-            var dataString = JSON.stringify(playerData);
-            localStorage.setItem('playerData', dataString);
-        }
-    } else {
-        var playerData = {
-            playerUnlock: character_number
-        };
-        var dataString = JSON.stringify(playerData);
-        localStorage.setItem('playerData', dataString);
-    }   
-}
-
-
 function UnlockGhost(ghost_number) {
     var storedData = localStorage.getItem('ghostData');
     if (storedData !== null) {

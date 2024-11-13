@@ -42,14 +42,6 @@ function retrieveLevel() {
     }
 }
 
-function retrieveAchievements() {
-    var storedData = localStorage.getItem('playerData');
-    if (storedData !== null) {
-        var playerData = JSON.parse(storedData);
-        nbPlayerUnlocked = playerData.playerUnlock;
-    }
-}
-
 
 function retrieveGhostAchievements() {
     var storedData = localStorage.getItem('ghostData');

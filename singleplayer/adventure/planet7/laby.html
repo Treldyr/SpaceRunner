@@ -31,6 +31,8 @@
             <div class="page" id="page2" >
                 <div class="custom-title">Navette L'Étranger complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p9down.png" width="80px">
                     <p id="your_score"></p>
         
                     <p>La planète Fantomia et ses 5 niveaux sont maintenant disponibles.</p>
@@ -125,8 +127,8 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_boss(1,12)
-    moveBoss(12);
+    construct_board_with_boss(1,9)
+    moveBoss(9);
     create_shuriken_poweritem()
 
     function checkKey(e) {

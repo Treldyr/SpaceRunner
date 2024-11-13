@@ -51,22 +51,9 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Terre complétée !</div>
                 <div class="game-description">
-                    <p>Félicitations ! Vous avez débloqué 4 nouveaux personnages :</p>
-                    
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="../../../images/p5down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../../../images/p6down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../../../images/p7down.png" class="img-thumbnail">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../../../images/p8down.png" class="img-thumbnail">
-                        </div>
-                    </div>
+                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p3down.png" width="80px">
+
                     <p id="your_score"></p>
                     <p>La planète Tatooine et ses 5 niveaux sont maintenant disponibles.</p>
                     <p>Bonne continuation !</p>
@@ -144,7 +131,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(7*fromtop+5)+"vh;left : "+(5*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0)
+            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
                 finish_labyrinth();
             }
@@ -158,7 +145,6 @@
             construct_tiny_board(actual_board+2);
         } else {
             stopTimer();
-            UnlockCharacter(2);
             UnlockPlanet(2);
             playEndLevel() 
             let number = actual_board+1;

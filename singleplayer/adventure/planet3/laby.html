@@ -51,9 +51,11 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Kamino complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p5down.png" width="80px">
+
                     <p id="your_score"></p>
                     <p>Un nouvel astre est disponible. Il semble différent des précédents.</p>
-        
                     <p>Bonne continuation !</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
@@ -135,7 +137,8 @@
             checkIsGaz();
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            if((boards[actual_board][fromtop][fromleft]==0)&&(found_b1)&&(found_b2)&&(found_b0))
+            if(((boards[actual_board][fromtop][fromleft]==0) || (boards[actual_board][fromtop][fromleft]==3))
+                &&(found_b1)&&(found_b2)&&(found_b0))
             {
                 finish_labyrinth();
             }

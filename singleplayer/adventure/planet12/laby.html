@@ -50,6 +50,9 @@
             <div class="page" id="page6" >
                 <div class="custom-title">Planète Défaillance complétée !</div>
                 <div class="game-description">
+                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p14down.png" width="80px">
+
                     <p id="your_score"></p>
                     <p>Vous avez terminé le jeu</p>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
@@ -140,7 +143,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0)
+            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==5)
             {
                 finish_labyrinth();
             }

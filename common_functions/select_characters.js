@@ -1,20 +1,44 @@
 function hideLockedCharacters(){
-    if(nbPlayerUnlocked<2){
+    if(lvl<2){
+        lockImage("p3")
+    }
+    if(lvl<3){
+        lockImage("p4")
+    }
+    if(lvl<4){
         lockImage("p5")
+    }
+    if(lvl<5){
         lockImage("p6")
+    }
+    if(lvl<6){
         lockImage("p7")
+    }
+    if(lvl<7){
         lockImage("p8")
     }
-    if(nbPlayerUnlocked<3){
+    if(lvl<8){
         lockImage("p9")
+    }
+    if(lvl<9){
         lockImage("p10")
+    }
+    if(lvl<10){
         lockImage("p11")
+    }
+    if(lvl<11){
         lockImage("p12")
     }
-    if(nbPlayerUnlocked<4){
+    if(lvl<12){
         lockImage("p13")
+    }
+    if(lvl<13){
         lockImage("p14")
+    }
+    if(lvl<14){
         lockImage("p15")
+    }
+    if(lvl<15){
         lockImage("p16")
     }
 }
