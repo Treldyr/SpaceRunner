@@ -1,23 +1,23 @@
 .background-image {
-    background: url('../../images/planete_desert.jpg') no-repeat center center fixed;
+    background: url('../../images/planet_jungle.jpg') no-repeat center center fixed;
 }
 
 
 .btn-outline-dark {
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(35, 59, 28);
 }
 
 
 .btn-start {
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(35, 59, 28);
 }
 
 
 .btn-start:hover {
-  box-shadow: 0 0 10px rgb(195, 125, 34);
+  box-shadow: 0 0 10px rgb(35, 59, 28);
 }
 
 
 .timer {
-    background-color: rgb(195, 125, 34);
+    background-color: rgb(35, 59, 28);
 }
