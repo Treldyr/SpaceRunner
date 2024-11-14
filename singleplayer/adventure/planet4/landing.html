@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/planets/planet4.css">
+    <link rel="stylesheet" href="../../../css/planets/default.css">
+    <link rel="icon" href="../../../images/p1down.png">
+</head>
+<body>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="custom-title">Bienvenu sur la station Deep Space Nine</div>
+        <div class="page" id="page1">
+            <div class="game-description">
+                <p>On est arrivé. </p>
+                <p>Normalement il devrait y avoir du monde. Mais c'est vide.</p>
+                <p>Je ne comprends pas...</p>
+                <p>J'ai comme un mauvais pressentiment.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page2">
+            <div class="game-description">
+                <p>Reste au vaisseau. </p>
+                <p>C'est peut être trop dangereux pour toi.</p>
+                <p>Je pars dans la salle des contrôles.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+        
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Bien compris !</p>
+                <p>Je reste sur la ligne d'écoute.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>...</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>Il y a quelqu'un ! Eh toi là !</p>
+                <p>Que s'est-il passé avec le reste des habitants du vaisseau ?</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="game-description">
+                <p>Tiens ? Il y a encore quelqu'un ?</p>
+                <p>Hahahaha je pensais que les survivants avaient tous déguerpis !</p>
+                <p>Approche petit.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="game-description">
+                <p>Comment ça ?</p>
+                <p>Je veux savoir ce qu'il s'est passé ici, je suis un Space Runner</p>
+                <p>Calme toi, je ne recherche pas la violence.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page8">
+            <div class="game-description">
+                <p>Hahaha</p>
+                <p>Moi si.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/animation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
+    <script>
+        var nbPage = 8
+        
+        
+        setCharacterRight(1,"p16")
+        setCharacterRight(2,"p16")
+        setCharacterLeft(3,chara)
+        setCharacterLeft(4,chara)
+        setCharacterLeft(5,chara)
+        setCharacterRight(6,"p6")
+        setCharacterLeft(7,chara)
+        setCharacterRight(8,"p6")
+
+        function goNextAnimation(){
+            goIntro()
+        }
+    </script>
+</body>
+</html>
