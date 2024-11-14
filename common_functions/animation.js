@@ -6,7 +6,7 @@ function setCharacterLeft(numberPage, character){
     // Style pour afficher l'image en grand et la positionner sur le côté gauche
     the_image.setAttribute('style', `
         position: fixed;
-        bottom: 0;
+        bottom: -8vh;
         left: -10vw;
         height: 90vh;
         width: 40vw;
@@ -26,7 +26,7 @@ function setCharacterRight(numberPage, character){
     // Style pour afficher l'image en grand et la positionner sur le côté gauche
     the_image.setAttribute('style', `
         position: fixed;
-        bottom: 0;
+        bottom: -8vh;
         right: -10vw;
         height: 90vh;
         width: 40vw;

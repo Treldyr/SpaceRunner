@@ -21,7 +21,7 @@ function checkKey(e) {
         if(actualPage!=nbPage){
             goNextPage();
         } else {
-            goIntro();
+            goNextAnimation();
         } 
     }
 }

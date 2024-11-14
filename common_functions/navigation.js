@@ -62,3 +62,7 @@ function goCredits() {
 function goIntro(){
     window.location.href='intro.html';
 }
+
+function goLanding(){
+    window.location.href='landing.html';
+}
