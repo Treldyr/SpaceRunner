@@ -17,8 +17,8 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bonjour !</p>
-                <p>Merci de m'avoir retrouvé sur Kamino !</p>
+                <p>Tu es incroyable...</p>
+                <p>Je ne sais pas comment te remercier. Cette planète aurait été mon tombeau.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -26,12 +26,8 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Space Runner !</p>
-                <p>On fera les remerciements plus tard !</p>
-                <p>L'un de nos vaisseau, la station <u>Deep Space Nine</u>, ne répond plus à nos messages.</p>
-                <p>Il faut quelqu'un pour m'accompagner leur rendre visite et comprendre la situation.</p>
-                <p>Nous avons besoin d'un agent immédiatement.</p>
-                <p>Bonne chance.</p>
+                <p>Ne t'inquiète pas, maintenant tout va bien.</p>
+                <p>Tu es en sécurité sur cette station.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -39,7 +35,17 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>D'accord ! J'y vais de suite !</p>
+                <p>Exellent travail ! Tu dépasses mes attentes tous les jours !</p>
+                <p>Écoute bien : ce chat doit retourner dans sa station, <b>Deep Space Nine</b>.</p>
+                <p>Je vois que tu t'entends déjà très bien avec lui, je te laisse le racompagner.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>D'accord, je vais faire ça.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
@@ -52,11 +58,12 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 3
+        var nbPage = 4
         
         setCharacterRight(1,"p5")
-        setCharacterRight(2,"p16")
-        setCharacterLeft(3,chara)
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p16")
+        setCharacterLeft(4,chara)
 
         function goNextAnimation(){
             goLanding()

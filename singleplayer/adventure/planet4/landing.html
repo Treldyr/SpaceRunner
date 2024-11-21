@@ -16,10 +16,9 @@
         <div class="custom-title">Bienvenu sur la station Deep Space Nine</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>On est arrivé. </p>
+                <p>On est arrivé.</p>
                 <p>Normalement il devrait y avoir du monde. Mais c'est vide.</p>
                 <p>Je ne comprends pas...</p>
-                <p>J'ai comme un mauvais pressentiment.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -27,9 +26,8 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Reste au vaisseau. </p>
-                <p>C'est peut être trop dangereux pour toi.</p>
-                <p>Je pars dans la salle des contrôles.</p>
+                <p>Je pars voir la salle des contrôles.</p>
+                <p>Attends moi ici, ça va être rapide.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -37,8 +35,8 @@
         
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Bien compris !</p>
-                <p>Je reste sur la ligne d'écoute.</p>
+                <p>D'accord, je reste ici.</p>
+                <p>Dès que tu as terminé, reviens me voir.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -74,8 +72,9 @@
         <div class="page" id="page7">
             <div class="game-description">
                 <p>Comment ça ?</p>
-                <p>Je veux savoir ce qu'il s'est passé ici, je suis un Space Runner</p>
-                <p>Calme toi, je ne recherche pas la violence.</p>
+                <p>Pourquoi tu as des shurikens sur toi ?</p>
+                <p>Calme toi... Je viens de la station voisine, <b>Zorath</b> </p>
+                <p>Je ne recherche pas la violence.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -99,8 +98,8 @@
         var nbPage = 8
         
         
-        setCharacterRight(1,"p16")
-        setCharacterRight(2,"p16")
+        setCharacterRight(1,"p5")
+        setCharacterRight(2,"p5")
         setCharacterLeft(3,chara)
         setCharacterLeft(4,chara)
         setCharacterLeft(5,chara)
