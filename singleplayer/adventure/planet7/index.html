@@ -17,8 +17,9 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Merci infiniment de m'avoir sauvé Space Runner !</p>
-                <p>Tu es inspirant !</p>
+                <p>Observe, jeune chat... Un astre, caché dans le système.</p>
+                <p>Aucun signal officiel, aucune affiliation connue.</p>
+                <p>Il se déplace pour éviter d’être détecté. </p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -26,27 +27,40 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>De rien, tu es en sécurité maintenant.</p>
+                <p>Qu'est ce que c'est ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Bonjour ! Désolé d'interrompre votre conversation.</p>
-                <p>Nous avons signalé un vaisseau étranger que l'on ne connait pas.</p>
-                <p>Il ne reçoit et n'envoi aucun message. Il faut enquêter sur ce vaisseau.</p>
-                <p>Acceptes-tu la mission ?</p>
+                <p>C'est une station, de toute évidence.</p>
+                <p>Les autres l'ont nommés <b>L’Étranger</b>, un nom qui lui va bien.</p>
+                <p>Mais si elle se cache, c’est qu’elle a quelque chose à cacher.</p>
+                <p>Peut-être des réponses, ou peut-être des ennuis.</p>
+                <p>Peu importe ce que c’est, nous devons agir avant qu’elle ne disparaisse à nouveau.</p>
+                <p>Et entrer en contact avec.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Absolument !</p>
-                <p>C'est parti !</p>
+                <p>Je peux vous aider !</p>
+                <p>Je suis le chat de la situation.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>Tu as prouvé que tu étais prêt à affronter l’inconnu, jeune héros.</p>
+                <p>Cette mission ne sera pas différente.</p>
+                <p>Trouve un moyen d’intercepter <b>L’Étranger</b> et découvre ce qu’elle cache. Mais sois prudent...</p>
+                <p>Cette fois, l’ennemi pourrait être plus qu’une tempête ou une atmosphère hostile.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
@@ -59,12 +73,13 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 4
+        var nbPage = 5
         
-        setCharacterRight(1,"p8")
+        setCharacterRight(1,"p16")
         setCharacterLeft(2,chara)
         setCharacterRight(3,"p16")
         setCharacterLeft(4,chara)
+        setCharacterRight(5,"p16")
 
         function goNextAnimation(){
             goLanding()

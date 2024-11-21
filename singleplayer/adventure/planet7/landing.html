@@ -16,6 +16,13 @@
         <div class="custom-title">Bienvenu sur l'Étranger</div>
         <div class="page" id="page1">
             <div class="game-description">
+                <p>J'ai réussi à renter dans le vaisseau !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="game-description">
                 <p>Âllo ? Il y a quelqu'un ?</p>
                 <p>Tiens, il y a des shurikens par terre.</p>
                 <p>Je sens mal cette histoire...</p>
@@ -24,28 +31,18 @@
             </div>
         </div>
 
-        <div class="page" id="page2">
+        <div class="page" id="page3">
             <div class="game-description">
-                <p>Krrr hu Krrr Ks Krrr khhh </p>
-                <p>Kss ts ts Krrr Krrr</p>
+                <p>Eh ! Toi là ! T'es qui toi ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
         </div>
         
-        <div class="page" id="page3">
-            <div class="game-description">
-                <p>Quoi ? Je ne comprends rien, peux tu parler ma langue ?</p>
-                <p>Quel est ce dialecte ?</p>
-                <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
-            </div>
-        </div>
-
         <div class="page" id="page4">
             <div class="game-description">
-                <p>fkfkfkfk Krrr Kss</p>
-                <p>Raaaaaaah</p>
+                <p>Je viens de la station <b>Zorath</b>.</p>
+                <p>Je suis venu vous demander de désactiver vos brouilleurs radar et allumer vos transmetteurs.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -53,9 +50,11 @@
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Aah tu m'attaques !</p>
+                <p>T'es le chat que l'on surnomme le jeune héros ?</p>
+                <p>Je te connais, c'est toi qui a fait emprisonné mon frère qui était sur <b>Deep Space Nine</b>.</p>
+                <p>Je vais te faire ta peau.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
         </div>
         
@@ -68,10 +67,10 @@
         var nbPage = 5
         
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p9")
-        setCharacterLeft(3,chara)
-        setCharacterRight(4,"p9")
-        setCharacterLeft(5,chara)
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p9")
+        setCharacterLeft(4,chara)
+        setCharacterRight(5,"p9")
 
         function goNextAnimation(){
             goIntro()
