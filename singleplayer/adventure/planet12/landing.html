@@ -16,7 +16,9 @@
         <div class="custom-title" style="color: #000000;">Bienvenu sur la planète Défaillance</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>Cette mission te demandera d’être plus qu’un explorateur.</p>
+                <p>Tu devras être un observateur attentif et un survivant ingénieux.</p>
+                <p>Prépare-toi à changer de dimension !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +26,16 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>D'accord, ça marche.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Va, jeune héros.</p>
+                <p>Et comme toujours... souviens-toi que nous croyons en toi.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -36,10 +47,11 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 2
+        var nbPage = 3
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(1,"p16")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p16")
 
         function goNextAnimation(){
             goIntro()
