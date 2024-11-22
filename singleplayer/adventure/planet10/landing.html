@@ -16,7 +16,13 @@
         <div class="custom-title">Bienvenu sur la planète Felucia</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>Regarde cette planète... <b>Felucia</b>.</p>
+                <p>Sa surface regorge de vie, mais son atmosphère est un véritable poison.</p>
+                <p>Là-bas, le temps est une ressource, et sans oxygène, chaque minute compte.</p>
+                <p>Cette mission sera différente.</p>
+                <p>Tu devras emporter des bouteilles d’oxygène et surveiller constamment tes niveaux</p>
+                <p>Chaque pas sur Felucia doit être calculé.</p>
+                <p>Rappelle-toi, jeune chat, là-bas, le danger n’est pas une créature ou une arme. C’est le temps qui s’écoule trop vite</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +30,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>Merci pour tes précieux conseils. Je ferais attention, je te le promet.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -38,8 +44,8 @@
     <script>
         var nbPage = 2
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(1,"p16")
+        setCharacterLeft(2,chara)
 
         function goNextAnimation(){
             goIntro()

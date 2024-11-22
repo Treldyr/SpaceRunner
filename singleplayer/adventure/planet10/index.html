@@ -16,8 +16,8 @@
         <div class="custom-title">Mission 10</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bonjour Space Runner !</p>
-                <p>Je suis fier de toi pour avoir réussi à affronter le bandit </p>
+                <p>Merci d'avoir sauvé mon ami !</p>
+                <p>Tu es impressionnant ! Je pensais que c'était peine perdue pour lui...</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -25,11 +25,11 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Repos soldat !</p>
-                <p>Aujourd'hui tu dois aller sauver un chat qui s'est perdu sur la planète <b>Terre</b>.</p>
-                <p>Tu connais bien cette planète, c'est le moment de faire tes preuves.</p>
-                <p>Si tu réussis cette mission, tu pourras peut-être être assigné à d'autres plus prestigieuses.</p>
-                <p>Bonne chance !</p>
+                <p>Merci énormément jeune prodige.</p>
+                <p>Le scientifique qui m'avait capturé sur la planète a quitté les lieux avant que tu arrives.</p>
+                <p>Les fantômes que tu croises sont ses créations.</p>
+                <p>Il faut l'arrêter avant qu'il ne contamine d'autres planètes avec !</p>
+                <p>Si seulement on savait ou se situait son quartier général...</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -37,7 +37,28 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Merci capitaine !<p>
+                <p>Pourquoi fait-il celà ?<p>
+                <p>Il n'a rien à gagner à introduire ses fantômes sur les planètes.<p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Vous savez, la folie de certains dépassent la compréhension des autres...<p>
+                <p>Nous attraperons ce scientifique renégat plus tard.<p>
+                <p>Il y a un autre chat disparu, sur une nouvelle planète, <b>Felucia</b>.<p>
+                <p>Il s'est aventuré trop loin dans ses marais toxiques et va épuiser ses réserves d’oxygènes...<p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>D'accord, je vais le sauver.<p>
+                <p>On aura nos réponses sur le scientifique fou plus tard.<p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
@@ -49,11 +70,13 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 3
+        var nbPage = 5
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(1,"p10")
+        setCharacterRight(2,"p11")
         setCharacterLeft(3,chara)
+        setCharacterRight(4,"p16")
+        setCharacterLeft(5,chara)
 
         function goNextAnimation(){
             goLanding()

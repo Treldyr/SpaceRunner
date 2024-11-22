@@ -16,8 +16,9 @@
         <div class="custom-title">Mission 11</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bonjour Space Runner !</p>
-                <p>Je suis fier de toi pour avoir réussi à affronter le bandit </p>
+                <p>Tu m’as sauvé… Je ne pensais jamais revoir un ciel dégagé.</p>
+                <p>Ce gaz, il me rongeait à chaque respiration. Mais toi, tu n’as pas reculé. Merci…</p>
+                <p>Merci de m’avoir ramené.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -25,11 +26,12 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Repos soldat !</p>
-                <p>Aujourd'hui tu dois aller sauver un chat qui s'est perdu sur la planète <b>Terre</b>.</p>
-                <p>Tu connais bien cette planète, c'est le moment de faire tes preuves.</p>
-                <p>Si tu réussis cette mission, tu pourras peut-être être assigné à d'autres plus prestigieuses.</p>
-                <p>Bonne chance !</p>
+                <p>Encore une vie sauvée, jeune héros.</p>
+                <p>Ce que tu as accompli sur Felucia était aussi périlleux que remarquable.</p>
+                <p>Mais il semble que nous soyons à l’aube d’un nouveau mystère, un mystère qui pourrait expliquer bien des choses.</p>
+                <p>Âtrebois. Une station oubliée, dissimulée dans les confins de ce système.</p>
+                <p>Selon les données récupérées récemment, elle abritait le scientifique renégat que nous recherchons.</p>
+                <p>Nous devons arrêter cette menace à la source.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -37,7 +39,17 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Merci capitaine !<p>
+                <p>Je dois y aller !<p>
+                <p>Je sais que je peux l'arrêter. J'ai déjà fait pire.<p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Sois prudent et souviens-toi :<p>
+                <p>Si ces fantômes sont siens, il n'hésitera pas à en utiliser contre toi !<p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
             </div>
@@ -49,11 +61,12 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 3
+        var nbPage = 4
         
-        setCharacterLeft(1,chara)
+        setCharacterRight(1,"p12")
         setCharacterRight(2,"p16")
         setCharacterLeft(3,chara)
+        setCharacterRight(4,"p16")
 
         function goNextAnimation(){
             goLanding()
