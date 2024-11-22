@@ -16,7 +16,7 @@
         <div class="custom-title" style="color: #000000;">Bienvenu sur la planète Sablière Rouge</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>C'est donc ici qu'il est ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +24,17 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>Dans les environs, oui.</p>
+                <p>Fais attention, les fantômes rôdent. Ne te laisse pas toucher, ou c'est la fin.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Compris !</p>
+                <p>C'est parti !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -36,10 +46,11 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 2
+        var nbPage = 3
         
         setCharacterLeft(1,chara)
         setCharacterRight(2,"p16")
+        setCharacterLeft(3,chara)
 
         function goNextAnimation(){
             goIntro()

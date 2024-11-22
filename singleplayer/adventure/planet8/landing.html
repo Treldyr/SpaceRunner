@@ -16,7 +16,10 @@
         <div class="custom-title">Bienvenu sur la planète Fantomia</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p>Sois sur tes gardes : </p>
+                <p>Fantomia n'est pas une planète comme les autres. Ce que tu verras là-bas pourrait défier tout ce que tu connais.</p>
+                <p>Si les légendes racontent vraies et que tu croises un fantôme... Fuis le !</p>
+                <p>J'ai peur du sort réservé à celui qui s'en approche.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -24,7 +27,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p>D'accord ! Je prends note du conseil !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
             </div>
@@ -38,8 +41,8 @@
     <script>
         var nbPage = 2
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
+        setCharacterRight(1,"p16")
+        setCharacterLeft(2,chara)
 
         function goNextAnimation(){
             goIntro()

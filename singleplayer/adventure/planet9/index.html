@@ -17,7 +17,7 @@
         <div class="page" id="page1">
             <div class="game-description">
                 <p>Tu... tu es vraiment incroyable.</p>
-                <p>Je pensais que <u>Léviathe</u> serait ma dernière destination, mais tu es venu.</p>
+                <p>Je pensais que <b>Fantomia</b> serait ma dernière destination, mais tu es venu.</p>
                 <p>Même avec ce froid glacial et cet air empoisonné, tu ne t’es pas arrêté.</p>
                 <p>Merci... Merci de m’avoir donné une seconde chance.</p>
                 <p>Tu es inspirant !</p>
@@ -37,9 +37,34 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Merci capitaine !<p>
+                <p>Je... je n'aurais jamais cru ça.</p>
+                <p>Je pensais que les fantômes n'était qu’une légende, mais ce que tu as vécu là-bas... c’était bien réel.</p>
+                <p>Ce n’étaient pas des hallucinations dues à l’atmosphère ou à la fatigue. Il y a quelque chose de plus dans cet endroit.</p>
+                <p>Les fantômes existent.</p>
+                <p>Et si Fantomia n'était que le début ?</p>
+                <p>Si d’autres planètes abritent de tels phénomènes ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Il y en a.</p>
+                <p>J'ai déjà vu ces fantômes auparavant. À <b>Sablière Rouge</b>.</p>
+                <p>Un de mes amis y a été emprisonné là-bas par un scientiste fou.</p>
+                <p>Vous devez aller le sauver. S'il vous plait.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>D'accord.</p>
+                <p>J'y vais. Peut importe le risque.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
         </div>
         
@@ -49,11 +74,13 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 3
+        var nbPage = 5
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
-        setCharacterLeft(3,chara)
+        setCharacterRight(1,"p10")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p16")
+        setCharacterRight(4,"p10")
+        setCharacterLeft(5,chara)
 
         function goNextAnimation(){
             goLanding()

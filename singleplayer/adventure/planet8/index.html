@@ -16,8 +16,10 @@
         <div class="custom-title">Mission 8</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bonjour Space Runner !</p>
-                <p>Je suis fier de toi pour avoir réussi à affronter le bandit </p>
+                <p>Te voilà enfin, jeune héros.</p>
+                <p>Nous avons suivi ta mission de près, et ce que tu as accompli dépasse les attentes.</p>
+                <p>Neutraliser un adversaire aussi rusé et découvrir les secrets de <b>L’Étranger…</b></p>
+                <p>Peu auraient pu réussir</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -25,11 +27,9 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Repos soldat !</p>
-                <p>Aujourd'hui tu dois aller sauver un chat qui s'est perdu sur la planète <b>Terre</b>.</p>
-                <p>Tu connais bien cette planète, c'est le moment de faire tes preuves.</p>
-                <p>Si tu réussis cette mission, tu pourras peut-être être assigné à d'autres plus prestigieuses.</p>
-                <p>Bonne chance !</p>
+                <p>Merci beaucoup.</p>
+                <p>J'ai failli y passer mais je l'ai fait !</p>
+                <p>Je suis prêt pour ma nouvelle mission !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
@@ -37,9 +37,23 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Merci capitaine !<p>
+                <p>Si tu es si pressé... Je voudrais te parler de <b>Fantomia</b>...</p>
+                <p>Les rapports parlent de phénomènes étranges... certains disent qu’il y a des esprits qui rôdent. Mais ce ne sont sûrement que des histoires.</p>
+                <p>Un de nos compagnons, s’est aventuré là-bas lors d’une mission de reconnaissance... et il ne donne plus signe de vie.<br>
+                <p>Nous savons qu'il est toujours vivant, mais il est coincé quelque part dans cette planète inquiétante.</p>
+                <p>Et ces phénomènes... s’ils sont réels, ils pourraient bien être une menace que nous n’avons jamais affrontée.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Ça ira pour moi.</p>
+                <p>Je vais faire cette mission.</p>
+                <p>Ce ne sont pas ces superstitions qui vont m'effrayer</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
             </div>
         </div>
         
@@ -49,11 +63,13 @@
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
     <script>
-        var nbPage = 3
+        var nbPage = 4
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p16")
-        setCharacterLeft(3,chara)
+        
+        setCharacterRight(1,"p16")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p16")
+        setCharacterLeft(4,chara)
 
         function goNextAnimation(){
             goLanding()
