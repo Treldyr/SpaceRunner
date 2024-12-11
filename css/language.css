@@ -45,8 +45,8 @@
 .language-options img {
     cursor: pointer;
     margin: 40px 0;
-    width: 20vh;
-    height: auto;
+    width: 14vw;
+    height: 14vh;
     transition: transform 0.2s ease;
 }
 

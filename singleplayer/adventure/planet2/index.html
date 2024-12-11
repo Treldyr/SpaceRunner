@@ -17,42 +17,42 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Tu m'as sauvé... Merci.</p>
-                <p>Je pensais que j’étais perdu à jamais dans cette froide solitude.</p>
-                <p>Mais toi... toi, tu as risqué ta vie pour moi. Les autres chats de la station ont de la chance de t’avoir.</p>
-                <p>Promets-moi de continuer à les aider.</p>
+                <p data-lang-key="text24">Tu m'as sauvé... Merci.</p>
+                <p data-lang-key="text25">Je pensais que j’étais perdu à jamais dans cette froide solitude.</p>
+                <p data-lang-key="text26">Mais toi... toi, tu as risqué ta vie pour moi. Les autres chats de la station ont de la chance de t’avoir.</p>
+                <p data-lang-key="text27">Promets-moi de continuer à les aider.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Je le promet.</p>
-                <p>Merci de ton encouragement.</p>
+                <p data-lang-key="text28">Je le promet.</p>
+                <p data-lang-key="text29">Merci de ton encouragement.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Bien joué, jeune héros. Ta rapidié pour le trouver a été impressionnante.</p>
-                <p>Merci beaucoup de ton aide.</p>
-                <p>Une autre alerte vient de nous parvenir...</p>
-                <p>Cette fois, sur la planète <b>Katshyk</b>, une jungle colossale.</p>
-                <p>Le chat à retrouver est perdu dans un labyrinthe de verdure.</p>
-                <p>Acceptes-tu d'aller le sauver ?</p>
+                <p data-lang-key="text30">Bien joué, jeune héros. Ta rapidié pour le trouver a été impressionnante.</p>
+                <p data-lang-key="text31">Merci beaucoup de ton aide.</p>
+                <p data-lang-key="text32">Une autre alerte vient de nous parvenir...</p>
+                <p><a data-lang-key="text33">Cette fois, sur la planète</a> <b>Katshyk</b><a data-lang-key="text36">, une jungle colossale.</a></p>
+                <p data-lang-key="text34">Le chat à retrouver est perdu dans un labyrinthe de verdure.</p>
+                <p data-lang-key="text35">Acceptes-tu d'aller le sauver ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Bien sûr que je l'accepte ! C'est parti !</p>
+                <p data-lang-key="text37">Bien sûr que je l'accepte ! C'est parti !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -61,6 +61,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 4
         
