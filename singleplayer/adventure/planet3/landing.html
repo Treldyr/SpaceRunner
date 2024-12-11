@@ -13,24 +13,24 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Kamino</div>
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Kamino</div>
         <div class="page" id="page1">
             <div class="game-description">
                 <p>Uh uh uh</p>
-                <p>C'est dûr de respirer.</p>
+                <p data-lang-key="text68">C'est dûr de respirer.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Il y a des bouteilles d'oxygènes un peu partout ici.</p>
-                <p>N'oublie pas de les prendre sur ton passage !</p>
-                <p>Il y en a trois par niveaux.</p>
-                <p>Tu ne peux pas sortir d'un niveau sans les avoir toutes les trois récupérées.</p>
+                <p data-lang-key="text69">Il y a des bouteilles d'oxygènes un peu partout ici.</p>
+                <p data-lang-key="text70">N'oublie pas de les prendre sur ton passage !</p>
+                <p data-lang-key="text71">Il y en a trois par niveaux.</p>
+                <p data-lang-key="text72">Tu ne peux pas sortir d'un niveau sans les avoir toutes les trois récupérées.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -39,6 +39,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 2
         
