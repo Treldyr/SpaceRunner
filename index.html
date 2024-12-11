@@ -36,6 +36,12 @@
     <script src="common_functions/translation.js"></script>
     <script src="common_functions/languages.js"></script>
     <script>
+        function saveLanguage(language_name) {
+            var lang = language_name
+            var dataString = JSON.stringify(lang);
+            localStorage.setItem('language', dataString);
+        }
+
         function setLanguage(lang) {
             updateLanguageSettings(lang)
             saveLanguage(lang)

@@ -46,10 +46,3 @@ function setHighScorePlanet(planet_name) {
         localStorage.setItem(planet_name, dataString);
     }   
 }
-
-
-function saveLanguage(language_name) {
-    var lang = language_name
-    var dataString = JSON.stringify(lang);
-    localStorage.setItem('language', dataString);
-}
