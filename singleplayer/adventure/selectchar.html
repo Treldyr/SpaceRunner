@@ -17,8 +17,8 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title">Space Runner</h1>
-        <h1 >Choisissez votre personnage</h1>
+        <h1 data-lang-key="adventureMode">Mode Aventure</h1>
+        <h1 data-lang-key="chosecharacter">Choisissez votre personnage</h1>
         <div class="container">
             <div class="row" id="listChar1">
                 <div class="col-md-3">
@@ -82,12 +82,14 @@
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
-        <button class="btn-start" onclick="acceptPlayer('charChosen','carte.html')">Commencer</button>
+        <button class="btn-start" onclick="acceptPlayer('charChosen','carte.html')" data-lang-key="start">Commencer</button>
     </div>
     <script src="../../common_functions/get_data.js"></script>
     <script src="../../common_functions/unlocks.js"></script>
     <script src="../../common_functions/sounds.js"></script>
     <script src="../../common_functions/select_characters.js"></script>
+    <script src="../../common_functions/translation.js"></script>
+    <script src="../../common_functions/languages.js"></script>
 	<script>
         var char = "p1"
         var lvl = 1

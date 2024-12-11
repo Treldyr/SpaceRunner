@@ -13,13 +13,13 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title">Space Runner</h1>
+        <h1 class="custom-title" data-lang-key="scores">Scores</h1>
         <table>
             <thead>
                 <tr>
-                    <th>Planètes</th>
-                    <th>Coups</th>
-                    <th>Temps</th>
+                    <th data-lang-key="planet">Planètes</th>
+                    <th data-lang-key="moves">Coups</th>
+                    <th data-lang-key="time">Temps</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,12 +85,14 @@
                 </tr>
             </tbody>
         </table>
-        <button class="btn-start" onclick="returnLastIndexPage()">Retour</button>
+        <button class="btn-start" onclick="returnLastIndexPage()" data-lang-key="back">Retour</button>
     </div>
 </body>
 <script src="../common_functions/get_data.js"></script>
 <script src="../common_functions/basic.js"></script>
 <script src="../common_functions/navigation.js"></script>
+<script src="../common_functions/translation.js"></script>
+<script src="../common_functions/languages.js"></script>
 <script>
     retrievePlanet(1,'terre');
     retrievePlanet(2,'katshyk');

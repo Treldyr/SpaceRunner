@@ -12,12 +12,15 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title">2 joueurs</h1>
-        <button class="btn-start" onclick="goMultiplayer1v1()">1 contre 1</button>
-        <button class="btn-start" onclick="goMultiplayerAdventure()">Aventure</button>
-        <button class="btn-start" onclick="goRules()">Règles du jeu</button>
-        <button class="btn-start" onclick="returnLastIndexPage()">Retour</button>
+        <h1 class="custom-title" data-lang-key="btnTwo">2 joueurs</h1>
+        <button class="btn-start" onclick="goMultiplayerAdventure()" data-lang-key="adventureMode">Mode Aventure</button>
+        <button class="btn-start" onclick="goMultiplayer1v1()" data-lang-key="OneV1Mode">Mode 1 contre 1</button>
+        <button class="btn-start" onclick="goRules()" data-lang-key="rules">Règles</button>
+        <button class="btn-start" onclick="returnLastIndexPage()" data-lang-key="back">Retour</button>
     </div>
     <script src="../common_functions/navigation.js"></script>
+    <script src="../common_functions/translation.js"></script>
+    <script src="../common_functions/languages.js"></script>
+</body>
 </body>
 </html>

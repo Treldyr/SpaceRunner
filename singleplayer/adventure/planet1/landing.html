@@ -13,21 +13,21 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Terre</div>
+        <div class="custom-title" data-lang-key="text20">Bienvenu sur la planète Terre</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>C'est donc ici la dernière fois qu'on l'a vu. Il ne devrait pas être très loin.</p>
+                <p data-lang-key="text21">C'est donc ici la dernière fois qu'on l'a vu. Il ne devrait pas être très loin.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Laissez moi faire. Je vais le trouver en un claquement de doigts !</p>
-                <p>C'est parti !</p>
+                <p data-lang-key="text22">Laissez moi faire. Je vais le trouver en un claquement de doigts !</p>
+                <p data-lang-key="text23">C'est parti !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -36,6 +36,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 2
         

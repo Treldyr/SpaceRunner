@@ -12,16 +12,18 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title">Space Runner</h1>
-        <button class="btn-start" onclick="goSinglePlayerAdventure()">Mode Aventure</button>
-        <button class="btn-start" onclick="resetAventure()">Recommencer</button>
-        <button class="btn-start" onclick="goRules()">Règles</button>
-        <button class="btn-start" onclick="returnLastIndexPage()">Retour</button>
+        <h1 class="custom-title" data-lang-key="btnOne">1 joueur</h1>
+        <button class="btn-start" onclick="goSinglePlayerAdventure()" data-lang-key="adventureMode">Mode Aventure</button>
+        <button class="btn-start" onclick="resetAventure()" data-lang-key="restart">Recommencer</button>
+        <button class="btn-start" onclick="goRules()" data-lang-key="rules">Règles</button>
+        <button class="btn-start" onclick="returnLastIndexPage()" data-lang-key="back">Retour</button>
         
     </div>
 </body>
 <script src="../common_functions/set_data.js"></script>
 <script src="../common_functions/navigation.js"></script>
+<script src="../common_functions/translation.js"></script>
+<script src="../common_functions/languages.js"></script>
 <script>
 
     function resetAventure() {

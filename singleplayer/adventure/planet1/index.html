@@ -13,43 +13,43 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Mission 1</div>
+        <div class="custom-title"><a data-lang-key="mission">Mission</a> 1</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bienvenu sur la station <b>Zorath</b> jeune chat.</p>
-                <p>Cette station est bien plus qu'un simple abri dans l'immensité.</p>
-                <p>Ici, chaque chat a un rôle. Je t'accompagnerais afin que tu trouves ta place comme il se doit.</p>
+                <p><a data-lang-key="text1">Bienvenu sur la station</a> <b>Zorath</b> <a data-lang-key="text2">jeune chat.</a></p>
+                <p data-lang-key="text3">Cette station est bien plus qu'un simple abri dans l'immensité.</p>
+                <p data-lang-key="text4">Ici, chaque chat a un rôle. Je t'accompagnerais afin que tu trouves ta place comme il se doit.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Bonjour, merci beaucoup de m'accueillir parmis vous !</p>
-                <p>Je vous en suis infiniment reconnaissant.</p>
-                <p>Comment pourrais-je faire pour vous remercier ?</p>
+                <p data-lang-key="text5">Bonjour, merci beaucoup de m'accueillir parmis vous !</p>
+                <p data-lang-key="text6">Je vous en suis infiniment reconnaissant.</p>
+                <p data-lang-key="text7">Comment pourrais-je faire pour vous remercier ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>J'ai peut-être une idée...</p>
-                <p>Un de nos compagnons s'est égaré sur la planète <b>Terre</b> </p>
-                <p>On m'a dit que tu viens de cette planète, peux-tu nous aider à le retrouver ?</p>
+                <p data-lang-key="text8">J'ai peut-être une idée...</p>
+                <p> <a data-lang-key="text9">Un de nos compagnons s'est égaré sur la planète</a> <b data-lang-key="planet1">Terre</b> </p>
+                <p data-lang-key="text10">On m'a dit que tu viens de cette planète, peux-tu nous aider à le retrouver ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Avec plaisir !<p>
-                <p>Merci pour votre confiance.<p>
+                <p data-lang-key="text11">Avec plaisir !<p>
+                <p data-lang-key="text12">Merci pour votre confiance.<p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -58,6 +58,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 4
         

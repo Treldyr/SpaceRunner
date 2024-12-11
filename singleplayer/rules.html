@@ -14,41 +14,43 @@
     <div class="background-image"></div>
     <div class="content">
         <div class="page" id="page1">
-            <div class="custom-title">Mode Aventure</div>
+            <div class="custom-title" data-lang-key="adventureMode">Mode Aventure</div>
             <div class="game-description">
-                <h3><u>But du jeu</u></h3>
-                <p>Vous incarnez un personnage principal qui voyage de planètes en planètes</p>
-                <p>Ce personnage doit sur chaque planètes qu'il visite, réaliser 5 labyrinthes afin d'en sortir</p>
-                <p>La planète suivante ne sera débloquée que quand les labyrinthes sont complétés</p>
+                <h3><u data-lang-key="adventureMode">But du jeu</u></h3>
+                <p data-lang-key="rules1">Vous incarnez un chat qui voyage de planètes en planètes</p>
+                <p data-lang-key="rules2">Ce félin doit sur chaque planètes qu'il visite, réaliser 5 labyrinthes afin d'en sortir</p>
+                <p data-lang-key="rules3">La planète suivante ne sera débloquée que quand les labyrinthes sont complétés</p>
             </div>
 
             <div class="game-description">
-                <h3><u>Déplacements</u></h3>
-                <p>Vous ne pouvez vous déplacer que horinzontalement et verticalement</p>
-                <p>Appuyez sur Q ou la flèche directionnelle de droite pour aller à droite</p>
-                <p>Appuyez sur S ou la flèches directionnelle du bas pour aller en bas</p>
-                <p>Appuyez sur D ou la flèches directionnelle de gauche pour aller à gauche</p>
-                <p>Appuyez sur Z ou la flèches directionnelle du haut pour aller en haut</p>
+                <h3><u data-lang-key="shift">Déplacements</u></h3>
+                <p data-lang-key="rules4">Vous ne pouvez vous déplacer que horinzontalement et verticalement</p>
+                <p data-lang-key="rules5">Appuyez sur Q ou la flèche directionnelle de droite pour aller à droite</p>
+                <p data-lang-key="rules6">Appuyez sur S ou la flèches directionnelle du bas pour aller en bas</p>
+                <p data-lang-key="rules7">Appuyez sur D ou la flèches directionnelle de gauche pour aller à gauche</p>
+                <p data-lang-key="rules8">Appuyez sur Z ou la flèches directionnelle du haut pour aller en haut</p>
             </div>
 
             <div class="game-description">
-                <h3><u>Planètes</u></h3>
-                <p>Chaque planète que vous rencontrerez aura des spécificités différentes</p>
-                <p>Elle possède des textures, et des règles uniques</p>
-                <p>Ces règles auront un impact sur le gameplay du jeu !</p>
-                <p>Ils vont du plus simple (il y a des objets à collecter), au plus tordu (un fantôme vous poursuit)</p>
+                <h3><u data-lang-key="planet">Planètes</u></h3>
+                <p data-lang-key="rules9">Chaque planète que vous rencontrerez aura des spécificités différentes</p>
+                <p data-lang-key="rules10">Elle possède des textures, et des règles uniques</p>
+                <p data-lang-key="rules11">Ces règles auront un impact sur le gameplay du niveau !</p>
+                <p data-lang-key="rules12">Ils vont du plus simple (il y a des objets à collecter), au plus tordu (un fantôme vous poursuit)</p>
             </div>
 
             <div class="game-description">
-                <h3><u>A débloquer</u></h3>
-                <p>Lorsque vous complétez une planète, vous avez des chances de débloquer des skins exclusifs !</p>
-                <p>Ces skins peuvent être ceux du personnage principal, auquel cas ils seront utilisables dans tous les modes de jeu</p>
-                <p>Ces skins peuvent être ceux du fantôme, auquel cas ils seront disponible en mode 1 contre 1</p>
+                <h3><u data-lang-key="toUnlock">A débloquer</u></h3>
+                <p data-lang-key="rules13">Lorsque vous complétez une planète, vous avez des chances de débloquer des skins exclusifs !</p>
+                <p data-lang-key="rules14">Ces skins peuvent être ceux du personnage principal, auquel cas ils seront utilisables dans tous les modes de jeu</p>
+                <p data-lang-key="rules15">Ces skins peuvent être ceux du fantôme, auquel cas ils seront disponible en mode 1 contre 1</p>
             </div>
         </div>
 
-        <button class="btn-start" onclick="returnCurrentIndexPage()">Retour</button>
+        <button class="btn-start" onclick="returnCurrentIndexPage()" data-lang-key="back">Retour</button>
     </div>
     <script src="../common_functions/navigation.js"></script>
+    <script src="../common_functions/translation.js"></script>
+    <script src="../common_functions/languages.js"></script>
 </body>
 </html>
