@@ -17,52 +17,52 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Observe, jeune chat... Un astre, caché dans le système.</p>
-                <p>Aucun signal officiel, aucune affiliation connue.</p>
-                <p>Il se déplace pour éviter d’être détecté. </p>
+                <p data-lang-key="text147">Observe, jeune chat... Un astre, caché dans le système.</p>
+                <p data-lang-key="text148">Aucun signal officiel, aucune affiliation connue.</p>
+                <p data-lang-key="text149">Il se déplace pour éviter d’être détecté. </p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Qu'est ce que c'est ?</p>
+                <p data-lang-key="text150">Qu'est ce que c'est ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>C'est une station, de toute évidence.</p>
-                <p>Les autres l'ont nommés <b>L’Étranger</b>, un nom qui lui va bien.</p>
-                <p>Mais si elle se cache, c’est qu’elle a quelque chose à cacher.</p>
-                <p>Peut-être des réponses, ou peut-être des ennuis.</p>
-                <p>Peu importe ce que c’est, nous devons agir avant qu’elle ne disparaisse à nouveau.</p>
-                <p>Et entrer en contact avec.</p>
+                <p data-lang-key="text151">C'est une station, de toute évidence.</p>
+                <p><a data-lang-key="text152">Les autres l'ont nommés</a> <b>L’Étranger</b><a data-lang-key="text153"></a>, un nom qui lui va bien.</p>
+                <p data-lang-key="text154">Mais si elle se cache, c’est qu’elle a quelque chose à cacher.</p>
+                <p data-lang-key="text155">Peut-être des réponses, ou peut-être des ennuis.</p>
+                <p data-lang-key="text156">Peu importe ce que c’est, nous devons agir avant qu’elle ne disparaisse à nouveau.</p>
+                <p data-lang-key="text157">Et entrer en contact avec.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Je peux vous aider !</p>
-                <p>Je suis le chat de la situation.</p>
+                <p data-lang-key="text158">Je peux vous aider !</p>
+                <p data-lang-key="text159">Je suis le chat de la situation.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Tu as prouvé que tu étais prêt à affronter l’inconnu, jeune héros.</p>
-                <p>Cette mission ne sera pas différente.</p>
-                <p>Trouve un moyen d’intercepter <b>L’Étranger</b> et découvre ce qu’elle cache. Mais sois prudent...</p>
-                <p>Cette fois, l’ennemi pourrait être plus qu’une tempête ou une atmosphère hostile.</p>
+                <p data-lang-key="text160">Tu as prouvé que tu étais prêt à affronter l’inconnu, jeune héros.</p>
+                <p data-lang-key="text161">Cette mission ne sera pas différente.</p>
+                <p><a data-lang-key="text162">Trouve un moyen d’intercepter</a> <b>L’Étranger</b> <a data-lang-key="text163">et découvre ce qu’elle cache. Mais sois prudent...</a></p>
+                <p data-lang-key="text164">Cette fois, l’ennemi pourrait être plus qu’une tempête ou une atmosphère hostile.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -72,6 +72,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 5
         

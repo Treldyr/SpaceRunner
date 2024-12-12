@@ -13,48 +13,48 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur l'Étranger</div>
+        <div class="custom-title"><a data-lang-key="text167">Bienvenu sur</a> l'Étranger</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>J'ai réussi à renter dans le vaisseau !</p>
+                <p data-lang-key="text170">J'ai réussi à renter dans le vaisseau !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Âllo ? Il y a quelqu'un ?</p>
-                <p>Tiens, il y a des shurikens par terre.</p>
-                <p>Je sens mal cette histoire...</p>
+                <p data-lang-key="text171">Âllo ? Il y a quelqu'un ?</p>
+                <p data-lang-key="text172">Tiens, il y a des shurikens par terre.</p>
+                <p data-lang-key="text173">Je sens mal cette histoire...</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Eh ! Toi là ! T'es qui toi ?</p>
+                <p data-lang-key="text174">Eh ! Toi là ! T'es qui toi ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Je viens de la station <b>Zorath</b>.</p>
-                <p>Je suis venu vous demander de désactiver vos brouilleurs radar et allumer vos transmetteurs.</p>
+                <p><a data-lang-key="text175">Je viens de la station</a> <b>Zorath</b>.</p>
+                <p data-lang-key="text176">Je suis venu vous demander de désactiver vos brouilleurs radar et allumer vos transmetteurs.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>T'es le chat que l'on surnomme le jeune héros ?</p>
-                <p>Je te connais, c'est toi qui a fait emprisonné mon frère qui était sur <b>Deep Space Nine</b>.</p>
-                <p>Je vais te faire ta peau.</p>
+                <p data-lang-key="text177">T'es le chat que l'on surnomme le jeune héros ?</p>
+                <p><a data-lang-key="text178">Je te connais, c'est toi qui a fait emprisonné mon frère qui était sur</a> <b>Deep Space Nine</b>.</p>
+                <p data-lang-key="text179">Je vais te faire ta peau.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -63,6 +63,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 5
         

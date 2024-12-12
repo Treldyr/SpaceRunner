@@ -13,16 +13,18 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur l'Étranger</div> 
+        <div class="custom-title"><a data-lang-key="text167">Bienvenu sur </a>l'Étranger</div> 
         <div class="game-description">
-            <p>Neutralisez votre adversaire en lui tirant dessus avec les shurikens trouvés par terre !</p>
-            <p>Attention ! S'il vous touche, vous avez perdu !</p>
-            <p>Bonne chance !</p>
-            <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
+            <p data-lang-key="text165">Neutralisez votre adversaire en lui tirant dessus avec les shurikens trouvés par terre !</p>
+            <p data-lang-key="text166">Attention ! S'il vous touche, vous avez perdu !</p>
+            <p data-lang-key="goodluck">Bonne chance !</p>
+            <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
         </div>
         
     </div>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
 </body>
 </html>
