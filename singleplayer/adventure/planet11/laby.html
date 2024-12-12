@@ -19,9 +19,9 @@
     <div class="background-image"></div>
         <div class="content">
             <div id="pause">
-                <button class="btn-start" onclick="closePause()">Continuer</button>
-                <button class="btn-start" onclick="returnToMapFromPlanet()">Carte</button>
-                <button class="btn-start" onclick="returnToMenu()">Menu</button>
+                <button class="btn-start" onclick="closePause()" data-lang-key="continue">Continuer</button>
+                <button class="btn-start" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
+                <button class="btn-start" onclick="returnToMenu()" data-lang-key="menu">Menu</button>
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -31,12 +31,12 @@
             <div class="page" id="page2" >
                 <div class="custom-title">Station d'Âtrebois complétée !</div>
                 <div class="game-description">
-                    <p>Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
                     <img src="../../../images/p13down.png" width="80px">
                     <p id="your_score"></p>
         
                     <p>La planète Défaillance et ses 5 niveaux sont maintenant disponibles.</p>
-                    <p>Bonne continuation !</p>
+                    <p data-lang-key="goodContinuation">Bonne continuation !</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="goPlanet(12)">Continuer</button>
