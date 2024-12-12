@@ -13,32 +13,32 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la station Deep Space Nine</div>
+        <div class="custom-title" data-lang-key="text80">Bienvenu sur la station Deep Space Nine</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>On est arrivé.</p>
-                <p>Normalement il devrait y avoir du monde. Mais c'est vide.</p>
-                <p>Je ne comprends pas...</p>
+                <p data-lang-key="text85">On est arrivé.</p>
+                <p data-lang-key="text86">Normalement il devrait y avoir du monde. Mais c'est vide.</p>
+                <p data-lang-key="text87">Je ne comprends pas...</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Je pars voir la salle des contrôles.</p>
-                <p>Attends moi ici, ça va être rapide.</p>
+                <p data-lang-key="text88">Je pars voir la salle des contrôles.</p>
+                <p data-lang-key="text89">Attends moi ici, ça va être rapide.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
         <div class="page" id="page3">
             <div class="game-description">
-                <p>D'accord, je reste ici.</p>
-                <p>Dès que tu as terminé, reviens me voir.</p>
+                <p data-lang-key="text90">D'accord, je reste ici.</p>
+                <p data-lang-key="text91">Dès que tu as terminé, reviens me voir.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -46,46 +46,46 @@
             <div class="game-description">
                 <p>...</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Il y a quelqu'un ! Eh toi là !</p>
-                <p>Que s'est-il passé avec le reste des habitants du vaisseau ?</p>
+                <p data-lang-key="text92">Il y a quelqu'un ! Eh toi là !</p>
+                <p data-lang-key="text93">Que s'est-il passé avec le reste des habitants du vaisseau ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page6">
             <div class="game-description">
-                <p>Tiens ? Il y a encore quelqu'un ?</p>
-                <p>Hahahaha je pensais que les survivants avaient tous déguerpis !</p>
-                <p>Approche petit.</p>
+                <p data-lang-key="text94">Tiens ? Il y a encore quelqu'un ?</p>
+                <p data-lang-key="text95">Hahahaha je pensais que les survivants avaient tous déguerpis !</p>
+                <p data-lang-key="text96">Approche petit.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page7">
             <div class="game-description">
-                <p>Comment ça ?</p>
-                <p>Pourquoi tu as des shurikens sur toi ?</p>
-                <p>Calme toi... Je viens de la station voisine, <b>Zorath</b> </p>
-                <p>Je ne recherche pas la violence.</p>
+                <p data-lang-key="text97">Comment ça ?</p>
+                <p data-lang-key="text98">Pourquoi tu as des shurikens sur toi ?</p>
+                <p><a data-lang-key="text99">Calme toi... Je viens de la station voisine,</a> <b>Zorath</b> </p>
+                <p data-lang-key="text100">Je ne recherche pas la violence.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page8">
             <div class="game-description">
                 <p>Hahaha</p>
-                <p>Moi si.</p>
+                <p data-lang-key="text101">Moi si.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
@@ -94,6 +94,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 8
         

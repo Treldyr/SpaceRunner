@@ -17,37 +17,37 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Tu es incroyable...</p>
-                <p>Je ne sais pas comment te remercier. Cette planète aurait été mon tombeau.</p>
+                <p data-lang-key="text62">Tu es incroyable...</p>
+                <p data-lang-key="text73">Je ne sais pas comment te remercier. Cette planète aurait été mon tombeau.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Ne t'inquiète pas, maintenant tout va bien.</p>
-                <p>Tu es en sécurité sur cette station.</p>
+                <p data-lang-key="text74">Ne t'inquiète pas, maintenant tout va bien.</p>
+                <p data-lang-key="text75">Tu es en sécurité sur cette station.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Exellent travail ! Tu dépasses mes attentes tous les jours !</p>
-                <p>Écoute bien : ce chat doit retourner dans sa station, <b>Deep Space Nine</b>.</p>
-                <p>Je vois que tu t'entends déjà très bien avec lui, je te laisse le racompagner.</p>
+                <p data-lang-key="text76">Exellent travail ! Tu dépasses mes attentes tous les jours !</p>
+                <p><a data-lang-key="text77">Écoute bien : ce chat doit retourner dans sa station,</a> <b>Deep Space Nine</b>.</p>
+                <p data-lang-key="text78">Je vois que tu t'entends déjà très bien avec lui, je te laisse le racompagner.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>D'accord, je vais faire ça.</p>
+                <p data-lang-key="text79">D'accord, je vais faire ça.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -57,6 +57,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 4
         
