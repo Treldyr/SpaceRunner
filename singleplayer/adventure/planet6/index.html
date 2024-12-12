@@ -17,51 +17,51 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Encore une vie sauvée. Chaque chat sauvé est une victoire contre l’immensité et ses dangers.</p>
-                <p>Notre ami est sauf grâce à toi, jeune héros.</p>
-                <p>Mais il semble que l’univers n’ait pas fini de nous tester.</p>
-                <p>Nous avons encore une disparition à déplorer.</p>
+                <p data-lang-key="text126">Encore une vie sauvée. Chaque chat sauvé est une victoire contre l’immensité et ses dangers.</p>
+                <p data-lang-key="text127">Notre ami est sauf grâce à toi, jeune héros.</p>
+                <p data-lang-key="text128">Mais il semble que l’univers n’ait pas fini de nous tester.</p>
+                <p data-lang-key="text129">Nous avons encore une disparition à déplorer.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Merci l'ami !</p>
-                <p>Si tu n'avais pas été là, je serais sûrement mort de froid !</p>
+                <p data-lang-key="text130">Merci l'ami !</p>
+                <p data-lang-key="text131">Si tu n'avais pas été là, je serais sûrement mort de froid !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>C'est avec plaisir !</p>
-                <p>Quelle est la prochaine mission ?</p>
-                <p>Qui dois-je sauver cette fois ?</p>
+                <p data-lang-key="text132">C'est avec plaisir !</p>
+                <p data-lang-key="text133">Quelle est la prochaine mission ?</p>
+                <p data-lang-key="text134">Qui dois-je sauver cette fois ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Cette fois-ci, c'est un autre chat dont on a perdu le contact sur la planète similaire, <u>Léviathe</u>.</p>
-                <p>L’atmosphère de cette planète est bien pire que celle de <u>Hoth</u>.</p>
-                <p>Tu devras surveiller ton oxygène tout en le trouvant.</p>
-                <p>Cette mission sera rude, mais je sais que tu n’abandonnes jamais.</p>
-                <p>Acceptes-tu d'aller le chercher ?</p>
+                <p><a data-lang-key="text135">Cette fois-ci, c'est un autre chat dont on a perdu le contact sur la planète similaire,</a> <b>Léviathe</b>.</p>
+                <p><a data-lang-key="text136">L’atmosphère de cette planète est bien pire que celle de</a> <b>Hoth</b>.</p>
+                <p data-lang-key="text137">Tu devras surveiller ton oxygène tout en le trouvant.</p>
+                <p data-lang-key="text138">Cette mission sera rude, mais je sais que tu n’abandonnes jamais.</p>
+                <p data-lang-key="text139">Acceptes-tu d'aller le chercher ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Bien sûr ! C'est parti !</p>
+                <p data-lang-key="text140">Bien sûr ! C'est parti !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -71,6 +71,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 5
         

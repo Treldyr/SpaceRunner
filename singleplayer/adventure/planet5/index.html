@@ -17,59 +17,59 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Bienvenue à bord, jeune héros.</p>
-                <p>J'ai entendu dire que tu as affronté un horrible bandit sur la station.</p>
-                <p>Une fois de plus, tu as prouvé que ton cœur est aussi grand que les étoiles.</p>
-                <p>Nous sommes fiers de t’avoir parmi nous.</p>
+                <p data-lang-key="text118">Bienvenue à bord, jeune héros.</p>
+                <p data-lang-key="text102">J'ai entendu dire que tu as affronté un horrible bandit sur la station.</p>
+                <p data-lang-key="text103">Une fois de plus, tu as prouvé que ton cœur est aussi grand que les étoiles.</p>
+                <p data-lang-key="text104">Nous sommes fiers de t’avoir parmi nous.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Je... Je ne saurais comment vous remercier.</p>
-                <p>Sans toi, ce bandit aurait fait de moi un simple souvenir.</p>
-                <p>Et... Ma station est désertée... Je ne sais plus où aller.</p>
+                <p data-lang-key="text105">Je... Je ne saurais comment vous remercier.</p>
+                <p data-lang-key="text106">Sans toi, ce bandit aurait fait de moi un simple souvenir.</p>
+                <p data-lang-key="text107">Et... Ma station est désertée... Je ne sais plus où aller.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Mon brave petit ! Notre station accueille tous les félins de bons coeur.</p>
-                <p>Reste ici le temps qu'il le faut, jusqu'à ce qu'on retrouve les tiens.</p>
+                <p data-lang-key="text108">Mon brave petit ! Notre station accueille tous les félins de bons coeur.</p>
+                <p data-lang-key="text109">Reste ici le temps qu'il le faut, jusqu'à ce qu'on retrouve les tiens.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>C'est vrai ? Merci infiniment ! Youpiii !</p>
+                <p data-lang-key="text110">C'est vrai ? Merci infiniment ! Youpiii !</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>Pas de répit pour les braves, il semblerait.</p>
-                <p>Une nouvelle mission vient de tomber.</p>
-                <p>Cette fois, c’est sur <b>Hoth</b>, une planète gelée aux tempêtes glaciales redoutables. </p>
-                <p>Un de nos explorateurs, y est coincé.</p>
-                <p>Ce sera une mission difficile, mais je sais que tu es à la hauteur. Comme toujours.</p>
+                <p data-lang-key="text111">Pas de répit pour les braves, il semblerait.</p>
+                <p data-lang-key="text112">Une nouvelle mission vient de tomber.</p>
+                <p><a  data-lang-key="text113">Cette fois, c’est sur</a> <b>Hoth</b><a data-lang-key="text115">, une planète gelée aux tempêtes glaciales redoutables.</a></p>
+                <p data-lang-key="text114">Un de nos explorateurs, y est coincé.</p>
+                <p data-lang-key="text116">Ce sera une mission difficile, mais je sais que tu es à la hauteur. Comme toujours.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page6">
             <div class="game-description">
-                <p>Et comme toujours, je suis partant.</p>
+                <p data-lang-key="text117">Et comme toujours, je suis partant.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goLanding()">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -79,6 +79,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 6
         

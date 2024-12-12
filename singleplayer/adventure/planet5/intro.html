@@ -13,18 +13,20 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title" style="color: #000000;">Bienvenu sur la planète Hoth</div>
+        <div class="custom-title" style="color: #000000;"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Hoth</div>
 
         <div class="game-description">
-            <p>Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.</p>
-            <p>Attention ! Sur cette planète, le sol est glissant !</p>
-            <p>Quand vous commencez un déplacement, vous vous arrêtez lorsque vous touchez le mur d'en face.</p>
-            <p>Bonne chance !</p>
+            <p data-lang-key="text38">Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.</p>
+            <p data-lang-key="text119">Attention ! Sur cette planète, le sol est glissant !</p>
+            <p data-lang-key="text120">Quand vous commencez un déplacement, vous vous arrêtez lorsque vous touchez le mur d'en face.</p>
+            <p data-lang-key="goodluck">Bonne chance !</p>
             <br>
-            <button class="btn btn-outline-light" onclick="beginMaze()">Commencer</button>
+            <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
         </div>
     </div>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
 </body>
 </html>
