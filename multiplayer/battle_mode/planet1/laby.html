@@ -29,15 +29,15 @@
             </div>
 
             <div class="page" id="page2" >
-                <div class="custom-title">Fin de la partie</div>
+                <div class="custom-title" data-lang-key="text234">Fin de la partie</div>
                 <div class="game-description">
                     <h2 id="game_over_who_won"></h2>
-                    <h2>Victoires :</h2>
+                    <h2 data-lang-key="text235">Victoires :</h2>
                     <h4 id="score_p1">J1 :</h4>
                     <h4  id="score_p2">J2 :</h4>
                     <br>
-                    <button class="btn btn-outline-light" onclick="rebegin()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
+                    <button class="btn btn-outline-light" onclick="rebegin()" data-lang-key="restart">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                 </div>
             </div>
         </div>
@@ -84,6 +84,8 @@
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/build.js"></script>
 <script src="../javascript/interactions.js"></script>
+<script src="../../../common_functions/translation.js"></script>
+<script src="../../../common_functions/languages.js"></script>
 <script>
     function reactivate_all_powers(){
         // reactivate powers

@@ -13,29 +13,24 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Kamino</div>
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Kamino</div>
 
         <div class="game-description">
-            <p>Le joueur 1 doit atteindre l'arrivée</p>
-
-            <p>Le joueur fantome doit l'en empêcher, en le touchant</p>
-
-            <p>Attention, vous n'avez pas accès aux mêmes chemins...stratégisez pour pouvoir atteindre votre objectif</p>
-
-            <p> Le chemin <img src="img1.png" width="40px" class="img-thumbnail"> est accessible par tous. </p>
-
-            <p> Le chemin <img src="img4.png" width="40px" class="img-thumbnail"> n'est accessible par personne. </p>
-
-            <p> Le chemin <img src="img2.png" width="40px" class="img-thumbnail"> n'est accessible que par le joueur 1. </p>
-
-            <p> Le chemin <img src="img3.png" width="40px" class="img-thumbnail"> n'est accessible que par le joueur fantome. </p>
-
-            <p>Bonne chance !</p>
+            <p data-lang-key="text236">Le joueur chat doit atteindre l'arrivée</p>
+            <p data-lang-key="text237">Le joueur fantome doit l'en empêcher, en le touchant</p>
+            <p data-lang-key="text238">Attention, vous n'avez pas accès aux mêmes chemins...stratégisez pour pouvoir atteindre votre objectif</p>
+            <p><a data-lang-key="text239">Le chemin</a> <img src="img1.png" width="40px" class="img-thumbnail"> <a data-lang-key="text240">est accessible par tous.</a></p>
+            <p><a data-lang-key="text239">Le chemin</a> <img src="img4.png" width="40px" class="img-thumbnail"> <a data-lang-key="text241">n'est accessible par personne.</a></p>
+            <p><a data-lang-key="text239">Le chemin</a> <img src="img2.png" width="40px" class="img-thumbnail"> <a data-lang-key="text242">n'est accessible que par le joueur chat.</a></p>
+            <p><a data-lang-key="text239">Le chemin</a> <img src="img3.png" width="40px" class="img-thumbnail"> <a data-lang-key="text243">n'est accessible que par le joueur fantome.</a></p>
+            <p data-lang-key="goodluck">Bonne chance !</p>
             <br>
             <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
         </div>
     </div>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
 </body>
 </html>

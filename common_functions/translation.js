@@ -324,7 +324,17 @@ const languageData = {
         text230: "Attention ! N'oublie pas que cette nouvelle planète est spéciale !",
         text231: "Sur cette planète, deux esprits mal intentionnés rôdes...Fuyez les !",
         text232: "S'il touche l'un d'entre vous, vous avez tous les deux perdu !",
-        text233: "Toutes mes félicitations !"
+        text233: "Toutes mes félicitations !",
+        text234: "Fin de la partie",
+        text235: "Victoires :",
+        text236: "Le joueur chat doit atteindre l'arrivée",
+        text237: "Le joueur fantome doit l'en empêcher, en le touchant",
+        text238: "Attention, vous n'avez pas accès aux mêmes chemins...stratégisez pour pouvoir atteindre votre objectif",
+        text239: "Le chemin",
+        text240: "est accessible par tous.",
+        text241: "n'est accessible par personne.",
+        text242: "n'est accessible que par le joueur chat.",
+        text243: "n'est accessible que par le joueur fantome."
     },
     en: {
         mainTitle: "Space Runner",
@@ -651,7 +661,18 @@ const languageData = {
         text230: "Careful! Don’t forget that this new planet is special!",
         text231: "On this planet, two malevolent spirits roam... Run away from them!",
         text232: "If either one of you gets touched, you both lose!",
-        text233: "All my congratulations!"
+        text233: "All my congratulations!",
+        text234: "End of the game",
+        text235: "Wins:",
+        text236: "The cat player must reach the finish line",
+        text237: "The ghost player must stop them by touching him",
+        text238: "Careful, you don’t have access to the same paths... strategize to achieve your goal",
+        text239: "The path",
+        text240: "is accessible by everyone.",
+        text241: "is accessible by no one.",
+        text242: "is accessible only by the cat player.",
+        text243: "is accessible only by the ghost player.",
+
     },
     pt: {
         mainTitle: "Space Runner",
