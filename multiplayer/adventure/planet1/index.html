@@ -13,10 +13,10 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Terre</div>
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Terre</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Une nouvelle planète ! Super ! </p>
+                <p data-lang-key="text229">Une nouvelle planète ! Super !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -24,7 +24,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Attention ! N'oublie pas que cette nouvelle planète est différente des précédentes !</p>
+                <p data-lang-key="text230">Attention ! N'oublie pas que cette nouvelle planète est spéciale !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
@@ -35,6 +35,8 @@
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
     <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
     <script>
         var nbPage = 2
         

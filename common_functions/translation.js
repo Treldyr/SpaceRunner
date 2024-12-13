@@ -317,7 +317,14 @@ const languageData = {
         text225: "C'est donc ici qu'il est ?",
         text226: "Dans les environs, oui.",
         text227: "Fais attention, les fantômes rôdent. Ne te laisse pas toucher, ou c'est la fin.",
-        text228: "Compris."
+        text228: "Compris.",
+        choseThePlayer: "Choisissez le joueur",
+        next: "Suivant",
+        text229: "Une nouvelle planète ! Super !",
+        text230: "Attention ! N'oublie pas que cette nouvelle planète est spéciale !",
+        text231: "Sur cette planète, deux esprits mal intentionnés rôdes...Fuyez les !",
+        text232: "S'il touche l'un d'entre vous, vous avez tous les deux perdu !",
+        text233: "Toutes mes félicitations !"
     },
     en: {
         mainTitle: "Space Runner",
@@ -637,7 +644,14 @@ const languageData = {
         text225: "So this is where he is?",
         text226: "Somewhere around here, yes.",
         text227: "Be careful, ghosts roam. Don’t let them touch you, or it’s over.",
-        text228: "Understood."
+        text228: "Understood.",
+        choseThePlayer: "Choose the player",
+        next: "Next",
+        text229: "A new planet! Awesome!",
+        text230: "Careful! Don’t forget that this new planet is special!",
+        text231: "On this planet, two malevolent spirits roam... Run away from them!",
+        text232: "If either one of you gets touched, you both lose!",
+        text233: "All my congratulations!"
     },
     pt: {
         mainTitle: "Space Runner",

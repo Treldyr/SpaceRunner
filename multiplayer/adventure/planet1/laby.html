@@ -48,13 +48,19 @@
             </div>
 
             <div class="page" id="page6" >
-                <div class="custom-title">Planète Terre complétée !</div>
+                <div class="custom-title" data-lang-key="text18">Planète Terre complétée !</div>
                 <div class="game-description">
-                    <p id="your_score"></p>
-                    <p>Toutes mes félicitations !</p>
+                    <p>
+                        <a data-lang-key="youUsed">Vous avez utilisé</a>
+                        <a id="nbHits"></a>
+                        <a data-lang-key="hitIn">coups en</a>
+                        <a id="nbTime"></a>
+                        <a data-lang-key="seconds">secondes.</a>
+                    </p>
+                    <p data-lang-key="text233">Toutes mes félicitations !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="goPlanet(1)">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(1)" data-lang-key="restart">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                     
                 </div>
             </div>
@@ -63,10 +69,6 @@
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
-
-
-
-
       
 
 <!-- Optional JavaScript -->
@@ -83,6 +85,8 @@
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../ghosts.js"></script>
 <script src="../movements.js"></script>
+<script src="../../../common_functions/translation.js"></script>
+<script src="../../../common_functions/languages.js"></script>
 <script>
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -164,7 +168,8 @@
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
-            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups en "+totalSeconds+" secondes.";
+            document.getElementById('nbHits').innerHTML = nbCoups;
+            document.getElementById('nbTime').innerHTML = totalSeconds;
         }
     }
 
