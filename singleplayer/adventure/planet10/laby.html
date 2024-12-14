@@ -48,17 +48,20 @@
             </div>
 
             <div class="page" id="page6" >
-                <div class="custom-title">Planète Felucia complétée !</div>
+                <div class="custom-title" data-lang-key="text261">Planète Felucia complétée !</div>
                 <div class="game-description">
                     <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
                     <img src="../../../images/p12down.png" width="80px">
-
-                    <p id="your_score"></p>
-                    <p>La station d'Âtrebois est désormais disponible.</p>
+                    <p>
+                        <a data-lang-key="youUsed">Vous avez utilisé</a>
+                        <a id="nbHits"></a>
+                        <a data-lang-key="moves">coups</a>
+                    </p>
+                    <p data-lang-key="text262">La station d'Âtrebois est désormais disponible.</p>
                     <p data-lang-key="goodContinuation">Bonne continuation !</p>
-                    <button class="btn btn-outline-light" onclick="goIntro()">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="goPlanet(11)">Continuer</button>
-                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()">Carte</button>
+                    <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="restart">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(11)" data-lang-key="continue">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                     
                 </div>
             </div>
@@ -89,6 +92,8 @@
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/checks.js"></script>
+<script src="../../../common_functions/translation.js"></script>
+<script src="../../../common_functions/languages.js"></script>
 <script>
     var CountDownSeconds = 20
     var nbCoups = 0;
@@ -162,7 +167,7 @@
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
-            document.getElementById('your_score').innerHTML = "Vous avez utilisé "+nbCoups+" coups.";
+            document.getElementById('nbHits').innerHTML = nbCoups;
         }
     }
 

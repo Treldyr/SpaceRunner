@@ -13,18 +13,20 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title">Bienvenu sur la planète Felucia</div>
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Felucia</div>
 
         <div class="game-description">
-            <p>Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.</p>
-            <p>Sur cette planète, vous êtes submergés par de l'eau.</p>
-            <p>Vous avez besoin des bombonnes pour vous ravitailler en air, ne les oubliez pas !</p>
-            <p>Bonne chance !</p>
+            <p data-lang-key="text38">Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.</p>
+            <p data-lang-key="text259">Sur cette planète, vous êtes submergés par de l'eau.</p>
+            <p data-lang-key="text260">Vous avez besoin des bombonnes pour vous ravitailler en air, ne les oubliez pas !</p>
+            <p data-lang-key="goodluck">Bonne chance !</p>
             <br>
             <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
         </div>
     </div>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
 </body>
 </html>
