@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../css/planets/planet4.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/battle_mode.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -51,6 +52,17 @@
         </div>
         <div class="timer">
             <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="power-bottom-bar">
+            <div class="power-item" id="heart1">
+                <img src="../../../images/heart.png" alt="Coeur 1">
+              </div>
+            <div class="power-item" id="heart2">
+              <img src="../../../images/heart.png" alt="Coeur 2">
+            </div>
+            <div class="power-item" id="heart3">
+                <img src="../../../images/heart.png" alt="Coeur 4">
+            </div>
         </div>
     </div>
 
@@ -161,6 +173,10 @@
         if(((fromtop==fromtopShuriken)&&(fromleft==fromleftShuriken))&&(!game_ended)){
             goIntro()
         }
+    }
+
+    function hideNextHeart(nb_heart){
+        document.getElementById('heart'+nb_heart).style.display = "none";
     }
 
 </script>
