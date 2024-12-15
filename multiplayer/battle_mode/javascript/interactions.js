@@ -151,13 +151,11 @@ function finish_labyrinth(dop1won){
     document.getElementById('page2').style.display = "block";
     if(dop1won){
         nbvictoryP1++;
-        document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 1 <img src='../../../images/"+chara +"down.png' width='40px' class='img-thumbnail'>";
     } else {
         nbvictoryP2++
-        document.getElementById('game_over_who_won').innerHTML = "Gagnant : Joueur 2 <img src='../../../images/fantom"+charap2 +".png' width='40px' class='img-thumbnail'>" ;
     }
-    document.getElementById('score_p1').innerHTML = "J1 : "+nbvictoryP1;
-    document.getElementById('score_p2').innerHTML = "J2 : "+nbvictoryP2;
+    document.getElementById('score_p1').innerHTML = ""+nbvictoryP1;
+    document.getElementById('score_p2').innerHTML = ""+nbvictoryP2;
 }
 
 function rebegin() {

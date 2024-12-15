@@ -7,6 +7,7 @@ function construct_board(numboard){
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
+    set_final_tab();
 }
 
 function construct_line(line,numline,numboard){
@@ -39,4 +40,9 @@ function create_character(numboard) {
     document.getElementById('laby' + numboard).appendChild(the_image2);
     fromtop2 = coords_begin_2[numboard - 1][0];
     fromleft2 = coords_begin_2[numboard - 1][1];
+}
+
+function set_final_tab(){
+    document.getElementById('th_p1').innerHTML = "<img src='../../../images/"+chara +"down.png' width='60px' class='img-thumbnail'>";
+    document.getElementById('th_p2').innerHTML = "<img src='../../../images/fantom"+charap2 +".png' width='60px' class='img-thumbnail'>" ;
 }
