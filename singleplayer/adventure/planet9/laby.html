@@ -50,8 +50,10 @@
             <div class="page" id="page6" >
                 <div class="custom-title" style="color: #000000;" data-lang-key="text223">Planète Sablière Rouge complétée !</div>
                 <div class="game-description">
-                    <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <p data-lang-key="congratYouUnlockedMany">Félicitations ! Vous avez débloqué des nouveaux personnages :</p>
                     <img src="../../../images/p11down.png" width="80px">
+                    <img src="../../../images/fantomp4.png" width="80px">
+                    <img src="../../../images/fantomp5.png" width="80px">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
                         <a id="nbHits"></a>
@@ -172,6 +174,7 @@
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('sabliereR')
             UnlockPlanet(10)
+            UnlockGhost(3)
         }
     }
 

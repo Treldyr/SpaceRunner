@@ -31,8 +31,10 @@
             <div class="page" id="page2" >
                 <div class="custom-title" data-lang-key="text285">Station d'Âtrebois complétée !</div>
                 <div class="game-description">
-                    <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <p data-lang-key="congratYouUnlockedMany">Félicitations ! Vous avez débloqué des nouveaux personnages :</p>
                     <img src="../../../images/p13down.png" width="80px">
+                    <img src="../../../images/fantomp6.png" width="80px">
+                    <img src="../../../images/fantomp7.png" width="80px">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
                         <a id="nbHits"></a>
@@ -201,6 +203,7 @@
         totalSeconds = totalTimePlayed;
         setHighScorePlanet('atrebois');
         UnlockPlanet(12)
+        UnlockGhost(4)
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('nbHits').innerHTML = nbCoups;
