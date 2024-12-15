@@ -21,7 +21,7 @@ function enablePowerItem(powerid,image,color){
   // Changer la source de l'image
   const img = powerItem.querySelector("img");
   if (img) {
-    img.src = "../../../images/"+image+".png";
+    img.src = "../../../images/items/"+image+".png";
   }
   // Changer la couleur du texte dans h6
   const h6 = powerItem.querySelector("h6");

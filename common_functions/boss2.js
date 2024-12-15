@@ -104,7 +104,7 @@ function create_shuriken_poweritem(){
         powerItemLeft++;
     }
     let powitem = document.createElement('img');
-    powitem.setAttribute('src', "../../../images/powshuriken.png");
+    powitem.setAttribute('src', "../../../images/items/powshuriken.png");
     powitem.setAttribute('style', "position: fixed;top : "+(5*powerItemTop+5)+"vh;left : "+(3.5*powerItemLeft+5)+"vw;");
     powitem.className = "img_of_laby";
     powitem.setAttribute('id', "shuriPowItem");
