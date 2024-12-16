@@ -522,7 +522,7 @@ const languageData = {
         seconds : "seconds.",
         welcomeInThePlanet: "Welcome in the planet",
         planet1 : "Terre",
-        text21: "So this is the last time we saw him. He shouldn't be very far away.",
+        text21: "So this is here the last time we saw him. He shouldn't be very far away.",
         text22: "Let me do it. I'll find it in a snap!",
         text23: "Here we go!",
         text24: "You saved me... Thank you.",
@@ -582,7 +582,7 @@ const languageData = {
         text78: "I see you're already getting along well with him, I'll let you escort him back.",
         text79: "Alright, I'll do that.",
         text80: "Welcome to the Deep Space Nine station", // let the name Deep Space Nine (it is a star trek reference)
-        text81: "Neutralize your opponent by making them walk on the bombs on the ground!",
+        text81: "Neutralize your opponent by making him walk on the bombs on the ground!",
         text82: "Careful! He can throw shurikens. If one hits you, you lose.",
         text83: "Deep Space Nine station completed!",
         text84: "The planet Hoth and its 5 levels are now available.",
@@ -933,7 +933,7 @@ const languageData = {
         hitIn: "moves in",
         seconds : "seconds.",
         planet1 : "Terre", // we keep the french name for now (it's complicate to change planet names !!)
-        text21: "So this is the last time we saw him. He shouldn't be very far away.",
+        text21: "So this is here the last time we saw him. He shouldn't be very far away.",
         text22: "Let me do it. I'll find it in a snap!",
         text23: "Here we go!",
         text24: "You saved me... Thank you.",
@@ -993,7 +993,7 @@ const languageData = {
         text78: "I see you're already getting along well with him, I'll let you escort him back.",
         text79: "Alright, I'll do that.",
         text80: "Welcome to the Deep Space Nine station", // let the name Deep Space Nine (it is a star trek reference)
-        text81: "Neutralize your opponent by making them walk on the bombs on the ground!",
+        text81: "Neutralize your opponent by making him walk on the bombs on the ground!",
         text82: "Careful! He can throw shurikens. If one hits you, you lose.",
         text83: "Deep Space Nine station completed!",
         text84: "The planet Hoth and its 5 levels are now available.",
