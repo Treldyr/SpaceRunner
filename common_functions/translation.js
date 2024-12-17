@@ -255,7 +255,7 @@ const languageData = {
         text163: "et découvre ce qu’elle cache. Mais sois prudent...",
         text164: "Cette fois, l’ennemi pourrait être plus qu’une tempête ou une atmosphère hostile.",
         text165: "Neutralisez votre adversaire en lui tirant dessus avec les shurikens trouvés par terre !",
-        text166: "Attention ! S'il vous touche, vous avez perdu !",
+        text166: "Attention ! Si votre adversaire vous touche, vous avez perdu !",
         text167: "Bienvenu sur",
         text168: "Navette L'Étranger complétée !",
         text169: "La planète Fantomia et ses 5 niveaux sont maintenant disponibles.",
@@ -409,7 +409,9 @@ const languageData = {
         text314: "Prépare-toi à changer de dimension !",
         text315: "Va, jeune héros.",
         text316: "Et comme toujours... souviens-toi que nous croyons en toi.",
-        congratYouUnlockedMany: "Félicitations ! Vous avez débloqué des nouveaux personnages :"
+        congratYouUnlockedMany: "Félicitations ! Vous avez débloqué des nouveaux personnages :",
+        text317: "Un shuriken est représenté par :",
+        text318: "Appuyez sur E pour lancer un shuriken récupéré par terre.",
     },
     en: {
         mainTitle: "Space Runner",
@@ -667,7 +669,7 @@ const languageData = {
         text163: "and discover what it’s hiding. But be careful...",
         text164: "This time, the enemy might be more than just a storm or a hostile atmosphere.",
         text165: "Neutralize your opponent by shooting them with the shurikens found on the ground!",
-        text166: "Careful! If he hit you, you lose!",
+        text166: "Careful! If your opponent hits you, you lose!",
         text167: "Welcome to",
         text168: "Shuttle L'Etranger completed!",
         text169: "The planet Fantomia and its 5 levels are now available.",
@@ -821,7 +823,9 @@ const languageData = {
         text314: "Prepare to change dimensions!",  
         text315: "Go, young hero.",  
         text316: "And as always... remember that we believe in you.",
-        congratYouUnlockedMany: "Congratulations ! You unlocked new characters :" 
+        congratYouUnlockedMany: "Congratulations ! You unlocked new characters :",
+        text317: "A shuriken is represented by :",
+        text318: "Press E to launch a shuriken grabed previously.",
     },
     pt: {
         mainTitle: "Space Runner",
@@ -1078,7 +1082,7 @@ const languageData = {
         text163: "and discover what it’s hiding. But be careful...",
         text164: "This time, the enemy might be more than just a storm or a hostile atmosphere.",
         text165: "Neutralize your opponent by shooting them with the shurikens found on the ground!",
-        text166: "Careful! If he hit you, you lose!",
+        text166: "Careful! If your opponent hits you, you lose!",
         text167: "Welcome to",
         text168: "Shuttle L'Etranger completed!",
         text169: "The planet Fantomia and its 5 levels are now available.",
@@ -1232,7 +1236,9 @@ const languageData = {
         text314: "Prepare to change dimensions!",  
         text315: "Go, young hero.",  
         text316: "And as always... remember that we believe in you.",
-        congratYouUnlockedMany: "Congratulations ! You unlocked new characters :" 
+        congratYouUnlockedMany: "Congratulations ! You unlocked new characters :",
+        text317: "A shuriken is represented by :",
+        text318: "Press E to launch a shuriken grabed previously.",
     },
     es: {
         mainTitle: "Space Runner",
@@ -1489,7 +1495,7 @@ const languageData = {
         text163: "et découvre ce qu’elle cache. Mais sois prudent...",
         text164: "Cette fois, l’ennemi pourrait être plus qu’une tempête ou une atmosphère hostile.",
         text165: "Neutralisez votre adversaire en lui tirant dessus avec les shurikens trouvés par terre !",
-        text166: "Attention ! S'il vous touche, vous avez perdu !",
+        text166: "Attention ! Si votre adversaire vous touche, vous avez perdu !",
         text167: "Bienvenu sur",
         text168: "Navette L'Étranger complétée !",
         text169: "La planète Fantomia et ses 5 niveaux sont maintenant disponibles.",
@@ -1643,6 +1649,8 @@ const languageData = {
         text314: "Prépare-toi à changer de dimension !",
         text315: "Va, jeune héros.",
         text316: "Et comme toujours... souviens-toi que nous croyons en toi.",
-        congratYouUnlockedMany: "Félicitations ! Vous avez débloqué des nouveaux personnages :"
+        congratYouUnlockedMany: "Félicitations ! Vous avez débloqué des nouveaux personnages :",
+        text317: "Un shuriken est représenté par :",
+        text318: "Appuyez sur E pour lancer un shuriken récupéré par terre.",
     }
 }
