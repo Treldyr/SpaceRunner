@@ -104,7 +104,6 @@
 <script src="../../../common_functions/timer.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/checks.js"></script>
-<script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script>
@@ -114,8 +113,6 @@
     document.onkeydown = checkKey;
     var fromtop =0;
     var fromleft = 0;
-    var ghostTop = 0;
-    var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
 
@@ -168,7 +165,6 @@
             {
                 finish_labyrinth();
             }
-            checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
         }
     }
 
