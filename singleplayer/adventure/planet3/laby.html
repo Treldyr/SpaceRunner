@@ -119,6 +119,11 @@
     var found_b0;
     var found_b2;
 
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveLevel();
+    checkIfLevelIsEnough(3,lvl)
+
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";

@@ -42,7 +42,6 @@ function retrieveLevel() {
     }
 }
 
-
 function retrieveGhostAchievements() {
     var storedData = localStorage.getItem('ghostData');
     if (storedData !== null) {

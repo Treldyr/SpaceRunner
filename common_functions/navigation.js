@@ -66,3 +66,7 @@ function goIntro(){
 function goLanding(){
     window.location.href='landing.html';
 }
+
+function goMapFromMenu() {
+    window.location.href='carte.html';
+}

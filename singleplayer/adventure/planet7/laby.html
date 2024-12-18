@@ -134,6 +134,11 @@
     var actual_board = 0;
     retrievePlayer()
 
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveLevel();
+    checkIfLevelIsEnough(7,lvl)
+
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";

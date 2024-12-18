@@ -15,5 +15,8 @@ function isInDiagonal(x1, y1, x2, y2){
     return Math.abs(x2 - x1) === Math.abs(y2 - y1);
 }
 
-
-
+function checkIfLevelIsEnough(level_required,actual_level) {
+    if (level_required > actual_level){
+        window.location.href='../warning_cheating.html';
+    }
+}

@@ -121,8 +121,14 @@
     var ghostLeft = 0;
     var actual_board = 0;
     retrievePlayer()
-    moveGhost(7);
 
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveLevel();
+    checkIfLevelIsEnough(9,lvl)
+
+    // the ghost start following the player
+    moveGhost(7);
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";
