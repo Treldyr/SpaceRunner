@@ -191,6 +191,26 @@
         }
     }
 
+    function die_from_ghost(){
+        stopGhost();
+        reset_ghost_and_player();
+        moveGhost(6)
+    }
+
+
+    function reset_ghost_and_player(){
+        fromtop = coords_begin[actual_board][0];
+        fromleft = coords_begin[actual_board][1];
+        ghostTop = coords_begin_ghost[actual_board][0];
+        ghostLeft = coords_begin_ghost[actual_board][1];
+        
+        let cat = document.getElementById('character'+actual_board)
+        cat.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+        cat.setAttribute('src',"../../../images/"+chara+"down.png");
+        let ghost = document.getElementById('ghost'+actual_board);
+        ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+    }
+
 </script>
 </body>
 </html>
