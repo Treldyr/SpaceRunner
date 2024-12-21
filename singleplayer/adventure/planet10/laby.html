@@ -150,11 +150,11 @@
                 dest_rigthward();
             }
             nbCoups++;
-            checkIsAir(12);
+            checkIsAir(11);
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(countdownFinished){
-                goIntro();
+                reset_timer_and_player();
             }
             if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
@@ -183,6 +183,18 @@
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
         }
+    }
+
+    function reset_timer_and_player(){
+        fromtop = coords_begin[actual_board][0];
+        fromleft = coords_begin[actual_board][1];
+        
+        let cat = document.getElementById('character'+actual_board)
+        cat.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+        cat.setAttribute('src',"../../../images/"+chara+"down.png");
+        
+        stopCountDown()
+        startCountDown(CountDownSeconds)
     }
 
 </script>
