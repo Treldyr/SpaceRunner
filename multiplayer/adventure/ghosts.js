@@ -9,13 +9,15 @@ var ghostLeft2 = 0;
 
 function moveGhost() {
     ghostId = setInterval(() => {
-        nbTourGhost++;
-        if(nbTourGhost%2==0){
-            moveFirstGhost();
-        }else{
-            moveSecondGhost()
+        if(!inpause){
+            nbTourGhost++;
+            if(nbTourGhost%2==0){
+                moveFirstGhost();
+            }else{
+                moveSecondGhost()
+            }
+            checkGhost();
         }
-        checkGhost();
     }, 500);
 }
 
@@ -30,7 +32,7 @@ function checkGhost(){
     || ((ghostLeft2 == fromleft2) && (ghostTop2 == fromtop2) &&(!p2_won)) )
     {
         stopGhost()
-        goPlanet(1)
+        reset_ghosts_and_players()
     }
 }
 

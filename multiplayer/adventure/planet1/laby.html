@@ -106,7 +106,6 @@
     var charap2 = "p0";
     var inpause = false;
     retrievePlayers()
-    startTimer();
     moveGhost();
 
 
@@ -127,31 +126,33 @@
             showPause()
         }
         }else {
-            if ((e.keyCode == '38')&&(!p1_won)) { // going up p1
-                dest_upward_p1();
+            if(!inpause){
+                if ((e.keyCode == '38')&&(!p1_won)) { // going up p1
+                    dest_upward_p1();
+                }
+                else if ((e.keyCode == '40')&&(!p1_won))  { // going down p1
+                    dest_downward_p1();
+                }
+                else if ((e.keyCode == '37')&&(!p1_won))  { // going left p1
+                    dest_leftward_p1();
+                }
+                else if ((e.keyCode == '39')&&(!p1_won))  { // going rigth p1
+                    dest_rigthward_p1();
+                }
+                else if ((e.keyCode == '90') && (!p2_won)) { // Z key for going up for p2
+                    dest_upward_p2();
+                } 
+                else if ((e.keyCode == '83') && (!p2_won)) { // S key for going down for p2
+                    dest_downward_p2();
+                } 
+                else if ((e.keyCode == '81') && (!p2_won)) { // Q key for going left for p2
+                    dest_leftward_p2();
+                } 
+                else if ((e.keyCode == '68') && (!p2_won)) { // D key for going right for p2
+                    dest_rigthward_p2();
+                }
+                nbCoups++;
             }
-            else if ((e.keyCode == '40')&&(!p1_won))  { // going down p1
-                dest_downward_p1();
-            }
-            else if ((e.keyCode == '37')&&(!p1_won))  { // going left p1
-                dest_leftward_p1();
-            }
-            else if ((e.keyCode == '39')&&(!p1_won))  { // going rigth p1
-                dest_rigthward_p1();
-            }
-            else if ((e.keyCode == '90') && (!p2_won)) { // Z key for going up for p2
-                dest_upward_p2();
-            } 
-            else if ((e.keyCode == '83') && (!p2_won)) { // S key for going down for p2
-                dest_downward_p2();
-            } 
-            else if ((e.keyCode == '81') && (!p2_won)) { // Q key for going left for p2
-                dest_leftward_p2();
-            } 
-            else if ((e.keyCode == '68') && (!p2_won)) { // D key for going right for p2
-                dest_rigthward_p2();
-            }
-            nbCoups++;
             
             if((p1_won)&&(p2_won))
             {
@@ -180,6 +181,35 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
         }
+    }
+
+    function reset_ghosts_and_players(){
+        stopGhost();
+
+        fromtop1 = coords_begin[actual_board][0];
+        fromleft1 = coords_begin[actual_board][1];
+        fromtop2 = coords_begin2[actual_board][0];
+        fromleft2 = coords_begin2[actual_board][1];
+        ghostTop1 = coords_begin_ghost_1[actual_board][0];
+        ghostLeft1 = coords_begin_ghost_1[actual_board][1];
+        ghostTop2 = coords_begin_ghost_2[actual_board][0];
+        ghostLeft1 =  coords_begin_ghost_2[actual_board][1];
+        
+        let cat1 = document.getElementById('character'+actual_board)
+        cat1.setAttribute('style',"position: fixed;top : "+(3*fromtop1+5)+"vh;left : "+(2*fromleft1+5)+"vw;");
+        cat1.setAttribute('src',"../../../images/"+chara+"down.png");
+
+        let cat2 = document.getElementById('characterp2'+actual_board)
+        cat2.setAttribute('style',"position: fixed;top : "+(3*fromtop2+5)+"vh;left : "+(2*fromleft2+5)+"vw;");
+        cat2.setAttribute('src',"../../../images/"+charap2+"down.png");
+
+        let ghost1 = document.getElementById('ghost'+actual_board);
+        ghost1.setAttribute('style', "position: fixed;top : " + (3*ghostTop1+5) + "vh;left : " + (2 *ghostLeft1+5) + "vw;");
+
+        let ghost2 = document.getElementById('ghost2_'+actual_board);
+        ghost2.setAttribute('style', "position: fixed;top : " + (3*ghostTop2+5) + "vh;left : " + (2 *ghostLeft2+5) + "vw;");
+        
+        moveGhost()
     }
 
 </script>
