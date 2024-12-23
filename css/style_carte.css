@@ -34,12 +34,6 @@
     height: 90px; 
 }
 
-.btn-back {
-    position: fixed;
-    top : 5px;
-    left : 5px;
-}
-
 .map-container {
     width: 2000px; /* Largeur plus grande pour inclure toutes les planètes */
     height: 100vh;

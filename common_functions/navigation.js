@@ -70,3 +70,7 @@ function goLanding(){
 function goMapFromMenu() {
     window.location.href='carte.html';
 }
+
+function goSettings() {
+    window.location.href='menu/settings.html';
+}

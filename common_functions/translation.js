@@ -412,7 +412,8 @@ const languageData = {
         congratYouUnlockedMany: "Félicitations ! Vous avez débloqué des nouveaux personnages :",
         text317: "Un shuriken est représenté par :",
         text318: "Appuyez sur E pour lancer un shuriken récupéré par terre.",
-        text319: "Vous avez essayé de tricher. Je vous vois. Partez."
+        text319: "Vous avez essayé de tricher. Je vous vois. Partez.",
+        settings: "Paramètres"
     },
     en: {
         mainTitle: "Space Runner",
@@ -827,7 +828,8 @@ const languageData = {
         congratYouUnlockedMany: "Congratulations ! You unlocked new characters :",
         text317: "A shuriken is represented by :",
         text318: "Press E to launch a shuriken grabed previously.",
-        text319: "You tried to cheat you fool. I see you. Go away."
+        text319: "You tried to cheat you fool. I see you. Go away.",
+        settings: "Settings"
     },
     pt: {
         mainTitle: "Space Runner",

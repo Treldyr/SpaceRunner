@@ -20,21 +20,19 @@
 </script>
 <body>
     <div class="background-image"></div>
+    
     <div class="content">
-        <h1 class="custom-title" data-lang-key="btnTwo">2 joueurs</h1>
-        <button class="btn-start" onclick="goMultiplayerAdventure()" data-lang-key="adventureMode">Mode Aventure</button>
-        <button class="btn-start" onclick="goMultiplayer1v1()" data-lang-key="OneV1Mode">Mode 1 contre 1</button>
-        <button class="btn-start" onclick="goRules()" data-lang-key="rules">Règles</button>
+        <h1 class="custom-title" data-lang-key="settings">Paramètres</h1>
+        <p> Coming soon </p>
         <button class="btn-start" onclick="returnLastIndexPage()" data-lang-key="back">Retour</button>
+        <div class="btn-back">
+            <a onclick="returnLastIndexPage()">
+                <img class="arrow_back" src="../images/arrow_back.png" alt="Go backs">
+            </a>
+        </div>
     </div>
-    <div class="btn-back">
-        <a onclick="returnLastIndexPage()">
-            <img class="arrow_back" src="../images/arrow_back.png" alt="Go backs">
-        </a>
-    </div>
-    <script src="../common_functions/navigation.js"></script>
-    <script src="../common_functions/translation.js"></script>
-    <script src="../common_functions/languages.js"></script>
 </body>
-</body>
+<script src="../common_functions/navigation.js"></script>
+<script src="../common_functions/translation.js"></script>
+<script src="../common_functions/languages.js"></script>
 </html>

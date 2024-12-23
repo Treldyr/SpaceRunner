@@ -73,3 +73,19 @@ body {
     background-size: cover; /* Couvre toute la fenêtre */
     overflow: hidden;       /* Empêche tout débordement */
 }
+
+.btn-back {
+    position: fixed;
+    top : 10px;
+    left : 10px;
+    z-index:100;
+}
+
+.arrow_back {
+    width: 5vw;
+    height: 7vh;
+}
+
+.arrow_back:hover {
+    transform: scale(1.2); /* Effet d'agrandissement au survol */
+}

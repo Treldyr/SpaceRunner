@@ -92,7 +92,13 @@
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
         <button class="btn-start" onclick="acceptPlayer('charChosen','selectchar2.html')" data-lang-key="next">Suivant</button>
+        <div class="btn-back">
+            <a onclick="returnLastIndexPage()">
+                <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
+            </a>
+        </div>
     </div>
+    <script src="../../common_functions/navigation.js"></script>
     <script src="../../common_functions/get_data.js"></script>
     <script src="../../common_functions/unlocks.js"></script>
     <script src="../../common_functions/sounds.js"></script>
