@@ -129,7 +129,7 @@ const languageData = {
         text37: "Bien sûr que je l'accepte ! C'est parti !",
         text38: "Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.",
         text39: "Désormais, à partir de cette planète, les labyrinthes seront plus grands.",
-        text40: "Attention à ne pas vour perdre !",
+        text40: "Attention à ne pas vous perdre !",
         text41: "Planète Katshyk complétée !",
         text42: "La planète Kamino et ses 5 niveaux sont maintenant disponibles.",
         text43: "La forêt est bien épaisse ici !",

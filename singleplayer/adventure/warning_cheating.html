@@ -20,13 +20,19 @@
 </script>
 <body>
     <div class="background-image"></div>
-    <div class="content">
-        <h2 data-lang-key="text319">You tried to cheat you fool. I see you. Go away.</h2>
-        <button class="btn-start" onclick="goMapFromMenu()" data-lang-key="map">Carte</button>
-        
-    </div>
+        <div class="content" id="page1">
+            <div class="game-description">
+                <h2 data-lang-key="text319">Vous avez essayé de tricher ! Allez-vous en</h2>
+                <br>
+                <button class="btn-start" onclick="goMapFromMenu()" data-lang-key="map">Carte</button>
+            </div>
+        </div>
 </body>
+<script src="../../common_functions/animation.js"></script>
 <script src="../../common_functions/navigation.js"></script>
 <script src="../../common_functions/translation.js"></script>
 <script src="../../common_functions/languages.js"></script>
+<script>
+    setCharacterWarning()
+</script>
 </html>
