@@ -44,7 +44,7 @@ function goRules(){
 }
 
 function goHighScores() {
-    window.location.href='menu/highScore.html';
+    window.location.href='highScore.html';
 }
 
 function goTwoPlayersMode() {
