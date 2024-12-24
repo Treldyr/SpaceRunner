@@ -84,6 +84,7 @@ body {
 .arrow_back {
     width: 5vw;
     height: 7vh;
+    cursor: pointer;
 }
 
 .arrow_back:hover {
