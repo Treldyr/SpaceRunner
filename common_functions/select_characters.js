@@ -1,69 +1,75 @@
 function hideLockedCharacters(){
-    if(lvl<2){
-        lockImage("p3")
+    if(lvl>1){
+        unlockImagePlayer("p3")
     }
-    if(lvl<3){
-        lockImage("p4")
+    if(lvl>2){
+        unlockImagePlayer("p4")
     }
-    if(lvl<4){
-        lockImage("p5")
+    if(lvl>3){
+        unlockImagePlayer("p5")
     }
-    if(lvl<5){
-        lockImage("p6")
+    if(lvl>4){
+        unlockImagePlayer("p6")
     }
-    if(lvl<6){
-        lockImage("p7")
+    if(lvl>5){
+        unlockImagePlayer("p7")
     }
-    if(lvl<7){
-        lockImage("p8")
+    if(lvl>6){
+        unlockImagePlayer("p8")
     }
-    if(lvl<8){
-        lockImage("p9")
+    if(lvl>7){
+        unlockImagePlayer("p9")
     }
-    if(lvl<9){
-        lockImage("p10")
+    if(lvl>8){
+        unlockImagePlayer("p10")
     }
-    if(lvl<10){
-        lockImage("p11")
+    if(lvl>9){
+        unlockImagePlayer("p11")
     }
-    if(lvl<11){
-        lockImage("p12")
+    if(lvl>10){
+        unlockImagePlayer("p12")
     }
-    if(lvl<12){
-        lockImage("p13")
+    if(lvl>11){
+        unlockImagePlayer("p13")
     }
-    if(lvl<13){
-        lockImage("p14")
+    if(lvl>12){
+        unlockImagePlayer("p14")
     }
-    if(lvl<14){
-        lockImage("p15")
+    if(lvl>13){
+        unlockImagePlayer("p15")
     }
-    if(lvl<15){
-        lockImage("p16")
+    if(lvl>14){
+        unlockImagePlayer("p16")
     }
 }
 
 function hideLockedGhosts(){
-    if(lvlGhost<2){
-        lockImage("p2")
-        lockImage("p3")
+    if(lvlGhost>1){
+        unlockImageGhost("p2")
+        unlockImageGhost("p3")
     }
-    if(lvlGhost<3){
-        lockImage("p4")
-        lockImage("p5")
+    if(lvlGhost>2){
+        unlockImageGhost("p4")
+        unlockImageGhost("p5")
     }
-    if(lvlGhost<4){
-        lockImage("p6")
-        lockImage("p7")
+    if(lvlGhost>3){
+        unlockImageGhost("p6")
+        unlockImageGhost("p7")
     }
 }
 
-
-function lockImage(imageId) {
+function unlockImagePlayer(imageId) {
     var image = document.getElementById(imageId);
-    image.classList.add('locked');                  // Ajoute la classe de verrouillage
-    image.onclick = null;                           // Désactive le clic
-    image.src = "../../images/locked.png";          // Ajoute l'image de cadenas
+    image.classList.remove('locked');                            // Supprime la classe de verrouillage
+    image.setAttribute('onclick', "selectImage('"+imageId+"')"); // réactive le clic
+    image.src = "../../images/"+imageId+"down.png"               // Ajoute l'image du personnage
+}
+
+function unlockImageGhost(imageId) {
+    var image = document.getElementById(imageId);
+    image.classList.remove('locked');                            // Supprime la classe de verrouillage
+    image.setAttribute('onclick', "selectImage('"+imageId+"')"); // réactive le clic
+    image.src = "../../images/fantom"+imageId+".png"              // Ajoute l'image du fantome
 }
 
 
