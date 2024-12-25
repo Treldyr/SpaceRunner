@@ -1,26 +1,28 @@
 function moveGhost(planet_id) {
     ghostId = setInterval(() => {
-        let diffLeft;
-        let diffTop;
-        if (ghostLeft > fromleft) {
-            diffLeft = ghostLeft - fromleft;
-        } else {
-            diffLeft = fromleft - ghostLeft;
-        }
-        if (ghostTop > fromtop) {
-            diffTop = ghostTop - fromtop;
-        } else {
-            diffTop = fromtop - ghostTop;
-        }
+        if(!inpause){
+            let diffLeft;
+            let diffTop;
+            if (ghostLeft > fromleft) {
+                diffLeft = ghostLeft - fromleft;
+            } else {
+                diffLeft = fromleft - ghostLeft;
+            }
+            if (ghostTop > fromtop) {
+                diffTop = ghostTop - fromtop;
+            } else {
+                diffTop = fromtop - ghostTop;
+            }
 
 
-        if (diffLeft > diffTop) {
-            moveGhostHorizontally(planet_id);
-        } else {
-            moveGhostVertically(planet_id);
-        }
+            if (diffLeft > diffTop) {
+                moveGhostHorizontally(planet_id);
+            } else {
+                moveGhostVertically(planet_id);
+            }
 
-        checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
+            checkGhost(ghostLeft,fromleft,ghostTop,fromtop);
+        }
     }, 500);
 }
 

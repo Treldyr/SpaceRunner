@@ -133,14 +133,14 @@
 
 
     function checkKey(e) {
-    e = e || window.event;
-    if (e.keyCode == '27'){ // touche echap
-        if(inpause){
-            closePause() 
-        }else{
-            showPause()
-        }
-        }else {
+        e = e || window.event;
+        if (e.keyCode == '27'){ // touche echap
+            if(inpause){
+                closePause() 
+            }else{
+                showPause()
+            }
+        } else if(!inpause) {
             if (is_input_up(e))  { // going up
                 dest_dim_up();
             }
@@ -153,7 +153,7 @@
             else if (is_input_right(e)) { // going rigth
                 dest_dim_right();
             }
-            else if (e.keyCode ==  '69'){
+            else if (e.keyCode ==  '69'){ // change dimension
                 if(nbChangDim>0){
                     changeDimension();
                 }

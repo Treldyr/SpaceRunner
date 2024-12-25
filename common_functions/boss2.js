@@ -1,7 +1,6 @@
 function moveBoss(number_boss) {
     boss2Id = setInterval(() => {
-        if((!isStop)&&(!game_ended)){
-            
+        if((!isStop)&&(!game_ended)&&(!inpause)){
             let diffLeft;
             let diffTop;
             if (bossLeft > fromleft) {
@@ -71,28 +70,30 @@ function launchShurikenFromBoss2(directionLaunched){
     create_shuriken(fromtopShuriken,fromleftShuriken)
 
     powshurikenId = setInterval(() => {
-        switch(directionLaunched){
-            case "u":
-                fromtopShuriken--;
-            break;
-            case "d":
-                fromtopShuriken++;
-            break;
-            case "l":
-                fromleftShuriken--;
-            break;
-            case "r":
-                fromleftShuriken++;
-            break;
-            default:
-                console.log('erreur direction')
-        }
-        updateImageShuriken()
-        checkShuriken()
-        if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
-            clearInterval(powshurikenId);
-            create_shuriken_poweritem()
-            delete_shuriken()
+        if(!inpause){
+            switch(directionLaunched){
+                case "u":
+                    fromtopShuriken--;
+                break;
+                case "d":
+                    fromtopShuriken++;
+                break;
+                case "l":
+                    fromleftShuriken--;
+                break;
+                case "r":
+                    fromleftShuriken++;
+                break;
+                default:
+                    console.log('erreur direction')
+            }
+            updateImageShuriken()
+            checkShuriken()
+            if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
+                clearInterval(powshurikenId);
+                create_shuriken_poweritem()
+                delete_shuriken()
+            }
         }
     }, 100); // run the function after 0.1 second (100 milliseconds)
 }

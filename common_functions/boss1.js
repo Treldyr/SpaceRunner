@@ -1,7 +1,7 @@
 function moveBoss(number_boss) {
     bossId = setInterval(() => {
         // vérification si le shuriken est disponible et les personnages alignés
-        if((!isStop)&&(!game_ended)){
+        if((!isStop)&&(!game_ended)&&(!inpause)){
             if(shurikenAvailable){
                 if(isInDiagonal(bossLeft,bossTop,fromleft,fromtop)){
                     if(bossLeft < fromleft){
@@ -105,37 +105,39 @@ function launchShurikenFromBoss1(directionLaunched){
     create_shuriken(fromtopShuriken,fromleftShuriken)
 
     powshurikenId = setInterval(() => {
-        switch(directionLaunched){
-            case "u":
-                fromtopShuriken--;
-            break;
-            case "d":
-                fromtopShuriken++;
-            break;
-            case "l":
-                fromleftShuriken--;
-            break;
-            case "r":
-                fromleftShuriken++;
-            break;
-            case "ul":
-                fromtopShuriken--;
-                fromleftShuriken--;
-            break;
-            case "dl":
-                fromtopShuriken++;
-                fromleftShuriken--;
-            break;
-            case "ur":
-                fromtopShuriken--;
-                fromleftShuriken++;
-            break;
-            case "dr":
-                fromtopShuriken++;
-                fromleftShuriken++;
-            break;
-            default:
-                console.log('erreur direction')
+        if(!inpause){
+            switch(directionLaunched){
+                case "u":
+                    fromtopShuriken--;
+                break;
+                case "d":
+                    fromtopShuriken++;
+                break;
+                case "l":
+                    fromleftShuriken--;
+                break;
+                case "r":
+                    fromleftShuriken++;
+                break;
+                case "ul":
+                    fromtopShuriken--;
+                    fromleftShuriken--;
+                break;
+                case "dl":
+                    fromtopShuriken++;
+                    fromleftShuriken--;
+                break;
+                case "ur":
+                    fromtopShuriken--;
+                    fromleftShuriken++;
+                break;
+                case "dr":
+                    fromtopShuriken++;
+                    fromleftShuriken++;
+                break;
+                default:
+                    console.log('erreur direction')
+            }
         }
         updateImageShuriken()
         checkShuriken()

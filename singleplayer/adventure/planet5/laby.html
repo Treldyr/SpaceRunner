@@ -130,14 +130,14 @@
 
 
     function checkKey(e) {
-    e = e || window.event;
-    if (e.keyCode == '27'){ // touche echap
-        if(inpause){
-            closePause() 
-        }else{
-            showPause()
-        }
-        }else {
+        e = e || window.event;
+        if (e.keyCode == '27'){ // touche echap
+            if(inpause){
+                closePause() 
+            }else{
+                showPause()
+            }
+        } else if(!inpause) {
             if (is_input_up(e)) { // going up
                 dest_upward_sliding();
             }
