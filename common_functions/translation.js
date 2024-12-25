@@ -416,7 +416,11 @@ const languageData = {
         settings: "Paramètres",
         keyboard: "Clavier",
         validate: "Valider",
-        choose_inputs: "Choisissez vos touches"
+        choose_inputs: "Choisissez vos touches",
+        volume: "Volume",
+        testsound: "Tester un son",
+        ajustSound: "Utilisez la barre pour ajuster le volume des sons",
+        actualVolume : "Volume actuel"
     },
     en: {
         mainTitle: "Space Runner",
@@ -835,7 +839,11 @@ const languageData = {
         settings: "Settings",
         keyboard: "Keyboard",
         validate: "Validate",
-        choose_inputs: "Choose your inputs"
+        choose_inputs: "Choose your inputs",
+        volume: "Volume",
+        testsound: "Test a sound",
+        ajustSound: "Use the range input to ajust the sound volume",
+        actualVolume : "Current volume"
     },
     pt: {
         mainTitle: "Space Runner",

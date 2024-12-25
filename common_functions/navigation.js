@@ -79,6 +79,10 @@ function goKeyboard(){
     window.location.href='settings/keyboard.html';
 }
 
+function goVolume(){
+    window.location.href='settings/volume.html';
+}
+
 function goBackSettings(){
     window.location.href='../settings.html';
 }

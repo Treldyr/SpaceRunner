@@ -37,3 +37,11 @@ function setKeyboard(keyboard_type) {
     var dataString = JSON.stringify(keyboard);
     localStorage.setItem('keyboard', dataString);
 }
+
+function setSoundLevel(sound_level) {
+    var sound = {
+        level: sound_level
+    };
+    var dataString = JSON.stringify(sound);
+    localStorage.setItem('soundLevel', dataString);
+}
