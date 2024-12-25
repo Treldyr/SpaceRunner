@@ -4,7 +4,7 @@ function retrieveSoundLevel() {
         var sound = JSON.parse(storedData);
         return sound.level;
     } else {
-        return 1.0
+        return 0.5
     }
 }
 
