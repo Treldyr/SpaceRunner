@@ -42,6 +42,16 @@ function retrieveLevel() {
     }
 }
 
+function retrieveKeyboard() {
+    var storedData = localStorage.getItem('keyboard');
+    if (storedData !== null) {
+        var keyboard = JSON.parse(storedData);
+        return keyboard.type;
+    } else {
+        return 'AZERTY'
+    }
+}
+
 function retrieveGhostAchievements() {
     var storedData = localStorage.getItem('ghostData');
     if (storedData !== null) {

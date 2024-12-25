@@ -96,6 +96,7 @@
 <script src="../movements.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
+<script src="../../../common_functions/keyboard.js"></script>
 <script>
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -139,16 +140,16 @@
                 else if ((e.keyCode == '39')&&(!p1_won))  { // going rigth p1
                     dest_rigthward_p1();
                 }
-                else if ((e.keyCode == '90') && (!p2_won)) { // Z key for going up for p2
+                else if (is_input_up_p2_multiplayer(e) && (!p2_won)) { // Z key for going up for p2
                     dest_upward_p2();
                 } 
-                else if ((e.keyCode == '83') && (!p2_won)) { // S key for going down for p2
+                else if (is_input_down_p2_multiplayer(e) && (!p2_won)) { // S key for going down for p2
                     dest_downward_p2();
                 } 
-                else if ((e.keyCode == '81') && (!p2_won)) { // Q key for going left for p2
+                else if (is_input_left_p2_multiplayer(e) && (!p2_won)) { // Q key for going left for p2
                     dest_leftward_p2();
                 } 
-                else if ((e.keyCode == '68') && (!p2_won)) { // D key for going right for p2
+                else if (is_input_right_p2_multiplayer(e) && (!p2_won)) { // D key for going right for p2
                     dest_rigthward_p2();
                 }
                 nbCoups++;

@@ -87,16 +87,16 @@ if (e.keyCode == '27'){ // touche echap
                 go_rigth_p1();
             }
         }
-        else if ((e.keyCode == '90')&&(!isStop)) { // Z key for going up for p2
+        else if (is_input_up_p2_multiplayer(e) && (!isStop)) { // Z key for going up for p2
             go_up_p2()
         } 
-        else if ((e.keyCode == '83')&&(!isStop)) { // S key for going down for p2
+        else if (is_input_down_p2_multiplayer(e) && (!isStop)) { // S key for going down for p2
             go_down_p2()
         } 
-        else if ((e.keyCode == '81')&&(!isStop)) { // Q key for going left for p2
+        else if (is_input_left_p2_multiplayer(e) && (!isStop)) { // Q key for going left for p2
             go_left_p2()
         } 
-        else if ((e.keyCode == '68')&&(!isStop)) { // D key for going right for p2
+        else if (is_input_right_p2_multiplayer(e) && (!isStop)) { // D key for going right for p2
             go_right_p2()
         }
         else if (((e.keyCode ==  '87')||(e.keyCode ==  '69'))&&(!pow1_used)){ // W or E key for power 1

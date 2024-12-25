@@ -74,3 +74,11 @@ function goMapFromMenu() {
 function goSettings() {
     window.location.href='menu/settings.html';
 }
+
+function goKeyboard(){
+    window.location.href='settings/keyboard.html';
+}
+
+function goBackSettings(){
+    window.location.href='../settings.html';
+}

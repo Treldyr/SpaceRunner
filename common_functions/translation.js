@@ -413,7 +413,10 @@ const languageData = {
         text317: "Un shuriken est représenté par :",
         text318: "Appuyez sur E pour lancer un shuriken récupéré par terre.",
         text319: "Vous avez essayé de tricher. Je vous vois. Partez.",
-        settings: "Paramètres"
+        settings: "Paramètres",
+        keyboard: "Clavier",
+        validate: "Valider",
+        choose_inputs: "Choisissez vos touches"
     },
     en: {
         mainTitle: "Space Runner",
@@ -829,7 +832,10 @@ const languageData = {
         text317: "A shuriken is represented by :",
         text318: "Press E to launch a shuriken grabed previously.",
         text319: "You tried to cheat you fool. I see you. Go away.",
-        settings: "Settings"
+        settings: "Settings",
+        keyboard: "Keyboard",
+        validate: "Validate",
+        choose_inputs: "Choose your inputs"
     },
     pt: {
         mainTitle: "Space Runner",

@@ -96,6 +96,7 @@
 <script src="../../../common_functions/checks.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
+<script src="../../../common_functions/keyboard.js"></script>
 <script>
     // vars of boss
     var bossId;
@@ -149,16 +150,16 @@
             showPause()
         }
         }else {
-            if (e.keyCode == '38' || e.keyCode == '90')  { // going up
+            if (is_input_up(e))  { // going up
                 dest_upward();
             }
-            else if (e.keyCode == '40' || e.keyCode == '83') { // going down
+            else if (is_input_down(e)) { // going down
                 dest_downward();
             }
-            else if (e.keyCode == '37' || e.keyCode == '81') { // going left
+            else if (is_input_left(e)) { // going left
                 dest_leftward();
             }
-            else if (e.keyCode == '39' || e.keyCode == '68') { // going rigth
+            else if (is_input_right(e)) { // going rigth
                 dest_rigthward();
             }
             nbCoups++;

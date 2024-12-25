@@ -1,20 +1,3 @@
-function resetAventure() {
-    var playerData = {
-        playerUnlock: 1
-    };
-    var dataString = JSON.stringify(playerData);
-    localStorage.setItem('playerData', dataString);
-
-    var level = {
-        num: 1
-    };
-    var dataString = JSON.stringify(level);
-    localStorage.setItem('level', dataString);
-
-    window.location.href='selectchar.html';
-}
-
-
 function setHighScorePlanet(planet_name) {
     var storedData = localStorage.getItem(planet_name);
     if (storedData !== null) {
@@ -45,4 +28,12 @@ function setHighScorePlanet(planet_name) {
         var dataString = JSON.stringify(terre);
         localStorage.setItem(planet_name, dataString);
     }   
+}
+
+function setKeyboard(keyboard_type) {
+    var keyboard = {
+        type: keyboard_type
+    };
+    var dataString = JSON.stringify(keyboard);
+    localStorage.setItem('keyboard', dataString);
 }

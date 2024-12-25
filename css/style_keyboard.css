@@ -1,0 +1,20 @@
+.keyboard-selection {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.keyboard-img{
+    width: 20vw;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    border-radius: 20px;
+}
+
+.keyboard-img.selected {
+    border-color: #f39c12;
+}
+.keyboard-option {
+    text-align: center;
+}
