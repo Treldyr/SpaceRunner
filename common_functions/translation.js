@@ -848,7 +848,12 @@ const languageData = {
         volume: "Volume",
         testsound: "Test a sound",
         ajustSound: "Use the range input to ajust the sound volume",
-        actualVolume : "Current volume"
+        actualVolume : "Current volume",
+        text320: "You can also use these inputs. (editable in the settings)",
+        text321: "The player",
+        text322: "uses the input",
+        cat: "cat",
+        ghost: "ghost",
     },
     pt: {
         mainTitle: "Space Runner",
