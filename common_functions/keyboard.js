@@ -1,6 +1,11 @@
 // load keyboard infos
 var keyboard_inputs = retrieveKeyboard();
 
+function updateImageKeyboardIntro(){
+        // update the second keyboard image to the one saved in the database
+        document.getElementById("keyboardinputs").src = "../../../images/keyboard/"+keyboard_inputs.toLowerCase()+".png";
+}
+
 
 function is_input_up(e){
     if((keyboard_inputs=='AZERTY') && (e.keyCode == '90')){

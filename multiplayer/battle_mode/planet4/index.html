@@ -25,15 +25,18 @@
         <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Kamino</div>
 
         <div class="game-description">
-            <p data-lang-key="text236">Le joueur chat doit atteindre l'arrivée</p>
-            <p data-lang-key="text237">Le joueur fantome doit l'en empêcher, en le touchant</p>
+            <a data-lang-key="text236">Le joueur chat doit atteindre l'arrivée</a>.
+            <a data-lang-key="text237">Le joueur fantome doit l'en empêcher, en le touchant</a>
             <p data-lang-key="text238">Attention, vous n'avez pas accès aux mêmes chemins...stratégisez pour pouvoir atteindre votre objectif</p>
             <p><a data-lang-key="text239">Le chemin</a> <img src="img1.png" width="40px" class="img-thumbnail"> <a data-lang-key="text240">est accessible par tous.</a></p>
             <p><a data-lang-key="text239">Le chemin</a> <img src="img4.png" width="40px" class="img-thumbnail"> <a data-lang-key="text241">n'est accessible par personne.</a></p>
             <p><a data-lang-key="text239">Le chemin</a> <img src="img2.png" width="40px" class="img-thumbnail"> <a data-lang-key="text242">n'est accessible que par le joueur chat.</a></p>
             <p><a data-lang-key="text239">Le chemin</a> <img src="img3.png" width="40px" class="img-thumbnail"> <a data-lang-key="text243">n'est accessible que par le joueur fantome.</a></p>
+            <p><a data-lang-key="text321">Le joueur</a> <a data-lang-key="cat">chat</a> <a data-lang-key="text322">utilise les touches</a> :
+                 <img src="../../../images/keyboard/directional_arrows.png" width="80px" class="img-thumbnail"> </p>
+            <p><a data-lang-key="text321">Le joueur</a> <a data-lang-key="ghost">fantôme</a> <a data-lang-key="text322">utilise les touches</a> :
+                 <img id="keyboardinputs" src="../../../images/keyboard/azerty.png" width="80px" class="img-thumbnail"> </p>
             <p data-lang-key="goodluck">Bonne chance !</p>
-            <br>
             <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
         </div>
     </div>
@@ -41,5 +44,10 @@
     <script src="../../../common_functions/intro_planet.js"></script>
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/keyboard.js"></script>
+    <script>
+        updateImageKeyboardIntro()
+    </script>
 </body>
 </html>

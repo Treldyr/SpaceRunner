@@ -420,7 +420,12 @@ const languageData = {
         volume: "Volume",
         testsound: "Tester un son",
         ajustSound: "Utilisez la barre pour ajuster le volume des sons",
-        actualVolume : "Volume actuel"
+        actualVolume : "Volume actuel",
+        text320: "Vous pouvez également utiliser ces touches. (modifiables dans les paramètres)",
+        text321: "Le joueur",
+        text322: "utilise les touches",
+        cat: "chat",
+        ghost: "fantôme",
     },
     en: {
         mainTitle: "Space Runner",
