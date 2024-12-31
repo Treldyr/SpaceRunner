@@ -23,13 +23,27 @@
     <div class="background-image"></div>
     <div class="content">
         <h1 class="custom-title" data-lang-key="volume">Volume</h1>
-        <h5 data-lang-key="ajustSound">Utilisez la barre pour ajuster le volume des sons :</h5>
-        <div class="volume-container">
-            <input type="range" id="volumeControl" min="0" max="1" step="0.02" value="1" onchange="updateVolume(this.value)">
-        </div>
-        <h5><a data-lang-key="actualVolume">Volume actuel</a> : <a id="currentVolume">100%</a></h5>
+        <div class="inline-container">
+            <div class="inline">
+                <h5 data-lang-key="ajustSound">Utilisez la barre pour ajuster le volume des sons</h5>
+                <div class="volume-container">
+                    <input type="range" id="volumeControl" min="0" max="1" step="0.02" value="1" onchange="updateVolume(this.value)">
+                </div>
+                <h5><a data-lang-key="actualVolume">Volume actuel</a> : <a id="currentVolume">100%</a></h5>
 
-        <button class="btn-start" onclick="testSound(globalVolume)" data-lang-key="testsound" >Tester un son</button>
+                <button class="btn-start" onclick="testSound(globalVolume)" data-lang-key="testsound" >Tester un son</button>
+            </div>
+
+            <div class="inline">
+                <h5 data-lang-key="ajustMusic">Utilisez la barre pour ajuster le volume de la musique</h5>
+                <div class="volume-container">
+                    <input type="range" id="musicControl" min="0" max="1" step="0.02" value="1" onchange="updateMusic(this.value)">
+                </div>
+                <h5><a data-lang-key="actualVolume">Volume actuel</a> : <a id="currentMusic">100%</a></h5>
+
+                <button class="btn-start" onclick="launchZorathTheme()" data-lang-key="testmusic" >Tester une musique</button>
+            </div>
+        </div>
 
         <button class="btn-start" onclick="goBackSettings()" data-lang-key="validate">Valider</button>
         <div class="btn-back">
@@ -44,16 +58,25 @@
     <script src="../../common_functions/languages.js"></script>
     <script src="../../common_functions/set_data.js"></script>
     <script src="../../common_functions/sounds.js"></script>
+    <script src="../../common_functions/background_music.js"></script>
     <script>
+        let globalMusic = retrieveMusicLevel();
+
         // Met à jour l'affichage du volume au chargement de la page
         window.onload = function () {
             const volumeControl = document.getElementById('volumeControl');
             volumeControl.value = globalVolume; // Définit la valeur de l'input range
             const percentage = Math.round(globalVolume * 100); // Convertit en pourcentage
             document.getElementById('currentVolume').textContent = `${percentage}%`; // Met à jour l'affichage
+
+            const musicControl = document.getElementById('musicControl');
+            musicControl.value = globalMusic; // Définit la valeur de l'input range
+            const percentageMusic = Math.round(globalMusic * 100); // Convertit en pourcentage
+            document.getElementById('currentMusic').textContent = `${percentageMusic}%`; // Met à jour l'affichage
         };
 
         selectedVolume = globalVolume;
+        selectedMusic = globalMusic;
 
         // Met à jour le volume global et l'affiche dans la console
         function updateVolume(value) {
@@ -62,6 +85,16 @@
             globalVolume = parseFloat(value); // Convertit la valeur en nombre
             const percentage = Math.round(globalVolume * 100); // Met à jour l'affichage du volume dans la page
             document.getElementById('currentVolume').textContent = `${percentage}%`;
+        }
+
+
+        // Met à jour le volume global et l'affiche dans la console
+        function updateMusic(value) {
+            setMusicLevel(value);
+
+            globalMusic = parseFloat(value); // Convertit la valeur en nombre
+            const percentage = Math.round(globalMusic * 100); // Met à jour l'affichage du volume dans la page
+            document.getElementById('currentMusic').textContent = `${percentage}%`;
         }
     </script>
 </body>

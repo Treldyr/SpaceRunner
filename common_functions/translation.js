@@ -426,6 +426,9 @@ const languageData = {
         text322: "utilise les touches",
         cat: "chat",
         ghost: "fantôme",
+        music: "Musique - Skarblown",
+        testmusic: "Tester une musique",
+        ajustMusic: "Utilisez la barre pour ajuster le volume de la musique"
     },
     en: {
         mainTitle: "Space Runner",
@@ -854,6 +857,9 @@ const languageData = {
         text322: "uses the input",
         cat: "cat",
         ghost: "ghost",
+        music: "Music - Skarblown",
+        testmusic: "Test a music",
+        ajustMusic: "Use the range input to ajust the music volume"
     },
     pt: {
         mainTitle: "Space Runner",

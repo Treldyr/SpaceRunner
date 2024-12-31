@@ -64,11 +64,14 @@
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
     <script src="../../../common_functions/basic.js"></script>
+    <script src="../../../common_functions/background_music.js"></script>
     <script>
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
         retrieveLevel();
         checkIfLevelIsEnough(12,lvl)
+        
+        launchZorathTheme(); // launch the station music
 
         var nbPage = 3
         

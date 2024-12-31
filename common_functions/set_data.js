@@ -45,3 +45,11 @@ function setSoundLevel(sound_level) {
     var dataString = JSON.stringify(sound);
     localStorage.setItem('soundLevel', dataString);
 }
+
+function setMusicLevel(music_level) {
+    var music = {
+        level: music_level
+    };
+    var dataString = JSON.stringify(music);
+    localStorage.setItem('musicLevel', dataString);
+}
