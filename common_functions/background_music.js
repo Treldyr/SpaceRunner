@@ -46,6 +46,18 @@ function launchZorathTheme() {
     ZorathMusic.play();
 }
 
+function TestMusic() {
+    if (ZorathMusic) {
+        ZorathMusic.pause();
+        ZorathMusic = null;
+    }
+    ZorathMusic = new Audio('../../music/italy.mp3');
+    ZorathMusic.loop = true;
+    ZorathMusic.volume = retrieveMusicLevel();
+    ZorathMusic.currentTime = 0;
+    ZorathMusic.play();
+}
+
 // Save the state before leaving the page
 window.addEventListener('beforeunload', function () {
     if (backgroundMusic) {
