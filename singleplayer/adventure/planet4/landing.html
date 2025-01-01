@@ -106,14 +106,16 @@
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
     <script src="../../../common_functions/basic.js"></script>
+    <script src="../../../common_functions/background_music.js"></script>
     <script>
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
         retrieveLevel();
         checkIfLevelIsEnough(4,lvl)
 
+        reInitMusic('motion'); // Initialise the music
+
         var nbPage = 8
-        
         
         setCharacterRight(1,"p5")
         setCharacterRight(2,"p5")

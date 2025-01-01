@@ -39,7 +39,7 @@ function launchZorathTheme() {
         ZorathMusic.pause();
         ZorathMusic = null;
     }
-    ZorathMusic = new Audio('../../../music/italy.mp3');
+    ZorathMusic = new Audio('../../../music/afternoon.mp3');
     ZorathMusic.loop = true;
     ZorathMusic.volume = retrieveMusicLevel();
     ZorathMusic.currentTime = 0;
