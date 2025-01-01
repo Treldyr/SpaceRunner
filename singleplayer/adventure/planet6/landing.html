@@ -50,6 +50,7 @@
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
     <script src="../../../common_functions/basic.js"></script>
+    <script src="../../../common_functions/background_music.js"></script>
     <script>
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
@@ -57,6 +58,8 @@
         checkIfLevelIsEnough(6,lvl)
 
         var nbPage = 2
+
+        reInitMusic('taiga'); // Initialise the music
         
         setCharacterRight(1,"p16")
         setCharacterLeft(2,chara)
