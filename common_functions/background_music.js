@@ -34,6 +34,16 @@ function reInitMusic(musicName) {
     }
 }
 
+function ambianceMusic(){
+    if (!backgroundMusic) {
+        backgroundMusic = new Audio('../../music/spaceship.mp3');
+        backgroundMusic.loop = true;
+        backgroundMusic.volume = retrieveMusicLevel()*0.1; // The sound is really low to have just little ambiance sounds 
+        backgroundMusic.currentTime = 0; // The difference is we begin since the beginning
+        backgroundMusic.play();
+    }
+}
+
 function launchZorathTheme() {
     if (ZorathMusic) {
         ZorathMusic.pause();
