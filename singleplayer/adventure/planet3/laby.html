@@ -31,7 +31,6 @@
                 <button class="btn-start" onclick="closePause()" data-lang-key="continue">Continuer</button>
                 <button class="btn-start" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                 <button class="btn-start" onclick="returnToMenu()" data-lang-key="menu">Menu</button>
-
             </div>
             <div class="page" id="page1">
                 <div id="laby1">
@@ -180,6 +179,7 @@
             goNext(actual_board+1);
             construct_board_with_gaz(actual_board+2);
         } else {
+            game_ended = true
             stopTimer();
             playEndLevel() 
             UnlockPlanet(4)
