@@ -92,7 +92,7 @@ function goHighScoresOnline(numberPlanet) {
 }
 
 function goHighScoresMenu() {
-    window.location.href='highScore/index.html';
+    window.location.href='HighScore/index.html';
 }
 
 function goHighScoresOnline1() {
