@@ -13,6 +13,7 @@
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
+  <script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
 <script>
@@ -98,6 +99,7 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('street'); // Initialise the music
     
@@ -185,6 +187,14 @@
         document.getElementById('nbHits').innerHTML = nbCoups;
         document.getElementById('nbTime').innerHTML = totalSeconds;
         setHighScorePlanet('dsn');
+        if(nbCoups >= 20){
+            const storedName = localStorage.getItem("pseudo");
+            if (storedName) {
+                sendBestTime('pDsn',totalSeconds,storedName)
+            }
+        } else {
+            window.location.href='../warning_cheating.html';
+        }
     }
 
     function checkShuriken(){
