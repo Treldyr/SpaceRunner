@@ -178,7 +178,7 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('katshyk');
-            if(nbCoups >= 180){
+            if(nbCoups >= 380){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
                     sendBestTime('pKatshyk',totalSeconds,storedName)
