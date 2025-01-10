@@ -21,3 +21,10 @@ th {
 tr {
     height: 5vh;
 }
+
+.container-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+}

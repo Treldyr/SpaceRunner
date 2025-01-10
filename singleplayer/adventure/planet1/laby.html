@@ -14,12 +14,13 @@
   </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script src="../../../config.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-C8DGYXCTDV');
+    gtag('config', 'G-C8DGYXCTDV');
 </script>
 <script src="boardList.js"></script>
   <body>
@@ -75,7 +76,7 @@
                     <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="restart">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="goPlanet(2)" data-lang-key="continue">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
-                    
+            
                 </div>
             </div>
         </div>
@@ -108,7 +109,9 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
 <script>
+    var game_ended = false
     initializeMusic('taiga'); // Initialise the music
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -151,7 +154,9 @@
             chara.setAttribute('style',"position: fixed;top : "+(7*fromtop+5)+"vh;left : "+(5*fromleft+5)+"vw;");
             if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
-                finish_labyrinth();
+                if(!game_ended){
+                    finish_labyrinth();
+                }
             }
         }
     }
@@ -162,6 +167,7 @@
             goNext(actual_board+1);
             construct_tiny_board(actual_board+2);
         } else {
+            game_ended = true
             stopTimer();
             UnlockPlanet(2);
             playEndLevel() 
@@ -172,9 +178,16 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('terre');
+            if(nbCoups >= 184){
+                const storedName = localStorage.getItem("pseudo");
+                if (storedName) {
+                    sendBestTime('pTerre',totalSeconds,storedName)
+                }
+            } else {
+                window.location.href='../warning_cheating.html';
+            }
         }
     }
-
 </script>
 </body>
 </html>

@@ -86,3 +86,19 @@ function goVolume(){
 function goBackSettings(){
     window.location.href='../settings.html';
 }
+
+function goHighScoresOnline(numberPlanet) {
+    window.location.href='planet'+numberPlanet+'.html';
+}
+
+function goHighScoresMenu() {
+    window.location.href='highScoreMenu.html';
+}
+
+function goBackHighScoresMenu() {
+    window.location.href='../highScoreMenu.html';
+}
+
+function goHighScoresOnline1() {
+    window.location.href='highScoreOnline/planet1.html';
+}

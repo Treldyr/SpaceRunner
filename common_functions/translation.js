@@ -428,7 +428,15 @@ const languageData = {
         ghost: "fantôme",
         music: "Musique - Skarblown",
         testmusic: "Tester une musique",
-        ajustMusic: "Utilisez la barre pour ajuster le volume de la musique"
+        ajustMusic: "Utilisez la barre pour ajuster le volume de la musique",
+        choosePseudo: "Choisissez votre pseudo",
+        personnalScores: "Scores personnels",
+        onlineScores: "Scores en ligne",
+        scoresEarth: "Scores planète Terre",
+        attribute1:"Position",
+        attribute2:"Pseudo",
+        attribute3:"Temps",
+        attribute4:"Date"
     },
     en: {
         mainTitle: "Space Runner",
@@ -859,7 +867,15 @@ const languageData = {
         ghost: "ghost",
         music: "Music - Skarblown",
         testmusic: "Test a music",
-        ajustMusic: "Use the range input to ajust the music volume"
+        ajustMusic: "Use the range input to ajust the music volume",
+        choosePseudo: "Choose your pseudo",
+        personnalScores: "Personal scores",
+        onlineScores: "Online scores",
+        scoresEarth: "Planet Earth scores",
+        attribute1:"Position",
+        attribute2:"Pseudo",
+        attribute3:"Time",
+        attribute4:"Date"
     },
     pt: {
         mainTitle: "Space Runner",

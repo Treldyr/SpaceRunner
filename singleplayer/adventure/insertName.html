@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Runner</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Lien vers Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Lien vers jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Lien vers Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/style_input.css">
+	<link rel="icon" href="../../images/p1down.png">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C8DGYXCTDV');
+</script>
+<body>
+    <div class="background-image"></div>
+    <div class="content">
+    <h1 class="custom-title" data-lang-key="adventureMode">Mode Aventure</h1>
+    <h1 data-lang-key="choosePseudo">Choisissez votre pseudo</h1>
+        <br>
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" id="playerName" name="playerName" placeholder="" required>
+            <button class="btn-start" data-lang-key="start" type="submit" data-lang-key="start">Commencer</button>
+        </form>
+        <br>
+    </div>
+
+    <div class="btn-back">
+        <a onclick="window.location.href = 'selectchar.html'">
+            <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
+        </a>
+    </div>
+    <script src="../../common_functions/navigation.js"></script>
+    <script src="../../common_functions/translation.js"></script>
+    <script src="../../common_functions/languages.js"></script>
+    <script>
+        let playerName = "";  // Variable to store the player's name
+
+        // Pre-fill the input field with the value from localStorage, if available
+        window.onload = function() {
+            const storedName = localStorage.getItem("pseudo");
+            if (storedName) {
+                document.getElementById("playerName").value = storedName;
+            }
+        };
+
+        function handleSubmit(event) {
+            // Prevent the form from submitting and refreshing the page
+            event.preventDefault();
+            
+            // Get the value from the input field and store it in the playerName variable
+            playerName = document.getElementById('playerName').value;
+
+            // save the pseudo
+            localStorage.setItem("pseudo", playerName);
+            window.location.href = 'carte.html'
+        }
+    </script>
+</body>
+</html>
