@@ -40,7 +40,7 @@
     
         // Function to display the best times
         async function displayBestTimes() {
-            const querySnapshot = await getDocs(collection(db, "pTerre"));
+            const querySnapshot = await getDocs(collection(db, "pKatshyk"));
             let timesArray = []; // Array to store all times
     
             querySnapshot.forEach((doc) => {
@@ -94,7 +94,7 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title"><a data-lang-key="scoresPlanet">Scores planète</a> : Terre</h1>
+        <h1 class="custom-title"><a data-lang-key="scoresPlanet">Scores planète</a> : Katshyk</h1>
         <table>
             <thead>
                 <tr>
@@ -109,7 +109,8 @@
         </table>
         <div class="container-arrows">
             <p></p> 
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('2')" data-lang-key="next">Suivant</button>
+            <button class="btn btn-outline-light" onclick="goHighScoresOnline('1')" data-lang-key="previous">Précédent</button>
+            <!--TODO <button class="btn btn-outline-light" onclick="goHighScoresOnline('3')" data-lang-key="next">Suivant</button>-->
         </div>
     </div>
     <div class="btn-back">
@@ -121,4 +122,12 @@
 <script src="../../common_functions/navigation.js"></script>
 <script src="../../common_functions/translation.js"></script>
 <script src="../../common_functions/languages.js"></script>
+<script src="../../common_functions/get_data.js"></script>
+<script src="../../common_functions/basic.js"></script>
+<script>
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveLevel();
+    checkIfLevelIsEnough(2,lvl,'planet1.html')
+</script>
 </html>

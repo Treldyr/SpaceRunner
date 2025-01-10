@@ -432,11 +432,12 @@ const languageData = {
         choosePseudo: "Choisissez votre pseudo",
         personnalScores: "Scores personnels",
         onlineScores: "Scores en ligne",
-        scoresEarth: "Scores planète Terre",
+        scoresPlanet: "Scores planète",
         attribute1:"Position",
         attribute2:"Pseudo",
         attribute3:"Temps",
-        attribute4:"Date"
+        attribute4:"Date",
+        previous:"Précédent"
     },
     en: {
         mainTitle: "Space Runner",
@@ -871,11 +872,12 @@ const languageData = {
         choosePseudo: "Choose your pseudo",
         personnalScores: "Personal scores",
         onlineScores: "Online scores",
-        scoresEarth: "Planet Earth scores",
+        scoresPlanet: "Planet scores",
         attribute1:"Position",
         attribute2:"Pseudo",
         attribute3:"Time",
-        attribute4:"Date"
+        attribute4:"Date",
+        previous:"Previous"
     },
     pt: {
         mainTitle: "Space Runner",

@@ -12,9 +12,9 @@
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
+<script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
-<script src="../../../common_functions/heater.js"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -111,8 +111,10 @@
 <script src="../../../common_functions/background_music.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
-    var game_ended = false
+    
     initializeMusic('taiga'); // Initialise the music
+
+    var game_ended = false
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
