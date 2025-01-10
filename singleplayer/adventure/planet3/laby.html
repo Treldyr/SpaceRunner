@@ -12,6 +12,7 @@
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
+  <script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
 <script>
@@ -109,9 +110,11 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('reality'); // Initialise the music
 
+    var game_ended = false
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
@@ -164,7 +167,9 @@
             if(((boards[actual_board][fromtop][fromleft]==0) || (boards[actual_board][fromtop][fromleft]==3))
                 &&(found_b1)&&(found_b2)&&(found_b0))
             {
-                finish_labyrinth();
+                if(!game_ended){
+                    finish_labyrinth();
+                }
             }
         }
     }
@@ -185,6 +190,14 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('kamino');
+            if(nbCoups >= 200){
+                const storedName = localStorage.getItem("pseudo");
+                if (storedName) {
+                    sendBestTime('pKamino',totalSeconds,storedName)
+                }
+            } else {
+                window.location.href='../warning_cheating.html';
+            }
         }
     }
 

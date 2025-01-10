@@ -44,7 +44,7 @@ function goRules(){
 }
 
 function goHighScores() {
-    window.location.href='highScore.html';
+    window.location.href='offline.html';
 }
 
 function goTwoPlayersMode() {
@@ -92,13 +92,9 @@ function goHighScoresOnline(numberPlanet) {
 }
 
 function goHighScoresMenu() {
-    window.location.href='highScoreMenu.html';
-}
-
-function goBackHighScoresMenu() {
-    window.location.href='../highScoreMenu.html';
+    window.location.href='highScore/index.html';
 }
 
 function goHighScoresOnline1() {
-    window.location.href='highScoreOnline/planet1.html';
+    window.location.href='online/planet1.html';
 }

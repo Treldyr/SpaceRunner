@@ -1,4 +1,4 @@
-.background-image {
+.background-image, .highscore-background-image {
     background: url('../../images/backgrounds/planete_rouge.jpg') no-repeat center center fixed;
 }
 

@@ -49,5 +49,5 @@ export async function sendBestTime(collectionName, time, pseudo) {
     }
 }
 
-// Attacher la fonction à l'objet window pour qu'elle soit globale
+// Attach the function to the window object to reuse-it
 window.sendBestTime = sendBestTime;
