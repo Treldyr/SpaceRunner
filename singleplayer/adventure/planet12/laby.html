@@ -12,6 +12,7 @@
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
+  <script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
 <script>
@@ -109,9 +110,11 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('clouds'); // Initialise the music
     
+    var game_ended = false
     var isDimRed = true
     var nbChangDim = 5
     var nbCoups = 0;
@@ -168,7 +171,9 @@
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==5)
             {
-                finish_labyrinth();
+                if(!game_ended){
+                    finish_labyrinth();
+                }
             }
         }
     }
@@ -205,6 +210,7 @@
             construct_large_board(actual_board+2);
             initializeSwaps();
         } else {
+            game_ended = true
             stopTimer();
             playEndLevel()
             UnlockPlanet(13)
@@ -215,6 +221,14 @@
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
+            if(nbCoups >= 200){
+                const storedName = localStorage.getItem("pseudo");
+                if (storedName) {
+                    sendBestTime('pDefaillance',totalSeconds,storedName)
+                }
+            } else {
+                window.location.href='../warning_cheating.html';
+            }
         }
     }
 </script>
