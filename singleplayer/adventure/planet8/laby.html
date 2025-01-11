@@ -12,6 +12,7 @@
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
+  <script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
 <script>
@@ -111,9 +112,11 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('rotation'); // Initialise the music
 
+    var game_ended = false
     var ghostId;
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -166,7 +169,9 @@
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
             if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
-                finish_labyrinth();
+                if(!game_ended){
+                    finish_labyrinth();
+                }
             }
             checkGhost(ghostLeft,fromleft,ghostTop,fromtop)
         }
@@ -181,6 +186,7 @@
             moveGhost(6)
             construct_board_with_ghost(actual_board+2);
         } else {
+            game_ended = true
             stopTimer();
             playEndLevel()
             UnlockPlanet(9)
@@ -192,6 +198,14 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('fantomia');
+            if(nbCoups >= 100){
+                const storedName = localStorage.getItem("pseudo");
+                if (storedName) {
+                    sendBestTime('pFantomia',totalSeconds,storedName)
+                }
+            } else {
+                window.location.href='../warning_cheating.html';
+            }
         }
     }
 
