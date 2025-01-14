@@ -122,7 +122,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_large_board(1)
+    construct_large_board_in_darkness(1)
     
 
 
@@ -136,16 +136,16 @@
             }
         } else if(!inpause) {
             if (is_input_up(e))  { // going up
-                dest_upward();
+                dest_upward_in_darkness();
             }
             else if (is_input_down(e)) { // going down
-                dest_downward();
+                dest_downward_in_darkness();
             }
             else if (is_input_left(e)) { // going left
-                dest_leftward();
+                dest_leftward_in_darkness();
             }
             else if (is_input_right(e)) { // going rigth
-                dest_rigthward();
+                dest_rigthward_in_darkness();
             }
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
@@ -163,7 +163,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_large_board(actual_board+2);
+            construct_large_board_in_darkness(actual_board+2);
         } else {
             game_ended = true
             stopTimer();
