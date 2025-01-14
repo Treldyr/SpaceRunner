@@ -276,3 +276,82 @@ function dest_rigthward_in_darkness(){
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
 
+
+// --------------------------------------------------//
+//                                                   //
+//        SLIDING MOVEMENTS WITH DIMENSIONS          //
+//                                                   //
+// --------------------------------------------------//
+/*/
+function dest_dim_upward_sliding(){
+    pos_top = fromtop-1;
+    pos_left = fromleft;
+    let founded = false;
+    while(founded != true)
+    {
+        nextcase = boards[actual_board][pos_top][pos_left]
+        if ((nextcase==4)
+            || (((isDimRed)&&(nextcase==3))||((!isDimRed)&&(nextcase==2)))){
+            founded = true;
+        }
+        pos_top--;
+    }
+    fromtop = pos_top+2;
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
+}
+
+
+function dest_dim_downward_sliding(){
+    pos_top = fromtop+1;
+    pos_left = fromleft;
+    let founded = false;
+    while(founded != true)
+    {
+        nextcase = boards[actual_board][pos_top][pos_left]
+        if ((nextcase==4)
+            || (((isDimRed)&&(nextcase==3))||((!isDimRed)&&(nextcase==2)))){
+            founded = true;
+        }
+        pos_top++;
+    }
+    fromtop = pos_top-2;
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
+}
+
+
+function dest_dim_leftward_sliding(){
+    pos_top = fromtop;
+    pos_left = fromleft-1;
+    let founded = false;
+    while(founded != true)
+    {
+        nextcase = boards[actual_board][pos_top][pos_left]
+        if ((nextcase==4)
+            || (((isDimRed)&&(nextcase==3))||((!isDimRed)&&(nextcase==2)))){
+            founded = true;
+        }
+        pos_left--;
+    }
+    fromleft = pos_left+2;
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
+}
+
+
+
+function dest_dim_rigthward_sliding(){
+    pos_top = fromtop;
+    pos_left = fromleft+1;
+    let founded = false;
+    while(founded != true)
+    {
+        nextcase = boards[actual_board][pos_top][pos_left]
+        if ((nextcase==4)
+            || (((isDimRed)&&(nextcase==3))||((!isDimRed)&&(nextcase==2)))){
+            founded = true;
+        }
+        pos_left++;
+    }
+    fromleft = pos_left-2;
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
+}
+    /*/
