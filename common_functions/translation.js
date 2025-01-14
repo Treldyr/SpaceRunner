@@ -82,7 +82,7 @@ const languageData = {
         mission: "Mission",
         continue: "Continuer",
         text1: "Bienvenu sur la station",
-        text2: "jeune chat.",
+        text2: "La planète Sombronces et ses 5 niveaux sont maintenant disponibles.",
         text3: "Cette station est bien plus qu'un simple abri dans l'immensité.",
         text4: "Ici, chaque chat a un rôle. Je t'accompagnerais afin que tu trouves ta place comme il se doit.",
         text5: "Bonjour, merci beaucoup de m'accueillir parmis vous !",
@@ -464,8 +464,7 @@ const languageData = {
         text346: "Ce n'est pas un hasard si on est ici. Il y a sûrement quelque chose à chercher à l'intérieur.",
         text347: "C'est risqué, mais je dois y aller.",
         text348: "Bon courage, jeune chat.",
-        text349: "Planète Sombronces complétée !",
-        text350: "La planète Sombronces et ses 5 niveaux sont maintenant disponibles."
+        text349: "Planète Sombronces complétée !"
     },
     en: {
         mainTitle: "Space Runner",
@@ -550,7 +549,7 @@ const languageData = {
         mission: "Mission",
         continue: "Continue",
         text1: "Welcome to the station",
-        text2: "young cat.",
+        text2: "The Sombronces planet and its 5 levels are now available.",
         text3: "This station is much more than just a shelter in the vastness.",
         text4: "Here, each cat has a role. I will accompany you so that you find your place as you should.",
         text5: "Hello, thank you very much for welcoming me among you!",
@@ -932,8 +931,6 @@ const languageData = {
         text346: "It’s no coincidence that we’re here. There’s surely something to find inside.",  
         text347: "It’s risky, but I have to go.",  
         text348: "Good luck, young cat.",  
-        text349: "Sombronces planet completed!",  
-        text350: "The Sombronces planet and its 5 levels are now available."  
-
+        text349: "Sombronces planet completed!"
     }
 }
