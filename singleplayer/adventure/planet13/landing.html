@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/planets/planet13.css">
+    <link rel="stylesheet" href="../../../css/planets/default.css">
+    <link rel="icon" href="../../../images/p1down.png">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C8DGYXCTDV');
+</script>
+<body>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Sombronces</div>
+        <div class="page" id="page1">
+            <div class="game-description">
+                <p data-lang-key="text342">Faites très attention où vous allez mes braves.</p>
+                <p data-lang-key="text343">Il fait très sombre, regardez où vous mettez les pieds, et ne perdez pas votre chemin !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page2">
+            <div class="game-description">
+                <p data-lang-key="text344">Le chat tente de nous guider quelque part.</p>
+                <p data-lang-key="text345">C'est une grotte !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Nok nok !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p data-lang-key="text346">Ce n'est pas un hasard si on est ici. Il y a sûrement quelque chose à chercher à l'intérieur.</p>
+                <p data-lang-key="text347">C'est risqué, mais je dois y aller.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p data-lang-key="text348">Bon courage, jeune chat.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/animation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
+    <script src="../../../common_functions/basic.js"></script>
+    <script src="../../../common_functions/background_music.js"></script>
+    <script>
+        // redirect if the player is normally unable to reach the planet
+        var lvl = 1;
+        retrieveLevel();
+        checkIfLevelIsEnough(13,lvl,'../warning_cheating.html')
+
+        reInitMusic('blue'); // Initialise the music
+
+        var nbPage = 5
+        
+        setCharacterRight(1,"p16")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p14")
+        setCharacterLeft(4,chara)
+        setCharacterRight(5,"p16")
+
+        function goNextAnimation(){
+            goIntro()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planet_sombronces.jpg') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(26, 26, 32);
+}
+
+
+.btn-start {
+    background-color: rgb(26, 26, 32);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(26, 26, 32);
+}
+
+
+.timer {
+    background-color: rgb(26, 26, 32);
+}

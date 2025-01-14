@@ -176,3 +176,103 @@ function dest_dim_right(){
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
+
+
+// --------------------------------------------------//
+//                                                   //
+//         LINEAR MOVEMENTS IN THE DARK              //
+//                                                   //
+// --------------------------------------------------//
+
+
+function dest_downward_in_darkness(){
+    if(boards[actual_board][fromtop+1][fromleft]!=2){
+        fromtop++;
+        playMove();
+
+        show_light_case(actual_board,fromtop+1,fromleft-2)
+        show_light_case(actual_board,fromtop+2,fromleft-1)
+        show_light_case(actual_board,fromtop+2,fromleft)
+        show_light_case(actual_board,fromtop+2,fromleft+1)
+        show_light_case(actual_board,fromtop+1,fromleft+2)
+
+        hide_light_case(actual_board,fromtop-2,fromleft-2)
+        hide_light_case(actual_board,fromtop-3,fromleft-1)
+        hide_light_case(actual_board,fromtop-3,fromleft)
+        hide_light_case(actual_board,fromtop-3,fromleft+1)
+        hide_light_case(actual_board,fromtop-2,fromleft+2)
+    }else{
+        playWallHit()
+    }
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
+}
+
+
+function dest_leftward_in_darkness(){
+    if(boards[actual_board][fromtop][fromleft-1]!=2){
+        fromleft--;
+        playMove();
+
+        show_light_case(actual_board,fromtop-2,fromleft-1)
+        show_light_case(actual_board,fromtop-1,fromleft-2)
+        show_light_case(actual_board,fromtop,fromleft-2)
+        show_light_case(actual_board,fromtop+1,fromleft-2)
+        show_light_case(actual_board,fromtop+2,fromleft-1)
+
+        hide_light_case(actual_board,fromtop-2,fromleft+2)
+        hide_light_case(actual_board,fromtop-1,fromleft+3)
+        hide_light_case(actual_board,fromtop,fromleft+3)
+        hide_light_case(actual_board,fromtop+1,fromleft+3)
+        hide_light_case(actual_board,fromtop+2,fromleft+2)
+    }else{
+        playWallHit()
+    }
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
+}
+
+
+function dest_upward_in_darkness(){
+    if(boards[actual_board][fromtop-1][fromleft]!=2){
+        fromtop--;
+        playMove();
+
+        show_light_case(actual_board,fromtop-1,fromleft-2)
+        show_light_case(actual_board,fromtop-2,fromleft-1)
+        show_light_case(actual_board,fromtop-2,fromleft)
+        show_light_case(actual_board,fromtop-2,fromleft+1)
+        show_light_case(actual_board,fromtop-1,fromleft+2)
+
+        hide_light_case(actual_board,fromtop+2,fromleft-2)
+        hide_light_case(actual_board,fromtop+3,fromleft-1)
+        hide_light_case(actual_board,fromtop+3,fromleft)
+        hide_light_case(actual_board,fromtop+3,fromleft+1)
+        hide_light_case(actual_board,fromtop+2,fromleft+2)
+    }else{
+        playWallHit()
+    }
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
+}
+
+
+function dest_rigthward_in_darkness(){
+    if(boards[actual_board][fromtop][fromleft+1]!=2){
+        fromleft++;
+        playMove();
+
+        show_light_case(actual_board,fromtop-2,fromleft+1)
+        show_light_case(actual_board,fromtop-1,fromleft+2)
+        show_light_case(actual_board,fromtop,fromleft+2)
+        show_light_case(actual_board,fromtop+1,fromleft+2)
+        show_light_case(actual_board,fromtop+2,fromleft+1)
+
+        hide_light_case(actual_board,fromtop-2,fromleft-2)
+        hide_light_case(actual_board,fromtop-1,fromleft-3)
+        hide_light_case(actual_board,fromtop,fromleft-3)
+        hide_light_case(actual_board,fromtop+1,fromleft-3)
+        hide_light_case(actual_board,fromtop+2,fromleft-2)
+    }else{
+        playWallHit()
+    }
+    document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
+}
+

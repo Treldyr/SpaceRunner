@@ -49,6 +49,18 @@ function construct_big_line(line,numline,numboard){
     }
 }
 
+function construct_big_line_in_darkness(line,numline,numboard){
+    for(let j= 0; j < line.length; j++)
+    {
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"img4.png");
+        the_image.setAttribute('id', actual_board+"_"+numline+"_"+j);
+        the_image.setAttribute('style', "position: fixed;top : " + (3 * numline + 5) + "vh;left : " + (2 * j + 5) + "vw;");
+        the_image.className = "img_of_laby";
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+}
+
 // --------------------------------------------------//
 //                                                   //
 //      THE FUNCTION THAT CONSTRUCT CHARACTERS       //
@@ -87,7 +99,6 @@ function create_big_character(numboard) {
     fromtop = coords_begin[numboard - 1][0];
     fromleft = coords_begin[numboard - 1][1];
 }
-
 
 // --------------------------------------------------//
 //                                                   //
@@ -378,6 +389,16 @@ function construct_large_board_with_gaz(numboard){
     }
     create_big_character(numboard);
     place_air(numboard,3,2);
+}
+
+function construct_large_board_in_darkness(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_big_line_in_darkness(boards[numboard-1][i],i,numboard);
+    }
+    create_big_character(numboard);
+    set_light_all_around(numboard,fromtop,fromleft)
 }
 
 // --------------------------------------------------//

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/planets/spaceship.css">
+    <link rel="stylesheet" href="../../../css/planets/default.css">
+    <link rel="icon" href="../../../images/p1down.png">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C8DGYXCTDV');
+</script>
+<body>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="custom-title"><a data-lang-key="mission">Mission</a> 13</div>
+        <div class="page" id="page1">
+            <div class="game-description">
+                <p>Shukpi toutimoh ...</p>
+                <p>Hvv-kpoish nok nok decuft himash !</p>
+                <p>Seph <b>Défaillance</b> nek puushti zaafeh !!!</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page2">
+            <div class="game-description">
+                <p data-lang-key="text323">Désolé mon ami, je ne comprend rien du tout.</p>
+                <p data-lang-key="text324">Nous ne sommes pas là pour te faire du mal, ne t'inquiète pas.</p>
+                <p data-lang-key="text325">Nous sommes venus à ton secours.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p><a data-lang-key="text326">Mon cher</a> <a id="pseudoToInsert"></a>, <a data-lang-key="text327">ce jeune chaton tente de te remercier !</a></p>
+                <p data-lang-key="text328">Je ne comprends pas non plus son dialecte, mais son expression vaut milles mots.</p>
+                <p data-lang-key="text329">La joie et la gratitude sont universelles.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Kuush imak arrh !</p>
+                <p>Ish raah Imak sophf zaafeh, Seph <b>Sombronces</b>.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p data-lang-key="text330">Il veut maintenant nous dire quelque chose !</p>
+                <p data-lang-key="text331">C'est sûrement important, si seulement on pouvais le comprendre...</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="game-description">
+                <p><b>Sombronces</b>... <a data-lang-key="text332">Ce nom m'est famillier</a>.</p>
+                <p data-lang-key="text333">C'est un astéroïde, qui était autrefois une planète reconnue.</p>
+                <p data-lang-key="text334">Malheureusement, elle a rencontré son funèbre destin.</p>
+                <p data-lang-key="text335">Son soleil a implosé, laissant derrière elle cette planète orpheline, désormais plongée dans l'obscurité...</p>
+                <p data-lang-key="text336">Ce pauvre chaton semble vouloir y aller.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="game-description">
+                <p data-lang-key="text337">Alors allons-y !</p>
+                <p data-lang-key="text338">Je ne sais pas encore ce que l'on va y trouver, mais il y a peut-être encore des gens en danger !</p>
+                <p data-lang-key="text339">Au pire, on ne trouve rien, mais qui ne tente rien n'a rien !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/animation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
+    <script src="../../../common_functions/basic.js"></script>
+    <script src="../../../common_functions/background_music.js"></script>
+    <script>
+        // redirect if the player is normally unable to reach the planet
+        var lvl = 1;
+        retrieveLevel();
+        checkIfLevelIsEnough(13,lvl,'../warning_cheating.html')
+        
+        launchZorathTheme(); // launch the station music
+
+        // write the name in the dialogue
+        const storedName = localStorage.getItem("pseudo");
+        document.getElementById("pseudoToInsert").innerHTML = storedName;
+
+        var nbPage = 7
+        
+        setCharacterRight(1,"p14")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p16")
+        setCharacterRight(4,"p14")
+        setCharacterLeft(5,chara)
+        setCharacterRight(6,"p16")
+        setCharacterLeft(7,chara)
+
+        function goNextAnimation(){
+            goLanding()
+        }
+
+    </script>
+</body>
+</html>
