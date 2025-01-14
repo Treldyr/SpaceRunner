@@ -164,6 +164,9 @@
             playEndLaby()
             goNext(actual_board+1);
             construct_large_board_in_darkness(actual_board+2);
+            if(actual_board==4){ // if it is the last board, we put glowing around the glowing cat
+                set_light_all_around(actual_board+1,13,20)
+            }
         } else {
             game_ended = true
             stopTimer();
