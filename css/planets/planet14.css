@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planet_lantern.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: yellow;
+}
+
+
+.btn-start {
+    background-color: yellow;
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px yellow;
+}
+
+
+.timer {
+    background-color: yellow;
+}

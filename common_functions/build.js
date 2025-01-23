@@ -61,6 +61,18 @@ function construct_big_line_in_darkness(line,numline,numboard){
     }
 }
 
+function construct_medium_line_in_darkness(line,numline,numboard){
+    for(let j= 0; j < line.length; j++)
+    {
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"img4.png");
+        the_image.setAttribute('id', actual_board+"_"+numline+"_"+j);
+        the_image.setAttribute('style', "position: fixed;top : " + (5 * numline + 5) + "vh;left : " + (3.5 * j + 5) + "vw;");
+        the_image.className = "img_of_laby";
+        document.getElementById('laby'+numboard).appendChild(the_image);
+    }
+}
+
 // --------------------------------------------------//
 //                                                   //
 //      THE FUNCTION THAT CONSTRUCT CHARACTERS       //
@@ -398,6 +410,18 @@ function construct_large_board_in_darkness(numboard){
         construct_big_line_in_darkness(boards[numboard-1][i],i,numboard);
     }
     create_big_character(numboard);
+    set_light_all_around(numboard,fromtop,fromleft)
+}
+
+function construct_medium_board_in_darkness(numboard,number_boss){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_medium_line_in_darkness(boards[numboard-1][i],i,numboard);
+    }
+    create_character(numboard);
+    create_boss(numboard,number_boss);
+    hide_boss3()
     set_light_all_around(numboard,fromtop,fromleft)
 }
 

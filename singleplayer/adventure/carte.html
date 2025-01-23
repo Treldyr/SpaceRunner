@@ -96,6 +96,11 @@
                 <img id="imgplanet13" src="../../images/planets/planet13.png" alt="Planète 13">
             </a>
         </div>
+        <div id="planet14" class="planet">
+            <a onclick="goPlanetFromMap(14)">
+                <img id="imgplanet14" src="../../images/planets/planet14.png" alt="Planète 14">
+            </a>
+        </div>
     </div>
     <div class="btn-back">
         <a onclick="window.location.href = 'insertName.html'">
@@ -113,6 +118,9 @@
     var lvl = 1;
     retrieveLevel();
 
+    if(lvl<=13){
+        document.getElementById('planet14').style.display = "none";
+    }
     if(lvl<=12){
         document.getElementById('planet13').style.display = "none";
     }

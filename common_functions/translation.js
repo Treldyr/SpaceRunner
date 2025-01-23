@@ -464,7 +464,29 @@ const languageData = {
         text346: "Ce n'est pas un hasard si on est ici. Il y a sûrement quelque chose à chercher à l'intérieur.",
         text347: "C'est risqué, mais je dois y aller.",
         text348: "Bon courage, jeune chat.",
-        text349: "Planète Sombronces complétée !"
+        text349: "Planète Sombronces complétée !",
+        text350: "Le vaisseau Lanterne est maintenant disponible.",
+        text351: "hhhhhhhhhhhhhhh",
+        text352: "hhhhhhhhhhhhhhh",
+        text353: "hhhhhhhhhhhhhhh",
+        text354: "hhhhhhhhhhhhhhh",
+        text355: "hhhhhhhhhhhhhhh",
+        text356: "hhhhhhhhhhhhhhh",
+        text357: "hhhhhhhhhhhhhhh",
+        text358: "hhhhhhhhhhhhhhh",
+        text359: "hhhhhhhhhhhhhhh",
+        text360: "hhhhhhhhhhhhhhh",
+        text361: "hhhhhhhhhhhhhhh",
+        text362: "hhhhhhhhhhhhhhh",
+        text363: "hhhhhhhhhhhhhhh",
+        text364: "hhhhhhhhhhhhhhh",
+        text365: "hhhhhhhhhhhhhhh",
+        text366: "hhhhhhhhhhhhhhh",
+        text367: "hhhhhhhhhhhhhhh",
+        text368: "hhhhhhhhhhhhhhh",
+        text369: "hhhhhhhhhhhhhhh",
+        text370: "hhhhhhhhhhhhhhh",
+
     },
     en: {
         mainTitle: "Space Runner",
@@ -931,6 +953,7 @@ const languageData = {
         text346: "It’s no coincidence that we’re here. There’s surely something to find inside.",  
         text347: "It’s risky, but I have to go.",  
         text348: "Good luck, young cat.",  
-        text349: "Sombronces planet completed!"
+        text349: "Sombronces planet completed!",
+        text350: "Lanterne spaceship is now available."
     }
 }

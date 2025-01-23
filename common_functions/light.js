@@ -49,3 +49,59 @@ function set_light_all_around(numboard,numline,j){
     set_light_case(numboard,numline+2,j)
     set_light_case(numboard,numline+2,j+1)
 }
+
+function light_left(actual_board,fromtop,fromleft){
+    show_light_case(actual_board,fromtop-2,fromleft-1)
+    show_light_case(actual_board,fromtop-1,fromleft-2)
+    show_light_case(actual_board,fromtop,fromleft-2)
+    show_light_case(actual_board,fromtop+1,fromleft-2)
+    show_light_case(actual_board,fromtop+2,fromleft-1)
+
+    hide_light_case(actual_board,fromtop-2,fromleft+2)
+    hide_light_case(actual_board,fromtop-1,fromleft+3)
+    hide_light_case(actual_board,fromtop,fromleft+3)
+    hide_light_case(actual_board,fromtop+1,fromleft+3)
+    hide_light_case(actual_board,fromtop+2,fromleft+2)
+}
+
+function light_right(actual_board,fromtop,fromleft){
+    show_light_case(actual_board,fromtop-2,fromleft+1)
+    show_light_case(actual_board,fromtop-1,fromleft+2)
+    show_light_case(actual_board,fromtop,fromleft+2)
+    show_light_case(actual_board,fromtop+1,fromleft+2)
+    show_light_case(actual_board,fromtop+2,fromleft+1)
+
+    hide_light_case(actual_board,fromtop-2,fromleft-2)
+    hide_light_case(actual_board,fromtop-1,fromleft-3)
+    hide_light_case(actual_board,fromtop,fromleft-3)
+    hide_light_case(actual_board,fromtop+1,fromleft-3)
+    hide_light_case(actual_board,fromtop+2,fromleft-2)
+}
+
+function light_up(actual_board,fromtop,fromleft){
+    show_light_case(actual_board,fromtop-1,fromleft-2)
+    show_light_case(actual_board,fromtop-2,fromleft-1)
+    show_light_case(actual_board,fromtop-2,fromleft)
+    show_light_case(actual_board,fromtop-2,fromleft+1)
+    show_light_case(actual_board,fromtop-1,fromleft+2)
+
+    hide_light_case(actual_board,fromtop+2,fromleft-2)
+    hide_light_case(actual_board,fromtop+3,fromleft-1)
+    hide_light_case(actual_board,fromtop+3,fromleft)
+    hide_light_case(actual_board,fromtop+3,fromleft+1)
+    hide_light_case(actual_board,fromtop+2,fromleft+2)
+}
+
+function light_down(actual_board,fromtop,fromleft){
+    show_light_case(actual_board,fromtop+1,fromleft-2)
+    show_light_case(actual_board,fromtop+2,fromleft-1)
+    show_light_case(actual_board,fromtop+2,fromleft)
+    show_light_case(actual_board,fromtop+2,fromleft+1)
+    show_light_case(actual_board,fromtop+1,fromleft+2)
+
+    hide_light_case(actual_board,fromtop-2,fromleft-2)
+    hide_light_case(actual_board,fromtop-3,fromleft-1)
+    hide_light_case(actual_board,fromtop-3,fromleft)
+    hide_light_case(actual_board,fromtop-3,fromleft+1)
+    hide_light_case(actual_board,fromtop-2,fromleft+2)
+}
