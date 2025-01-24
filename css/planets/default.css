@@ -53,6 +53,14 @@ body {
     right: -160px;
 }
 
+.title-highlighted {
+    background-color: rgba(0, 0, 0, 0.8); border-radius: 10px;
+}
+
+.text-black {
+    color: #000000;
+}
+
 .game-part {
     text-align: center;
     line-height: 1.6;
