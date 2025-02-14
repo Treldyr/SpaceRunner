@@ -41,7 +41,7 @@ function setCharacterRight(numberPage, character){
 function setCharacterWarning(){
     // Création de l'élément image
     let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../../images/p16down.png");
+    the_image.setAttribute('src', "../../images/p20down.png");
     
     // Style pour afficher l'image en grand et la positionner sur le côté gauche
     the_image.setAttribute('style', `
