@@ -293,7 +293,7 @@ const languageData = {
         text201: "J'ai peur du sort réservé à celui qui s'en approche.",
         text202: "D'accord ! Je prends note du conseil !",
         text203: "Tu... tu es vraiment incroyable.",
-        text204: "Je pensais qu",
+        text204: "Je pensais que",
         text205: "serait ma dernière destination, mais tu es venu.",
         text206: "Même poursuivi par des esprits, tu ne t'es pas arrêté.",
         text207: "Merci... Merci de m’avoir donné une seconde chance.",
