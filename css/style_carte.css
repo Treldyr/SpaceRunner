@@ -20,6 +20,7 @@
 #planet13{ top: 120px; left: 1740px;}
 #planet14{ top: 410px; left: 1840px;}
 
+
 .planet:hover {
     transform: scale(1.2); /* Effet d'agrandissement au survol */
 }
@@ -28,12 +29,23 @@
 #imgplanet1, #imgplanet2, #imgplanet3, #imgplanet4, #imgplanet6, #imgplanet7, #imgplanet8, #imgplanet9, #imgplanet10, #imgplanet11,#imgplanet13,#imgplanet14 {
     width: 110px; 
     height: 80px; 
-
 }
 
 #imgplanet5, #imgplanet12 {
     width: 160px; 
     height: 90px; 
+}
+
+#cursor_planet {
+    width: 110px; 
+    height: 110px; 
+}
+
+#click_cursor {
+    position: absolute;
+    cursor: not-allowed;
+    top: 100px;
+    left: 110px; 
 }
 
 .map-container {

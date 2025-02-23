@@ -101,6 +101,8 @@
                 <img id="imgplanet14" src="../../images/planets/planet14.png" alt="Planète 14">
             </a>
         </div>
+        <div id="click_cursor">
+        </div>
     </div>
     <div class="btn-back">
         <a onclick="window.location.href = 'insertName.html'">
@@ -156,6 +158,10 @@
     }
     if(lvl==1){
         document.getElementById('planet2').style.display = "none";
+        let cursor = document.createElement('img');
+        cursor.setAttribute('src',"../../../images/specific/click_cursor.png");
+        cursor.setAttribute('id',"cursor_planet");
+        document.getElementById('click_cursor').appendChild(cursor);
     }
    
 </script>
