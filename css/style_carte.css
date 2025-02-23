@@ -45,8 +45,13 @@
     position: absolute;
     cursor: not-allowed;
     top: 100px;
-    left: 110px; 
+    left: 110px;
+    display: flex;
+    flex-direction: column; /* Alignement des éléments en colonne */
+    gap: 10px; /* Espacement entre les éléments */
+    align-items: center;
 }
+
 
 .map-container {
     width: 2000px; /* Largeur plus grande pour inclure toutes les planètes */

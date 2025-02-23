@@ -158,10 +158,18 @@
     }
     if(lvl==1){
         document.getElementById('planet2').style.display = "none";
+
         let cursor = document.createElement('img');
         cursor.setAttribute('src',"../../../images/specific/click_cursor.png");
         cursor.setAttribute('id',"cursor_planet");
         document.getElementById('click_cursor').appendChild(cursor);
+
+        
+        let cursor_text = document.createElement('a');
+        cursor_text.innerHTML = "click here"
+        cursor_text.style.color = "white";
+        cursor_text.style.fontSize = "20px";
+        document.getElementById('click_cursor').appendChild(cursor_text);
     }
    
 </script>
