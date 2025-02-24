@@ -29,78 +29,44 @@
         </div>
 
         <div id="planet2" class="planet">
-            <a onclick="goPlanetFromMap(2)">
-                <img id="imgplanet2" src="../../images/planets/planet2.png" alt="Planète 2">
-            </a>
         </div>
 
         <div id="planet3" class="planet">
-            <a onclick="goPlanetFromMap(3)">
-                <img id="imgplanet3" src="../../images/planets/planet3.png" alt="Planète 3">
-            </a>
         </div>
 
         <div id="planet4" class="planet">
-            <a onclick="goPlanetFromMap(4)">
-                <img id="imgplanet4" src="../../images/planets/planet4.png" alt="Planète 4">
-            </a>
         </div>
 
         <div id="planet5" class="planet">
-            <a onclick="goPlanetFromMap(5)">
-                <img id="imgplanet5" src="../../images/planets/planet5.png" alt="Planète 5">
-            </a>
         </div>
 
         <div id="planet6" class="planet">
-            <a onclick="goPlanetFromMap(6)">
-                <img id="imgplanet6" src="../../images/planets/planet6.png" alt="Planète 6">
-            </a>
         </div>
     
         <div id="planet7" class="planet">
-            <a onclick="goPlanetFromMap(7)">
-                <img id="imgplanet7" src="../../images/planets/planet7.png" alt="Planète 7">
-            </a>
         </div>
     
         <div id="planet8" class="planet">
-            <a onclick="goPlanetFromMap(8)">
-                <img id="imgplanet8" src="../../images/planets/planet8.png" alt="Planète 8">
-            </a>
         </div>
 
         <div id="planet9" class="planet">
-            <a onclick="goPlanetFromMap(9)">
-                <img id="imgplanet9" src="../../images/planets/planet9.png" alt="Planète 9">
-            </a>
         </div>
 
         <div id="planet10" class="planet">
-            <a onclick="goPlanetFromMap(10)">
-                <img id="imgplanet10" src="../../images/planets/planet10.png" alt="Planète 10">
-            </a>
         </div>
+
         <div id="planet11" class="planet">
-            <a onclick="goPlanetFromMap(11)">
-                <img id="imgplanet11" src="../../images/planets/planet11.png" alt="Planète 11">
-            </a>
         </div>
+
         <div id="planet12" class="planet">
-            <a onclick="goPlanetFromMap(12)">
-                <img id="imgplanet12" src="../../images/planets/planet12.png" alt="Planète 12">
-            </a>
         </div>
+
         <div id="planet13" class="planet">
-            <a onclick="goPlanetFromMap(13)">
-                <img id="imgplanet13" src="../../images/planets/planet13.png" alt="Planète 13">
-            </a>
         </div>
+
         <div id="planet14" class="planet">
-            <a onclick="goPlanetFromMap(14)">
-                <img id="imgplanet14" src="../../images/planets/planet14.png" alt="Planète 14">
-            </a>
         </div>
+        
         <div id="click_cursor">
         </div>
     </div>
@@ -120,57 +86,74 @@
     var lvl = 1;
     retrieveLevel();
 
-    if(lvl<=13){
-        document.getElementById('planet14').style.display = "none";
-    }
-    if(lvl<=12){
-        document.getElementById('planet13').style.display = "none";
-    }
-    if(lvl<=11){
-        document.getElementById('planet12').style.display = "none";
-    }
-    if(lvl<=10){
-        document.getElementById('planet11').style.display = "none";
-    }
-    if(lvl<=9){
-        document.getElementById('planet10').style.display = "none";
-    }
-    if(lvl<=8){
-        document.getElementById('planet9').style.display = "none";
-    }
-    if(lvl<=7){
-        document.getElementById('planet8').style.display = "none";
-    }
-    if(lvl<=6){
-        document.getElementById('planet7').style.display = "none";
-    }
-    if(lvl<=5){
-        document.getElementById('planet6').style.display = "none";
-    }
-    if(lvl<=4){
-        document.getElementById('planet5').style.display = "none";
-    }
-    if(lvl<=3){
-        document.getElementById('planet4').style.display = "none";
-    }
-    if(lvl<=2){
-        document.getElementById('planet3').style.display = "none";
-    }
     if(lvl==1){
-        document.getElementById('planet2').style.display = "none";
-
-        let cursor = document.createElement('img');
-        cursor.setAttribute('src',"../../../images/specific/click_cursor.png");
-        cursor.setAttribute('id',"cursor_planet");
-        document.getElementById('click_cursor').appendChild(cursor);
-
-        
-        let cursor_text = document.createElement('a');
-        cursor_text.innerHTML = "click here"
-        cursor_text.style.color = "white";
-        cursor_text.style.fontSize = "20px";
-        document.getElementById('click_cursor').appendChild(cursor_text);
+        createCursor()
     }
+    if(lvl>1){
+        unlockImagePlanet(2)
+    }
+    if(lvl>2){
+        unlockImagePlanet(3)
+    }
+    if(lvl>3){
+        unlockImagePlanet(4)
+    }
+    if(lvl>4){
+        unlockImagePlanet(5)
+    }
+    if(lvl>5){
+        unlockImagePlanet(6)
+    }
+    if(lvl>6){
+        unlockImagePlanet(7)
+    }
+    if(lvl>7){
+        unlockImagePlanet(8)
+    }
+    if(lvl>8){
+        unlockImagePlanet(9)
+    }
+    if(lvl>9){
+        unlockImagePlanet(10)
+    }
+    if(lvl>10){
+        unlockImagePlanet(11)
+    }
+    if(lvl>11){
+        unlockImagePlanet(12)
+    }
+    if(lvl>12){
+        unlockImagePlanet(13)
+    }
+    if(lvl>13){
+        unlockImagePlanet(14)
+    }
+
+function unlockImagePlanet(planetId) {
+    let planet = document.createElement('a');
+    planet.setAttribute('onclick', "goPlanetFromMap("+planetId+")"); // créé le clic
+
+    let planet_image = document.createElement('img');
+    planet_image.setAttribute('src',"../../images/planets/planet"+planetId+".png");
+    planet_image.setAttribute('id',"imgplanet"+planetId);
+
+    planet.appendChild(planet_image);
+    document.getElementById("planet"+planetId).appendChild(planet);
+}
+
+function createCursor(){
+    let cursor = document.createElement('img');
+    cursor.setAttribute('src',"../../../images/specific/click_cursor.png");
+    cursor.setAttribute('id',"cursor_planet");
+    document.getElementById('click_cursor').appendChild(cursor);
+
+    
+    let cursor_text = document.createElement('a');
+    cursor_text.innerHTML = "click here"
+    cursor_text.style.color = "white";
+    cursor_text.style.fontSize = "20px";
+    document.getElementById('click_cursor').appendChild(cursor_text);
+}
    
 </script>
 </html>
