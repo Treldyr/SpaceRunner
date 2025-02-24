@@ -213,12 +213,12 @@ function create_big_ghost(numboard){
 //                                                   //
 // --------------------------------------------------//
 
-function place_gaz(numboard){
+function place_item(numboard,object){
     for(let j= 0; j < gaz[numboard-1].length; j++)
     {
         let idGaz = j + (numboard-1)*4
         let the_image = document.createElement('img');
-        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
+        the_image.setAttribute('src',"../../../images/specific/"+object+".png");
         the_image.setAttribute('style',"position: fixed;top : "+(5*gaz[numboard-1][j][0]+5) + "vh;left : " +(3.5*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"gaz"+idGaz);
@@ -252,7 +252,7 @@ function place_air(numboard,sizetop,sizeleft){
     {
         let idGaz = j + (numboard-1)*10
         let the_image = document.createElement('img');
-        the_image.setAttribute('src',"../../../images/gaz_bottle2.png");
+        the_image.setAttribute('src',"../../../images/specific/gaz_bottle.png");
         the_image.setAttribute('style',"position: fixed;top : "+(sizetop*gaz[numboard-1][j][0]+5) + "vh;left : " +(sizeleft*gaz[numboard-1][j][1]+5)+ "vw;");
         the_image.className = "img_of_laby";
         the_image.setAttribute('id',"air"+idGaz);
@@ -296,14 +296,14 @@ function construct_board(numboard){
 }
 
 
-function construct_board_with_gaz(numboard){
+function construct_board_with_gaz(numboard,object){
     actual_board = numboard-1;
     for(let i= 0; i < boards[numboard-1].length; i++)
     {
         construct_line(boards[numboard-1][i],i,numboard);
     }
     create_character(numboard);
-    place_gaz(numboard);
+    place_item(numboard,object);
 }
 
 
