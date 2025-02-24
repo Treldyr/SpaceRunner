@@ -225,8 +225,8 @@ const languageData = {
         text133: "Quelle est la prochaine mission ?",
         text134: "Qui dois-je sauver cette fois ?",
         text135: "Cette fois-ci, c'est un autre chat dont on a perdu le contact sur la planète similaire,",
-        text136: "L’atmosphère de cette planète est bien pire que celle de",
-        text137: "Tu devras surveiller ton oxygène tout en le trouvant.",
+        text136: "L’atmosphère de cette planète est pire que celle de",
+        text137: "Tu devras récupérer de l'oxygène tout en le trouvant.",
         text138: "Cette mission sera rude, mais je sais que tu n’abandonnes jamais.",
         text139: "Acceptes-tu d'aller le chercher ?",
         text140: "Bien sûr ! C'est parti !",
@@ -495,7 +495,8 @@ const languageData = {
         text377: "Attends moi ici.",
         text378: "Tout va bien ? Je ne te vois pas.",
         text379: "Il n'est PAS obligatoire de récupérer toutes les bombonnes avant de terminer un niveau.",
-        text380: "Ma famille m'a oublié ici, haha qu'est-ce qu'ils sont maladroits !"
+        text380: "Ma famille m'a oublié ici, haha qu'est-ce qu'ils sont maladroits !",
+        text381: "Une bombonne d'oxygène est représentée par :"
     },
     en: {
         mainTitle: "Space Runner",
@@ -723,8 +724,8 @@ const languageData = {
         text133: "What's the next mission?",
         text134: "Who do I need to save this time?",
         text135: "This time, it's another cat we've lost contact with on a similar planet",
-        text136: "The atmosphere of this planet is even worse than the one of",
-        text137: "You'll need to monitor your oxygen while finding him.",
+        text136: "The atmosphere of this planet is worse than the one of",
+        text137: "You'll need to collect oxygen while finding him.",
         text138: "This mission will be tough, but I know you never give up.",
         text139: "Do you accept to go search for him?",
         text140: "Of course! Let's go!",
@@ -993,6 +994,7 @@ const languageData = {
         text377: "Wait for me here.",  
         text378: "Are you okay? I can’t see you.",
         text379: "It is NOT mandatory to collect all the oxygen bottles before finishing a level.",
-        text380: "My family forgot me here, haha they are so clumsy !"
+        text380: "My family forgot me here, haha they are so clumsy !",
+        text381: "Une bombonne d'oxygène est représentée par :"
     }
 }
