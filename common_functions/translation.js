@@ -995,6 +995,6 @@ const languageData = {
         text378: "Are you okay? I can’t see you.",
         text379: "It is NOT mandatory to collect all the oxygen bottles before finishing a level.",
         text380: "My family forgot me here, haha they are so clumsy !",
-        text381: "Une bombonne d'oxygène est représentée par :"
+        text381: "Oxygen bottle is represented by :"
     }
 }
