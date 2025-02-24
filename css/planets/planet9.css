@@ -1,23 +1,23 @@
 .background-image, .highscore-background-image {
-    background: url('../../images/backgrounds/planete_rouge.jpg') no-repeat center center fixed;
+    background: url('../../images/backgrounds/planete_roche.jpg') no-repeat center center fixed;
 }
 
 
 .btn-outline-dark {
-    background-color: rgb(157, 51, 51);
+    background-color: rgb(195, 125, 34);
 }
 
 
 .btn-start {
-    background-color: rgb(157, 51, 51);
+    background-color: rgb(195, 125, 34);
 }
 
 
 .btn-start:hover {
-    box-shadow: 0 0 10px rgb(157, 51, 51);
+    box-shadow: 0 0 10px rgb(195, 125, 34);
 }
 
 
 .timer {
-    background-color: rgb(157, 51, 51);
+    background-color: rgb(195, 125, 34);
 }
