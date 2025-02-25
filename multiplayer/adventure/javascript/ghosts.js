@@ -118,3 +118,32 @@ function moveGhostVertically2(){
     let ghost = document.getElementById('ghost2_'+actual_board);
     ghost.setAttribute('style',"position: fixed;top : "+(3*ghostTop2+5)+"vh;left : "+(2*ghostLeft2+5)+"vw;");
 }
+
+function reset_ghosts_and_players(){
+    stopGhost();
+
+    fromtop1 = coords_begin[actual_board][0];
+    fromleft1 = coords_begin[actual_board][1];
+    fromtop2 = coords_begin2[actual_board][0];
+    fromleft2 = coords_begin2[actual_board][1];
+    ghostTop1 = coords_begin_ghost_1[actual_board][0];
+    ghostLeft1 = coords_begin_ghost_1[actual_board][1];
+    ghostTop2 = coords_begin_ghost_2[actual_board][0];
+    ghostLeft1 =  coords_begin_ghost_2[actual_board][1];
+    
+    let cat1 = document.getElementById('character'+actual_board)
+    cat1.setAttribute('style',"position: fixed;top : "+(3*fromtop1+5)+"vh;left : "+(2*fromleft1+5)+"vw;");
+    cat1.setAttribute('src',"../../../images/"+chara+"down.png");
+
+    let cat2 = document.getElementById('characterp2'+actual_board)
+    cat2.setAttribute('style',"position: fixed;top : "+(3*fromtop2+5)+"vh;left : "+(2*fromleft2+5)+"vw;");
+    cat2.setAttribute('src',"../../../images/"+charap2+"down.png");
+
+    let ghost1 = document.getElementById('ghost'+actual_board);
+    ghost1.setAttribute('style', "position: fixed;top : " + (3*ghostTop1+5) + "vh;left : " + (2 *ghostLeft1+5) + "vw;");
+
+    let ghost2 = document.getElementById('ghost2_'+actual_board);
+    ghost2.setAttribute('style', "position: fixed;top : " + (3*ghostTop2+5) + "vh;left : " + (2 *ghostLeft2+5) + "vw;");
+    
+    moveGhost()
+}

@@ -18,6 +18,13 @@ function UnlockPlanet(planet_number) {
     }   
 }
 
+function UnlockPlanet2pMode(planet_number) {
+    var storedLevel = localStorage.getItem("teamLevel");
+    if ((storedLevel) || (storedLevel < planet_number)){
+        localStorage.setItem("teamLevel", planet_number);
+    }  
+}
+
 
 function UnlockGhost(ghost_number) {
     var storedData = localStorage.getItem('ghostData');

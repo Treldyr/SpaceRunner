@@ -42,6 +42,13 @@ function retrieveLevel() {
     }
 }
 
+function retrieveTeamLevel() {
+    var storedData = localStorage.getItem('teamLevel');
+    if (storedData !== null) {
+        lvl = storedData
+    }
+}
+
 function retrieveKeyboard() {
     var storedData = localStorage.getItem('keyboard');
     if (storedData !== null) {

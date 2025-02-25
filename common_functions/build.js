@@ -112,13 +112,30 @@ function create_big_character(numboard) {
     fromleft = coords_begin[numboard - 1][1];
 }
 
-// --------------------------------------------------//
-//                                                   //
-//       CONSTRUCTION OF THE BOARD FOR GHOSTS        //
-//                                                   //
-// --------------------------------------------------//
+function create_2_character(numboard) {
+    {
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src', "../../../images/" + chara + "down.png");
+        the_image.setAttribute('style', "position: fixed;top : " + (5 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin[numboard - 1][1] + 5) + "vw;");
+        the_image.className = "img_of_laby";
+        the_image.setAttribute('id', "character" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(the_image);
+        fromtop1 = coords_begin[numboard - 1][0];
+        fromleft1 = coords_begin[numboard - 1][1];
 
-function create_ghosts_and_characters(numboard) {
+
+        let the_image2 = document.createElement('img');
+        the_image2.setAttribute('src', "../../../images/" + charap2 + "down.png");
+        the_image2.setAttribute('style', "position: fixed;top : " + (5 * coords_begin2[numboard - 1][0] + 5) + "vh;left : " + (3.5 * coords_begin2[numboard - 1][1] + 5) + "vw;");
+        the_image2.className = "img_of_laby";
+        the_image2.setAttribute('id', "characterp2" + actual_board);
+        document.getElementById('laby' + numboard).appendChild(the_image2);
+        fromtop2 = coords_begin2[numboard - 1][0];
+        fromleft2 = coords_begin2[numboard - 1][1];
+    }
+}
+
+function create_2_big_characters(numboard) {
     {
         let the_image = document.createElement('img');
         the_image.setAttribute('src', "../../../images/" + chara + "down.png");
@@ -138,7 +155,18 @@ function create_ghosts_and_characters(numboard) {
         document.getElementById('laby' + numboard).appendChild(the_image2);
         fromtop2 = coords_begin2[numboard - 1][0];
         fromleft2 = coords_begin2[numboard - 1][1];
+    }
+}
 
+// --------------------------------------------------//
+//                                                   //
+//       CONSTRUCTION OF THE BOARD FOR GHOSTS        //
+//                                                   //
+// --------------------------------------------------//
+
+function create_ghosts_and_characters(numboard) {
+    {
+        create_2_big_characters(numboard)
 
         let ghost = document.createElement('img');
         ghost.setAttribute('src', "../../../images/fantomp0.png");
@@ -327,6 +355,14 @@ function construct_board_with_2_ghosts(numboard){
     create_ghosts_and_characters(numboard)
 }
 
+function construct_board_2_players(numboard){
+    actual_board = numboard-1;
+    for(let i= 0; i < boards[numboard-1].length; i++)
+    {
+        construct_line(boards[numboard-1][i],i,numboard);
+    }
+    create_2_character(numboard);
+}
 
 // --------------------------------------------------//
 //                                                   //

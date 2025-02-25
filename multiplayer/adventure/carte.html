@@ -27,11 +27,41 @@
             <img id="imgplanet1" src="../../images/planets/planet1.png" alt="Planète 1">
         </a>
     </div>
+
+    <div id="planet2" class="planet">
+    </div>
+
+    <div id="planet3" class="planet">
+    </div>
+
+    <div id="click_cursor">
+    </div>
+
     <div class="btn-back">
-        <a onclick="window.location.href = 'selectchar2.html'">
+        <a onclick="window.location.href = 'insertTeamName.html'">
             <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
         </a>
     </div>
 </body>
 <script src="../../common_functions/navigation.js"></script>
+<script src="../../common_functions/get_data.js"></script>
+<script src="../../common_functions/unlocks.js"></script>
+<script src="../../common_functions/background_music.js"></script>
+<script src="../../common_functions/maps.js"></script>
+<script>
+    ambianceMusic(); // Put some ambiance sound for the map
+
+    var lvl = 1;
+    retrieveTeamLevel();
+
+    if(lvl==1){
+        createCursor()
+    }
+    if(lvl>1){
+        unlockImagePlanet(2)
+    }
+    if(lvl>2){
+        unlockImagePlanet(3)
+    }
+</script>
 </html>
