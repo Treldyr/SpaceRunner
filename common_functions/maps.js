@@ -10,6 +10,19 @@ function unlockImagePlanet(planetId) {
     document.getElementById("planet"+planetId).appendChild(planet);
 }
 
+
+function unlockImagePlanet2p(planetId,planet_img) {
+    let planet = document.createElement('a');
+    planet.setAttribute('onclick', "goPlanetFromMap("+planetId+")"); // créé le clic
+
+    let planet_image = document.createElement('img');
+    planet_image.setAttribute('src',"../../images/planets/planet"+planet_img+".png");
+    planet_image.setAttribute('id',"imgplanet"+planetId);
+
+    planet.appendChild(planet_image);
+    document.getElementById("planet"+planetId).appendChild(planet);
+}
+
 function createCursor(){
     let cursor = document.createElement('img');
     cursor.setAttribute('src',"../../../images/specific/click_cursor.png");

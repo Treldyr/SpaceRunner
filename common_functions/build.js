@@ -364,6 +364,11 @@ function construct_board_2_players(numboard){
     create_2_character(numboard);
 }
 
+function construct_board_2p_with_gaz(numboard,object){
+    construct_board_2_players(numboard)
+    place_item(numboard,object);
+}
+
 // --------------------------------------------------//
 //                                                   //
 //    CONSTRUCTION OF THE MEDIUM BOARD WITH BOS      //
