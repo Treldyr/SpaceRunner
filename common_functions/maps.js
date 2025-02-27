@@ -25,7 +25,7 @@ function unlockImagePlanet2p(planetId,planet_img) {
 
 function createCursor(){
     let cursor = document.createElement('img');
-    cursor.setAttribute('src',"../../../images/specific/click_cursor.png");
+    cursor.setAttribute('src',"../../images/specific/click_cursor.png");
     cursor.setAttribute('id',"cursor_planet");
     document.getElementById('click_cursor').appendChild(cursor);
 
