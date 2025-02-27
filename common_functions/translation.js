@@ -497,7 +497,9 @@ const languageData = {
         text379: "Il n'est PAS obligatoire de récupérer toutes les bombonnes avant de terminer un niveau.",
         text380: "Ma famille m'a oublié ici, haha qu'est-ce qu'ils sont maladroits !",
         text381: "Une bombonne d'oxygène est représentée par :",
-        chooseTeamName: "Choisissez votre nom d'équipe"
+        chooseTeamName: "Choisissez votre nom d'équipe",
+        MeleeMode: "Mode Melee",
+        GhostMode: "Mode Fantome"
     },
     en: {
         mainTitle: "Space Runner",
@@ -997,6 +999,8 @@ const languageData = {
         text379: "It is NOT mandatory to collect all the oxygen bottles before finishing a level.",
         text380: "My family forgot me here, haha they are so clumsy !",
         text381: "Oxygen bottle is represented by :",
-        chooseTeamName: "Choose your team name"
+        chooseTeamName: "Choose your team name",
+        MeleeMode: "Melee Mode",
+        GhostMode: "Ghost Mode"
     }
 }
