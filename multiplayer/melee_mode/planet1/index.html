@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Runner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/planets/planet4.css">
+    <link rel="stylesheet" href="../../../css/planets/default.css">
+    <link rel="icon" href="../../../images/p1down.png">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C8DGYXCTDV');
+</script>
+<body>
+    <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
+    <div class="background-image"></div>
+    <div class="content">
+        <div class="custom-title" data-lang-key="text80">Bienvenu sur la station Deep Space Nine</div>
+
+        <div class="game-description">
+           <p><a data-lang-key="text321">Le joueur</a> 1 <a data-lang-key="text322">utilise les touches</a> :
+                 <img src="../../../images/keyboard/directional_arrows.png" width="80px" class="img-thumbnail"> </p>
+            <p><a data-lang-key="text321">Le joueur</a> 2 <a data-lang-key="text322">utilise les touches</a> :
+                 <img id="keyboardinputs" src="../../../images/keyboard/azerty.png" width="80px" class="img-thumbnail"> </p>
+            <p data-lang-key="goodluck">Bonne chance !</p>
+            <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
+        </div>
+    </div>
+    <script src="../../../common_functions/navigation.js"></script>
+    <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/translation.js"></script>
+    <script src="../../../common_functions/languages.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/keyboard.js"></script>
+    <script>
+        updateImageKeyboardIntro()
+    </script>
+</body>
+</html>

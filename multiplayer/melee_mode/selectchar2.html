@@ -27,7 +27,7 @@
     <div class="background-image"></div>
     <div class="content">
         <h1 class="custom-title">Space Runner</h1>
-        <h1><a data-lang-key="choseThePlayer">Choisissez le joueur</a> 1</h1>
+        <h1><a data-lang-key="choseThePlayer">Choisissez le joueur</a> 2</h1>
         <div class="container">
             <div class="row" id="listChar1">
                 <div class="col-md-3">
@@ -91,14 +91,13 @@
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
-        <button class="btn-start" onclick="acceptPlayer('charChosen','selectchar2.html')" data-lang-key="next">Suivant</button>
+        <button class="btn-start" onclick="acceptPlayer('charChosen2','carte.html')" data-lang-key="start">Commencer</button>
         <div class="btn-back">
-            <a onclick="returnMenu1v1()">
+            <a onclick="window.location.href = 'selectchar1.html'">
                 <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
             </a>
         </div>
     </div>
-    <script src="../../common_functions/navigation.js"></script>
     <script src="../../common_functions/get_data.js"></script>
     <script src="../../common_functions/unlocks.js"></script>
     <script src="../../common_functions/sounds.js"></script>

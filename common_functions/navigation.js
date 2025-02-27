@@ -27,6 +27,14 @@ function goPlanet(numberPlanet) {
 }
 
 function goMultiplayer1v1(){
+    window.location.href='menu_1v1.html'
+}
+
+function goMelee1v1(){
+    window.location.href='melee_mode/selectchar1.html'
+}
+
+function goGhost1v1(){
     window.location.href='battle_mode/selectchar1.html'
 }
 
@@ -97,4 +105,8 @@ function goHighScoresMenu() {
 
 function goHighScoresOnline1() {
     window.location.href='online/planet1.html';
+}
+
+function returnMenu1v1() {
+    window.location.href='../menu_1v1.html';
 }
