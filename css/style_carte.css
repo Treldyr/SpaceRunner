@@ -5,20 +5,20 @@
     transition: transform 0.2s ease-in-out;
 }
 
-#planet1 { top: 10px; left: 100px;  }
-#planet2 { top: 200px; left: 200px; }
-#planet3 { top: 340px; left: 300px; }
-#planet4 { top: 450px; left: 480px; }
-#planet5 { top: 160px; left: 540px; }
-#planet6 { top: 200px; left: 760px; }
-#planet7 { top: 460px; left: 880px; }
-#planet8 { top: 300px; left: 980px; }
-#planet9 { top: 140px; left: 1100px;}
-#planet10{ top: 40px; left: 1300px;}
-#planet11{ top: 430px; left: 1420px;}
-#planet12{ top: 300px; left: 1580px;}
-#planet13{ top: 120px; left: 1740px;}
-#planet14{ top: 410px; left: 1840px;}
+#planet1 { top: 200px; left: 200px;  }
+#planet2 { top: 360px; left: 300px; }
+#planet3 { top: 480px; left: 420px; }
+#planet4 { top: 320px; left: 580px; }
+#planet5 { top: 120px; left: 640px; }
+#planet6 { top: 100px; left: 860px; }
+#planet7 { top: 460px; left: 980px; }
+#planet8 { top: 300px; left: 1080px; }
+#planet9 { top: 140px; left: 1200px;}
+#planet10{ top: 40px; left: 1400px;}
+#planet11{ top: 430px; left: 1520px;}
+#planet12{ top: 300px; left: 1680px;}
+#planet13{ top: 120px; left: 1880px;}
+#planet14{ top: 310px; left: 2020px;}
 
 
 .planet:hover {
@@ -44,8 +44,8 @@
 #click_cursor {
     position: absolute;
     cursor: not-allowed;
-    top: 100px;
-    left: 110px;
+    top: 270px;
+    left: 240px;
     display: flex;
     flex-direction: column; /* Alignement des éléments en colonne */
     gap: 10px; /* Espacement entre les éléments */
@@ -54,7 +54,7 @@
 
 
 .map-container {
-    width: 2000px; /* Largeur plus grande pour inclure toutes les planètes */
+    width: 2200px; /* Largeur plus grande pour inclure toutes les planètes */
     height: 100vh;
     position: relative;
     overflow-x: scroll; /* Autorise le défilement horizontal */
