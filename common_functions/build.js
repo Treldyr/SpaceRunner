@@ -237,7 +237,7 @@ function create_big_ghost(numboard){
 
 // --------------------------------------------------//
 //                                                   //
-//      CONSTRUCTION OF THE AIR AND GAZ AND BOMB     //
+//       CONSTRUCTION OF AIR, GAZ, BOMB, LEVERS      //
 //                                                   //
 // --------------------------------------------------//
 
@@ -291,6 +291,37 @@ function place_air(numboard,sizetop,sizeleft){
     found_b0 = false;
     found_b4 = false;
     found_b3 = false;
+}
+
+function place_levers(numboard){
+    for(let j= 0; j < levers[numboard-1].length; j++)
+    {
+        let idLever = j + (numboard-1)*10
+        let the_image = document.createElement('img');
+        the_image.setAttribute('src',"../../../images/specific/lever_"+levers[numboard-1][j][2]+".png");
+        the_image.setAttribute('style',"position: fixed;top : "+(5*levers[numboard-1][j][0]+5) + "vh;left : " +(3.5*levers[numboard-1][j][1]+5)+ "vw;");
+        the_image.className = "img_of_laby";
+        the_image.setAttribute('id',"lever"+idLever);
+        document.getElementById('laby'+numboard).appendChild(the_image);
+
+        if(levers[numboard-1][j][2] == "on"){
+            place_blocks_of_levers(numboard,j)
+        }
+    }
+}
+
+function place_blocks_of_levers(numboard,j){
+    for(let k= 0; k < levers[numboard-1][j][3].length; k++){
+        AllAdditionnalBlocks.push([levers[numboard-1][j][3][k][0] , levers[numboard-1][j][3][k][1]])
+
+        let theblock = document.createElement('img');
+        theblock.setAttribute('src',"img2.png");
+        theblock.setAttribute('style',"position: fixed;top : "+(5*levers[numboard-1][j][3][k][0]+5) + "vh;left : " +(3.5*levers[numboard-1][j][3][k][1]+5)+ "vw;");
+        theblock.className = "img_of_laby";
+        nbboard = numboard-1
+        theblock.setAttribute('id',"additionBlock"+nbboard+"_"+j+"_"+k);
+        document.getElementById('laby'+numboard).appendChild(theblock);
+    }
 }
 
 // --------------------------------------------------//
@@ -367,6 +398,12 @@ function construct_board_2_players(numboard){
 function construct_board_2p_with_gaz(numboard,object){
     construct_board_2_players(numboard)
     place_item(numboard,object);
+}
+
+
+function construct_board_2p_with_levers(numboard){
+    construct_board_2_players(numboard);
+    place_levers(numboard)
 }
 
 // --------------------------------------------------//

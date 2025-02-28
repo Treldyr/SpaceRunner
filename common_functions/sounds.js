@@ -55,3 +55,9 @@ function playSoundButton() {
     audio.volume = globalVolume;
     audio.play();
 }
+
+function playLever() {
+    var audio = new Audio('../../../sons/lever.mp3');
+    audio.volume = globalVolume;
+    audio.play();
+}
