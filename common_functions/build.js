@@ -318,6 +318,7 @@ function place_blocks_of_levers(numboard,j,column){ // column is 3 for on levers
 
         let theblock = document.createElement('img');
         theblock.setAttribute('src',"img2.png");
+        theblock.setAttribute('style',"position: fixed;top : "+(5*levers[numboard-1][j][column][k][0]+5) + "vh;left : " +(3.5*levers[numboard-1][j][column][k][1]+5)+ "vw;");
         theblock.className = "img_of_laby";
         nbboard = numboard-1
         theblock.setAttribute('id',"additionBlock"+nbboard+"_"+j+"_"+k);
