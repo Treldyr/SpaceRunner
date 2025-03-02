@@ -129,7 +129,10 @@ function reset_ghosts_and_players(){
     ghostTop1 = coords_begin_ghost_1[actual_board][0];
     ghostLeft1 = coords_begin_ghost_1[actual_board][1];
     ghostTop2 = coords_begin_ghost_2[actual_board][0];
-    ghostLeft1 =  coords_begin_ghost_2[actual_board][1];
+    ghostLeft2 =  coords_begin_ghost_2[actual_board][1];
+
+    p1_won = false;
+    p2_won = false;
     
     let cat1 = document.getElementById('character'+actual_board)
     cat1.setAttribute('style',"position: fixed;top : "+(3*fromtop1+5)+"vh;left : "+(2*fromleft1+5)+"vw;");
