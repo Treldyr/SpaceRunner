@@ -296,7 +296,7 @@ function place_air(numboard,sizetop,sizeleft){
 function place_levers(numboard){
     for(let j= 0; j < levers[numboard-1].length; j++)
     {
-        let idLever = j + (numboard-1)*10
+        let idLever = j + (numboard-1)*100
         let the_image = document.createElement('img');
         the_image.setAttribute('src',"../../../images/specific/lever_"+levers[numboard-1][j][2]+".png");
         the_image.setAttribute('style',"position: fixed;top : "+(5*levers[numboard-1][j][0]+5) + "vh;left : " +(3.5*levers[numboard-1][j][1]+5)+ "vw;");
@@ -305,14 +305,16 @@ function place_levers(numboard){
         document.getElementById('laby'+numboard).appendChild(the_image);
 
         if(levers[numboard-1][j][2] == "on"){
-            place_blocks_of_levers(numboard,j)
+            place_blocks_of_levers(numboard,j,3)
+        } else {
+            place_blocks_of_levers(numboard,j,4)
         }
     }
 }
 
-function place_blocks_of_levers(numboard,j){
-    for(let k= 0; k < levers[numboard-1][j][3].length; k++){
-        AllAdditionnalBlocks.push([levers[numboard-1][j][3][k][0] , levers[numboard-1][j][3][k][1]])
+function place_blocks_of_levers(numboard,j,column){ // column is 3 for on levers, and 4  for off levers
+    for(let k= 0; k < levers[numboard-1][j][column].length; k++){
+        AllAdditionnalBlocks.push([levers[numboard-1][j][column][k][0] , levers[numboard-1][j][column][k][1]])
 
         let theblock = document.createElement('img');
         theblock.setAttribute('src',"img2.png");

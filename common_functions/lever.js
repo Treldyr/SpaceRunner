@@ -21,23 +21,26 @@ function check_lever_superposition_p2(){
 }
 
 function update_lever(j,actualState){
-    idLevers = j + actual_board*10;
+    idLevers = j + actual_board*100;
     if(actualState=="off"){
         document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_on.png";
         levers[actual_board][j][2] = "on"
         let numeroBoard = actual_board+1
-        place_blocks_of_levers(numeroBoard,j)
+        place_blocks_of_levers(numeroBoard,j,3)
+        delete_blocks_of_levers(j,4)
     }
     if(actualState=="on"){
         document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_off.png";
         levers[actual_board][j][2] = "off"
-        delete_blocks_of_levers(j)
+        delete_blocks_of_levers(j,3)
+        let numeroBoard = actual_board+1
+        place_blocks_of_levers(numeroBoard,j,4)
     }
 }
 
-function delete_blocks_of_levers(j){
-    for(let k= 0; k < levers[actual_board][j][3].length; k++){
-        delete_from_additionnal_blocks(levers[actual_board][j][3][k][0] , levers[actual_board][j][3][k][1])
+function delete_blocks_of_levers(j,column){ // column is 3 for off levers, and 4 for on levers
+    for(let k= 0; k < levers[actual_board][j][column].length; k++){
+        delete_from_additionnal_blocks(levers[actual_board][j][column][k][0] , levers[actual_board][j][column][k][1])
         console.log()
         document.getElementById("additionBlock"+actual_board+"_"+j+"_"+k).remove();
 
