@@ -141,7 +141,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_large_board_with_ghost(1)
+    construct_board_with_parameters(1,3,2,true,null,false,0,false);
     
 
 
@@ -185,7 +185,7 @@
             playEndLaby()
             goNext(actual_board+1);
             moveGhost(7)
-            construct_large_board_with_ghost(actual_board+2);
+            construct_board_with_parameters(actual_board+2,3,2,true,null,false,0,false);
         } else {
             game_ended = true
             stopTimer();

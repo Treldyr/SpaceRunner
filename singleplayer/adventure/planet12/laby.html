@@ -131,7 +131,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_large_board(1)
+    construct_board(1,3,2)
     
 
 
@@ -203,7 +203,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_large_board(actual_board+2);
+            construct_board(actual_board+2,3,2);
             initializeSwaps();
         } else {
             game_ended = true

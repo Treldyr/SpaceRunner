@@ -129,7 +129,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board(1)
+    construct_board(1,5,3.5);
 
 
     function checkKey(e) {
@@ -171,7 +171,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_board(actual_board+2);
+            construct_board(actual_board+2,5,3.5);
         } else {
             game_ended = true
             stopTimer();

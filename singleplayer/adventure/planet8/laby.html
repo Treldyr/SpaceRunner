@@ -140,7 +140,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_ghost(1)
+    construct_board_with_parameters(1,5,3.5,true,null,false,0,false);
 
 
     function checkKey(e) {
@@ -184,7 +184,7 @@
             playEndLaby()
             goNext(actual_board+1);
             moveGhost(6)
-            construct_board_with_ghost(actual_board+2);
+            construct_board_with_parameters(actual_board+2,5,3.5,true,null,false,0,false);
         } else {
             game_ended = true
             stopTimer();

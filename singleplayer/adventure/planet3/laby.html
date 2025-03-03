@@ -135,7 +135,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_gaz(1,"coconut")
+    construct_board_with_parameters(1,5,3.5,false,"coconut",false,0,false);
 
 
     function checkKey(e) {
@@ -177,7 +177,7 @@
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_board_with_gaz(actual_board+2,"coconut");
+            construct_board_with_parameters(actual_board+2,5,3.5,false,"coconut",false,0,false)
         } else {
             game_ended = true
             stopTimer();
