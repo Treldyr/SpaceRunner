@@ -194,6 +194,7 @@ function dest_downward_in_darkness(){
         playWallHit()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
+    document.getElementById('hat'+actual_board).setAttribute('src',"../../../images/specific/coal_hat_down.png");
 }
 
 
@@ -206,6 +207,7 @@ function dest_leftward_in_darkness(){
         playWallHit()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
+    document.getElementById('hat'+actual_board).setAttribute('src',"../../../images/specific/coal_hat_left.png");
 }
 
 
@@ -218,6 +220,7 @@ function dest_upward_in_darkness(){
         playWallHit()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
+    document.getElementById('hat'+actual_board).setAttribute('src',"../../../images/specific/coal_hat_up.png");
 }
 
 
@@ -230,6 +233,7 @@ function dest_rigthward_in_darkness(){
         playWallHit()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
+    document.getElementById('hat'+actual_board).setAttribute('src',"../../../images/specific/coal_hat_right.png");
 }
 
 // --------------------------------------------------//

@@ -151,6 +151,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            document.getElementById('hat'+actual_board).setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
             {
                 if(!game_ended){

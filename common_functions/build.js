@@ -326,6 +326,15 @@ function place_blocks_of_levers(numboard,j,column){ // column is 3 for on levers
     }
 }
 
+function create_big_coal_hat(numboard){
+    let the_image = document.createElement('img');
+    the_image.setAttribute('src', "../../../images/specific/coal_hat_down.png");
+    the_image.setAttribute('style', "position: fixed;top : " + (3 * coords_begin[numboard - 1][0] + 5) + "vh;left : " + (2 * coords_begin[numboard - 1][1] + 5) + "vw;");
+    the_image.className = "img_of_laby";
+    the_image.setAttribute('id', "hat" + actual_board);
+    document.getElementById('laby' + numboard).appendChild(the_image);
+}
+
 // --------------------------------------------------//
 //                                                   //
 //          CONSTRUCTION OF THE TINY BOARD           //
@@ -491,6 +500,7 @@ function construct_large_board_in_darkness(numboard){
     }
     create_big_character(numboard);
     set_light_all_around(numboard,fromtop,fromleft)
+    create_big_coal_hat(numboard)
 }
 
 function construct_medium_board_in_darkness(numboard,number_boss){
