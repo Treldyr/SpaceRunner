@@ -61,3 +61,9 @@ function playLever() {
     audio.volume = globalVolume;
     audio.play();
 }
+
+function playLava() {
+    var audio = new Audio('../../../sons/lava.mp3');
+    audio.volume = globalVolume;
+    audio.play();
+}

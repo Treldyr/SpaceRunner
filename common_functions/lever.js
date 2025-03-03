@@ -10,6 +10,16 @@ function check_lever_superposition_p1(){
     }   
 }
 
+function check_lever_superposition(){
+    for(let j= 0; j < levers[actual_board].length; j++)
+    {
+        if((levers[actual_board][j][0]==fromtop)&&(levers[actual_board][j][1]==fromleft)){
+            update_lever(j,levers[actual_board][j][2])
+            playLever()
+        }
+    }   
+}
+
 function check_lever_superposition_p2(){
     for(let j= 0; j < levers[actual_board].length; j++)
     {
