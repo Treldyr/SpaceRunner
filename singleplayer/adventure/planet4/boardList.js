@@ -27,7 +27,7 @@ var coords_begin_boss = [
     [7,20]
 ]
 
-var bomb = [
+var item = [
     [
         [11,4],[8,11],[3,23]
     ]

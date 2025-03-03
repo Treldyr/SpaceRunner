@@ -107,7 +107,7 @@ var coords_begin2 = [
     [2,8],
 ]
 
-var gaz = [
+var item = [
     [
         [11,17],[6,7],[8,23]
     ],
