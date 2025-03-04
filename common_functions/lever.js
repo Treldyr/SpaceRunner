@@ -1,34 +1,15 @@
 AllAdditionnalBlocks = []
 
-function check_lever_superposition_p1(){
+function check_lever_superposition(valueleft, valuetop){
     for(let j= 0; j < levers[actual_board].length; j++)
     {
-        if((levers[actual_board][j][0]==fromtop1)&&(levers[actual_board][j][1]==fromleft1)){
+        if((levers[actual_board][j][0]==valuetop)&&(levers[actual_board][j][1]==valueleft)){
             update_lever(j,levers[actual_board][j][2])
             playLever()
         }
     }   
 }
 
-function check_lever_superposition(){
-    for(let j= 0; j < levers[actual_board].length; j++)
-    {
-        if((levers[actual_board][j][0]==fromtop)&&(levers[actual_board][j][1]==fromleft)){
-            update_lever(j,levers[actual_board][j][2])
-            playLever()
-        }
-    }   
-}
-
-function check_lever_superposition_p2(){
-    for(let j= 0; j < levers[actual_board].length; j++)
-    {
-        if((levers[actual_board][j][0]==fromtop2)&&(levers[actual_board][j][1]==fromleft2)){
-            update_lever(j,levers[actual_board][j][2])
-            playLever()
-        }
-    }   
-}
 
 function update_lever(j,actualState){
     idLevers = j + actual_board*100;
