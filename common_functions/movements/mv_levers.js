@@ -1,6 +1,6 @@
 // --------------------------------------------------//
 //                                                   //
-//         LINEAR MOVEMENTS WITH LAVA                //
+//         LINEAR MOVEMENTS WITH LEVER                //
 //                                                   //
 // --------------------------------------------------//
 
@@ -52,21 +52,3 @@ function dest_rigthward_with_lever(){
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
 
-
-function reset_level(){
-    fromtop = coords_begin[actual_board][0];
-    fromleft = coords_begin[actual_board][1];
-    
-    let cat = document.getElementById('character'+actual_board)
-    cat.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-    cat.setAttribute('src',"../../../images/"+chara+"down.png");
-
-    for(let j= 0; j < levers[actual_board].length; j++)
-        {
-            let idLevers = j + (actual_board)*100
-            document.getElementById('character'+actual_board)
-            if(levers[actual_board][j][2] == "off"){
-                turn_on_lever(j,idLevers);
-            }
-        }
-}

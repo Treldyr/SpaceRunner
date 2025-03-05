@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planet_blue_stone.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(46, 38, 168);
+}
+
+
+.btn-start {
+    background-color: rgb(46, 38, 168);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(46, 38, 168);
+}
+
+
+.timer {
+    background-color: rgb(46, 38, 168);
+}
