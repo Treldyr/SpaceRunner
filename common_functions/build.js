@@ -68,6 +68,12 @@ function create_big_coal_hat(numboard){
     create_element(numboard, 3, 2, "specific/coal_hat_down.png", "hat" + id_board, coords_begin[numboard - 1][0], coords_begin[numboard - 1][1])
 }
 
+function create_papy(numboard){
+    bossTop = coords_begin_boss[numboard - 1][0];
+    bossLeft = coords_begin_boss[numboard - 1][1];
+    create_element(numboard, 3, 2, "p20down.png", "papy" + actual_board, coords_begin_boss[numboard-1][0], coords_begin_boss[numboard-1][1])
+}
+
 
 // --------------------------------------------------//
 //                                                   //
@@ -177,20 +183,23 @@ function place_levers(numboard, lever_height, lever_width){
         create_element(numboard, lever_height, lever_width, "specific/lever_"+levers[numboard-1][j][2]+".png", "lever"+idLever, levers[numboard-1][j][0], levers[numboard-1][j][1]); 
 
         if(levers[numboard-1][j][2] == "on"){
-            place_blocks_of_levers(numboard,j,3)
+            place_blocks_of_levers(numboard,j,3,lever_height,lever_width)
         } else {
-            place_blocks_of_levers(numboard,j,4)
+            place_blocks_of_levers(numboard,j,4,lever_height,lever_width)
         }
     }
 }
 
-function place_blocks_of_levers(numboard,j,column){ // column is 3 for on levers, and 4  for off levers
+function place_blocks_of_levers(numboard,j,column, case_height, case_width){ // column is 3 for on levers, and 4  for off levers
+    // if case = tiny : case_height = 7, case_width = 5
+    // if case = normal : case_height = 5, case_width = 3.5
+    // if case = big : case_height = 3, case_width = 2
     for(let k= 0; k < levers[numboard-1][j][column].length; k++){
         AllAdditionnalBlocks.push([levers[numboard-1][j][column][k][0] , levers[numboard-1][j][column][k][1]])
 
         let theblock = document.createElement('img');
         theblock.setAttribute('src',"img2.png");
-        theblock.setAttribute('style',"position: fixed;top : "+(5*levers[numboard-1][j][column][k][0]+5) + "vh;left : " +(3.5*levers[numboard-1][j][column][k][1]+5)+ "vw;");
+        theblock.setAttribute('style',"position: fixed;top : "+(case_height*levers[numboard-1][j][column][k][0]+5) + "vh;left : " +(case_width*levers[numboard-1][j][column][k][1]+5)+ "vw;");
         theblock.className = "img_of_laby";
         nbboard = numboard-1
         theblock.setAttribute('id',"additionBlock"+nbboard+"_"+j+"_"+k);
@@ -248,6 +257,19 @@ function construct_board_with_2_ghosts(numboard){
         construct_line(boards[numboard-1][i],i,numboard,3,2,false);
     }
     create_ghosts_and_characters(numboard)
+}
+
+
+function construct_board_with_papy(numboard, case_height, case_width){
+    for (const timeoutId of timeouts) {
+        clearTimeout(timeoutId);
+    }
+    timeouts.clear();
+    isCatMoved = false
+    AllAdditionnalBlocks = []
+    construct_board(numboard,case_height,case_width);
+    create_papy(numboard)
+    place_levers(numboard,case_height,case_width)
 }
 
 function construct_board_2_players(numboard){

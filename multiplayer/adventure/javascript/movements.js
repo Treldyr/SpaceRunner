@@ -40,49 +40,49 @@ function set_new_positions_with_lever(e,height,length){
             if(!isAdditionnalBlockInTheWay(fromtop1-1,fromleft1)){
                 dest_upward_p1(height,length);
             }
-            check_lever_superposition(fromleft1, fromtop1);
+            check_lever_superposition(fromleft1, fromtop1,5,3.5);
         }
         else if ((e.keyCode == '40')&&(!p1_won))  { // going down p1
             if(!isAdditionnalBlockInTheWay(fromtop1+1,fromleft1)){
                 dest_downward_p1(height,length);
             }
-            check_lever_superposition(fromleft1, fromtop1);
+            check_lever_superposition(fromleft1, fromtop1,5,3.5);
         }
         else if ((e.keyCode == '37')&&(!p1_won))  { // going left p1
             if(!isAdditionnalBlockInTheWay(fromtop1,fromleft1-1)){
                 dest_leftward_p1(height,length);
             }
-            check_lever_superposition(fromleft1, fromtop1);
+            check_lever_superposition(fromleft1, fromtop1,5,3.5);
         }
         else if ((e.keyCode == '39')&&(!p1_won))  { // going rigth p1
             if(!isAdditionnalBlockInTheWay(fromtop1,fromleft1+1)){
                 dest_rigthward_p1(height,length);
             }
-            check_lever_superposition(fromleft1, fromtop1);
+            check_lever_superposition(fromleft1, fromtop1,5,3.5);
         }
         else if (is_input_up_p2_multiplayer(e) && (!p2_won)) { // Z key for going up for p2
             if(!isAdditionnalBlockInTheWay(fromtop2-1,fromleft2)){
                 dest_upward_p2(height,length);
             }
-            check_lever_superposition(fromleft2, fromtop2);
+            check_lever_superposition(fromleft2, fromtop2,5,3.5);
         } 
         else if (is_input_down_p2_multiplayer(e) && (!p2_won)) { // S key for going down for p2
             if(!isAdditionnalBlockInTheWay(fromtop2+1,fromleft2)){
                 dest_downward_p2(height,length);
             }
-            check_lever_superposition(fromleft2, fromtop2);
+            check_lever_superposition(fromleft2, fromtop2,5,3.5);
         } 
         else if (is_input_left_p2_multiplayer(e) && (!p2_won)) { // Q key for going left for p2
             if(!isAdditionnalBlockInTheWay(fromtop2,fromleft2-1)){
                 dest_leftward_p2(height,length);
             }
-            check_lever_superposition(fromleft2, fromtop2);
+            check_lever_superposition(fromleft2, fromtop2,5,3.5);
         } 
         else if (is_input_right_p2_multiplayer(e) && (!p2_won)) { // D key for going right for p2
             if(!isAdditionnalBlockInTheWay(fromtop2,fromleft2+1)){
                 dest_rigthward_p2(height,length);
             }
-            check_lever_superposition(fromleft2, fromtop2);
+            check_lever_superposition(fromleft2, fromtop2,5,3.5);
         }
         nbCoups++;
     }

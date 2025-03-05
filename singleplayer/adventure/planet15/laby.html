@@ -6,13 +6,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/planets/planet16.css">
+    <link rel="stylesheet" href="../../../css/planets/planet15.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
-    <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/board_large.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
-<script src="../../../common_functions/heater.js"></script>
+  <script src="../../../common_functions/heater.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
 <script>
@@ -74,10 +74,15 @@
                 </div>
             </div>
         </div>
-        <div class="timer" style="color: #ffffff;">
+        <div class="timer">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
+
+
+
+
+      
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -86,7 +91,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../common_functions/build.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
-<script src="../../../common_functions/movements/mv_levers.js"></script>
+<script src="../../../common_functions/movements/mv_followed.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/pause.js"></script>
 <script src="../../../common_functions/set_data.js"></script>
@@ -94,33 +99,39 @@
 <script src="../../../common_functions/basic.js"></script>
 <script src="../../../common_functions/timer.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
+<script src="../../../common_functions/checks.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script src="../../../common_functions/boss_papy.js"></script>
 <script src="../../../common_functions/lever.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
+
     var game_ended = false
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
     var fromleft = 0; // horizontal position // var fromleft = 0;
+    var bossTop = 0;
+    var bossLeft = 0;
     var actual_board = 0;
+    var isCatMoved = false
     retrievePlayer()
 
     // redirect if the player is normally unable to reach the planet
     var lvl = 1;
     retrieveLevel();
-    checkIfLevelIsEnough(1,lvl,'../warning_cheating.html')
+    checkIfLevelIsEnough(1,lvl,'../warning_cheating.html') // TODO
+
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board(1,5,3.5);
-    place_levers(1,5,3.5)
+    construct_board_with_papy(1,3,2);
 
 
     function checkKey(e) {
@@ -133,51 +144,55 @@
             }
         } else if(!inpause) {
             if (is_input_up(e))  { // going up
-                dest_upward_with_lever();
+                dest_upward();
             }
             else if (is_input_down(e)) { // going down
-                dest_downward_with_lever();
+                dest_downward();
             }
             else if (is_input_left(e)) { // going left
-                dest_leftward_with_lever();
+                dest_leftward();
             }
             else if (is_input_right(e)) { // going rigth
-                dest_rigthward_with_lever();
+                dest_rigthward();
             }
-            check_lever_superposition(fromleft, fromtop,5,3.5);
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
-            chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==3)
+            chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==4)
             {
                 if(!game_ended){
                     finish_labyrinth();
                 }
+            } else if(boards[actual_board][fromtop][fromleft]==3){
+                playLava();
+                reset_level();
             }
+            check_lever_superposition(fromleft, fromtop,3,2);
+            checkPapy(bossLeft,fromleft,bossTop,fromtop)
         }
     }
+    
 
     function finish_labyrinth(){
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            AllAdditionnalBlocks = []
-            construct_board(actual_board+2,5,3.5);
-            place_levers(actual_board+1,5,3.5)
+            construct_board_with_papy(actual_board+2,3,2);
         } else {
             game_ended = true
             stopTimer();
             playEndLevel()
-            //UnlockPlanet(3); TODO
+            // UnlockPlanet(9) TODO
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
-            //setHighScorePlanet('katshyk'); TODO
+            // setHighScorePlanet('fantomia'); TODO
         }
     }
+
 </script>
 </body>
 </html>
