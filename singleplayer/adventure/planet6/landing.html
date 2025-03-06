@@ -22,22 +22,15 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Léviathe</div>
+        <div class="custom-title text-black"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Pandora</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p data-lang-key="text142">Ici non seulement le sol est très glissant comme la dernière fois</p>
-                <p data-lang-key="text143">Mais aussi l'air est difficilement respirable !</p>
-                <p data-lang-key="text144">N'oublie pas de récupérer les bouteilles d'oxygènes sur ton passage.</p>
-                <p data-lang-key="text145">Reste prudent</p>
-                <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
-            </div>
-        </div>
-
-        <div class="page" id="page2">
-            <div class="game-description">
-                <p data-lang-key="text146">D'accord, ça marche !</p>
-                <br>
+                <p data-lang-key="text41">Observe, mon petit.</p>
+                <p data-lang-key="text66">Ces leviers autour de toi sont un vestige de la civilisation oubliée.</p>
+                <p data-lang-key="text121">Cette planète en est gorgée.</p>
+                <p data-lang-key="text382">En les actionnant, des passages s'ouvrent, et d'autres se referment.</p>
+                <p data-lang-key="text383">Utilise les pour révéler des passages cachés.</p>
+                <p data-lang-key="text384">Mais attention ! Certains leviers ont des conséquences négatives!</p>
                 <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
@@ -57,12 +50,11 @@
         retrieveLevel();
         checkIfLevelIsEnough(6,lvl,'../warning_cheating.html')
 
-        var nbPage = 2
-
-        reInitMusic('darkness'); // Initialise the music
+        var nbPage = 1
         
+        reInitMusic('darkness'); // Initialise the music
+
         setCharacterRight(1,"p20")
-        setCharacterLeft(2,chara)
 
         function goNextAnimation(){
             goIntro()

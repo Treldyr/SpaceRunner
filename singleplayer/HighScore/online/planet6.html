@@ -40,7 +40,7 @@
     
         // Function to display the best times
         async function displayBestTimes() {
-            const querySnapshot = await getDocs(collection(db, "pLeviathe"));
+            const querySnapshot = await getDocs(collection(db, "pPandora"));
             let timesArray = []; // Array to store all times
     
             querySnapshot.forEach((doc) => {
@@ -94,7 +94,7 @@
 <body>
     <div class="highscore-background-image"></div>
     <div class="content">
-        <h1 class="custom-title"><a data-lang-key="scoresPlanet">Scores planète</a> : Léviathe</h1>
+        <h1 class="custom-title text-black"><a data-lang-key="scoresPlanet">Scores planète</a> : Pandora</h1>
         <table>
             <thead>
                 <tr>

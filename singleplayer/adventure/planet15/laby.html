@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../css/planets/planet15.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
-    <link rel="stylesheet" href="../../../css/planets/board_large.css">
+    <link rel="stylesheet" href="../../../css/planets/board_medium.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -57,8 +57,11 @@
                 </div>
             </div>
 
-            <div class="page" id="page6" >
+            <div class="page" id="page6">
+                <div class="custom-title" ><a data-lang-key="text141">Planète</a> Léviathe <a data-lang-key="text18">complétée</a> !</div>
                 <div class="game-description">
+                    <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p8down.png" width="80px">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
                         <a id="nbHits"></a>
@@ -66,9 +69,11 @@
                         <a id="nbTime"></a>
                         <a data-lang-key="seconds">secondes.</a>
                     </p>
+                    <p data-lang-key="text67">Un nouvel astre est apparu dans ce système ! Il semble peu commun...</p>
                     <p data-lang-key="goodContinuation">Bonne continuation !</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="restart">Recommencer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(16)" data-lang-key="continue">Continuer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                     
                 </div>
@@ -78,10 +83,6 @@
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
-
-
-
-
       
 
 <!-- Optional JavaScript -->
@@ -91,7 +92,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../common_functions/build.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
-<script src="../../../common_functions/movements/mv_followed.js"></script>
+<script src="../../../common_functions/movements/mv_slide.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/pause.js"></script>
 <script src="../../../common_functions/set_data.js"></script>
@@ -104,26 +105,25 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
-<script src="../../../common_functions/boss_papy.js"></script>
-<script src="../../../common_functions/lever.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
-
+    initializeMusic('darkness'); // Initialise the music
+    
     var game_ended = false
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0; // vertical position // var fromtop =0;
     var fromleft = 0; // horizontal position // var fromleft = 0;
-    var bossTop = 0;
-    var bossLeft = 0;
     var actual_board = 0;
-    var isCatMoved = false
     retrievePlayer()
+    var found_b1;
+    var found_b0;
+    var found_b2;
 
     // redirect if the player is normally unable to reach the planet
     var lvl = 1;
     retrieveLevel();
-    checkIfLevelIsEnough(1,lvl,'../warning_cheating.html') // TODO
+    checkIfLevelIsEnough(15,lvl,'../warning_cheating.html')
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -131,7 +131,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_with_papy(1,3,2);
+    construct_board_with_parameters(1,5,3.5,false,"gaz_bottle",false,0,false);
 
 
     function checkKey(e) {
@@ -143,53 +143,58 @@
                 showPause()
             }
         } else if(!inpause) {
-            if (is_input_up(e))  { // going up
-                dest_upward();
+            if (is_input_up(e)) { // going up
+                dest_upward_sliding();
             }
             else if (is_input_down(e)) { // going down
-                dest_downward();
+                dest_downward_sliding();
             }
             else if (is_input_left(e)) { // going left
-                dest_leftward();
+                dest_leftward_sliding();
             }
             else if (is_input_right(e)) { // going rigth
-                dest_rigthward();
+                dest_rigthward_sliding();
             }
             nbCoups++;
+            playMove()
+            checkIsGaz();
             let chara = document.getElementById('character'+actual_board);
-            chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0 || boards[actual_board][fromtop][fromleft]==4)
+            chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+            if(((boards[actual_board][fromtop][fromleft]==0) || (boards[actual_board][fromtop][fromleft]==3))
+                    &&(found_b1)&&(found_b2)&&(found_b0))
             {
                 if(!game_ended){
                     finish_labyrinth();
                 }
-            } else if(boards[actual_board][fromtop][fromleft]==3){
-                playLava();
-                reset_level();
             }
-            check_lever_superposition(fromleft, fromtop,3,2);
-            checkPapy(bossLeft,fromleft,bossTop,fromtop)
         }
     }
-    
 
     function finish_labyrinth(){
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
-            construct_board_with_papy(actual_board+2,3,2);
+            construct_board_with_parameters(actual_board+2,5,3.5,false,"gaz_bottle",false,0,false);
         } else {
             game_ended = true
             stopTimer();
             playEndLevel()
-            // UnlockPlanet(9) TODO
+            UnlockPlanet(16)
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
-            // setHighScorePlanet('fantomia'); TODO
+            setHighScorePlanet('leviathe');
+            if(nbCoups >= 100){
+                const storedName = localStorage.getItem("pseudo");
+                if (storedName) {
+                    sendBestTime('pLeviathe',totalSeconds,storedName)
+                }
+            } else {
+                window.location.href='../warning_cheating.html';
+            }
         }
     }
 

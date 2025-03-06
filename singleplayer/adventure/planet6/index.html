@@ -56,9 +56,9 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p><a data-lang-key="text135">Cette fois-ci, c'est un autre chat dont on a perdu le contact sur la planète similaire,</a> <b>Léviathe</b>.</p>
-                <p><a data-lang-key="text136">L’atmosphère de cette planète est pire que celle de</a> <b>Hoth</b>.</p>
-                <p data-lang-key="text137">Tu devras récupérer de l'oxygène tout en le trouvant.</p>
+                <p><a data-lang-key="text135">Cette fois-ci, c'est un autre chat dont on a perdu le contact sur une autre planète,</a> <b>Pandora</b>.</p>
+                <p data-lang-key="text136">Cette planète, anciennement habitée, est gorgée de méchanismes ingénieux.</p>
+                <p data-lang-key="text137">Tu devras les utiliser à bon escient pour le trouver !</p>
                 <p data-lang-key="text138">Cette mission sera rude, mais je sais que tu n’abandonnes jamais.</p>
                 <p data-lang-key="text139">Acceptes-tu d'aller le chercher ?</p>
                 <br>
@@ -73,7 +73,6 @@
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
-
         
     </div>
     <script src="../../../common_functions/navigation.js"></script>
@@ -89,7 +88,7 @@
         var lvl = 1;
         retrieveLevel();
         checkIfLevelIsEnough(6,lvl,'../warning_cheating.html')
-        
+
         launchZorathTheme(); // launch the station music
 
         var nbPage = 5
