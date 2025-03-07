@@ -50,9 +50,9 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p><a data-lang-key="text310">Et je connais peut-être quelqu'un qui peut nous aider. C'est un ami qui vit en solitaire sur</a> Léviathe</p>
-                <p><a data-lang-key="text349">Il n'est pas comme les autres,</a> <a>Felix</a>. <a>Il est spécial. Il voit des choses, beaucoup de choses.</a></p>
-                <p>Et il pourrait avoir des réponses à nos questions.</p>
+                <p><a data-lang-key="text310">Et je connais peut-être quelqu'un qui peut nous aider. C'est un ami qui vit en solitaire sur</a> <b>Léviathe</b>.</p>
+                <p><a data-lang-key="text349">Il n'est pas comme les autres,</a> <a id="pseudoToInsert"></a>. <a data-lang-key="text391">Il est spécial. Il voit des choses, beaucoup de choses.</a></p>
+                <p data-lang-key="text392">Et il pourrait avoir des réponses à nos questions.</p>
                 <br> 
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -60,8 +60,8 @@
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p><a>Un ami sur</a> Léviathe ?</p>
-                <p>Etrange... Laissez moi prendre contact seul avec lui. Je vous dispense de cette mission.</p>
+                <p><a data-lang-key="text393">Un ami sur</a> <b>Léviathe</b> ?</p>
+                <p data-lang-key="text394">Etrange... Laissez moi prendre contact seul avec lui. Je vous dispense de cette mission.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -69,9 +69,9 @@
 
         <div class="page" id="page6">
             <div class="game-description">
-                <p>Il est spécial. Il ne parle pas à n'importe qui.</p>
-                <p>Il n'aime pas être dérangé. Il s'est barricadé derrnière des méchanismes tordus. Des leviers qui activent des passerelles, des portes…</p>
-                <p>Je m'en occupe. Je saurais lui parler.</p>
+                <p data-lang-key="text395">Il est spécial. Il ne parle pas à n'importe qui.</p>
+                <p data-lang-key="text396">Il n'aime pas être dérangé. Il s'est barricadé derrnière des méchanismes tordus. Des leviers qui activent des passerelles, des portes…</p>
+                <p data-lang-key="text397">Je m'en occupe. Je saurais lui parler.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -79,8 +79,8 @@
 
         <div class="page" id="page7">
             <div class="game-description">
-                <p>Je viens avec toi !</p>
-                <p>Si tu dis qu’il peut nous aider, je te fais confiance.</p>
+                <p data-lang-key="text398">Je viens avec toi !</p>
+                <p data-lang-key="text399">Si tu dis qu’il peut nous aider, je te fais confiance.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -88,7 +88,7 @@
 
         <div class="page" id="page8">
             <div class="game-description">
-                <p>Tu es prêt ?</p>
+                <p data-lang-key="text400">Tu es prêt ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -96,7 +96,7 @@
 
         <div class="page" id="page9">
             <div class="game-description">
-                <p>Toujours. On part immédiatement.</p>
+                <p data-lang-key="text401">Toujours. On part immédiatement.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
@@ -118,6 +118,10 @@
         checkIfLevelIsEnough(15,lvl,'../warning_cheating.html')
         
         launchZorathTheme(); // launch the station music
+
+        // write the name in the dialogue
+        const storedName = localStorage.getItem("pseudo");
+        document.getElementById("pseudoToInsert").innerHTML = storedName;
 
         var nbPage = 9
         

@@ -26,7 +26,7 @@
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Qui m'a dérangé dans ma sieste ?</p>
+                <p data-lang-key="text402">Qui m'a dérangé dans ma sieste ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -34,9 +34,9 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Bonjour mon ami ! Pardonne-nous notre dérangement.</p>
-                <p>Nous sommes venus vous demander de l'aide pour mon frère.</p>
-                <p>Il voyageait avec son vaisseau, et une anomalie spaciale l'a changé.</p>
+                <p data-lang-key="text403">Bonjour mon ami ! Pardonne-nous notre dérangement.</p>
+                <p data-lang-key="text404">Nous sommes venus vous demander de l'aide pour mon frère.</p>
+                <p data-lang-key="text405">Il voyageait avec son vaisseau, et une anomalie spaciale l'a changé.</p>
                 <p></p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
@@ -45,8 +45,8 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Je vois. Pouvez-vous me donner la boite noire de son vaisseau ?</p>
-                <p>Elle connait toute ses informations de vols. Celà pourra vous être utile.</p>
+                <p data-lang-key="text406">Je vois. Pouvez-vous me donner l'enregistreur de vol de son vaisseau ?</p>
+                <p data-lang-key="text407">Elle connait toute ses informations de vols. Celà pourra vous être utile.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -54,9 +54,9 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Merci !</p>
-                <p>Tu vois Felix ?</p>
-                <p>Je savais qu'il nous aiderait !</p>
+                <p data-lang-key="thankYou">Merci !</p>
+                <p><a data-lang-key="text409">Tu vois</a> <a id="pseudoToInsert"></a> ?</p>
+                <p data-lang-key="text408">Je savais qu'il nous aiderait !</p>
                 <br> 
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -65,9 +65,9 @@
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p>On a récupéré la boite noire précédemment !</p>
+                <p data-lang-key="text410">On a récupéré l'enregistreur de vol précédemment !</p>
                 <p>Ah ?</p>
-                <p>Elle est où ?</p>
+                <p data-lang-key="text411">Elle est où ?</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -75,8 +75,8 @@
 
         <div class="page" id="page6">
             <div class="game-description">
-                <p>C'est le capitaine qui l'a pris la dernière fois.</p>
-                <p>Je ne sais pas où il est.</p>
+                <p data-lang-key="text412">C'est le capitaine qui l'a pris la dernière fois.</p>
+                <p data-lang-key="text413">Je ne sais pas où il est.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -93,7 +93,7 @@
 
         <div class="page" id="page8">
             <div class="game-description">
-                <p>Il me dit qu'il l'a vu partir à Mustafar avec la boite noire, et qu'il était paniqué.</p>
+                <p><a data-lang-key="text414">Il me dit qu'il l'a vu partir à</a> <b>Mustafar</b> <a data-lang-key="text445">avec l'enregistreur de vol, et qu'il était paniqué.</a></p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -101,8 +101,8 @@
 
         <div class="page" id="page9">
             <div class="game-description">
-                <p>Paniqué ? Je ne l'ai jamais vu comme ça...</p>
-                <p>On doit aller le voir ! En plus il a les informations de vols avec lui. </p>
+                <p data-lang-key="text415">Paniqué ? Je ne l'ai jamais vu comme ça...</p>
+                <p data-lang-key="text416">On doit aller le voir ! En plus il a les informations de vols avec lui.</p>
                 <p data-lang-key="text23">C'est parti !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
@@ -125,6 +125,10 @@
         checkIfLevelIsEnough(16,lvl,'../warning_cheating.html')
         
         launchZorathTheme(); // launch the station music
+
+        // write the name in the dialogue
+        const storedName = localStorage.getItem("pseudo");
+        document.getElementById("pseudoToInsert").innerHTML = storedName;
 
         var nbPage = 9
 
