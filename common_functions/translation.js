@@ -514,7 +514,7 @@ const languageData = {
         text392: "Et il pourrait avoir des réponses à nos questions.",
         text393: "Un ami sur",
         text394: "Etrange... Laissez moi prendre contact seul avec lui. Je vous dispense de cette mission.",
-        text395: "Il est spécial. Il ne parle pas à n'importe qui.",
+        text395: "Il ne parle pas à n'importe qui.",
         text396: "Il n'aime pas être dérangé. Il s'est barricadé derrnière des méchanismes tordus. Des leviers qui activent des passerelles, des portes…",
         text397: "Je m'en occupe. Je saurais lui parler.",
         text398: "Je viens avec toi !",
@@ -537,7 +537,7 @@ const languageData = {
         text414: "Il me dit qu'il l'a vu partir à",
         text415: "Paniqué ? Je ne l'ai jamais vu comme ça...",
         text416: "On doit aller le voir ! En plus il a les informations de vols avec lui.",
-        text417: "Capitine ! Tout va bien ?",
+        text417: "Capitaine ! Tout va bien ?",
         text418: "Où est l'enregistreur de vol ?",
         text419: "Oh mes petits chatons vous êtes venus...",
         text420: "Je voulais l'étudier ici au calme.",
@@ -562,7 +562,7 @@ const languageData = {
         text439: "J'aurais dû mourir face à eux !",
         text440: "Je suis désolé,",
         text441: "J'aurais aimé terminer les choses différemment avec toi.",
-        text442: "Mais vais devoir terminer ta vie. Tu en sais trop maintenant.",
+        text442: "Mais je vais devoir terminer ta vie. Tu en sais trop maintenant.",
         text443: "Attention ! Il y a de la lave sur cette planète ! Il ne faut pas la toucher !",
         text444: "De plus, votre capitaine vous poursuit ! Fuyez le !",
         text445: "avec l'enregistreur de vol, et qu'il était paniqué."
@@ -1082,7 +1082,7 @@ const languageData = {
         text392: "And he might have answers to our questions.", 
         text393: "A friend on",
         text394: "Strange... Let me contact him alone. I’m relieving you of this mission.",  
-        text395: "He is special. He doesn’t talk to just anyone.",  
+        text395: "He doesn’t talk to just anyone.",  
         text396: "He doesn’t like being disturbed. He has barricaded himself behind twisted mechanisms. Levers that activate bridges, doors...",  
         text397: "I’ll handle it. I know how to talk to him.",  
         text398: "I’m coming with you!",  
@@ -1134,6 +1134,5 @@ const languageData = {
         text443: "Careful! There’s lava on this planet! Don’t touch it!",
         text444: "And on top of that, your captain is chasing you! Run away from him!",
         text445: "with the flight recorder, and he looked panicked."
-        
     }
 }
