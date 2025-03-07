@@ -183,7 +183,7 @@
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
             setHighScorePlanet('pandora');
-            if(nbCoups >= 0){
+            if(nbCoups >= 100){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
                     sendBestTime('pPandora',totalSeconds,storedName)

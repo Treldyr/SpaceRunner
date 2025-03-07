@@ -59,6 +59,9 @@
 
             <div class="page" id="page6" >
                 <div class="game-description">
+                    <div class="custom-title  text-black"><a data-lang-key="text141">Planète</a> Mustafar <a data-lang-key="text18">complétée</a> !</div>
+                    <p data-lang-key="congratYouUnlocked">Félicitations ! Vous avez débloqué un nouveau personnage :</p>
+                    <img src="../../../images/p18down.png" width="80px">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
                         <a id="nbHits"></a>
@@ -66,7 +69,7 @@
                         <a id="nbTime"></a>
                         <a data-lang-key="seconds">secondes.</a>
                     </p>
-                    <p data-lang-key="goodContinuation">Bonne continuation !</p>
+                    <p data-lang-key="text311">Vous avez terminé le jeu</p>
                     <br>
                     <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="restart">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
@@ -108,6 +111,7 @@
 <script src="../../../common_functions/lever.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
+    initializeMusic('flood'); // Initialise the music
 
     var game_ended = false
     var nbCoups = 0;

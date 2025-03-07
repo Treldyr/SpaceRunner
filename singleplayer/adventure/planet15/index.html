@@ -22,14 +22,11 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title"><a data-lang-key="mission">Mission</a> 6</div>
+        <div class="custom-title"><a data-lang-key="mission">Mission</a> 15</div>
 
         <div class="page" id="page1">
             <div class="game-description">
-                <p data-lang-key="text126">Encore une vie sauvée. Chaque chat sauvé est une victoire contre l’immensité et ses dangers.</p>
-                <p data-lang-key="text127">Notre ami est sauf grâce à toi, jeune héros.</p>
-                <p data-lang-key="text128">Mais il semble que l’univers n’ait pas fini de nous tester.</p>
-                <p data-lang-key="text129">Nous avons encore une disparition à déplorer.</p>
+                <p>Tu vas bien ? Cette chose nous a donné du fil à retordre…</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -37,8 +34,7 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p data-lang-key="text130">Merci l'ami !</p>
-                <p data-lang-key="text131">Si tu n'avais pas été là, je serais sûrement mort de froid !</p>
+                <p>Oui… Merci, l'ami. Sans toi, je serais encore entre ses griffes… ou pire.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -46,9 +42,7 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p data-lang-key="text132">C'est avec plaisir !</p>
-                <p data-lang-key="text133">Quelle est la prochaine mission ?</p>
-                <p data-lang-key="text134">Qui dois-je sauver cette fois ?</p>
+                <p>Cette créature... Même après l’arrestation du scientifique, elles continuent d’apparaître. Il reste encore des mystères à élucider.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -56,24 +50,57 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p><a data-lang-key="text135">Cette fois-ci, c'est un autre chat dont on a perdu le contact sur la planète similaire,</a> <b>Léviathe</b>.</p>
-                <p><a data-lang-key="text136">L’atmosphère de cette planète est pire que celle de</a> <b>Hoth</b>.</p>
-                <p data-lang-key="text137">Tu devras récupérer de l'oxygène tout en le trouvant.</p>
-                <p data-lang-key="text138">Cette mission sera rude, mais je sais que tu n’abandonnes jamais.</p>
-                <p data-lang-key="text139">Acceptes-tu d'aller le chercher ?</p>
-                <br>
+                <p>Et je connais peut-être quelqu'un qui peut nous aider. C'est un ami qui vit en solitaire sur Léviathe</p>
+                <p>Il est pas comme les autres, Felix. Il est spécial. Il voit des choses, beaucoup de choses.</p>
+                <p>Et il pourrait avoir des réponses à nos questions.</p>
+                <br> 
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
         <div class="page" id="page5">
             <div class="game-description">
-                <p data-lang-key="text140">Bien sûr ! C'est parti !</p>
+                <p>Un ami sur Léviathe ?</p>
+                <p>Etrange... Laissez moi prendre contact seul avec lui. Je vous dispense de cette mission.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="game-description">
+                <p>Il est spécial. Il ne parle pas à n'importe qui.</p>
+                <p>Il n'aime pas être dérangé. Il s'est barricadé derrnière des méchanismes tordus. Des leviers qui activent des passerelles, des portes…</p>
+                <p>Je m'en occupe. Je saurais lui parler.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="game-description">
+                <p>Je viens avec toi !</p>
+                <p>Si tu dis qu’il peut nous aider, je te fais confiance.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page8">
+            <div class="game-description">
+                <p>Tu es prêt ?</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page9">
+            <div class="game-description">
+                <p>Toujours. On part immédiatement.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
-
         
     </div>
     <script src="../../../common_functions/navigation.js"></script>
@@ -92,13 +119,17 @@
         
         launchZorathTheme(); // launch the station music
 
-        var nbPage = 5
+        var nbPage = 9
         
-        setCharacterRight(1,"p20")
-        setCharacterRight(2,"p7")
+        setCharacterLeft(1,chara)
+        setCharacterRight(2,"p15")
         setCharacterLeft(3,chara)
-        setCharacterRight(4,"p20")
-        setCharacterLeft(5,chara)
+        setCharacterRight(4,"p15")
+        setCharacterRight(5,"p20")
+        setCharacterRight(6,"p15")
+        setCharacterLeft(7,chara)
+        setCharacterRight(8,"p15")
+        setCharacterLeft(9,chara)
 
         function goNextAnimation(){
             goLanding()

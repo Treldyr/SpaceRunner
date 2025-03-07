@@ -506,7 +506,9 @@ const languageData = {
         text385: "Cette planète est gorgée de leviers.",
         text386: "Chaque levier à deux modes : Allumés et éteints",
         text387: "Ils sont représentés par :",
-        text388: "En pressant un levier, vous le passez dans son autre état, supprimant ou ajoutant des blocs dans le jeu."
+        text388: "En pressant un levier, vous le passez dans son autre état, supprimant ou ajoutant des blocs dans le jeu.",
+        text389: "La planète Léviathe et ses 5 niveaux sont maintenant disponibles.",
+        text390: "La planète Mustafar et ses 5 niveaux sont maintenant disponibles."
     },
     en: {
         mainTitle: "Space Runner",
@@ -1015,7 +1017,8 @@ const languageData = {
         text385: "This planet is filled with levers.",  
         text386: "Each lever has two modes: On and Off.", 
         text387: "They are represented by:",
-        text388: "By pressing a lever, you switch it to its other state, removing or adding blocks in the game."  
-
+        text388: "By pressing a lever, you switch it to its other state, removing or adding blocks in the game.",
+        text389: "Léviathe planet and his 5 levels are now availables.",
+        text390: "Mustafar planet and his 5 levels are now availables."
     }
 }
