@@ -10,19 +10,19 @@ function movePapy(direction){
     switch(direction){
         case "u":
             bossTop--;
-            papy.setAttribute('src',"../../../images/p20up.png");
+            papy.setAttribute('src',"../../../images/p18up.png");
         break;
         case "d":
             bossTop++;
-            papy.setAttribute('src',"../../../images/p20down.png");
+            papy.setAttribute('src',"../../../images/p18down.png");
         break;
         case "l":
             bossLeft--;
-            papy.setAttribute('src',"../../../images/p20left.png");
+            papy.setAttribute('src',"../../../images/p18left.png");
         break;
         case "r":
             bossLeft++;
-            papy.setAttribute('src',"../../../images/p20right.png");
+            papy.setAttribute('src',"../../../images/p18right.png");
         break;
         default:
             console.log('erreur direction')

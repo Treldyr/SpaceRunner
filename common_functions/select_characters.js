@@ -41,6 +41,14 @@ function hideLockedCharacters(){
     if(lvl>14){
         unlockImagePlayer("p16")
     }
+    if(lvl>15){
+        unlockImagePlayer("p17")
+    } else {
+        document.getElementById("listChar5").style.display = "none";
+    }
+    if(lvl>16){
+        unlockImagePlayer("p18")
+    }
 }
 
 function hideLockedGhosts(){

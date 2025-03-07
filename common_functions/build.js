@@ -71,7 +71,7 @@ function create_big_coal_hat(numboard){
 function create_papy(numboard){
     bossTop = coords_begin_boss[numboard - 1][0];
     bossLeft = coords_begin_boss[numboard - 1][1];
-    create_element(numboard, 3, 2, "p20down.png", "papy" + actual_board, coords_begin_boss[numboard-1][0], coords_begin_boss[numboard-1][1])
+    create_element(numboard, 3, 2, "p18down.png", "papy" + actual_board, coords_begin_boss[numboard-1][0], coords_begin_boss[numboard-1][1])
 }
 
 
