@@ -45,7 +45,7 @@ function delayMovePapy(direction) {
 
 
 function checkPapy(bossLeft,fromleft,bossTop,fromtop){
-    if ((bossLeft == fromleft) && (bossTop == fromtop)){
+    if ((bossLeft == fromleft) && (bossTop == fromtop) && (!game_ended)){
         reset_level()
     }
 }

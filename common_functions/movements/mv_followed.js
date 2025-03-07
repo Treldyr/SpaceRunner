@@ -1,7 +1,8 @@
 
 
 function dest_downward(){
-    if((boards[actual_board][fromtop+1][fromleft]!=2)
+    let nextcase = boards[actual_board][fromtop+1][fromleft]
+    if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop+1,fromleft))){
         fromtop++;
         playMove();
@@ -15,7 +16,8 @@ function dest_downward(){
 
 
 function dest_leftward(){
-    if((boards[actual_board][fromtop][fromleft-1]!=2)
+    let nextcase = boards[actual_board][fromtop][fromleft-1]
+    if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft-1))){
         fromleft--;
         playMove();
@@ -29,7 +31,8 @@ function dest_leftward(){
 
 
 function dest_upward(){
-    if((boards[actual_board][fromtop-1][fromleft]!=2)
+    let nextcase = boards[actual_board][fromtop-1][fromleft]
+    if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop-1,fromleft))){
         fromtop--;
         playMove();
@@ -43,7 +46,8 @@ function dest_upward(){
 
 
 function dest_rigthward(){
-    if((boards[actual_board][fromtop][fromleft+1]!=2)
+    let nextcase = boards[actual_board][fromtop][fromleft+1]
+    if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft+1))){
         fromleft++;
         playMove();
