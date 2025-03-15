@@ -153,7 +153,7 @@ const languageData = {
         text61: "J'y vais. Je ne compte pas abandonner le moindre félin.",
         text63: "Vous avez besoin de récupérer des noix de coco !",
         text64: "Une noix de coco est représentée par :",
-        text65: "Il faut récupérer toutes les bouteilles d'oxygène pour sortir du labyrinthe.",
+        text65: "avec l'enregistreur de vol, et qu'il était paniqué.",
         text66: "Ces leviers autour de toi sont un vestige de la civilisation oubliée.",
         text67: "Un nouvel astre est disponible. Il semble peu commun...",
         text68: "Que dois-je récupérer ?",
@@ -564,8 +564,7 @@ const languageData = {
         text441: "J'aurais aimé terminer les choses différemment avec toi.",
         text442: "Mais je vais devoir terminer ta vie. Tu en sais trop maintenant.",
         text443: "Attention ! Il y a de la lave sur cette planète ! Il ne faut pas la toucher !",
-        text444: "De plus, votre capitaine vous poursuit ! Fuyez le !",
-        text445: "avec l'enregistreur de vol, et qu'il était paniqué."
+        text444: "De plus, votre capitaine vous poursuit ! Fuyez le !"
     },
     en: {
         mainTitle: "Space Runner",
@@ -721,7 +720,7 @@ const languageData = {
         text61: "I'm going there. I don't plan to abandon any feline.",
         text63: "You need to collect coconuts !",
         text64: "A coconut is represented by :",
-        text65: "You must collect all the oxygen bottles to escape the maze.",
+        text65: "with the flight recorder, and he looked panicked.",
         text66: "This levers around you are a remains of a forgotten civilization.",
         text67: "A new luminary is available. It seems not common...",
         text68: "What should I collect ?",
@@ -1133,6 +1132,5 @@ const languageData = {
         text442: "But I have to end your life. You know too much now.",
         text443: "Careful! There’s lava on this planet! Don’t touch it!",
         text444: "And on top of that, your captain is chasing you! Run away from him!",
-        text445: "with the flight recorder, and he looked panicked."
     }
 }
