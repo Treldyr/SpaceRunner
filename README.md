@@ -1,16 +1,14 @@
 ENGLISH :
 
-To run the program, open the file index.html of the main folder with a navigator.
-
-To reset your progression in the game, click in the button "Recommencer" in the menu.
-
-Enjoy the game !
+You can find the game at https://treldyr.github.io/SpaceRunner/
+You are a spacial cat explorer that do missions through different planets and spaceships.
+Good reflexes and good ingeniosity will be required to complete the game !
+Good luck !
 
 
 FRANCAIS :
 
-Pour lancer le programme, ouvrez le fichier index.html avec un navigateur.
-
-Pour réinitialiser votre progression dans le jeu, cliquez sur le bouton "Recommencer" du menu.
-
-Profitez bien du jeu !
+Vous pouvez trouver le jeu à https://treldyr.github.io/SpaceRunner/
+Vous êtes un chat de l'espace qui réalise des missions à travers différentes planètes et vaisseaux spaciaux.
+De bons réflexes et une bonne ingéniosité seront requis pour finir le jeu !
+Bonne chance !
