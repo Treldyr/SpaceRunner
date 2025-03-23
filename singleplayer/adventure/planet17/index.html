@@ -25,6 +25,8 @@
         <div class="custom-title"><a data-lang-key="mission">Mission</a> 17</div>
         <div class="page" id="page1">
             <div class="game-description">
+                <p>Je suis désolé pour toi Felix.</p>
+                <p>Si j'avais su à quel point vous étiez proches, j'aurais amorcé le sujet différemment.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -32,6 +34,54 @@
 
         <div class="page" id="page2">
             <div class="game-description">
+                <p>*snif*</p>
+                <p>Ce n'est pas ta faute... Ne t'en veux pas</p>
+                <p>C'était notre capitaine...Nous l'aimions tous...</p>
+                <p>*snif*</p>
+                <p>Il va me manquer</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Sache que tout n'était pas mensonges chez lui.</p>
+                <p>Ses sauvetages étaient réels. Tu as sauvé des vies Félix.</p>
+                <p>Il faut se reprendre. Continuer les actions positives qu'on avait commencé ensemble.</p>
+                <p>Il ne faut rien abandonner malgré nos sacrifices.</p>
+                <p>On a pas fait tout ça pour rien !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p>Tu as raison.</p>
+                <p>Mais que faire maintenant ?</p>
+                <p>L'enregistreur de vol est perdu à jamais, on aura jamais nos réponses à nos questions.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page5">
+            <div class="game-description">
+                <p>Ce n'est pas notre seul piste.</p>
+                <p>J'ai fouillé la cabine du capitaine, et j'ai trouvé des choses intéressantes.</p>
+                <p>Il a un contact secret avec un félin sur le même système solaire que <b>Mustafar</b>.</p>
+                <p>Il aurait discuté avec lui du contenu de l'explorateur de vol avant de le détruire.</p>
+                <p>On pourrait aller le questionner ? Il se terre sur la planète <b>Trantor</b>.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page6">
+            <div class="game-description">
+                <p>Oui, il le faut.</p>
+                <p>Allons-y</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
@@ -54,7 +104,14 @@
         
         launchZorathTheme(); // launch the station music
 
-        var nbPage = 2
+        var nbPage = 6
+
+        setCharacterRight(1,"p17")
+        setCharacterLeft(2,chara)
+        setCharacterRight(3,"p15")
+        setCharacterLeft(4,chara)
+        setCharacterRight(5,"p17")
+        setCharacterLeft(6,chara)
 
         function goNextAnimation(){
             goLanding()

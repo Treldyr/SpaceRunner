@@ -207,6 +207,34 @@ function place_blocks_of_levers(numboard,j,column, case_height, case_width){ // 
     }
 }
 
+function place_pow(name_pow, numboard, pow_height, pow_width){
+    // if pow = tiny : pow_height = 7, pow_width = 5
+    // if pow = normal : pow_height = 5, pow_width = 3.5
+    // if pow = big : pow_height = 3, pow_width = 2
+    let pow_board;
+    switch(name_pow){
+        case "alive":
+            pow_board = pow_alive
+        break;
+        case "death":
+            pow_board = pow_death
+        break;
+        case "duplication":
+            pow_board = pow_duplication
+        break;
+        case "shuriken":
+            pow_board = pow_shuriken
+        break;
+        default:
+            console.log('error pow name')
+    }
+    for(let j= 0; j < pow_board[numboard-1].length; j++)
+    {
+        let idPow = name_pow + j + (numboard-1)*100
+        create_element(numboard, pow_height, pow_width, "items/pow"+name_pow+".png", "pow"+idPow, pow_board[numboard-1][j][0], pow_board[numboard-1][j][1]);
+    }
+}
+
 // --------------------------------------------------//
 //                                                   //
 //        CONSTRUCTION OF THE NORMAL BOARD           //
@@ -299,4 +327,15 @@ function construct_board_in_darkness(numboard, case_height, case_width){
     }
     create_character(numboard,case_height,case_width);
     set_light_all_around(numboard,fromtop,fromleft)
+}
+
+function construct_board_with_pows(numboard, case_height, case_width){
+    // if board = tiny : case_height = 7, case_width = 5
+    // if board = normal : case_height = 5, case_width = 3.5
+    // if board = big : case_height = 3, case_width = 2
+    construct_board(numboard, case_height, case_width);
+    place_pow("alive", numboard, case_height, case_width)
+    place_pow("death", numboard, case_height, case_width)
+    place_pow("duplication", numboard, case_height, case_width)
+    place_pow("shuriken", numboard, case_height, case_width)
 }

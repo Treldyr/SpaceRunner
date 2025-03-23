@@ -25,6 +25,7 @@
         <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Trantor</div>
         <div class="page" id="page1">
             <div class="game-description">
+                <p>Il devrait être ici mais je ne le vois pas.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -32,6 +33,17 @@
 
         <div class="page" id="page2">
             <div class="game-description">
+                <p>Il a dû voir le vaisseau arriver et comprendre que le capitaine n'est plus.</p>
+                <p>S'il s'était enfui en véhicule, nous l'aurions vu partir.</p>
+                <p>Cela veut dire qu'il s'est caché pas loin.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p>Fouillons les environs alors.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
@@ -54,7 +66,7 @@
 
         reInitMusic('storm'); // Initialise the music
 
-        var nbPage = 2
+        var nbPage = 3
 
         function goNextAnimation(){
             goIntro()

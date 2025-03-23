@@ -79,5 +79,3 @@ function launchShuriken(numberPower){
         }
     }, 100); // run the function after 0.1 second (100 milliseconds)
 }
-
-
