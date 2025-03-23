@@ -4,8 +4,6 @@
 //                                                        //
 // -------------------------------------------------------//
 
-// TODO CLONES
-
 function dest_downward(){
     if(isAlive){
         if(boards[actual_board][fromtop+1][fromleft]!=2){
@@ -17,6 +15,9 @@ function dest_downward(){
         document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
     } else {
         fromtop++;
+    }
+    if(hasClone){
+        dest_upward_mirror_clone();
     }
     directionLaunched = "d"
 }
@@ -34,6 +35,9 @@ function dest_leftward(){
     } else {
         fromleft--;
     }
+    if(hasClone){
+        dest_rigthward_mirror_clone();
+    }
     directionLaunched = "l"
 }
 
@@ -49,6 +53,9 @@ function dest_upward(){
         document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
     } else {
         fromtop--;
+    }
+    if(hasClone){
+        dest_downward_mirror_clone();
     }
     directionLaunched = "u"
 }
@@ -66,8 +73,17 @@ function dest_rigthward(){
     } else {
         fromleft++;
     }
+    if(hasClone){
+        dest_leftward_mirror_clone();
+    }
     directionLaunched = "r"
 }
+
+// -------------------------------------------------------//
+//                                                        //
+//                FUNCTIONS TREATMENT EVENTS              //
+//                                                        //
+// -------------------------------------------------------//
 
 function treatment_arrival_case(){
     get_power_item()
@@ -87,22 +103,30 @@ function get_power_item(){
     // check for "alive" power items
     for(let j= 0; j < pow_alive[actual_board].length; j++)
     {
-        let idPow = "alive" + j + (actual_board)*100
-        if((pow_alive[actual_board][j][2])&&(pow_alive[actual_board][j][0]==fromtop)&&(pow_alive[actual_board][j][1]==fromleft)){
-            document.getElementById('pow'+idPow).remove();
-            pow_alive[actual_board][j][2] = false;
-            get_powalive();
+        if(pow_alive[actual_board][j][2]){
+            if(((pow_alive[actual_board][j][0]==fromtop)&&(pow_alive[actual_board][j][1]==fromleft))
+                ||((hasClone)&&(pow_alive[actual_board][j][0]==fromtop_clone)&&(pow_alive[actual_board][j][1]==fromleft_clone))){
+            
+                    let idPow = "alive" + j + (actual_board)*100
+                    document.getElementById('pow'+idPow).remove();
+                    pow_alive[actual_board][j][2] = false;
+                    get_powalive();
+            }
         }
     }
 
     // check for "death" power items
     for(let j= 0; j < pow_death[actual_board].length; j++)
     {
-        let idPow = "death" + j + (actual_board)*100
-        if((pow_death[actual_board][j][2])&&(pow_death[actual_board][j][0]==fromtop)&&(pow_death[actual_board][j][1]==fromleft)){
-            document.getElementById('pow'+idPow).remove();
-            pow_death[actual_board][j][2] = false;
-            get_powdeath();
+        if(pow_death[actual_board][j][2]){
+            if(((pow_death[actual_board][j][0]==fromtop)&&(pow_death[actual_board][j][1]==fromleft))
+                ||((hasClone)&&(pow_death[actual_board][j][0]==fromtop_clone)&&(pow_death[actual_board][j][1]==fromleft_clone))){
+            
+                    let idPow = "death" + j + (actual_board)*100
+                    document.getElementById('pow'+idPow).remove();
+                    pow_death[actual_board][j][2] = false;
+                    get_powdeath();
+            }
         }
     }
 
@@ -120,19 +144,35 @@ function get_power_item(){
     // check for "shuriken" power items
     for(let j= 0; j < pow_shuriken[actual_board].length; j++)
     {
-        let idPow = "shuriken" + j + (actual_board)*100
-        if((pow_shuriken[actual_board][j][2])&&(pow_shuriken[actual_board][j][0]==fromtop)&&(pow_shuriken[actual_board][j][1]==fromleft)){
-            document.getElementById('pow'+idPow).remove();
+        if(pow_shuriken[actual_board][j][2]){
+            if(((pow_shuriken[actual_board][j][0]==fromtop)&&(pow_shuriken[actual_board][j][1]==fromleft))
+                ||((hasClone)&&(pow_shuriken[actual_board][j][0]==fromtop_clone)&&(pow_shuriken[actual_board][j][1]==fromleft_clone))){
+            
+                    let idPow = "shuriken" + j + (actual_board)*100
+                    document.getElementById('pow'+idPow).remove();
             pow_shuriken[actual_board][j][2] = false;
             get_powshuriken();
+            }
         }
     }
 }
 
+// -------------------------------------------------------//
+//                                                        //
+//                   FUNCTIONS GET POWS                   //
+//                                                        //
+// -------------------------------------------------------//
+
 function get_powdeath(){
     isAlive = false
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/fantomp0.png");
-    console.log("get death")
+    if(hasClone){
+        document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/fantomp0.png");
+    }
+}
+
+function get_powshuriken(){
+    shurikenAvailable = true;
 }
 
 function get_powalive(){
@@ -151,16 +191,117 @@ function get_powalive(){
             document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
         break;
         default:
-            console.log('erreur direction')
+            console.log('error direction')
     }
-    console.log("get alive")
+    if(hasClone){
+        switch(directionLaunched){
+            case "u":
+                document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
+            break;
+            case "d":
+                document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
+            break;
+            case "l":
+                document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
+            break;
+            case "r":
+                document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
+            break;
+            default:
+                console.log('error direction')
+        }
+    }
 }
 
 function get_powduplication(){
-    console.log("get duplication")
+    hasClone = true;
+    fromtop_clone = fromtop;
+    fromleft_clone = fromleft;
+    create_mirror_clone();
 }
 
-function get_powshuriken(){
-    console.log("get shuriken")
-    shurikenAvailable = true;
+// -------------------------------------------------------//
+//                                                        //
+//                 FUNCTIONS MIRROR CLONE                 //
+//                                                        //
+// -------------------------------------------------------//
+
+function create_mirror_clone(){
+    let the_mirror = document.createElement('img');
+    if(isAlive){
+        switch(directionLaunched){
+            case "u":
+                the_mirror.setAttribute('src',"../../../images/"+chara+"up.png");
+            break;
+            case "d":
+                the_mirror.setAttribute('src',"../../../images/"+chara+"down.png");
+            break;
+            case "l":
+                the_mirror.setAttribute('src',"../../../images/"+chara+"left.png");
+            break;
+            case "r":
+                the_mirror.setAttribute('src',"../../../images/"+chara+"right.png");
+            break;
+            default:
+                console.log('error direction')
+        }
+    }else{
+        the_mirror.setAttribute('src',"../../../images/fantomp0.png");
+    }
+    
+    the_mirror.setAttribute('style', "position: fixed;top : " + (3 * fromtop_clone + 5) + "vh;left : " + (2 * fromleft_clone + 5) + "vw;");
+    the_mirror.className = "img_of_laby";
+    the_mirror.setAttribute('id', "mclone"+actual_board);
+    numboard_shuri = actual_board+1
+    document.getElementById('laby'+numboard_shuri).appendChild(the_mirror);
+}
+
+// -------------------------------------------------------//
+//                                                        //
+//                 MOVEMENTS MIRROR CLONE                 //
+//                                                        //
+// -------------------------------------------------------//
+
+function dest_downward_mirror_clone(){
+    if(isAlive){
+        if(boards[actual_board][fromtop_clone+1][fromleft_clone]!=2){
+            fromtop_clone++;
+        }
+        document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
+    } else {
+        fromtop_clone++;
+    }
+}
+
+function dest_rigthward_mirror_clone(){
+    if(isAlive){
+        if(boards[actual_board][fromtop_clone][fromleft_clone+1]!=2){
+            fromleft_clone++;
+        }
+        document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
+    } else {
+        fromleft_clone++;
+    }
+}
+
+function dest_leftward_mirror_clone(){
+    if(isAlive){
+        if(boards[actual_board][fromtop_clone][fromleft_clone-1]!=2){
+            fromleft_clone--;
+        }
+        document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
+    } else {
+        fromleft_clone--;
+    }
+}
+
+function dest_upward_mirror_clone(){
+    if(isAlive){
+        if(boards[actual_board][fromtop_clone-1][fromleft_clone]!=2){
+            fromtop_clone--;
+        }
+        document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
+    } else {
+        fromtop_clone--;
+    }
 }

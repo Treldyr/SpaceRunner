@@ -107,6 +107,7 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script src="../../../common_functions/shuriken_1p.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('storm'); // Initialise the music
@@ -167,12 +168,14 @@
             }
             else if((e.keyCode ==  '69')||(e.keyCode ==  '76')) {// or E or L key
                 if((shurikenAvailable)&&(isAlive)){
-                    // launchShuriken(directionLaunched);  TODO
+                    launchShurikenFromPlayer(directionLaunched);
                 }
             }
             nbCoups++;
-            let chara = document.getElementById('character'+actual_board);
-            chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            document.getElementById('character'+actual_board).setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            if(hasClone){
+                document.getElementById('mclone'+actual_board).setAttribute('style',"position: fixed;top : "+(3*fromtop_clone+5)+"vh;left : "+(2*fromleft_clone+5)+"vw;");
+            }
             treatment_arrival_case();
         }
     }
