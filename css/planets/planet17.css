@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planet_dark_volcano.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(81, 25, 25);
+}
+
+
+.btn-start {
+    background-color: rgb(81, 25, 25);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(81, 25, 25);
+}
+
+
+.timer {
+    background-color: rgb(81, 25, 25);
+}

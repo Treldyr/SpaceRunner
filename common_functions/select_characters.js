@@ -49,6 +49,9 @@ function hideLockedCharacters(){
     if(lvl>16){
         unlockImagePlayer("p18")
     }
+    if(lvl>17){
+        unlockImagePlayer("p19")
+    }
 }
 
 function hideLockedGhosts(){

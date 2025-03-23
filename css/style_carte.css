@@ -21,6 +21,7 @@
 #planet14{ top: 380px; left: 1980px;}
 #planet15{ top: 200px; left: 2120px;}
 #planet16{ top: 440px; left: 2300px;}
+#planet17{ top: 240px; left: 2460px;}
 
 
 .planet:hover {
@@ -28,7 +29,7 @@
 }
 
 
-#imgplanet1, #imgplanet2, #imgplanet3, #imgplanet4, #imgplanet6, #imgplanet7, #imgplanet8, #imgplanet9, #imgplanet10, #imgplanet11,#imgplanet13,#imgplanet14,#imgplanet15,#imgplanet16 {
+#imgplanet1, #imgplanet2, #imgplanet3, #imgplanet4, #imgplanet6, #imgplanet7, #imgplanet8, #imgplanet9, #imgplanet10, #imgplanet11,#imgplanet13,#imgplanet14,#imgplanet15,#imgplanet16,#imgplanet17 {
     width: 110px; 
     height: 80px; 
 }
