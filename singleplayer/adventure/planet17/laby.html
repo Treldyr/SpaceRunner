@@ -199,8 +199,7 @@
             document.getElementById('nbTime').innerHTML = totalSeconds;
             UnlockPlanet(18)
             setHighScorePlanet('trantor')
-            /*/
-            if(nbCoups >= 200){
+            if(nbCoups >= 100){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
                     sendBestTime('pTrantor',totalSeconds,storedName)
@@ -208,7 +207,6 @@
             } else {
                 window.location.href='../warning_cheating.html';
             }
-            /*/
         }
     }
 
