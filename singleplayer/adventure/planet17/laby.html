@@ -94,6 +94,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="../../../common_functions/build.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
+<script src="../../../common_functions/powers_adventure_mode/alive_dead.js"></script>
+<script src="../../../common_functions/powers_adventure_mode/duplication.js"></script>
+<script src="../../../common_functions/powers_adventure_mode/shuriken.js"></script>
 <script src="../../../common_functions/movements/mv_alive_dead.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/pause.js"></script>
@@ -107,7 +110,6 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
-<script src="../../../common_functions/shuriken_1p.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('storm'); // Initialise the music
@@ -208,17 +210,6 @@
             }
             /*/
         }
-    }
-
-    function reset_level(){
-        fromtop = coords_begin[actual_board][0];
-        fromleft = coords_begin[actual_board][1];
-
-        let cat = document.getElementById('character'+actual_board)
-        cat.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
-        cat.setAttribute('src',"../../../images/"+chara+"down.png");
-
-        playLava()
     }
 
 </script>

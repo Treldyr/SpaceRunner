@@ -4,6 +4,10 @@
 //                                                   //
 // --------------------------------------------------//
 
+function get_powshuriken(){
+    shurikenAvailable = true;
+}
+
 function launchShurikenFromPlayer(directionLaunched){
     shurikenAvailable = false
     fromtopShuriken = fromtop
