@@ -110,23 +110,23 @@
         <div class="container-arrows">
             <p></p>
             <button class="btn btn-outline-light" onclick="goHighScoresOnline('1')">1</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('2')">2</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('3')">3</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('4')">4</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('5')">5</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('6')">6</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('7')">7</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('2')">2</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('3')">3</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('4')">4</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('5')">5</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('6')">6</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('7')">7</button>
             <button class="btn btn-outline-dark disabled">8</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('9')">9</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('10')">10</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('11')">11</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('12')">12</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('13')">13</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('14')">14</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('15')">15</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('16')">16</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('17')">17</button>
-            <button class="btn btn-outline-light" onclick="goHighScoresOnline('18')">18</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('9')">9</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('10')">10</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('11')">11</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('12')">12</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('13')">13</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('14')">14</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('15')">15</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('16')">16</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('17')">17</button>
+            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('18')">18</button>
             <p></p>
         </div>
     </div>
@@ -141,10 +141,12 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/basic.js"></script>
+<script src="../../../common_functions/online_highscore.js"></script>
 <script>
     // redirect if the player is normally unable to reach the planet
     var lvl = 1;
     retrieveLevel();
     checkIfLevelIsEnough(8,lvl,'planet1.html')
+    hideElementsByLevel(lvl)
 </script>
 </html>
