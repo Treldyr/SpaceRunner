@@ -7,6 +7,8 @@
 
 function dest_downward_with_lever(){
     if((boards[actual_board][fromtop+1][fromleft]!=2)
+        &&(boards[actual_board][fromtop+1][fromleft]!=4)
+        &&(boards[actual_board][fromtop+1][fromleft]!=5)
         &&(!isAdditionnalBlockInTheWay(fromtop+1,fromleft))){
         fromtop++;
         playMove();
@@ -19,6 +21,8 @@ function dest_downward_with_lever(){
 
 function dest_leftward_with_lever(){
     if((boards[actual_board][fromtop][fromleft-1]!=2)
+        &&(boards[actual_board][fromtop][fromleft-1]!=4)
+        &&(boards[actual_board][fromtop][fromleft-1]!=5)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft-1))){
         fromleft--;
         playMove();
@@ -31,6 +35,8 @@ function dest_leftward_with_lever(){
 
 function dest_upward_with_lever(){
     if((boards[actual_board][fromtop-1][fromleft]!=2)
+        &&(boards[actual_board][fromtop-1][fromleft]!=4)
+        &&(boards[actual_board][fromtop-1][fromleft]!=5)
         &&(!isAdditionnalBlockInTheWay(fromtop-1,fromleft))){
         fromtop--;
         playMove();
@@ -43,6 +49,8 @@ function dest_upward_with_lever(){
 
 function dest_rigthward_with_lever(){
     if((boards[actual_board][fromtop][fromleft+1]!=2)
+        &&(boards[actual_board][fromtop][fromleft+1]!=4)
+        &&(boards[actual_board][fromtop][fromleft+1]!=5)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft+1))){
         fromleft++;
         playMove();
