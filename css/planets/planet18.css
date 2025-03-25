@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planete_open.png') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(41, 62, 83);
+}
+
+
+.btn-start {
+    background-color: rgb(41, 62, 83);
+}
+
+
+.btn-start:hover {
+    box-shadow: 0 0 10px rgb(41, 62, 83);
+}
+
+
+.timer {
+    background-color: rgb(41, 62, 83);
+}
