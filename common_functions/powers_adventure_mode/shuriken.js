@@ -32,6 +32,7 @@ function launchShurikenFromPlayer(directionLaunched){
                 default:
                     console.log('error direction')
             }
+            check_lever_superposition(fromleftShuriken, fromtopShuriken,3,2);
             updateImageShuriken()
             if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
                 clearInterval(powshurikenId);

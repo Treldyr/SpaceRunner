@@ -56,7 +56,7 @@ function delete_mirror_clone(){
 
 function dest_downward_mirror_clone(){
     if(isAlive){
-        if(boards[actual_board][fromtop_clone+1][fromleft_clone]!=2){
+        if((boards[actual_board][fromtop_clone+1][fromleft_clone]!=2)&&(!isAdditionnalBlockInTheWay(fromtop_clone+1,fromleft_clone))){
             fromtop_clone++;
         }
         document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
@@ -67,7 +67,7 @@ function dest_downward_mirror_clone(){
 
 function dest_rigthward_mirror_clone(){
     if(isAlive){
-        if(boards[actual_board][fromtop_clone][fromleft_clone+1]!=2){
+        if((boards[actual_board][fromtop_clone][fromleft_clone+1]!=2)&&(!isAdditionnalBlockInTheWay(fromtop_clone,fromleft_clone+1))){
             fromleft_clone++;
         }
         document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
@@ -78,7 +78,7 @@ function dest_rigthward_mirror_clone(){
 
 function dest_leftward_mirror_clone(){
     if(isAlive){
-        if(boards[actual_board][fromtop_clone][fromleft_clone-1]!=2){
+        if((boards[actual_board][fromtop_clone][fromleft_clone-1]!=2)&&(!isAdditionnalBlockInTheWay(fromtop_clone,fromleft_clone-1))){
             fromleft_clone--;
         }
         document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
@@ -89,7 +89,7 @@ function dest_leftward_mirror_clone(){
 
 function dest_upward_mirror_clone(){
     if(isAlive){
-        if(boards[actual_board][fromtop_clone-1][fromleft_clone]!=2){
+        if((boards[actual_board][fromtop_clone-1][fromleft_clone]!=2)&&(!isAdditionnalBlockInTheWay(fromtop_clone-1,fromleft_clone))){
             fromtop_clone--;
         }
         document.getElementById('mclone'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");

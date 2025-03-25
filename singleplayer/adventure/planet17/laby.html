@@ -110,6 +110,7 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
+<script src="../../../common_functions/lever.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
     initializeMusic('storm'); // Initialise the music
@@ -175,10 +176,17 @@
             }
             nbCoups++;
             document.getElementById('character'+actual_board).setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+            if(isAlive){
+                check_lever_superposition(fromleft, fromtop,3,2);
+            }
             if(hasClone){
                 document.getElementById('mclone'+actual_board).setAttribute('style',"position: fixed;top : "+(3*fromtop_clone+5)+"vh;left : "+(2*fromleft_clone+5)+"vw;");
+                if(isAlive){
+                    check_lever_superposition(fromleft_clone, fromtop_clone,3,2);
+                }
             }
             treatment_arrival_case();
+            
         }
     }
 

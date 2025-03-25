@@ -338,4 +338,5 @@ function construct_board_with_pows(numboard, case_height, case_width){
     place_pow("death", numboard, case_height, case_width)
     place_pow("duplication", numboard, case_height, case_width)
     place_pow("shuriken", numboard, case_height, case_width)
+    place_levers(numboard,case_height,case_width)
 }
