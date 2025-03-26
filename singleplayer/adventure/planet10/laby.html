@@ -213,6 +213,32 @@
         
         stopCountDown()
         startCountDown(CountDownSeconds)
+
+        if(found_b0){
+            idGaz = (actual_board)*10
+            found_b0 = false;
+            document.getElementById("air"+idGaz).style.display = "block";
+        }
+        if(found_b1){
+            idGaz = (actual_board)*10+1
+            found_b1 = false;
+            document.getElementById("air"+idGaz).style.display = "block";
+        }
+        if(found_b2){
+            idGaz = (actual_board)*10+2
+            found_b2 = false;
+            document.getElementById("air"+idGaz).style.display = "block";
+        }
+        if(found_b3){
+            idGaz = (actual_board)*10+3
+            found_b3 = false;
+            document.getElementById("air"+idGaz).style.display = "block";
+        }
+        if(found_b4){
+            idGaz = (actual_board)*10+4
+            found_b4 = false;
+            document.getElementById("air"+idGaz).style.display = "block";
+        }
     }
 
 </script>
