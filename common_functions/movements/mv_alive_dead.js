@@ -183,6 +183,14 @@ function reset_level(){
     cat.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
     cat.setAttribute('src',"../../../images/"+chara+"down.png");
 
+    for(let j= 0; j < levers[actual_board].length; j++)
+    {
+        let idLevers = j + (actual_board)*100
+        if(levers[actual_board][j][2] == "off"){
+            turn_on_lever(j,idLevers,3,2);
+        }
+    }
+
     replace_all_pows();
 }
 

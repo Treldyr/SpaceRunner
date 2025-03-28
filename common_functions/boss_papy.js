@@ -74,7 +74,6 @@ function reset_level(){
     for(let j= 0; j < levers[actual_board].length; j++)
     {
         let idLevers = j + (actual_board)*100
-        document.getElementById('character'+actual_board)
         if(levers[actual_board][j][2] == "off"){
             turn_on_lever(j,idLevers,3,2);
         }
