@@ -20,8 +20,9 @@
 #planet13{ top: 120px; left: 1840px;}
 #planet14{ top: 380px; left: 1980px;}
 #planet15{ top: 200px; left: 2120px;}
-#planet16{ top: 440px; left: 2300px;}
-#planet17{ top: 240px; left: 2460px;}
+#planet16{ top: 440px; left: 2260px;}
+#planet17{ top: 380px; left: 2420px;}
+#planet18{ top: 30px; left: 2500px;}
 
 
 .planet:hover {
@@ -37,6 +38,11 @@
 #imgplanet5, #imgplanet12 {
     width: 160px; 
     height: 90px; 
+}
+
+#imgplanet18 {
+    width: 330px;
+    height: 240px ;
 }
 
 #cursor_planet {
@@ -57,7 +63,7 @@
 
 
 .map-container {
-    width: 2600px; /* Largeur plus grande pour inclure toutes les planètes */
+    width: 2800px; /* Largeur plus grande pour inclure toutes les planètes */
     height: 100vh;
     position: relative;
     overflow-x: scroll; /* Autorise le défilement horizontal */
