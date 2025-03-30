@@ -29,7 +29,7 @@
         <div class="content">
             <div id="pause">
                 <button class="btn-start dimension-color" onclick="closePause()" data-lang-key="continue">Continuer</button>
-                <button class="btn-start dimension-color" onclick="goIntro()" data-lang-key="restart">Recommencer</button>
+                <button class="btn-start dimension-color" onclick="reset_dim_level()" data-lang-key="restart">Recommencer</button>
                 <button class="btn-start dimension-color" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                 <button class="btn-start dimension-color" onclick="returnToMenu()" data-lang-key="menu">Menu</button>
             </div>
@@ -197,6 +197,16 @@
             document.getElementsByClassName("dimension-color")[i].style.backgroundColor = "red";
         }
         document.getElementById('dimension-name').innerHTML = "5 swaps";
+    }
+
+    function reset_dim_level(){
+        initializeSwaps();
+        fromtop = coords_begin[actual_board][0];
+        fromleft = coords_begin[actual_board][1];
+        let player = document.getElementById('character'+actual_board);
+        player.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
+        player.setAttribute('src', "../../../images/"+chara+"down.png");
+        closePause()
     }
 
     function finish_labyrinth(){
