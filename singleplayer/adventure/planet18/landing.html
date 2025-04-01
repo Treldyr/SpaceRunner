@@ -23,27 +23,47 @@
     <div class="background-image"></div>
     <div class="content">
         <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Catmageddon</div>
+        <div class="page" id="page1">
+            <div class="game-description">
+                <p><u>Brahma</u> <a data-lang-key="text516">ne doit pas être loin.</a></p>
+                <p data-lang-key="text517">Restes sur tes gardes. Il sera sans doute hostile.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
 
-        <div class="game-description">
-            <p data-lang-key="text519">Franchissez tous les niveaux.</p>
-            <p data-lang-key="goodluck">Bonne chance !</p>
-            <br>
-            <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
+        <div class="page" id="page2">
+            <div class="game-description">
+                <p data-lang-key="text518">Cette planète n'est pas comme les autres. Elle est comme ... étrange ...</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
+            </div>
         </div>
     </div>
     <script src="../../../common_functions/navigation.js"></script>
-    <script src="../../../common_functions/intro_planet.js"></script>
+    <script src="../../../common_functions/get_data.js"></script>
+    <script src="../../../common_functions/animation.js"></script>
+    <script src="../../../common_functions/index_planet.js"></script>
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
-    <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/basic.js"></script>
     <script src="../../../common_functions/background_music.js"></script>
     <script>
-        //initializeMusic('storm'); TODO Initialise the music
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
         retrieveLevel();
         checkIfLevelIsEnough(18,lvl,'../warning_cheating.html')
+
+        reInitMusic('storm'); // Initialise the music
+
+        var nbPage = 2
+
+        setCharacterRight(1,"p17")
+        setCharacterLeft(2,chara)
+
+        function goNextAnimation(){
+            goIntro()
+        }
     </script>
 </body>
 </html>

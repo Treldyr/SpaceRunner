@@ -636,7 +636,11 @@ const languageData = {
         text512: "Personne ne peux l'arrêter. Ne pas aller dans son sens, c'est signer sa mort.",
         text513: "Je vais essayer.",
         text514: "Qu'il soit le plus grand des chat ou non, il ne me fait pas peur !",
-        text515: "Alors va mourrir ! Il est sur"
+        text515: "Alors va mourrir ! Il est sur",
+        text516: "ne doit pas être loin.",
+        text517: "Restes sur tes gardes. Il sera sans doute hostile.",
+        text518: "Cette planète n'est pas comme les autres. Elle est comme ... étrange ...",
+        text519: "Franchissez tous les niveaux."
     },
     en: {
         mainTitle: "Space Runner",
@@ -1275,7 +1279,10 @@ const languageData = {
         text512: "No one can stop him. Not following his will is a death sentence.",
         text513: "I will try.",
         text514: "Whether he is the greatest cat or not, he doesn't scare me!",
-        text515: "Then go die! He is on"
-
+        text515: "Then go die! He is on",
+        text516: "should not be far.",
+        text517: "Stay focus. He will surely be hostile.",
+        text518: "This planet is not like the others. It is like ... strange ...",
+        text519: "Cross all the levels."
     }
 }
