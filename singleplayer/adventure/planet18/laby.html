@@ -64,13 +64,29 @@
             </div>
 
             <div class="page" id="page7">
-                <div id="laby8">
+                <div id="laby7">
                 </div>
             </div>
 
             <div class="page" id="page8">
-                <div id="laby8">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="game-description">
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
                 </div>
+            </div>
+
+            <div class="page" id="page9">
+               
+            </div>
+
+            <div class="page" id="page10">
+                
             </div>
         </div>
         <div class="timer" style="color: #ffffff;">
@@ -100,6 +116,7 @@
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/light.js"></script>
+<script src="../../../common_functions/brahma.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
@@ -166,14 +183,17 @@
             if(boards[actual_board][fromtop][fromleft]==0)
             {
                 if(!game_ended){
+                    playEndLaby();
                     finish_labyrinth();
                 }
+            } else if(boards[actual_board][fromtop][fromleft]==18){
+                playLava();
+                reset_player();
             }
         }
     }
 
     function finish_labyrinth(){
-        playEndLaby();
         goNext(actual_board+1);
         if(actual_board==0){
             current_size_top = 5
@@ -195,41 +215,17 @@
             construct_board_in_darkness(actual_board+2,3,2)
         } else if (actual_board==5){
             construct_board(actual_board+2,3,2);
+        } else if(actual_board==6){
+            actual_board++;
+        } else if (actual_board==7){
+            updateBackground('../../../images/backgrounds/planet_atrebois.png');
+            actual_board++;
         }
         // game_ended = TODO at the end
         // stopTimer(); TODO at the end
         // playEndLevel()  TODO at the end
     }
 
-    function updateStylesheet(previousStyle,nextStyle) {
-        const oldLink = document.querySelector("link[href='../../../css/planets/"+previousStyle+".css']");
-        if (oldLink) {
-            oldLink.parentNode.removeChild(oldLink);
-        }
-        const newLink = document.createElement("link");
-        newLink.rel = "stylesheet";
-        newLink.href = "../../../css/planets/"+nextStyle+".css";
-        document.head.appendChild(newLink);
-    }
-
-    function die_from_ghost(){
-        stopGhost();
-        reset_ghost_and_player();
-        moveGhost(6)
-    }
-
-    function reset_ghost_and_player(){
-        fromtop = coords_begin[actual_board][0];
-        fromleft = coords_begin[actual_board][1];
-        ghostTop = coords_begin_ghost[actual_board][0];
-        ghostLeft = coords_begin_ghost[actual_board][1];
-        
-        let cat = document.getElementById('character'+actual_board)
-        cat.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-        cat.setAttribute('src',"../../../images/"+chara+"down.png");
-        let ghost = document.getElementById('ghost'+actual_board);
-        ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
-    }
 </script>
 </body>
 </html>

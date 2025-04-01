@@ -49,6 +49,13 @@ function dest_downward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==6){
+        if(boards[actual_board][fromtop+1][fromleft]!=17){
+            fromtop++;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -95,6 +102,13 @@ function dest_leftward(){
             fromleft--;
             playMove();
             light_left(actual_board,fromtop,fromleft)
+        }else{
+            playWallHit()
+        }
+    } else if(actual_board==6){
+        if(boards[actual_board][fromtop][fromleft-1]!=17){
+            fromleft--;
+            playMove();
         }else{
             playWallHit()
         }
@@ -147,6 +161,13 @@ function dest_upward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==6){
+        if(boards[actual_board][fromtop-1][fromleft]!=17){
+            fromtop--;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -193,6 +214,13 @@ function dest_rigthward(){
             fromleft++;
             playMove();
             light_right(actual_board,fromtop,fromleft)
+        }else{
+            playWallHit()
+        }
+    } else if(actual_board==6){
+        if(boards[actual_board][fromtop][fromleft+1]!=17){
+            fromleft++;
+            playMove();
         }else{
             playWallHit()
         }
