@@ -1,0 +1,235 @@
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/planets/planet18.css">
+    <link rel="stylesheet" href="../../../css/planets/default.css">
+    <link rel="stylesheet" href="../../../css/planets/board_tiny.css">
+    <link rel="icon" href="../../../images/p1down.png">
+    <title>Space Runner</title>
+  </head>
+<script src="../../../common_functions/heater.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C8DGYXCTDV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-C8DGYXCTDV');
+</script>
+<script src="boardList.js"></script>
+  <body>
+    <button class="btn btn-outline-dark" id="showmenu" onclick="showPause()">&verbar;&nbsp;&verbar;</button>
+    <div class="background-image"></div>
+        <div class="content">
+            <div id="pause">
+                <button class="btn-start" onclick="closePause()" data-lang-key="continue">Continuer</button>
+                <button class="btn-start" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
+                <button class="btn-start" onclick="returnToMenu()" data-lang-key="menu">Menu</button>
+
+            </div>
+            <div class="page" id="page1">
+                <div id="laby1">
+                </div>
+            </div>
+
+            <div class="page" id="page2">
+                <div id="laby2">
+                </div>
+            </div>
+            
+            <div class="page" id="page3">
+                <div id="laby3">
+                </div>
+            </div>
+
+            <div class="page" id="page4">
+                <div id="laby4">
+                </div>
+            </div>
+
+            <div class="page" id="page5">
+                <div id="laby5">
+                </div>
+            </div>
+
+            <div class="page" id="page6">
+                <div id="laby6">
+                </div>
+            </div>
+
+            <div class="page" id="page7">
+                <div id="laby8">
+                </div>
+            </div>
+
+            <div class="page" id="page8">
+                <div id="laby8">
+                </div>
+            </div>
+        </div>
+        <div class="timer" style="color: #ffffff;">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+    </div>
+
+
+
+
+      
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../common_functions/build.js"></script>
+<script src="../../../common_functions/get_data.js"></script>
+<script src="../../../common_functions/movements/mv_all.js"></script>
+<script src="../../../common_functions/navigation.js"></script>
+<script src="../../../common_functions/pause.js"></script>
+<script src="../../../common_functions/set_data.js"></script>
+<script src="../../../common_functions/sounds.js"></script>
+<script src="../../../common_functions/basic.js"></script>
+<script src="../../../common_functions/timer.js"></script>
+<script src="../../../common_functions/unlocks.js"></script>
+<script src="../../../common_functions/ghost.js"></script>
+<script src="../../../common_functions/light.js"></script>
+<script src="../../../common_functions/translation.js"></script>
+<script src="../../../common_functions/languages.js"></script>
+<script src="../../../common_functions/keyboard.js"></script>
+<script src="../../../common_functions/background_music.js"></script>
+<script type="module" src="../../../common_functions/database.js"></script>
+<script>
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveLevel();
+    checkIfLevelIsEnough(18,lvl,'../warning_cheating.html')
+
+    var game_ended = false
+    var nbCoups = 0;
+    document.onkeydown = checkKey;
+    var fromtop =0; // vertical position // var fromtop =0;
+    var fromleft = 0; // horizontal position // var fromleft = 0;
+    var actual_board = 0;
+    retrievePlayer()
+    var current_size_top = 7
+    var current_size_left = 5
+
+    // var for the gosts
+    var ghostId;
+    var ghostTop = 0;
+    var ghostLeft = 0;
+
+    // var for the dimensions
+    var isDimRed = true
+
+
+    for (i=0;i<document.getElementsByClassName("page").length;i++){
+        document.getElementsByClassName("page")[i].style.display = "none";
+    }
+    document.getElementById('page1').style.display = "block";
+    
+    construct_board(1,7,5);
+
+    function checkKey(e) {
+        e = e || window.event;
+        if (e.keyCode == '27'){ // touche echap
+            if(inpause){
+                closePause() 
+            }else{
+                showPause()
+            }
+        }else if(!inpause) {
+            if (is_input_up(e))  { // going up
+                dest_upward();
+            }
+            else if (is_input_down(e)) { // going down
+                dest_downward();
+            }
+            else if (is_input_left(e)) { // going left
+                dest_leftward();
+            }
+            else if (is_input_right(e)) { // going rigth
+                dest_rigthward();
+            } else if ((e.keyCode ==  '69')&&(actual_board==4)){ // change dimension
+                isDimRed = !isDimRed
+            }
+            nbCoups++;
+            let chara = document.getElementById('character'+actual_board);
+            chara.setAttribute('style',"position: fixed;top : "+(current_size_top*fromtop+5)+"vh;left : "+(current_size_left*fromleft+5)+"vw;");
+            if(boards[actual_board][fromtop][fromleft]==0)
+            {
+                if(!game_ended){
+                    finish_labyrinth();
+                }
+            }
+        }
+    }
+
+    function finish_labyrinth(){
+        playEndLaby();
+        goNext(actual_board+1);
+        if(actual_board==0){
+            current_size_top = 5
+            current_size_left = 3.5
+            updateStylesheet("board_tiny","board_medium")
+            construct_board(actual_board+2,5,3.5);
+        } else if(actual_board==1) {
+            construct_board(actual_board+2,5,3.5);
+        } else if(actual_board==2){
+            construct_board_with_parameters(actual_board+2,5,3.5,true,null,false,0,false);
+            moveGhost(6); // the ghost start following the player
+        } else if(actual_board==3){
+            stopGhost();
+            current_size_top = 3
+            current_size_left = 2
+            updateStylesheet("board_medium","board_large")
+            construct_board(actual_board+2,3,2);
+        } else if(actual_board==4){
+            construct_board_in_darkness(actual_board+2,3,2)
+        } else if (actual_board==5){
+            construct_board(actual_board+2,3,2);
+        }
+        // game_ended = TODO at the end
+        // stopTimer(); TODO at the end
+        // playEndLevel()  TODO at the end
+    }
+
+    function updateStylesheet(previousStyle,nextStyle) {
+        const oldLink = document.querySelector("link[href='../../../css/planets/"+previousStyle+".css']");
+        if (oldLink) {
+            oldLink.parentNode.removeChild(oldLink);
+        }
+        const newLink = document.createElement("link");
+        newLink.rel = "stylesheet";
+        newLink.href = "../../../css/planets/"+nextStyle+".css";
+        document.head.appendChild(newLink);
+    }
+
+    function die_from_ghost(){
+        stopGhost();
+        reset_ghost_and_player();
+        moveGhost(6)
+    }
+
+    function reset_ghost_and_player(){
+        fromtop = coords_begin[actual_board][0];
+        fromleft = coords_begin[actual_board][1];
+        ghostTop = coords_begin_ghost[actual_board][0];
+        ghostLeft = coords_begin_ghost[actual_board][1];
+        
+        let cat = document.getElementById('character'+actual_board)
+        cat.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+        cat.setAttribute('src',"../../../images/"+chara+"down.png");
+        let ghost = document.getElementById('ghost'+actual_board);
+        ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
+    }
+</script>
+</body>
+</html>
