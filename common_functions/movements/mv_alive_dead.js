@@ -95,8 +95,7 @@ function treatment_arrival_case(){
             }
         } else if(boards[actual_board][fromtop][fromleft]==3){
             reset_level();
-        }
-        if((hasClone)&&(boards[actual_board][fromtop_clone][fromleft_clone]==3)){
+        } else if((hasClone)&&(boards[actual_board][fromtop_clone][fromleft_clone]==3)){
             reset_level();
         }
     }

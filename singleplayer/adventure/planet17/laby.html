@@ -194,6 +194,7 @@
 
     function finish_labyrinth(){
         if((actual_board)!=4){
+            init_vars()
             playEndLaby()
             goNext(actual_board+1);
             construct_board_with_pows(actual_board+2,3,2);
@@ -218,6 +219,18 @@
                 window.location.href='../warning_cheating.html';
             }
         }
+    }
+
+    function init_vars(){
+        //variables related to pows
+        isAlive = true;
+        hasClone = false;
+        fromtop_clone = 0;
+        fromleft_clone = 0;
+        fromtopShuriken = 0
+        fromleftShuriken = 0
+        shurikenAvailable = false
+        AllAdditionnalBlocks = []
     }
 
 </script>
