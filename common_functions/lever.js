@@ -25,7 +25,11 @@ function update_lever(j,actualState, lever_height, lever_width){
 }
 
 function turn_on_lever(j,idLevers, lever_height, lever_width){
-    document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_on.png";
+    if (levers[actual_board][j].length == 6){
+        document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_on_"+levers[actual_board][j][5]+".png";
+    } else {
+        document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_on.png";
+    }
     levers[actual_board][j][2] = "on"
     let numeroBoard = actual_board+1
     place_blocks_of_levers(numeroBoard,j,3, lever_height, lever_width)
@@ -33,7 +37,11 @@ function turn_on_lever(j,idLevers, lever_height, lever_width){
 }
 
 function turn_off_lever(j,idLevers, lever_height, lever_width){
-    document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_off.png";
+    if (levers[actual_board][j].length == 6){
+        document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_off_"+levers[actual_board][j][5]+".png";
+    } else {
+        document.getElementById("lever"+idLevers).src = "../../../images/specific/lever_off.png";
+    }
     levers[actual_board][j][2] = "off"
     delete_blocks_of_levers(j,3)
     let numeroBoard = actual_board+1

@@ -180,7 +180,11 @@ function place_levers(numboard, lever_height, lever_width){
     for(let j= 0; j < levers[numboard-1].length; j++)
     {
         let idLever = j + (numboard-1)*100
-        create_element(numboard, lever_height, lever_width, "specific/lever_"+levers[numboard-1][j][2]+".png", "lever"+idLever, levers[numboard-1][j][0], levers[numboard-1][j][1]); 
+        let link_img = "specific/lever_"+levers[numboard-1][j][2]+".png"
+        if (levers[numboard-1][j].length == 6){
+            link_img = "specific/lever_"+levers[numboard-1][j][2]+"_"+levers[numboard-1][j][5]+".png"
+        }
+        create_element(numboard, lever_height, lever_width, link_img , "lever"+idLever, levers[numboard-1][j][0], levers[numboard-1][j][1]); 
 
         if(levers[numboard-1][j][2] == "on"){
             place_blocks_of_levers(numboard,j,3,lever_height,lever_width)
@@ -198,7 +202,11 @@ function place_blocks_of_levers(numboard,j,column, case_height, case_width){ // 
         AllAdditionnalBlocks.push([levers[numboard-1][j][column][k][0] , levers[numboard-1][j][column][k][1]])
 
         let theblock = document.createElement('img');
-        theblock.setAttribute('src',"img2.png");
+        if (levers[numboard-1][j].length == 6){
+            theblock.setAttribute('src',"img2"+ levers[numboard-1][j][5]+".png");
+        } else {
+            theblock.setAttribute('src',"img2.png");
+        }
         theblock.setAttribute('style',"position: fixed;top : "+(case_height*levers[numboard-1][j][column][k][0]+5) + "vh;left : " +(case_width*levers[numboard-1][j][column][k][1]+5)+ "vw;");
         theblock.className = "img_of_laby";
         nbboard = numboard-1
