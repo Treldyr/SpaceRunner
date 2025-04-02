@@ -69,25 +69,103 @@
             </div>
 
             <div class="page" id="page8">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <div class="game-description">
+                <div class="god-dialog character-talk">
                     <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
                 </div>
             </div>
 
             <div class="page" id="page9">
-               
+                <div class="god-dialog god-talk">
+                    <p>Bienvenu, Félix.</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
             </div>
 
             <div class="page" id="page10">
-                
+                <div class="god-dialog character-talk">
+                    <p>Es-tu Brahma ?</p>
+                    <p>Comment connais-tu mon nom ?</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
             </div>
+
+            <div class="page" id="page11">
+                <div class="god-dialog god-talk">
+                    <p>Oui, c'est moi</p>
+                    <p>Je connais ton nom parce que je t'ai observé.</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page12">
+                <div class="god-dialog character-talk">
+                    <p>Observé ? Comment ça ?</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page13">
+                <div class="god-dialog god-talk">
+                    <p>Je sais que tu as surmonté de nombreux obstacles afin d'arriver là.</p>
+                    <p>Tu es intrépide, petit. Et tu as du talent.</p>
+                    <p>Aimes-tu mes labyrinthes ? En veux-tu d'autres ?</p>
+                    <p>J'en ai concocté qui devraient t'occuper encore longtemps.</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page14">
+                <div class="god-dialog character-talk">
+                    <p>Arrête ! Je ne veux pas d'autres labyrinthes.</p>
+                    <p>Je viens pour t'arrêter.</p>
+                    <p>Tu dois remettre en ordre le chaos que tu as produit.</p>
+                    <p>Les dimensions fusionnent, des chats sont maudits, et d'autres meurent !</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page15">
+                <div class="god-dialog god-talk">
+                    <p>Non. Cela m'amuse.</p>
+                    <p>Ce ne sont que des dommages collatéraux.</p>
+                    <p>Tu apelles ça chaos parce que tu n'y comprends rien. Pour moi il fait sens.</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page16">
+                <div class="god-dialog character-talk">
+                    <p>Tu t'amuses ? Des dommages collatéraux ?</p>
+                    <p>Tu es le seul à en rire !</p>
+                    <p>Te prends-tu pour un dieu ?</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page17">
+                <div class="god-dialog god-talk">
+                    <p>Mais je suis un dieu.</p>
+                    <p>Si tu veux m'arrêter, alors prépare-toi pour ton dernier duel.</p>
+                    <p>Je vais te faire affronter tes pires cauchemars !</p>
+                    <p>Tu vas me divertir encore un peu HAHAHAHAHAHA</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page18">
+                <div class="god-dialog character-talk">
+                    <p>Tu es donc bien la personne derrière tous les malheurs de l'univers.</p>
+                    <p>Je n'aurais donc aucune pitié.</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page19">
+                <div id="laby19">
+                </div>
+            </div>
+
+            
         </div>
         <div class="timer" style="color: #ffffff;">
             <span id="minutes">00</span>:<span id="seconds">00</span>
@@ -220,6 +298,10 @@
         } else if (actual_board==7){
             updateBackground('../../../images/backgrounds/planet_atrebois.png');
             actual_board++;
+        } else if (actual_board<17) {
+             actual_board++;
+        } else if (actual_board==17){
+            console.log("construct maze")
         }
         // game_ended = TODO at the end
         // stopTimer(); TODO at the end

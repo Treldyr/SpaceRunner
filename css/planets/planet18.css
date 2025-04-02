@@ -21,3 +21,29 @@
 .timer {
     background-color: rgb(41, 62, 83);
 }
+
+.god-dialog {
+    position: fixed;
+    bottom: 10px;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: right;
+    margin-bottom: 40px;
+    padding: 20px;
+    z-index: 1000;
+    line-height: 1.6;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.god-talk {
+    background-color: rgba(63, 63, 63, 0.7);
+}
+
+.character-talk {
+    background-color: rgba(0, 0, 0, 0.7);
+}
