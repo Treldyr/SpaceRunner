@@ -195,6 +195,7 @@
 <script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/light.js"></script>
 <script src="../../../common_functions/brahma.js"></script>
+<script src="../../../common_functions/animation.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
@@ -209,6 +210,18 @@
     // write the name in the dialogue
     const storedName = localStorage.getItem("pseudo");
     document.getElementById("pseudoToInsert").innerHTML = storedName;
+
+    setCharacterBack(8,chara)
+    setCharacterBack(9,chara)
+    setCharacterBack(10,chara)
+    setCharacterBack(11,chara)
+    setCharacterBack(12,chara)
+    setCharacterBack(13,chara)
+    setCharacterBack(14,chara)
+    setCharacterBack(15,chara)
+    setCharacterBack(16,chara)
+    setCharacterBack(17,chara)
+    setCharacterBack(18,chara)
 
     var game_ended = false
     var nbCoups = 0;
@@ -244,33 +257,39 @@
             }else{
                 showPause()
             }
-        }else if(!inpause) {
-            if (is_input_up(e))  { // going up
-                dest_upward();
-            }
-            else if (is_input_down(e)) { // going down
-                dest_downward();
-            }
-            else if (is_input_left(e)) { // going left
-                dest_leftward();
-            }
-            else if (is_input_right(e)) { // going rigth
-                dest_rigthward();
-            } else if ((e.keyCode ==  '69')&&(actual_board==4)){ // change dimension
-                isDimRed = !isDimRed
-            }
-            nbCoups++;
-            let chara = document.getElementById('character'+actual_board);
-            chara.setAttribute('style',"position: fixed;top : "+(current_size_top*fromtop+5)+"vh;left : "+(current_size_left*fromleft+5)+"vw;");
-            if(boards[actual_board][fromtop][fromleft]==0)
-            {
-                if(!game_ended){
-                    playEndLaby();
+        }else if(!inpause) { 
+            if((actual_board>6)&&(actual_board<18)){ // If it is during a dialog
+                if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
                     finish_labyrinth();
                 }
-            } else if(boards[actual_board][fromtop][fromleft]==18){
-                playLava();
-                reset_player();
+            } else { // If it is during a gameplay
+                if (is_input_up(e))  { // going up
+                    dest_upward();
+                }
+                else if (is_input_down(e)) { // going down
+                    dest_downward();
+                }
+                else if (is_input_left(e)) { // going left
+                    dest_leftward();
+                }
+                else if (is_input_right(e)) { // going rigth
+                    dest_rigthward();
+                } else if ((e.keyCode ==  '69')&&(actual_board==4)){ // change dimension
+                    isDimRed = !isDimRed
+                } else 
+                nbCoups++;
+                let chara = document.getElementById('character'+actual_board);
+                chara.setAttribute('style',"position: fixed;top : "+(current_size_top*fromtop+5)+"vh;left : "+(current_size_left*fromleft+5)+"vw;");
+                if(boards[actual_board][fromtop][fromleft]==0)
+                {
+                    if(!game_ended){
+                        playEndLaby();
+                        finish_labyrinth();
+                    }
+                } else if(boards[actual_board][fromtop][fromleft]==18){
+                    playLava();
+                    reset_player();
+                }
             }
         }
     }
@@ -305,7 +324,7 @@
         } else if (actual_board<17) {
              actual_board++;
         } else if (actual_board==17){
-            console.log("construct maze")
+            construct_board(actual_board+2,3,2);
         }
         // game_ended = TODO at the end
         // stopTimer(); TODO at the end

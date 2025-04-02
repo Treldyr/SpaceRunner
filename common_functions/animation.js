@@ -56,3 +56,23 @@ function setCharacterWarning(){
     // Ajout de l'image dans l'élément de la page spécifiée
     document.getElementById('page1').appendChild(the_image);
 }
+
+
+function setCharacterBack(numberPage, character){
+    // Création de l'élément image
+    let the_image = document.createElement('img');
+    the_image.setAttribute('src', "../../../images/" + character + "up.png");
+    
+    // Style pour afficher l'image en grand et la positionner sur le côté gauche
+    the_image.setAttribute('style', `
+        position: fixed;
+        bottom: -4vh;
+        right: -5vw;
+        height: 45vh;
+        width: 20vw;
+        object-fit: cover; /* Pour s'adapter à l'espace de manière homogène */
+    `);
+    
+    // Ajout de l'image dans l'élément de la page spécifiée
+    document.getElementById('page' + numberPage).appendChild(the_image);
+}
