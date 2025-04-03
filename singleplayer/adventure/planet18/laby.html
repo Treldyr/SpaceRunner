@@ -163,6 +163,38 @@
             <div class="page" id="page19">
                 <div id="laby19">
                 </div>
+                <div class="power-bottom-bar">
+                    <div class="power-item" id="heart1">
+                        <img src="../../../images/heart.png" alt="Coeur 1">
+                    </div>
+                    <div class="power-item" id="heart2">
+                    <img src="../../../images/heart.png" alt="Coeur 2">
+                    </div>
+                    <div class="power-item" id="heart3">
+                        <img src="../../../images/heart.png" alt="Coeur 3">
+                    </div>
+                    <div class="power-item" id="heart4">
+                        <img src="../../../images/heart.png" alt="Coeur 4">
+                    </div>
+                    <div class="power-item" id="heart5">
+                        <img src="../../../images/heart.png" alt="Coeur 5">
+                    </div>
+                    <div class="power-item" id="heart6">
+                        <img src="../../../images/heart.png" alt="Coeur 6">
+                    </div>
+                    <div class="power-item" id="heart7">
+                        <img src="../../../images/heart.png" alt="Coeur 7">
+                    </div>
+                    <div class="power-item" id="heart8">
+                        <img src="../../../images/heart.png" alt="Coeur 8">
+                    </div>
+                    <div class="power-item" id="heart9">
+                        <img src="../../../images/heart.png" alt="Coeur 9">
+                    </div>
+                    <div class="power-item" id="heart10">
+                        <img src="../../../images/heart.png" alt="Coeur 10">
+                    </div>
+                </div>
             </div>
 
             
@@ -195,6 +227,7 @@
 <script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/light.js"></script>
 <script src="../../../common_functions/brahma.js"></script>
+<script src="../../../common_functions/minibosses1_brahma.js"></script>
 <script src="../../../common_functions/animation.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -325,7 +358,10 @@
         } else if (actual_board<17) {
              actual_board++;
         } else if (actual_board==17){
+            updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,3,2);
+            //startAttacksBrahma();
+            startMiniBosses1();
         }
         // game_ended = TODO at the end
         // stopTimer(); TODO at the end

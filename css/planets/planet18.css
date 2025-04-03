@@ -47,3 +47,40 @@
 .character-talk {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.power-bottom-bar {
+    position: fixed;
+    bottom: 10px;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    opacity: 90%;
+    padding: 10px 0;
+    z-index: 1000;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Style of images */
+.power-bottom-bar div {
+    width: 5vw;
+    height: 4vh;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.power-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+  /* Style des images */
+.power-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    object-fit: cover;
+}

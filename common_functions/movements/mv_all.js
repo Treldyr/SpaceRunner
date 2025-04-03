@@ -56,6 +56,14 @@ function dest_downward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==18){
+        if(boards[actual_board][fromtop+1][fromleft]!=2){ // TODO update this
+            fromtop++;
+            playMove();
+        }else{
+            playWallHit()
+        }
+        checkShuriken(6)
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -112,6 +120,14 @@ function dest_leftward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==18){
+        if(boards[actual_board][fromtop][fromleft-1]!=2){ // TODO update this
+            fromleft--;
+            playMove();
+        }else{
+            playWallHit()
+        }
+        checkShuriken(6)
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
@@ -168,6 +184,14 @@ function dest_upward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==18){
+        if(boards[actual_board][fromtop-1][fromleft]!=2){ // TODO update this
+            fromtop--;
+            playMove();
+        }else{
+            playWallHit()
+        }
+        checkShuriken(6)
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -224,6 +248,14 @@ function dest_rigthward(){
         }else{
             playWallHit()
         }
+    } else if(actual_board==18){
+        if(boards[actual_board][fromtop][fromleft+1]!=2){ // TODO update this
+            fromleft++;
+            playMove();
+        }else{
+            playWallHit()
+        }
+        checkShuriken(6)
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
