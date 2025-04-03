@@ -65,7 +65,9 @@
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
                         <a id="nbHits"></a>
-                        <a data-lang-key="moves">coups</a>
+                        <a data-lang-key="hitIn">coups en</a>
+                        <a id="nbTime"></a>
+                        <a data-lang-key="seconds">secondes.</a>
                     </p>
                     <p data-lang-key="text262">La station d'Âtrebois est désormais disponible.</p>
                     <p data-lang-key="goodContinuation">Bonne continuation !</p>
@@ -192,6 +194,7 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
+            document.getElementById('nbTime').innerHTML = totalSeconds;
             if(nbCoups >= 100){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
