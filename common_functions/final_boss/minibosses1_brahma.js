@@ -60,6 +60,7 @@ function create_shuriken(fromtopShuriken,fromleftShuriken,idshuriken) {
 }
 
 function delete_shuriken(idshuriken) {
+    clearInterval(powshurikenBoss1Id);
     let shuri = document.getElementById('shuriken'+idshuriken);
     if(shuri!==null){
         shuri.remove()
@@ -70,12 +71,16 @@ function delete_shuriken(idshuriken) {
     }
 }
 
+function checkIsAlign(left1, top1, left2, top2){
+    if((left1==left2)&&(top1==top2)){
+        respawnFromBrahma()
+    }
+}
+
 function checkShuriken(idshuriken){
     if(!game_ended){
         if(idshuriken==6){
-            if((fromtop==fromtopShurikenBoss1)&&(fromleft==fromleftShurikenBoss1)){
-                respawnFromBrahma()
-            }
+            checkIsAlign(fromleft, fromtop, fromleftShurikenBoss1, fromtopShurikenBoss1)
         }
     }   
 }
@@ -149,7 +154,6 @@ function launchShurikenFromBoss1(directionLaunched){
         updateImageShuriken(6,fromtopShurikenBoss1,fromleftShurikenBoss1)
         checkShuriken(6)
         if((fromtopShurikenBoss1<=0)||(fromleftShurikenBoss1<=0)||(fromtopShurikenBoss1>boards[actual_board].length-1)||(fromleftShurikenBoss1>boards[actual_board][0].length-1)){
-            clearInterval(powshurikenBoss1Id);
             shurikenBoss1Available = true
             delete_shuriken(6)
         }
@@ -222,3 +226,35 @@ function stopBoss1() {
 //                  FUNCTIONS BOSS2                  //
 //                                                   //
 // --------------------------------------------------//
+
+function stopBoss2() {
+    clearInterval(Boss2Id);
+}
+
+function moveMiniBoss2() {
+    Boss2Id = setInterval(() => {
+        if(!game_ended){
+            
+            let diffLeft;
+            let diffTop;
+            if (boss2Left > fromleft) {
+                diffLeft = boss2Left - fromleft;
+            } else {
+                diffLeft = fromleft - boss2Left;
+            }
+            if (boss2Top > fromtop) {
+                diffTop = boss2Top - fromtop;
+            } else {
+                diffTop = fromtop - boss2Top;
+            }
+    
+            if (diffLeft > diffTop) {
+                moveBossHorizontally(9, boss2Top, boss2Left);
+            } else {
+                moveBossVertically(9, boss2Top, boss2Left);
+            }
+            checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+        }
+    }, 250);
+}
+

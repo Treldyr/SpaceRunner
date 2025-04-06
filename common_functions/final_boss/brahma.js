@@ -58,7 +58,7 @@ function respawnFromBrahma(){
     reset_player();
     restartMiniBosses1()
     delete_shuriken(6)
-    // TODO Regain hearts
+    stopBrahmaArm()
     brahma_life = 10
     for(let j= 1; j < 11; j++)
     {
@@ -93,9 +93,20 @@ var boss2Left = 0;
 function startMiniBosses1() {
     initializeMiniBosses1()
     moveMiniBoss1()
-    //TODO
+    moveMiniBoss2()
 }
 
+
+// --------------------------------------------------//
+//                                                   //
+//             FUNCTIONS STOPS ATTACKS               //
+//                                                   //
+// --------------------------------------------------//
+
+
+function stopBrahma() {
+    clearInterval(brahmaId);
+}
 
 // --------------------------------------------------//
 //                                                   //
@@ -110,6 +121,9 @@ var brahmaLoop = 0;
 var brahmaTop = 0;
 var brahmaLeft = 0;
 
+// attacks id
+var attackHitWithArmId;
+
 function startAttacksBrahma() {
     let brahmaPhase = 0;
     brahmaId = setInterval(() => {
@@ -117,35 +131,24 @@ function startAttacksBrahma() {
             brahmaLoop++;
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
+                case 0:
+                    hitwithArms(250) // TODO change this to something a heart is losable
+                break;
                 case 1:
-                    hitwithArms()
+                    hitwithArms(250)
                 break;
                 case 2:
-                    console.log(2)
+                    hitwithArms(250)
                 break;
                 case 3:
-                    console.log(3)
+                    hitwithArms(250)
                 break;
                 case 4:
-                    console.log(4)
-                break;
-                case 5:
-                    console.log(5)
+                    hitwithArms(250)
                 break;
                 default:
                     console.log('error phase number')
             }
         }
     }, 10000); // all 10 secs
-}
-
-function stopAttacks() {
-    clearInterval(brahmaId);
-}
-
-function hitwithArms(){
-    // GENERATE RANDOM NUMBER
-    // CREATE ARM ON BOARD
-    // MOVE IT UNTIL EDGE WITH NUMBER + CHECK HIT ZONE
-    // DELETE ARM
-}
+} // TODO add phases

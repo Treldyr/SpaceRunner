@@ -226,8 +226,9 @@
 <script src="../../../common_functions/unlocks.js"></script>
 <script src="../../../common_functions/ghost.js"></script>
 <script src="../../../common_functions/light.js"></script>
-<script src="../../../common_functions/brahma.js"></script>
-<script src="../../../common_functions/minibosses1_brahma.js"></script>
+<script src="../../../common_functions/final_boss/brahma.js"></script>
+<script src="../../../common_functions/final_boss/brahma_arm.js"></script>
+<script src="../../../common_functions/final_boss/minibosses1_brahma.js"></script>
 <script src="../../../common_functions/animation.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -360,12 +361,23 @@
         } else if (actual_board==17){
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,3,2);
-            //startAttacksBrahma();
+            startAttacksBrahma();
             startMiniBosses1();
         }
         // game_ended = TODO at the end
         // stopTimer(); TODO at the end
         // playEndLevel()  TODO at the end
+    }
+
+    function skipIntro(){
+        current_size_top = 3
+        current_size_left = 2
+        updateStylesheet("board_tiny","board_large")
+        document.getElementById('page1').style.display = "none";
+        document.getElementById('page19').style.display = "block";
+        actual_board = 17
+        updateBackground('../../../images/backgrounds/planete_open.png');
+        construct_board(actual_board+2,3,2);
     }
 
 </script>
