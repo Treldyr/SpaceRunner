@@ -197,6 +197,12 @@
                 </div>
             </div>
 
+            <div class="page" id="page20">
+                <div class="god-dialog character-talk">
+                    <button class="btn btn-outline-light" onclick="window.location.href='end.html'" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
             
         </div>
         <div class="timer" style="color: #ffffff;">
@@ -364,9 +370,6 @@
             startAttacksBrahma();
             startMiniBosses1();
         }
-        // game_ended = TODO at the end
-        // stopTimer(); TODO at the end
-        // playEndLevel()  TODO at the end
     }
 
     function skipIntro(){
@@ -378,6 +381,23 @@
         actual_board = 17
         updateBackground('../../../images/backgrounds/planete_open.png');
         construct_board(actual_board+2,3,2);
+    }
+
+    function finish_final_boss(){
+        game_ended = true
+        stopTimer()
+        playEndLevel()
+        UnlockPlanet(19)
+        setHighScorePlanet('catmageddon')
+        if(nbCoups >= 200){
+            const storedName = localStorage.getItem("pseudo");
+            if (storedName) {
+                sendBestTime('pCatmageddon',totalSeconds,storedName)
+            }
+            finish_labyrinth()
+        } else {
+            window.location.href='../warning_cheating.html';
+        }
     }
 
 </script>

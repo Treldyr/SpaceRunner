@@ -59,6 +59,7 @@ function respawnFromBrahma(){
     restartMiniBosses1()
     delete_shuriken(6)
     stopBrahmaArm()
+    stopPhysicalBrahma()
     brahma_life = 10
     for(let j= 1; j < 11; j++)
     {
@@ -69,6 +70,9 @@ function respawnFromBrahma(){
 function loseAHeart(){
     document.getElementById('heart'+brahma_life).style.display = "none";
     brahma_life--;
+    if(brahma_life==0){
+        finish_final_boss()
+    }
 }
 
 // ---------------------------------------------------//
@@ -123,32 +127,92 @@ var brahmaLeft = 0;
 
 // attacks id
 var attackHitWithArmId;
+var physicalBrahmaId;
 
 function startAttacksBrahma() {
     let brahmaPhase = 0;
     brahmaId = setInterval(() => {
         if(!game_ended){
-            brahmaLoop++;
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    hitwithArms(250) // TODO change this to something a heart is losable
+                    hitwithArms(100+(15*brahma_life))
                 break;
                 case 1:
-                    hitwithArms(250)
+                    hitwithArms(100+(15*brahma_life))
                 break;
                 case 2:
-                    hitwithArms(250)
+                    spawnBrahma()
                 break;
                 case 3:
-                    hitwithArms(250)
+                    hitwithArms(100+(15*brahma_life))
                 break;
                 case 4:
-                    hitwithArms(250)
+                    spawnBrahma()
                 break;
                 default:
                     console.log('error phase number')
             }
+            brahmaLoop++;
         }
     }, 10000); // all 10 secs
-} // TODO add phases
+}
+
+function spawnBrahma(){
+    brahmaTop = getRandomIntMax(20)+1;
+    brahmaLeft = getRandomIntMax(40)+1;
+    create_element(actual_board+1, 3, 2, "p20down.png", "physicalBrahma", brahmaTop, brahmaLeft)
+    let brahma_move = 0
+    physicalBrahmaId = setInterval(() => {
+        if(!game_ended){
+            brahma_move++;
+            let directionMoveBrahma = getRandomIntMax(4)
+            let physic = document.getElementById('physicalBrahma') 
+            switch(directionMoveBrahma){
+                case 0:
+                    brahmaTop = brahmaTop+1
+                    physic.setAttribute('src',"../../../images/p20down.png");
+                break;
+                case 1:
+                    if(brahmaTop!=0){
+                        brahmaTop = brahmaTop-1
+                        physic.setAttribute('src',"../../../images/p20up.png");
+                    }
+                break;
+                case 2:
+                    brahmaLeft = brahmaLeft+1
+                    physic.setAttribute('src',"../../../images/p20right.png");
+                break;
+                case 3:
+                    if(brahmaLeft!=0){
+                        brahmaLeft = brahmaLeft-1
+                        physic.setAttribute('src',"../../../images/p20left.png");
+                    }
+                break;
+                default:
+                    console.log('error physic number')
+            }
+            physic.setAttribute('style', "position: fixed;top : " + (3*brahmaTop+5) + "vh;left : " + (2*brahmaLeft+5) + "vw;");
+        }
+        if(brahma_move==10){
+            stopPhysicalBrahma()
+        }
+    }, 200);
+}
+
+function stopPhysicalBrahma(){
+    let physic = document.getElementById('physicalBrahma')
+    if(physic!=null){
+        clearInterval(physicalBrahmaId);
+        physic.remove()
+    }
+    brahmaTop = 0
+    brahmaLeft = 0
+}
+
+function checkHitBrahma() {
+    if((brahmaTop==fromtop)&&(brahmaLeft==fromleft)){
+        loseAHeart()
+        stopPhysicalBrahma()
+    }
+}

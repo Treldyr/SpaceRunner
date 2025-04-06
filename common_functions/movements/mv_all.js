@@ -65,6 +65,7 @@ function dest_downward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -130,6 +131,7 @@ function dest_leftward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
@@ -195,6 +197,7 @@ function dest_upward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -260,6 +263,7 @@ function dest_rigthward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
