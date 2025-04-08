@@ -1,0 +1,23 @@
+.background-image, .highscore-background-image {
+    background: url('../../images/backgrounds/planet_yellow_grass.jpg') no-repeat center center fixed;
+}
+
+
+.btn-outline-dark {
+    background-color: rgb(129, 99, 0);
+}
+
+
+.btn-start {
+    background-color: rgb(129, 99, 0);
+}
+
+
+.btn-start:hover {
+  box-shadow: 0 0 10px rgb(129, 99, 0);
+}
+
+
+.timer {
+    background-color: rgb(129, 99, 0);
+}

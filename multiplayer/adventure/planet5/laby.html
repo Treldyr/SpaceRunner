@@ -6,9 +6,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/planets/planet2p4.css">
+    <link rel="stylesheet" href="../../../css/planets/planet2.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
-    <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/board_large.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="page" id="page6" >
-                <div class="custom-title" ><a data-lang-key="text141">Planète</a> Vega IX <a data-lang-key="text18">complétée</a> !</div>
+                <div class="custom-title" ><a data-lang-key="text141">Planète</a> Katshyk <a data-lang-key="text18">complétée</a> !</div>
                 <div class="game-description">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
@@ -68,14 +68,13 @@
                     </p>
                     <p data-lang-key="text233">Toutes mes félicitations !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="goPlanet(4)" data-lang-key="restart">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="goPlanet(5)" data-lang-key="continue">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(5)" data-lang-key="restart">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                     
                 </div>
             </div>
         </div>
-        <div class="timer">
+        <div class="timer" style="color: #ffffff;">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
     </div>
@@ -93,12 +92,12 @@
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
+<script src="../javascript/ghosts.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
-<script src="../../../common_functions/checks.js"></script>
 <script>
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -108,9 +107,8 @@
     var chara = "p0";
     var charap2 = "p0";
     var inpause = false;
-    var p1_speed = false;
-    var p2_speed = false;
     retrievePlayers()
+    moveGhost();
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
@@ -118,7 +116,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_2_players(1) // TODO + generate speed boost
+    construct_board_with_2_ghosts(1)
 
 
     function checkKey(e) {
@@ -130,24 +128,28 @@
             showPause()
         }
         }else {
-            set_new_positions(e,5,3.5)  // TODO     
+            set_new_positions(e,3,2)
+
             if((p1_won)&&(p2_won))
             {
                 finish_labyrinth();
             }
+            checkGhost()
         }
     }
 
     function finish_labyrinth(){
+        stopGhost();
         if((actual_board)!=4){
             playEndLaby()
             goNext(actual_board+1);
             p1_won = false;
             p2_won = false;
-            construct_board_2_players(actual_board+2)
+            moveGhost()
+            construct_board_with_2_ghosts(actual_board+2)
         } else {
             stopTimer();
-            UnlockPlanet2pMode(5)
+            UnlockPlanet2pMode(6);
             playEndLevel()
             let number = actual_board+1;
             let number2 = actual_board+2
