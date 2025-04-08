@@ -10,35 +10,35 @@ function set_new_positions(e,height,length){
             rebegin();
         }
         if(!game_ended){
-            if ((e.keyCode == '38')) { // going up p1
+            if (is_input_up_p2_multiplayer(e)) { // Z key for going up p1
                 dest_upward_p1(height,length);
                 directionP1 = "u"
             }
-            else if ((e.keyCode == '40'))  { // going down p1
+            else if (is_input_down_p2_multiplayer(e))  { // S key for going down p1
                 dest_downward_p1(height,length);
                 directionP1 = "d"
             }
-            else if ((e.keyCode == '37'))  { // going left p1
+            else if (is_input_left_p2_multiplayer(e))  { // Q key for going left p1
                 dest_leftward_p1(height,length);
                 directionP1 = "l"
             }
-            else if ((e.keyCode == '39'))  { // going rigth p1
+            else if (is_input_right_p2_multiplayer(e))  { // D key for going rigth p1
                 dest_rigthward_p1(height,length);
                 directionP1 = "r"
             }
-            else if (is_input_up_p2_multiplayer(e)) { // Z key for going up for p2
+            else if ((e.keyCode == '38')) { //  going up p2
                 dest_upward_p2(height,length);
                 directionP2 = "u"
             } 
-            else if (is_input_down_p2_multiplayer(e)) { // S key for going down for p2
+            else if ((e.keyCode == '40')) { //  going down p2
                 dest_downward_p2(height,length);
                 directionP2 = "d"
             } 
-            else if (is_input_left_p2_multiplayer(e)) { // Q key for going left for p2
+            else if ((e.keyCode == '37')) { // going left p2
                 dest_leftward_p2(height,length);
                 directionP2 = "l"
             } 
-            else if (is_input_right_p2_multiplayer(e)) { // D key for going right for p2
+            else if ((e.keyCode == '39')) { // going right p2
                 dest_rigthward_p2(height,length);
                 directionP2 = "r"
             }
