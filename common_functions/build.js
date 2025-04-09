@@ -233,6 +233,9 @@ function place_pow(name_pow, numboard, pow_height, pow_width){
         case "shuriken":
             pow_board = pow_shuriken
         break;
+        case "speed":
+            pow_board = pow_speed
+        break;
         default:
             console.log('error pow name')
     }
@@ -325,6 +328,13 @@ function construct_board_2p_with_gaz(numboard,imageItem){
 function construct_board_2p_with_levers(numboard){
     construct_board_2_players(numboard);
     place_levers(numboard,5,3.5)
+}
+
+function construct_board_2p_with_pow_speed(numboard){
+    p1_speed = false;
+    p2_speed = false;
+    construct_board_2_players(numboard);
+    place_pow("speed", numboard, 5, 3.5)
 }
 
 function construct_board_in_darkness(numboard, case_height, case_width){

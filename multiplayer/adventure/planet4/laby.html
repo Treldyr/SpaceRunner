@@ -93,6 +93,7 @@
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
+<script src="../../../common_functions/powers_adventure_mode/speed.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -108,8 +109,6 @@
     var chara = "p0";
     var charap2 = "p0";
     var inpause = false;
-    var p1_speed = false;
-    var p2_speed = false;
     retrievePlayers()
 
 
@@ -118,7 +117,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_2_players(1) // TODO + generate speed boost
+    construct_board_2p_with_pow_speed(1)
 
 
     function checkKey(e) {
@@ -130,11 +129,12 @@
             showPause()
         }
         }else {
-            set_new_positions(e,5,3.5)  // TODO     
+            set_new_positions_with_speedpow(e,5,3.5) 
             if((p1_won)&&(p2_won))
             {
                 finish_labyrinth();
             }
+            check_get_powspeed()
         }
     }
 
@@ -144,7 +144,7 @@
             goNext(actual_board+1);
             p1_won = false;
             p2_won = false;
-            construct_board_2_players(actual_board+2)
+            construct_board_2p_with_pow_speed(actual_board+2)
         } else {
             stopTimer();
             UnlockPlanet2pMode(5)

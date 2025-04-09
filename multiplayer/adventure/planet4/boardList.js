@@ -101,16 +101,16 @@ var coords_begin = [
 
 var coords_begin2 = [
     [12,2],
-    [6,6],
+    [6,7],
     [4,6],
     [1,12],
     [2,8],
 ]
 
 var pow_speed = [
-    [[20,18,true]],
-    [[15,22,true]],
+    [[5,5,true],[6,6,true]],
+    [[6,6,true]],
     [],
-    [[14,22,true]],
-    [[8,1,true]],
+    [[6,6,true]],
+    [[6,6,true]],
 ]
