@@ -144,7 +144,10 @@ function set_new_positions_with_lever(e,height,length){
 }
 
 function dest_upward_p1(height,length){
-    if((boards[actual_board][fromtop1-1][fromleft1]!=2)&&(!isSuperposition(fromtop1-1,fromleft1,fromtop2,fromleft2))){
+    if((boards[actual_board][fromtop1-1][fromleft1]!=2)
+        &&(boards[actual_board][fromtop1-1][fromleft1]!=3)
+        &&(boards[actual_board][fromtop1-1][fromleft1]!=4)
+        &&(!isSuperposition(fromtop1-1,fromleft1,fromtop2,fromleft2))){
         fromtop1--;
         playMove()
     }else{
@@ -163,7 +166,10 @@ function dest_upward_p1(height,length){
 }
 
 function dest_upward_p2(height,length){
-    if((boards[actual_board][fromtop2-1][fromleft2]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2-1,fromleft2))){
+    if((boards[actual_board][fromtop2-1][fromleft2]!=2)
+        &&(boards[actual_board][fromtop2-1][fromleft2]!=3)
+        &&(boards[actual_board][fromtop2-1][fromleft2]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1,fromtop2-1,fromleft2))){
         fromtop2--;
         playMove()
     }else{
@@ -182,7 +188,10 @@ function dest_upward_p2(height,length){
 }
 
 function dest_downward_p1(height,length){
-    if((boards[actual_board][fromtop1+1][fromleft1]!=2)&&(!isSuperposition(fromtop1+1,fromleft1,fromtop2,fromleft2))){
+    if((boards[actual_board][fromtop1+1][fromleft1]!=2)
+        &&(boards[actual_board][fromtop1+1][fromleft1]!=3)
+        &&(boards[actual_board][fromtop1+1][fromleft1]!=4)
+        &&(!isSuperposition(fromtop1+1,fromleft1,fromtop2,fromleft2))){
         fromtop1++;
         playMove()
     }else{
@@ -201,7 +210,10 @@ function dest_downward_p1(height,length){
 
 
 function dest_downward_p2(height,length){
-    if((boards[actual_board][fromtop2+1][fromleft2]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2+1,fromleft2))){
+    if((boards[actual_board][fromtop2+1][fromleft2]!=2)
+        &&(boards[actual_board][fromtop2+1][fromleft2]!=3)
+        &&(boards[actual_board][fromtop2+1][fromleft2]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1,fromtop2+1,fromleft2))){
         fromtop2++;
         playMove()
     }else{
@@ -220,7 +232,10 @@ function dest_downward_p2(height,length){
 
 
 function dest_leftward_p1(height,length){
-    if((boards[actual_board][fromtop1][fromleft1-1]!=2)&&(!isSuperposition(fromtop1,fromleft1-1,fromtop2,fromleft2))){
+    if((boards[actual_board][fromtop1][fromleft1-1]!=2)
+        &&(boards[actual_board][fromtop1][fromleft1-1]!=3)
+        &&(boards[actual_board][fromtop1][fromleft1-1]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1-1,fromtop2,fromleft2))){
         fromleft1--;
         playMove()
     }else{
@@ -239,7 +254,10 @@ function dest_leftward_p1(height,length){
 
 
 function dest_leftward_p2(height,length){
-    if((boards[actual_board][fromtop2][fromleft2-1]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2-1))){
+    if((boards[actual_board][fromtop2][fromleft2-1]!=2)
+        &&(boards[actual_board][fromtop2][fromleft2-1]!=3)
+        &&(boards[actual_board][fromtop2][fromleft2-1]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2-1))){
         fromleft2--;
         playMove()
     }else{
@@ -257,7 +275,10 @@ function dest_leftward_p2(height,length){
 }
 
 function dest_rigthward_p1(height,length){
-    if((boards[actual_board][fromtop1][fromleft1+1]!=2)&&(!isSuperposition(fromtop1,fromleft1+1,fromtop2,fromleft2))){
+    if((boards[actual_board][fromtop1][fromleft1+1]!=2)
+        &&(boards[actual_board][fromtop1][fromleft1+1]!=3)
+        &&(boards[actual_board][fromtop1][fromleft1+1]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1+1,fromtop2,fromleft2))){
         fromleft1++;
         playMove()
     }else{
@@ -276,7 +297,10 @@ function dest_rigthward_p1(height,length){
 
 
 function dest_rigthward_p2(height,length){
-    if((boards[actual_board][fromtop2][fromleft2+1]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2+1))){
+    if((boards[actual_board][fromtop2][fromleft2+1]!=2)
+        &&(boards[actual_board][fromtop2][fromleft2+1]!=3)
+        &&(boards[actual_board][fromtop2][fromleft2+1]!=4)
+        &&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2+1))){
         fromleft2++;
         playMove()
     }else{
