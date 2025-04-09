@@ -202,5 +202,5 @@ function isSuperposition(ptop1,pleft1,ptop2,pleft2){
         return true;
     }
     return false;
-    // no collision = juste retourner false
+    // no collision = just return false
 }

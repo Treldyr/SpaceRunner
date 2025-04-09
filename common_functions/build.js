@@ -335,6 +335,7 @@ function construct_board_2p_with_pow_speed(numboard){
     p2_speed = false;
     construct_board_2_players(numboard);
     place_pow("speed", numboard, 5, 3.5)
+    place_levers(numboard,5,3.5)
 }
 
 function construct_board_in_darkness(numboard, case_height, case_width){
