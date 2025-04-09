@@ -30,6 +30,14 @@ function goMultiplayer1v1(){
     window.location.href='menu_1v1.html'
 }
 
+function goMultiplayerAdventureMenu(){
+    window.location.href='menu_adventure.html'
+}
+
+function returnMultiplayerAdventureMenu(){
+    window.location.href='../menu_adventure.html'
+}
+
 function goMelee1v1(){
     window.location.href='melee_mode/selectchar1.html'
 }
