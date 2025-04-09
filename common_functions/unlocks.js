@@ -20,9 +20,13 @@ function UnlockPlanet(planet_number) {
 
 function UnlockPlanet2pMode(planet_number) {
     var storedLevel = localStorage.getItem("teamLevel");
-    if ((storedLevel) || (storedLevel < planet_number)){
+    if (storedLevel !== null) {
+        if( storedLevel < planet_number){
+            localStorage.setItem("teamLevel", planet_number);
+        }
+    } else {
         localStorage.setItem("teamLevel", planet_number);
-    }  
+    }
 }
 
 
