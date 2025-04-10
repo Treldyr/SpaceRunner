@@ -40,6 +40,7 @@
         </div>
         
     </div>
+    <script src="../../../common_functions/basic.js"></script>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
@@ -47,6 +48,11 @@
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
     <script>
+        // redirect if the player is normally unable to reach the planet
+        var lvl = 1;
+        retrieveTeamLevel();
+        checkIfLevelIsEnough(3,lvl,'../carte.html')
+
         var nbPage = 2
         
         setCharacterLeft(1,chara)

@@ -103,6 +103,11 @@
 <script src="../../../common_functions/checks.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
 <script>
+    // redirect if the player is normally unable to reach the planet
+    var lvl = 1;
+    retrieveTeamLevel();
+    checkIfLevelIsEnough(2,lvl,'../carte.html')
+
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var p1_won = false;
