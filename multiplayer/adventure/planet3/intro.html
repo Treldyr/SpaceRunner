@@ -25,10 +25,10 @@
         <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Dagobah</div>
         <div class="game-description">
             <p data-lang-key="text38">Vous devez réussir les 5 niveaux de cette planète pour pouvoir passer à la suivante.</p>
-            <p><a data-lang-key="text321">Le joueur</a> 1 <a data-lang-key="text322">utilise les touches</a> :</p>
-            <p> <img id="keyboardinputs" src="../../../images/keyboard/azerty.png" width="80px" class="img-thumbnail"> </p>
-            <p><a data-lang-key="text321">Le joueur</a> 2 <a data-lang-key="text322">utilise les touches</a> :</p>
-            <p> <img src="../../../images/keyboard/directional_arrows.png" width="80px" class="img-thumbnail"> </p>
+            <p data-lang-key="text385">Cette planète est gorgée de leviers.</p>
+            <p data-lang-key="text386">Chaque levier à deux modes : Allumés et éteints</p>
+            <p><a data-lang-key="text387">Ils sont représentés par :</a> <img src="../../../images/specific/lever_on.png" width="40px" class="img-thumbnail"> & <img src="../../../images/specific/lever_off.png" width="40px" class="img-thumbnail"> </p>
+            <p data-lang-key="text388">En pressant un levier, vous le passez dans son autre état, supprimant ou ajoutant des blocs dans le jeu.</p>
             <p data-lang-key="goodluck">Bonne chance !</p>
             <br>
             <button class="btn btn-outline-light" onclick="beginMaze()" data-lang-key="start">Commencer</button>
@@ -41,7 +41,9 @@
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
+<script src="../../../common_functions/background_music.js"></script>
 <script>
+    initializeMusic('jungle');
     // redirect if the player is normally unable to reach the planet
     var lvl = 1;
     retrieveTeamLevel();

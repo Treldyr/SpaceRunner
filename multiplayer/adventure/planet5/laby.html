@@ -101,6 +101,7 @@
 <script src="../../../common_functions/keyboard.js"></script>
 <script src="../../../common_functions/unlocks.js"></script>
 <script type="module" src="../../../common_functions/database.js"></script>
+<script src="../../../common_functions/background_music.js"></script>
 <script>
     var nbCoups = 0;
     document.onkeydown = checkKey;
@@ -112,6 +113,7 @@
     var inpause = false;
     retrievePlayers()
     moveGhost();
+    initializeMusic('jungle');
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){

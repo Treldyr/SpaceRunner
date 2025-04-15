@@ -667,6 +667,10 @@ const languageData = {
         text542: "Tu vas me divertir encore un peu HAHAHAHAHAHA",
         text543: "Tu es donc bien la personne derrière tous les malheurs de l'univers.",
         text544: "Je n'aurais donc aucune pitié.",
+        text2p1: "Vous avez besoin de récupérer des poissons !",
+        text2p2: "Un poisson est représenté par :",
+        text2p3: "Il faut tous les récupérer pour sortir du labyrinthe.",
+        text2p4: "Ils vous permettent d'aller plus vite automatiquement après en avoir ramassé !"
     },
     en: {
         mainTitle: "Space Runner",
@@ -1335,6 +1339,10 @@ const languageData = {
         text541: "I will make you face your worst nightmares!",
         text542: "You will entertain me a little longer HAHAHAHAHAHA",
         text543: "So you really are the one behind all the misfortunes of the universe.",
-        text544: "I shall show no mercy."
+        text544: "I shall show no mercy.",
+        text2p1: "You need to recolt fish !",
+        text2p2: "A fish is represented by :",
+        text2p3: "You must collect them all to escape the maze.",
+        text2p4: "They make you go faster automatically after taking it !"
     }
 }
