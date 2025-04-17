@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Runner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/planets/planet2.css">
+    <link rel="stylesheet" href="../../../css/planets/planet2p4.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="icon" href="../../../images/p1down.png">
 </head>
@@ -22,10 +22,11 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title text-black"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Katshyk</div>
+        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Vega IX</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p data-lang-key="text229">Une nouvelle planète ! Super !</p>
+                <p data-lang-key="text2p36">Voici l'endroit à cartographier.</p>
+                <p data-lang-key="text2p37">Vous aurez 5 zones à visiter. Soit 5 labyrinthes.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -33,13 +34,25 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p data-lang-key="text230">Attention ! N'oublie pas que cette nouvelle planète est spéciale !</p>
+                <p data-lang-key="text2p52">Votre plainte a été partiellement traitée.</p>
+                <p data-lang-key="text2p53">Pour vous aider, nous avons disposé des Items de vitesse accélérée.</p>
+                <p><a data-lang-key="text387">Ils sont représentés par :</a><img src="../../../images/items/powspeed.png" width="40px" class="img-thumbnail"></p>
+                <p data-lang-key="text2p4">Ils vous permettent d'aller plus vite automatiquement après en avoir ramassé !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p data-lang-key="text2p54">Merci beaucoup !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
         
     </div>
+    <script src="../../../common_functions/basic.js"></script>
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
@@ -49,10 +62,16 @@
     <script src="../../../common_functions/background_music.js"></script>
     <script>
         reInitMusic('jungle');
-        var nbPage = 2
+        // redirect if the player is normally unable to reach the planet
+        var lvl = 1;
+        retrieveTeamLevel();
+        checkIfLevelIsEnough(4,lvl,'../carte.html')
+
+        var nbPage = 3
         
-        setCharacterLeft(1,chara)
+        setCharacterRight(1,"p21")
         setCharacterRight(2,"p21")
+        setCharacterLeft(3,chara)
 
         function goNextAnimation(){
             goIntro()

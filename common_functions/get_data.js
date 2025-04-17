@@ -8,17 +8,17 @@ function retrievePlayer() {
     }
 }
 
-function retrievePlayers() {
-    var storedData = localStorage.getItem('charChosen');
-    if (storedData !== null) {
-        var charChosen = JSON.parse(storedData);
-        chara = charChosen.char;
-    }
+function retrievePlayer2() {
     storedData = localStorage.getItem('charChosen2');
     if (storedData !== null) {
         var charChosen = JSON.parse(storedData);
         charap2 = charChosen.char;
     }
+}
+
+function retrievePlayers() {
+    retrievePlayer()
+    retrievePlayer2()
 }
 
 function retrieveBattlePlayers() {

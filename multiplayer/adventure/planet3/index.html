@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Runner</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../css/planets/planet2p3.css">
+    <link rel="stylesheet" href="../../../css/planets/spaceship.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="icon" href="../../../images/p1down.png">
 </head>
@@ -22,10 +22,10 @@
     <button class="btn btn-outline-dark" onclick="returnToMapFromPlanet()">&larr;</button>
     <div class="background-image"></div>
     <div class="content">
-        <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Dagobah</div>
+        <div class="custom-title"><a data-lang-key="mission">Mission</a> 3</div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p data-lang-key="text229">Une nouvelle planète ! Super !</p>
+                <p data-lang-key="text2p29">Regarde toutes ces prises ! On va nourrir toute la station.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -33,11 +33,32 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p data-lang-key="text230">Attention ! N'oublie pas que cette nouvelle planète est spéciale !</p>
+                <p data-lang-key="text2p30">Mission réussie. Préparez-vous pour une terre plus... marécageuse.</p>
+                <p><a data-lang-key="text2p22">Elle se déroulera sur la planète</a> <b>Dagobah</b>.</p>
+                <p data-lang-key="text2p31">Objectif : Cartographie.</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
+
+        <div class="page" id="page3">
+            <div class="game-description">
+                <p><b>Dagobah</b> ? <a data-lang-key="text2p32">J'ai déjà entendu parler de cette planète...</a></p>
+                <p data-lang-key="text2p33">Elle possédait une civilisation qui a aujourd'hui disparu.</p>
+                <p data-lang-key="text2p34">Certaines zones possèdent encore les méchanismes de ce peuple éteint.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page4">
+            <div class="game-description">
+                <p data-lang-key="text2p35">Parfait ! Allons-y !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+    </div>
         
     </div>
     <script src="../../../common_functions/basic.js"></script>
@@ -49,20 +70,27 @@
     <script src="../../../common_functions/languages.js"></script>
     <script src="../../../common_functions/background_music.js"></script>
     <script>
-        reInitMusic('jungle');
+        launchZorathTheme(); // launch the station music
+        var nbPage = 4
+
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
         retrieveTeamLevel();
         checkIfLevelIsEnough(3,lvl,'../carte.html')
 
-        var nbPage = 2
+        // load the second character
+        var charap2 = "p0";
+        retrievePlayer2()
         
-        setCharacterLeft(1,chara)
-        setCharacterRight(2,"p18")
+        setCharacterLeft(1,charap2)
+        setCharacterRight(2,"p21")
+        setCharacterLeft(3,chara)
+        setCharacterLeft(4,charap2)
 
         function goNextAnimation(){
-            goIntro()
+            goLanding()
         }
+
     </script>
 </body>
 </html>
