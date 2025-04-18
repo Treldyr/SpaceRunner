@@ -236,6 +236,9 @@ function place_pow(name_pow, numboard, pow_height, pow_width){
         case "speed":
             pow_board = pow_speed
         break;
+        case "switch":
+            pow_board = pow_switch
+        break;
         default:
             console.log('error pow name')
     }
@@ -336,6 +339,11 @@ function construct_board_2p_with_pow_speed(numboard){
     construct_board_2_players(numboard);
     place_pow("speed", numboard, 5, 3.5)
     place_levers(numboard,5,3.5)
+}
+
+function construct_board_2p_with_many_pows(numboard){
+    construct_board_2p_with_pow_speed(numboard)
+    place_pow("switch", numboard, 5, 3.5)
 }
 
 function construct_board_in_darkness(numboard, case_height, case_width){
