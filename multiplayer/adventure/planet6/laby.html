@@ -69,8 +69,7 @@
                     </p>
                     <p data-lang-key="text233">Toutes mes félicitations !</p>
                     <br>
-                    <button class="btn btn-outline-light" onclick="goPlanet(5)" data-lang-key="restart">Recommencer</button>
-                    <button class="btn btn-outline-light" onclick="goPlanet(6)" data-lang-key="continue">Continuer</button>
+                    <button class="btn btn-outline-light" onclick="goPlanet(6)" data-lang-key="restart">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                     
                 </div>
@@ -169,11 +168,11 @@
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
             document.getElementById('nbTime').innerHTML = totalSeconds;
-            setHighScorePlanet('vega');
-            if(nbCoups >= 0){
+            setHighScorePlanet('muspelheim');
+            if(nbCoups >= 100){
                 const storedName = localStorage.getItem("teamName");
                 if (storedName) {
-                    sendBestTime('p2Vega',totalSeconds,storedName)
+                    sendBestTime('p2Muspelheim',totalSeconds,storedName)
                 }
             }
         }
