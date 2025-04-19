@@ -25,6 +25,9 @@
         <div class="custom-title"><a data-lang-key="mission">Mission</a> 6</div>
         <div class="page" id="page1">
             <div class="game-description">
+                <p data-lang-key="text229">Analyse en cours...</p>
+                <p data-lang-key="text2p40">Analyse terminée.</p>
+                <p data-lang-key="text2p41">Vous avez parfaitement réussis votre mission.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -32,6 +35,8 @@
 
         <div class="page" id="page2">
             <div class="game-description">
+                <p>Génial ! Ces fantômes étaient très stressants !</p>
+                <p>J'espère pour les habitants que <b>Montressor</b> qu'ils seront rapidement maitrisés.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -39,6 +44,7 @@
 
         <div class="page" id="page3">
             <div class="game-description">
+                <p data-lang-key="text230">Tu as raison, on a eu chaud !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -46,6 +52,10 @@
 
         <div class="page" id="page4">
             <div class="game-description">
+                <p>Votre plainte de la dernière fois a été complètement traitée.</p>
+                <p>À partir de maintenant, vos missions assignées auront une difficulté supérieure.</p>
+                <p>La difficulté de vos missions étaient : Difficile</p>
+                <p>Elles ont été améliorées en : Hardcore</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -53,6 +63,9 @@
 
         <div class="page" id="page5">
             <div class="game-description">
+                <p>Quoi ? Comment ça ?</p>
+                <p>On a pas demandé à augmenter la difficulté dernièrement.</p>
+                <p>Les missions "Difficiles" sont déjà dures...</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -60,6 +73,34 @@
 
         <div class="page" id="page6">
             <div class="game-description">
+                <p>Votre prochaine mission sera sur la planète <b>Muspelheim</b>.</p>
+                <p>Vous devez sauver un félin perdu sur cette planète hautement volcanique.</p>
+                <p>Ne touchez pas la lave, elle est mortelle !</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page7">
+            <div class="game-description">
+                <p>*gloups* euh...Vous êtes sûrs ?</p>
+                <p>Cette mission semble vraiment dangereuse...</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page8">
+            <div class="game-description">
+                <p>Vous avez accès à des protections spécialement conçues pour cette mission.</p>
+                <br>
+                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+            </div>
+        </div>
+
+        <div class="page" id="page9">
+            <div class="game-description">
+                <p>D'accord... Allons-y alors...</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goLanding()" data-lang-key="continue">Continuer</button>
             </div>
@@ -77,12 +118,12 @@
     <script src="../../../common_functions/background_music.js"></script>
     <script>
         launchZorathTheme(); // launch the station music
-        var nbPage = 6
+        var nbPage = 9
 
         // redirect if the player is normally unable to reach the planet
         var lvl = 1;
         retrieveTeamLevel();
-        checkIfLevelIsEnough(4,lvl,'../carte.html')
+        checkIfLevelIsEnough(6,lvl,'../carte.html')
 
         // load the second character
         var charap2 = "p0";
@@ -90,10 +131,13 @@
         
         setCharacterRight(1,"p21")
         setCharacterLeft(2,chara)
-        setCharacterRight(3,"p21")
-        setCharacterLeft(4,chara)
-        setCharacterLeft(5,charap2)
+        setCharacterLeft(3,charap2)
+        setCharacterRight(4,"p21")
+        setCharacterLeft(5,chara)
         setCharacterRight(6,"p21")
+        setCharacterLeft(7,charap2)
+        setCharacterRight(8,"p21")
+        setCharacterLeft(9,charap2)
 
         function goNextAnimation(){
             goLanding()
