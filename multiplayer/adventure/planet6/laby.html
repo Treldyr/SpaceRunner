@@ -96,8 +96,7 @@
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/powers_adventure_mode/speed.js"></script>
 <script src="../../../common_functions/powers_adventure_mode/switch.js"></script>
-<script src="../javascript/movements.js"></script>
-<script src="../javascript/lever.js"></script>
+<script src="../javascript/lava.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/lever.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -141,7 +140,11 @@
             showPause()
         }
         }else {
-            set_new_positions_with_speedpow(e,5,3.5) 
+            set_new_positions(e,5,3.5) 
+            if((boards[actual_board][fromtop1][fromleft1]==5||(boards[actual_board][fromtop2][fromleft2]==5))){
+                playLava();
+                reset_level(5,3.5);
+            }
             if((p1_won)&&(p2_won))
             {
                 finish_labyrinth();
