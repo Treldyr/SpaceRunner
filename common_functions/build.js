@@ -314,36 +314,36 @@ function construct_board_with_papy(numboard, case_height, case_width){
     place_levers(numboard,case_height,case_width)
 }
 
-function construct_board_2_players(numboard){
+function construct_board_2_players(numboard, case_height, case_width){
     actual_board = numboard-1;
     for(let i= 0; i < boards[numboard-1].length; i++)
     {
-        construct_line(boards[numboard-1][i],i,numboard,5,3.5,false);
+        construct_line(boards[numboard-1][i],i,numboard,case_height,case_width,false);
     }
-    create_2_character(numboard,5,3.5);
+    create_2_character(numboard,case_height,case_width);
 }
 
 function construct_board_2p_with_gaz(numboard,imageItem){
-    construct_board_2_players(numboard)
+    construct_board_2_players(numboard,5,3.5);
     place_item(numboard,imageItem,5,3.5);
 }
 
 function construct_board_2p_with_levers(numboard){
-    construct_board_2_players(numboard);
+    construct_board_2_players(numboard,5,3.5)
     place_levers(numboard,5,3.5)
 }
 
-function construct_board_2p_with_pow_speed(numboard){
+function construct_board_2p_with_pow_speed(numboard, case_height, case_width){
     p1_speed = false;
     p2_speed = false;
-    construct_board_2_players(numboard);
-    place_pow("speed", numboard, 5, 3.5)
-    place_levers(numboard,5,3.5)
+    construct_board_2_players(numboard,case_height, case_width);
+    place_pow("speed", numboard, case_height, case_width)
+    place_levers(numboard, case_height, case_width)
 }
 
-function construct_board_2p_with_many_pows(numboard){
-    construct_board_2p_with_pow_speed(numboard)
-    place_pow("switch", numboard, 5, 3.5)
+function construct_board_2p_with_many_pows(numboard, case_height, case_width){
+    construct_board_2p_with_pow_speed(numboard, case_height, case_width)
+    place_pow("switch", numboard, case_height, case_width)
 }
 
 function construct_board_in_darkness(numboard, case_height, case_width){

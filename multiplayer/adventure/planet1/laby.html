@@ -120,7 +120,7 @@
     }
     document.getElementById('page1').style.display = "block";
     
-    construct_board_2_players(1)
+    construct_board_2_players(1,5,3.5)
 
 
     function checkKey(e) {
@@ -147,7 +147,7 @@
             goNext(actual_board+1);
             p1_won = false;
             p2_won = false;
-            construct_board_2_players(actual_board+2)
+            construct_board_2_players(actual_board+2,5,3.5)
         } else {
             stopTimer();
             UnlockPlanet2pMode(2);
