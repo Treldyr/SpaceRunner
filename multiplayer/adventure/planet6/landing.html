@@ -25,9 +25,9 @@
         <div class="custom-title"><a data-lang-key="welcomeInThePlanet">Bienvenu sur la planète</a> Muspelheim </div>
         <div class="page" id="page1">
             <div class="game-description">
-                <p>Rappelez-vous : Vous n'avez pas accès aux mêmes cases.</p>
-                <p><a data-lang-key="text239">Le chemin</a> <img src="img4.png" width="40px" class="img-thumbnail"> <a>n'est accessible que par :</a><img width="40px" class="img-thumbnail"></p>
-                <p><a data-lang-key="text239">Le chemin</a> <img src="img3.png" width="40px" class="img-thumbnail"> <a>n'est accessible que par :</a><img width="40px" class="img-thumbnail"></p>
+                <p data-lang-key="text2p82">Rappelez-vous : Vous n'avez pas accès aux mêmes cases grâce à vos protections.</p>
+                <p><a data-lang-key="text239">Le chemin</a> <img src="img3.png" width="40px" class="img-thumbnail"> <a data-lang-key="text2p83">n'est accessible que par</a> <img width="40px" id="player1" class="img-thumbnail"></p>
+                <p><a data-lang-key="text239">Le chemin</a> <img src="img4.png" width="40px" class="img-thumbnail"> <a data-lang-key="text2p83">n'est accessible que par</a> <img width="40px" id="player2" class="img-thumbnail"></p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -35,8 +35,8 @@
 
         <div class="page" id="page2">
             <div class="game-description">
-                <p>Vous ne pouvez pas nous fournir des équipements qui nous protège de la lave rouge, ET de la lave bleue ?</p>
-                <p>ça serait plus pratique...</p>
+                <p data-lang-key="text2p84">Vous ne pouvez pas nous fournir des équipements qui nous protège des flammes rouges, ET des flammes bleues ?</p>
+                <p data-lang-key="text2p85">Ça serait plus pratique...</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -44,8 +44,8 @@
 
         <div class="page" id="page3">
             <div class="game-description">
-                <p>Ce n'est pas possible pour la raison suivante :</p>
-                <p>Raison budgétaire.</p>
+                <p data-lang-key="text2p86">Ce n'est pas possible pour la raison suivante :</p>
+                <p data-lang-key="text2p87">Raison budgétaire.</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
             </div>
@@ -53,9 +53,9 @@
 
         <div class="page" id="page4">
             <div class="game-description">
-                <p>Allez, courage ! Il y a un pauvre félin sur cette planète qui n'a rien de tout ça !</p>
-                <p>On doit le sauver !</p>
-                <p>Quand il faut y aller, il faut y aller !</p>
+                <p data-lang-key="text2p88">Allez, courage ! Il y a un pauvre félin sur cette planète qui n'a rien de tout ça !</p>
+                <p data-lang-key="text2p89">On doit le sauver !</p>
+                <p data-lang-key="text2p90">Quand il faut y aller, il faut y aller !</p>
                 <br>
                 <button class="btn btn-outline-light" onclick="goIntro()" data-lang-key="continue">Continuer</button>
             </div>
@@ -80,6 +80,9 @@
         // load the second character
         var charap2 = "p0";
         retrievePlayer2()
+
+        document.getElementById("player1").src = "../../../images/"+chara+"down.png";
+        document.getElementById("player2").src = "../../../images/"+charap2+"down.png";
 
         var nbPage = 4
         
