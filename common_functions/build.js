@@ -330,6 +330,7 @@ function construct_board_2p_with_gaz(numboard,imageItem){
 
 function construct_board_2p_with_levers(numboard){
     construct_board_2_players(numboard,5,3.5)
+    AllAdditionnalBlocks = []
     place_levers(numboard,5,3.5)
 }
 
@@ -338,6 +339,7 @@ function construct_board_2p_with_pow_speed(numboard, case_height, case_width){
     p2_speed = false;
     construct_board_2_players(numboard,case_height, case_width);
     place_pow("speed", numboard, case_height, case_width)
+    AllAdditionnalBlocks = []
     place_levers(numboard, case_height, case_width)
 }
 
