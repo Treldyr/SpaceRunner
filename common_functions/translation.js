@@ -758,6 +758,9 @@ const languageData = {
         text2p89: "On doit le sauver !",
         text2p90: "Quand il faut y aller, il faut y aller !",
         text2p91: "La lave est représentée par :",
+        text2p92: "permet d'échanger vos positions",
+        text2p93: "Je peux cependant vous fournir des nouveaux objets : Des Items de Commutation",
+        text2p94: "Ils permettent de vous téléporter à la place de l'autre.",
         medium: "Moyen",
         difficult: "Difficile",
         hardcore: "Hardcore",
@@ -1525,6 +1528,9 @@ const languageData = {
         medium: "Medium",
         difficult: "Difficult",
         hardcore: "Hardcore",
-        impossible: "Impossible"
+        impossible: "Impossible",
+        text2p92: "allows to switch positions",
+        text2p93: "I can therefore provide you new items : Switch Items",
+        text2p94: "They allow you to teleport at the place of the other one.",
     }
 }
