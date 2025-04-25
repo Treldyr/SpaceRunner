@@ -95,6 +95,10 @@ function goKeyboard(){
     window.location.href='settings/keyboard.html';
 }
 
+function goCheatCode(){
+    window.location.href='settings/cheatcode.html';
+}
+
 function goVolume(){
     window.location.href='settings/volume.html';
 }

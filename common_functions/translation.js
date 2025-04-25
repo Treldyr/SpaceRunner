@@ -795,6 +795,12 @@ const languageData = {
         text2p122: "Ok ! Utilisons ça :",
         text2p123: "Ça permet de le pirater et de prendre son contrôle pendant quelques instants.",
         text2p124: "Ça peut nous être utile !",
+        cheatcode: "Code de Triche",
+        entercode: "Entrez votre code secret",
+        errorcode: "Code invalide",
+        unlockAll1PLevels: "Vous venez de débloquer tous les niveaux de l'aventure 1 joueur",
+        unlockAll2PLevels: "Vous venez de débloquer tous les niveaux de l'aventure 2 joueurs",
+        unlockAllGhosts: "Vous venez de débloquer tous les fantômes"
     },
     en: {
         mainTitle: "Space Runner",
@@ -1591,6 +1597,12 @@ const languageData = {
         text2p121: "He’s lost his screws!",
         text2p122: "Okay! Let’s use this:",
         text2p123: "It lets us hack and take control of him for a few moments.",
-        text2p124: "That could be really useful!"
+        text2p124: "That could be really useful!",
+        cheatcode: "Cheat Code",
+        entercode: "Enter your secret code",
+        errorcode: "Invalid code",
+        unlockAll1PLevels: "You unlocked all the 1 player adventure levels",
+        unlockAll2PLevels: "You unlocked all the 2 players adventure levels",
+        unlockAllGhosts: "You unlocked all the ghosts"
     }
 }
