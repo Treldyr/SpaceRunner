@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../css/planets/spaceship.css">
     <link rel="stylesheet" href="../../../css/planets/default.css">
     <link rel="stylesheet" href="../../../css/planets/board_medium.css">
+    <link rel="stylesheet" href="../../../css/planets/battle_mode.css">
     <link rel="icon" href="../../../images/p1down.png">
     <title>Space Runner</title>
   </head>
@@ -77,6 +78,20 @@
         <div class="timer">
             <span id="minutes">00</span>:<span id="seconds">00</span>
         </div>
+        <div class="power-bottom-bar">
+            <div class="power-item" id="heart1">
+                <img src="../../../images/heart.png" alt="Coeur 1">
+              </div>
+            <div class="power-item" id="heart2">
+              <img src="../../../images/heart.png" alt="Coeur 2">
+            </div>
+            <div class="power-item" id="heart3">
+                <img src="../../../images/heart.png" alt="Coeur 3">
+            </div>
+            <div class="power-item" id="heart4">
+                <img src="../../../images/heart.png" alt="Coeur 4">
+            </div>
+        </div>
     </div>
       
 
@@ -93,7 +108,8 @@
 <script src="../../../common_functions/get_data.js"></script>
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
-<script src="../javascript/movements.js"></script>
+<script src="../../../common_functions/powers_adventure_mode/brain_switch.js"></script>
+<script src="../javascript/felix.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
 <script src="../../../common_functions/keyboard.js"></script>
@@ -101,15 +117,21 @@
 <script type="module" src="../../../common_functions/database.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
 <script>
+    // if the game is endend
+    game_ended = false
+    
     var nbCoups = 0;
     document.onkeydown = checkKey;
-    var p1_won = false;
-    var p2_won = false;
+    var playerOneImmo = false;
+    var playerTwoImmo = false;
     var actual_board = 0;
     var chara = "p0";
     var charap2 = "p0";
     var inpause = false;
     retrievePlayers()
+
+    // life of the felix
+    var felix_life = 4
 
     // redirect if the player is normally unable to reach the planet
     var lvl = retrieveTeamLevel();
@@ -122,6 +144,7 @@
     document.getElementById('page1').style.display = "block";
     
     construct_board_2_players(1,5,3.5)
+    generatePowItem()
 
 
     function checkKey(e) {
@@ -134,39 +157,31 @@
         }
         }else {
             set_new_positions(e,5,3.5)
-            
-            if((p1_won)&&(p2_won))
-            {
-                finish_labyrinth();
-            }
         }
     }
 
     function finish_labyrinth(){
-        if((actual_board)!=4){
-            playEndLaby()
-            goNext(actual_board+1);
-            p1_won = false;
-            p2_won = false;
-            construct_board_2_players(actual_board+2,5,3.5)
-        } else {
-            stopTimer();
-            UnlockPlanet2pMode(2);
-            playEndLevel()
-            let number = actual_board+1;
-            let number2 = actual_board+2
-            document.getElementById('page'+number).style.display = "none";
-            document.getElementById('page'+number2).style.display = "block";
-            document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
-            setHighScorePlanet('zorath');
-            if(nbCoups >= 100){
-                const storedName = localStorage.getItem("teamName");
-                if (storedName) {
-                    sendBestTime('p2Zorath',totalSeconds,storedName)
-                }
+        stopTimer();
+        game_ended = true
+        UnlockPlanet2pMode(8);
+        playEndLevel()
+        let number = actual_board+1;
+        let number2 = actual_board+2
+        document.getElementById('page'+number).style.display = "none";
+        document.getElementById('page'+number2).style.display = "block";
+        document.getElementById('nbHits').innerHTML = nbCoups;
+        document.getElementById('nbTime').innerHTML = totalSeconds;
+        setHighScorePlanet('zorath');
+        if(nbCoups >= 10){
+            const storedName = localStorage.getItem("teamName");
+            if (storedName) {
+                sendBestTime('p2Zorath',totalSeconds,storedName)
             }
         }
+    }
+
+    function hideNextHeart(){
+        document.getElementById('heart'+felix_life).style.display = "none";
     }
 
 </script>

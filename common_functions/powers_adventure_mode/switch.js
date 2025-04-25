@@ -25,7 +25,5 @@ function switch_players(height,length){
     fromtop1 = temptop
     fromleft1 = templeft
     document.getElementById('character'+actual_board).setAttribute('style',"position: fixed;top : "+(height*fromtop1+5)+"vh;left : "+(length*fromleft1+5)+"vw;");
-    document.getElementById('characterp2'+actual_board).setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;");
-    
-    
+    document.getElementById('characterp2'+actual_board).setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;"); 
 }
