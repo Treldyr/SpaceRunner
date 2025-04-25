@@ -26,7 +26,7 @@ function getPowItem(isPlayerOne){
 function generatePowItem(){
     isNextItemBrain = !isNextItemBrain
     powerItemTop = getRandomIntMax(14)+1
-    powerItemLeft = getRandomIntMax(24)
+    powerItemLeft = getRandomIntMax(22)
     if(boards[actual_board][powerItemTop][powerItemLeft]==2){
         powerItemLeft++;
     }

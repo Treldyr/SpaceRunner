@@ -39,26 +39,6 @@
             </div>
 
             <div class="page" id="page2">
-                <div id="laby2">
-                </div>
-            </div>
-            
-            <div class="page" id="page3">
-                <div id="laby3">
-                </div>
-            </div>
-
-            <div class="page" id="page4">
-                <div id="laby4">
-                </div>
-            </div>
-
-            <div class="page" id="page5">
-                <div id="laby5">
-                </div>
-            </div>
-
-            <div class="page" id="page6" >
                 <div class="game-description">
                     <p>
                         <a data-lang-key="youUsed">Vous avez utilisé</a>
@@ -71,7 +51,6 @@
                     <br>
                     <button class="btn btn-outline-light" onclick="goPlanet(7)" data-lang-key="restart">Recommencer</button>
                     <button class="btn btn-outline-light" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
-                    
                 </div>
             </div>
         </div>
@@ -109,6 +88,7 @@
 <script src="../../../common_functions/navigation.js"></script>
 <script src="../../../common_functions/sounds.js"></script>
 <script src="../../../common_functions/powers_adventure_mode/brain_switch.js"></script>
+<script src="../../../common_functions/powers_battle_mode/stop.js"></script>
 <script src="../javascript/felix.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -119,7 +99,10 @@
 <script>
     // if the game is endend
     game_ended = false
-    
+
+    // if the boss is freeze
+    isStop = false
+
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var playerOneImmo = false;
@@ -144,7 +127,9 @@
     document.getElementById('page1').style.display = "block";
     
     construct_board_2_players(1,5,3.5)
+    place_item(1,"bomb",5,3.5);
     generatePowItem()
+    start_felix()
 
 
     function checkKey(e) {
@@ -161,6 +146,7 @@
     }
 
     function finish_labyrinth(){
+        stopBoss()
         stopTimer();
         game_ended = true
         UnlockPlanet2pMode(8);
@@ -180,8 +166,12 @@
         }
     }
 
-    function hideNextHeart(){
+    function loseFelixHeart(){
         document.getElementById('heart'+felix_life).style.display = "none";
+        felix_life--;
+        if(felix_life==0){
+            finish_labyrinth()
+        }
     }
 
 </script>

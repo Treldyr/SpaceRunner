@@ -120,45 +120,62 @@ function set_new_positions(e,height,length){
         if ( is_input_up_p2_multiplayer(e)) { // going up p1 - Z key
             if(!playerOneImmo){
                 dest_upward_p1(height,length);
+            } else {
+                moveBossDown()
             }
         }
         else if (is_input_down_p2_multiplayer(e))  { // going down p1 - S key
             if(!playerOneImmo){
                 dest_downward_p1(height,length);
+            } else {
+                moveBossUp()
             }
         }
         else if (is_input_left_p2_multiplayer(e))  { // going left p1 - Q key
             if(!playerOneImmo){
                 dest_leftward_p1(height,length);
+            } else {
+                moveBossRight()
             }
         }
         else if (is_input_right_p2_multiplayer(e))  { // going rigth p1 - D key
             if(!playerOneImmo){
                 dest_rigthward_p1(height,length);
+            } else {
+                moveBossLeft()
             }
         }
         else if ((e.keyCode == '38')) { // going up for p2
             if(!playerTwoImmo){
                 dest_upward_p2(height,length);
+            } else {
+                moveBossDown()
             }
         } 
         else if ((e.keyCode == '40')) { // going down for p2
             if(!playerTwoImmo){
                 dest_downward_p2(height,length);
+            } else {
+                moveBossUp()
             }
         } 
         else if ((e.keyCode == '37')) { // going left for p2
             if(!playerTwoImmo){
                 dest_leftward_p2(height,length);
+            } else {
+                moveBossRight()
             }
         } 
         else if ((e.keyCode == '39')) { // going right for p2
             if(!playerTwoImmo){
                 dest_rigthward_p2(height,length);
+            } else {
+                moveBossLeft()
             }
         }
         nbCoups++;
         check_get_powItem();
+        isFelixTouch()
     }
 }
 
@@ -167,3 +184,149 @@ function set_new_positions(e,height,length){
 //                  FELIX MOVEMENTS                  //
 //                                                   //
 // --------------------------------------------------//
+
+var bossId;
+var felixTop = coords_begin_felix[0]
+var felixLeft = coords_begin_felix[1]
+
+function start_felix(){
+    create_element(actual_board+1, 5, 3.5, "p21left.png", "boss" + actual_board, felixTop, felixLeft)
+    moveFelix()
+}
+
+
+function moveBossDown(){
+    if((felixTop<=14)&&(!isStop)){
+        felixTop++;
+        let felix = document.getElementById('boss'+actual_board);
+        felix.setAttribute('src',"../../../images/p21down.png");
+        felix.setAttribute('style', "position: fixed;top : " + (5*felixTop+5) + "vh;left : " + (3.5*felixLeft+5) + "vw;");
+    }
+    checkIsBomb()
+    isFelixTouch()
+}
+
+function moveBossUp(){
+    if((felixTop>0)&&(!isStop)){
+        felixTop--;
+        let felix = document.getElementById('boss'+actual_board);
+        felix.setAttribute('src',"../../../images/p21up.png");
+        felix.setAttribute('style', "position: fixed;top : " + (5*felixTop+5) + "vh;left : " + (3.5*felixLeft+5) + "vw;");
+    }
+    checkIsBomb()
+    isFelixTouch()
+}
+
+function moveBossLeft(){
+    if((felixLeft>0)&&(!isStop)){
+        felixLeft--;
+        let felix = document.getElementById('boss'+actual_board);
+        felix.setAttribute('src',"../../../images/p21left.png");
+        felix.setAttribute('style', "position: fixed;top : " + (5*felixTop+5) + "vh;left : " + (3.5*felixLeft+5) + "vw;");
+    }
+    checkIsBomb()
+    isFelixTouch()
+}
+
+function moveBossRight(){
+    if((felixLeft<=24)&&(!isStop)){
+        felixLeft++;
+        let felix = document.getElementById('boss'+actual_board);
+        felix.setAttribute('src',"../../../images/p21right.png");
+        felix.setAttribute('style', "position: fixed;top : " + (5*felixTop+5) + "vh;left : " + (3.5*felixLeft+5) + "vw;");
+    }
+    checkIsBomb()
+    isFelixTouch()
+}
+
+function checkIsBomb(){
+    for(let j= 0; j < item[actual_board].length; j++)
+    {
+        if(item[actual_board][j][2]){
+            if((item[actual_board][j][0]==felixTop)&&(item[actual_board][j][1]==felixLeft)){
+                document.getElementById('item'+j).remove();
+                item[actual_board][j][2] = false;
+                loseFelixHeart()
+                freezeCharacter("boss0")
+            }
+        }
+    }
+}
+
+
+function isFelixTouch(){
+    if(((felixLeft==fromleft1)&&(felixTop==fromtop1)) || ((felixLeft==fromleft2)&&(felixTop==fromtop2))){
+        // restart the page, so restart the level
+        beginMaze()
+    }
+}
+
+function moveFelixCloser() {
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+    }
+
+    const distTo1 = distance(felixTop, felixLeft, fromtop1, fromleft1);
+    const distTo2 = distance(felixTop, felixLeft, fromtop2, fromleft2);
+    
+    const targetTop = distTo1 <= distTo2 ? fromtop1 : fromtop2;
+    const targetLeft = distTo1 <= distTo2 ? fromleft1 : fromleft2;
+
+    if (felixTop !== targetTop) {
+        if (targetTop > felixTop) {
+            moveBossDown();
+        } else {
+            moveBossUp();
+        }
+    } else if (felixLeft !== targetLeft) {
+        if (targetLeft > felixLeft) {
+            moveBossRight();
+        } else {
+            moveBossLeft();
+        }
+    }
+}
+
+
+
+function moveFelix() {
+    bossId = setInterval(() => {
+        if((!isBrain)&&(!game_ended)&&(!inpause)){
+            moveFelixCloser()
+        }
+    }, 200);
+}
+
+
+function stopBoss() {
+    clearInterval(bossId);
+}
+
+function moveBossHorizontally(number_boss){
+    let ghost = document.getElementById('boss'+actual_board);
+    if(bossLeft > fromleft){
+        bossLeft--; 
+        ghost.setAttribute('src',"../../../images/p"+number_boss+"left.png");
+    }else{
+        bossLeft++;
+        ghost.setAttribute('src',"../../../images/p"+number_boss+"right.png");
+    }
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
+}
+
+
+function moveBossVertically(number_boss){
+    let ghost = document.getElementById('boss'+actual_board);
+    if(bossTop > fromtop){
+        bossTop--;
+        ghost.setAttribute('src',"../../../images/p"+number_boss+"up.png");
+    }else{
+        bossTop++;
+        ghost.setAttribute('src',"../../../images/p"+number_boss+"down.png");
+    }
+    ghost.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
+}
+
+
+
+
