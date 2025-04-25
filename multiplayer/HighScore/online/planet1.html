@@ -132,8 +132,7 @@
 <script src="../../../common_functions/online_highscore.js"></script>
 <script>
     // redirect if the player is normally unable to reach the planet
-    var lvl = 1;
-    retrieveTeamLevel();
+    var lvl = retrieveTeamLevel();
     checkIfLevelIsEnough(1,lvl,'planet1.html')
     hideElementsByLevel(lvl)
 </script>

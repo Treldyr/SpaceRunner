@@ -55,6 +55,15 @@ function hideLockedCharacters(){
     if(lvl>18){
         unlockImagePlayer("p20")
     }
+    let lvl2p = retrieveTeamLevel()
+    if(lvl2p<7){
+        document.getElementById("listChar6").style.display = "none";
+    } else {
+        unlockImagePlayer("p22")
+    }
+    if(lvl2p>7){
+        unlockImagePlayer("p21")
+    }
 }
 
 function hideLockedGhosts(){

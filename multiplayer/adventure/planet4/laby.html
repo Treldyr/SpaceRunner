@@ -109,8 +109,7 @@
 <script>
     initializeMusic('jungle');
     // redirect if the player is normally unable to reach the planet
-    var lvl = 1;
-    retrieveTeamLevel();
+    var lvl = retrieveTeamLevel();
     checkIfLevelIsEnough(4,lvl,'../carte.html')
     
     var nbCoups = 0;

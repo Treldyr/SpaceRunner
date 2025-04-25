@@ -45,8 +45,9 @@ function retrieveLevel() {
 function retrieveTeamLevel() {
     var storedData = localStorage.getItem('teamLevel');
     if (storedData !== null) {
-        lvl = storedData
+        return storedData
     }
+    return 1
 }
 
 function retrieveKeyboard() {

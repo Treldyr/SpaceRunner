@@ -193,8 +193,7 @@
         var nbPage = 16
 
         // redirect if the player is normally unable to reach the planet
-        var lvl = 1;
-        retrieveTeamLevel();
+        var lvl = retrieveTeamLevel();
         checkIfLevelIsEnough(7,lvl,'../carte.html')
 
         // load the second character
@@ -202,7 +201,7 @@
         retrievePlayer2()
         
         setCharacterLeft(1,chara)
-        setCharacterRight(2,"p20")
+        setCharacterRight(2,"p22")
         setCharacterLeft(3,charap2)
         setCharacterRight(4,"p21")
         setCharacterLeft(5,charap2)

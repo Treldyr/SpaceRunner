@@ -72,6 +72,10 @@
             UnlockGhost(4)
             alert(languageData[document.documentElement.lang]["unlockAllGhosts"]);
         break;
+        case "5a5b64d":
+            localStorage.clear();
+            alert(languageData[document.documentElement.lang]["adventureInit"]);
+        break;
         default:
             alert(languageData[document.documentElement.lang]["errorcode"] +" : "+input);
         }
