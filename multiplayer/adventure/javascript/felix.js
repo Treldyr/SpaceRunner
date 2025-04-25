@@ -191,7 +191,7 @@ var felixLeft = coords_begin_felix[1]
 
 function start_felix(){
     create_element(actual_board+1, 5, 3.5, "p21left.png", "boss" + actual_board, felixTop, felixLeft)
-    moveFelix()
+    moveFelix(300)
 }
 
 
@@ -246,8 +246,10 @@ function checkIsBomb(){
             if((item[actual_board][j][0]==felixTop)&&(item[actual_board][j][1]==felixLeft)){
                 document.getElementById('item'+j).remove();
                 item[actual_board][j][2] = false;
-                loseFelixHeart()
-                freezeCharacter("boss0")
+                loseFelixHeart();
+                stopBoss()
+                moveFelix(60+felix_life*60)
+                freezeCharacter("boss0");
             }
         }
     }
@@ -289,12 +291,12 @@ function moveFelixCloser() {
 
 
 
-function moveFelix() {
+function moveFelix(speedFelix) {
     bossId = setInterval(() => {
         if((!isBrain)&&(!game_ended)&&(!inpause)){
             moveFelixCloser()
         }
-    }, 200);
+    }, speedFelix);
 }
 
 
