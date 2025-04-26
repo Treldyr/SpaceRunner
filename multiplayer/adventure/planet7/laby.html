@@ -101,6 +101,12 @@
 <script type="module" src="../../../common_functions/database.js"></script>
 <script src="../../../common_functions/background_music.js"></script>
 <script>
+    // redirect if the player is normally unable to reach the planet
+    var lvl = retrieveTeamLevel();
+    checkIfLevelIsEnough(7,lvl,'../carte.html')
+
+    reInitMusic('stranger'); // Initialise the music
+
     // if the game is endend
     game_ended = false
 
@@ -119,10 +125,6 @@
 
     // life of the felix
     var felix_life = 4
-
-    // redirect if the player is normally unable to reach the planet
-    var lvl = retrieveTeamLevel();
-    checkIfLevelIsEnough(7,lvl,'../carte.html')
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
