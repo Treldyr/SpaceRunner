@@ -57,7 +57,6 @@
         event.preventDefault();
         const input = document.getElementById('cheatCode').value;
         const hash = simpleHash(input);
-        console.log("Code hashé :", hash);
 
         switch(hash){
         case "1a201865":
@@ -75,6 +74,10 @@
         case "5a5b64d":
             localStorage.clear();
             alert(languageData[document.documentElement.lang]["adventureInit"]);
+        break;
+        case "762bb533":
+            UnlockSpecialCharacter()
+            alert(languageData[document.documentElement.lang]["getfancy"]);
         break;
         default:
             alert(languageData[document.documentElement.lang]["errorcode"] +" : "+input);

@@ -56,13 +56,19 @@ function hideLockedCharacters(){
         unlockImagePlayer("p20")
     }
     let lvl2p = retrieveTeamLevel()
-    if(lvl2p<7){
+    let spChar = retrieveSpChar()
+    if((lvl2p<7)&&(!spChar)){
         document.getElementById("listChar6").style.display = "none";
-    } else {
+    }
+    if(lvl2p>6){
         unlockImagePlayer("p22")
     }
     if(lvl2p>7){
         unlockImagePlayer("p21")
+    }
+    if(spChar){
+        unlockImagePlayer("p23")
+        unlockImagePlayer("p0")
     }
 }
 

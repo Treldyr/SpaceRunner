@@ -50,6 +50,14 @@ function retrieveTeamLevel() {
     return 1
 }
 
+function retrieveSpChar() {
+    var storedData = localStorage.getItem('spChar');
+    if (storedData !== null) {
+        return storedData
+    }
+    return false
+}
+
 function retrieveKeyboard() {
     var storedData = localStorage.getItem('keyboard');
     if (storedData !== null) {

@@ -801,7 +801,8 @@ const languageData = {
         unlockAll1PLevels: "Vous venez de débloquer tous les niveaux de l'aventure 1 joueur",
         unlockAll2PLevels: "Vous venez de débloquer tous les niveaux de l'aventure 2 joueurs",
         unlockAllGhosts: "Vous venez de débloquer tous les fantômes",
-        adventureInit: "Progression remise à 0"
+        adventureInit: "Progression remise à 0",
+        getfancy: "Vous avez débloqué des personnages exclusifs"
     },
     en: {
         mainTitle: "Space Runner",
@@ -1605,6 +1606,7 @@ const languageData = {
         unlockAll1PLevels: "You unlocked all the 1 player adventure levels",
         unlockAll2PLevels: "You unlocked all the 2 players adventure levels",
         unlockAllGhosts: "You unlocked all the ghosts",
-        adventureInit: "Progression set to 0"
+        adventureInit: "Progression set to 0",
+        getfancy: "You unlocked exclusive characters"
     }
 }

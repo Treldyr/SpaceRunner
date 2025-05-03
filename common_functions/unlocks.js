@@ -29,6 +29,9 @@ function UnlockPlanet2pMode(planet_number) {
     }
 }
 
+function UnlockSpecialCharacter() {
+    localStorage.setItem("spChar", true);
+}
 
 function UnlockGhost(ghost_number) {
     var storedData = localStorage.getItem('ghostData');
