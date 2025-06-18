@@ -8,7 +8,7 @@ function dest_downward(){
     if(isAlive){
         if((boards[actual_board][fromtop+1][fromleft]!=2)&&(!isAdditionnalBlockInTheWay(fromtop+1,fromleft))){
             fromtop++;
-            playMove();
+            playGravelFootstep();
         }else{
             playWallHit()
         }
@@ -27,7 +27,7 @@ function dest_leftward(){
     if(isAlive){
         if((boards[actual_board][fromtop][fromleft-1]!=2)&&(!isAdditionnalBlockInTheWay(fromtop,fromleft-1))){
             fromleft--;
-            playMove();
+            playGravelFootstep();
         }else{
             playWallHit()
         }
@@ -46,7 +46,7 @@ function dest_upward(){
     if(isAlive){
         if((boards[actual_board][fromtop-1][fromleft]!=2)&&(!isAdditionnalBlockInTheWay(fromtop-1,fromleft))){
             fromtop--;
-            playMove();
+            playGravelFootstep();
         }else{
             playWallHit()
         }
@@ -65,7 +65,7 @@ function dest_rigthward(){
     if(isAlive){
         if((boards[actual_board][fromtop][fromleft+1]!=2)&&(!isAdditionnalBlockInTheWay(fromtop,fromleft+1))){
             fromleft++;
-            playMove();
+            playGravelFootstep();
         }else{
             playWallHit()
         }

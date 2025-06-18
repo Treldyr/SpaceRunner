@@ -79,3 +79,9 @@ function playMetalFootstep() {
     audio.volume = globalVolume *1.2;
     audio.play();
 }
+
+function playGravelFootstep() {
+    var audio = new Audio('../../../sons/gravel_footstep.wav');
+    audio.volume = globalVolume *0.8;
+    audio.play();
+}
