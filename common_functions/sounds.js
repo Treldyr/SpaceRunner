@@ -14,25 +14,25 @@ let globalVolume = retrieveSoundLevel();
 
 
 function testSound(given_volume) {
-    var audio = new Audio('../../sons/mario_move.wav');
+    var audio = new Audio('../../sons/mario_success.wav');
     audio.volume = given_volume;
     audio.play();
 }
 
 function playMove() {
-    var audio = new Audio('../../../sons/mario_move.wav');
-    audio.volume = globalVolume;
+    var audio = new Audio('../../../sons/grass_step.wav');
+    audio.volume = globalVolume *1.2;
     audio.play();
 }
 
 function playEndLevel() {
-    var audio = new Audio('../../../sons/mario_endplanet.wav');
+    var audio = new Audio('../../../sons/stage_clear.wav');
     audio.volume = globalVolume;
     audio.play();
 }
 
 function playEndLaby() {
-    var audio = new Audio('../../../sons/mario_endlaby.wav');
+    var audio = new Audio('../../../sons/end_maze.mp3');
     audio.volume = globalVolume;
     audio.play();
 }
@@ -40,7 +40,7 @@ function playEndLaby() {
 
 function playWallHit() {
     var audio = new Audio('../../../sons/wallhit.wav');
-    audio.volume = globalVolume;
+    audio.volume = globalVolume /2;
     audio.play();
 }
 
@@ -65,5 +65,17 @@ function playLever() {
 function playLava() {
     var audio = new Audio('../../../sons/lava.mp3');
     audio.volume = globalVolume;
+    audio.play();
+}
+
+function playWaterFootstep() {
+    var audio = new Audio('../../../sons/water_footstep.wav');
+    audio.volume = globalVolume *0.7;
+    audio.play();
+}
+
+function playMetalFootstep() {
+    var audio = new Audio('../../../sons/metal_step.wav');
+    audio.volume = globalVolume *1.2;
     audio.play();
 }

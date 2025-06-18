@@ -16,7 +16,7 @@ function isSuperposition(ptop1,pleft1,ptop2,pleft2){
 function dest_downward_p1(height,length){
     if((boards[actual_board][fromtop1+1][fromleft1]!=2)&&(!isSuperposition(fromtop1+1,fromleft1,fromtop2,fromleft2))){
         fromtop1++;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -29,7 +29,7 @@ function dest_downward_p1(height,length){
 function dest_leftward_p1(height,length){
     if((boards[actual_board][fromtop1][fromleft1-1]!=2)&&(!isSuperposition(fromtop1,fromleft1-1,fromtop2,fromleft2))){
         fromleft1--;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -42,7 +42,7 @@ function dest_leftward_p1(height,length){
 function dest_upward_p1(height,length){
     if((boards[actual_board][fromtop1-1][fromleft1]!=2)&&(!isSuperposition(fromtop1-1,fromleft1,fromtop2,fromleft2))){
         fromtop1--;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -55,7 +55,7 @@ function dest_upward_p1(height,length){
 function dest_rigthward_p1(height,length){
     if((boards[actual_board][fromtop1][fromleft1+1]!=2)&&(!isSuperposition(fromtop1,fromleft1+1,fromtop2,fromleft2))){
         fromleft1++;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -67,7 +67,7 @@ function dest_rigthward_p1(height,length){
 function dest_downward_p2(height,length){
     if((boards[actual_board][fromtop2+1][fromleft2]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2+1,fromleft2))){
         fromtop2++;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -80,7 +80,7 @@ function dest_downward_p2(height,length){
 function dest_leftward_p2(height,length){
     if((boards[actual_board][fromtop2][fromleft2-1]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2-1))){
         fromleft2--;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -93,7 +93,7 @@ function dest_leftward_p2(height,length){
 function dest_upward_p2(height,length){
     if((boards[actual_board][fromtop2-1][fromleft2]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2-1,fromleft2))){
         fromtop2--;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }
@@ -106,7 +106,7 @@ function dest_upward_p2(height,length){
 function dest_rigthward_p2(height,length){
     if((boards[actual_board][fromtop2][fromleft2+1]!=2)&&(!isSuperposition(fromtop1,fromleft1,fromtop2,fromleft2+1))){
         fromleft2++;
-        playMove();
+        playMetalFootstep();
     }else{
         playWallHit()
     }

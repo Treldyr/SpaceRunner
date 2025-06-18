@@ -10,7 +10,7 @@ function dest_dim_down_in_darkness(){
     if ((nextcase!=3)
         && (((isDimRed)&&(nextcase!=1))||((!isDimRed)&&(nextcase!=2)))){
         fromtop++;
-        playMove();
+        playMetalFootstep();
         light_down(actual_board,fromtop,fromleft)
     }else{
         playWallHit()
@@ -24,7 +24,7 @@ function dest_dim_left_in_darkness(){
     if ((nextcase!=3)
         && (((isDimRed)&&(nextcase!=1))||((!isDimRed)&&(nextcase!=2)))){
         fromleft--;
-        playMove();
+        playMetalFootstep();
         light_left(actual_board,fromtop,fromleft)
     }else{
         playWallHit()
@@ -38,7 +38,7 @@ function dest_dim_up_in_darkness(){
     if ((nextcase!=3)
         && (((isDimRed)&&(nextcase!=1))||((!isDimRed)&&(nextcase!=2)))){
         fromtop--;
-        playMove();
+        playMetalFootstep();
         light_up(actual_board,fromtop,fromleft)
     }else{
         playWallHit()
@@ -51,7 +51,7 @@ function dest_dim_right_in_darkness(){
     if ((nextcase!=3)
         && (((isDimRed)&&(nextcase!=1))||((!isDimRed)&&(nextcase!=2)))){
         fromleft++;
-        playMove();
+        playMetalFootstep();
         light_right(actual_board,fromtop,fromleft)
     }else{
         playWallHit()
