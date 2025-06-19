@@ -32,7 +32,7 @@ function playEndLevel() {
 }
 
 function playEndLaby() {
-    var audio = new Audio('../../../sons/end_maze.mp3');
+    var audio = new Audio('../../../sons/end_laby.wav');
     audio.volume = globalVolume;
     audio.play();
 }
