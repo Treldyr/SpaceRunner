@@ -40,7 +40,7 @@ function playEndLaby() {
 
 function playWallHit() {
     var audio = new Audio('../../../sons/wallhit.wav');
-    audio.volume = globalVolume /2;
+    audio.volume = globalVolume /3;
     audio.play();
 }
 
@@ -76,12 +76,18 @@ function playWaterFootstep() {
 
 function playMetalFootstep() {
     var audio = new Audio('../../../sons/metal_step.wav');
-    audio.volume = globalVolume *1.2;
+    audio.volume = globalVolume *1;
     audio.play();
 }
 
 function playGravelFootstep() {
     var audio = new Audio('../../../sons/gravel_footstep.wav');
     audio.volume = globalVolume *0.8;
+    audio.play();
+}
+
+function playStoneFootstep() {
+    var audio = new Audio('../../../sons/stone_footstep.wav');
+    audio.volume = globalVolume;
     audio.play();
 }

@@ -5,7 +5,7 @@ function dest_downward(){
     if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop+1,fromleft))){
         fromtop++;
-        playGravelFootstep();
+        playStoneFootstep();
         delayMovePapy("d");
     }else{
         playWallHit()
@@ -20,7 +20,7 @@ function dest_leftward(){
     if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft-1))){
         fromleft--;
-        playGravelFootstep();
+        playStoneFootstep();
         delayMovePapy("l");
     }else{
         playWallHit()
@@ -35,7 +35,7 @@ function dest_upward(){
     if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop-1,fromleft))){
         fromtop--;
-        playGravelFootstep();
+        playStoneFootstep();
         delayMovePapy("u");
     }else{
         playWallHit()
@@ -50,7 +50,7 @@ function dest_rigthward(){
     if((nextcase!=2)&&(nextcase!=5)&&(nextcase!=6)
         &&(!isAdditionnalBlockInTheWay(fromtop,fromleft+1))){
         fromleft++;
-        playGravelFootstep();
+        playStoneFootstep();
         delayMovePapy("r");
     }else{
         playWallHit()

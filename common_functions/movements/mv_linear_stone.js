@@ -1,14 +1,12 @@
 // --------------------------------------------------//
 //                                                   //
-//        LINEAR MOVEMENTS WITH DIMENSIONS           //
+//          LINEAR MOVEMENTS ON STONE GROUND         //
 //                                                   //
 // --------------------------------------------------//
 
 
-function dest_dim_down(){
-    let nextcase = boards[actual_board][fromtop+1][fromleft]
-    if ((nextcase!=4)
-        && (((isDimRed)&&(nextcase!=3))||((!isDimRed)&&(nextcase!=2)))){
+function dest_downward(){
+    if(boards[actual_board][fromtop+1][fromleft]!=2){
         fromtop++;
         playStoneFootstep();
     }else{
@@ -18,10 +16,8 @@ function dest_dim_down(){
 }
 
 
-function dest_dim_left(){
-    let nextcase = boards[actual_board][fromtop][fromleft-1]
-    if ((nextcase!=4)
-        && (((isDimRed)&&(nextcase!=3))||((!isDimRed)&&(nextcase!=2)))){
+function dest_leftward(){
+    if(boards[actual_board][fromtop][fromleft-1]!=2){
         fromleft--;
         playStoneFootstep();
     }else{
@@ -31,10 +27,8 @@ function dest_dim_left(){
 }
 
 
-function dest_dim_up(){
-    let nextcase = boards[actual_board][fromtop-1][fromleft]
-    if ((nextcase!=4)
-        && (((isDimRed)&&(nextcase!=3))||((!isDimRed)&&(nextcase!=2)))){
+function dest_upward(){
+    if(boards[actual_board][fromtop-1][fromleft]!=2){
         fromtop--;
         playStoneFootstep();
     }else{
@@ -43,10 +37,9 @@ function dest_dim_up(){
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
 
-function dest_dim_right(){
-    let nextcase = boards[actual_board][fromtop][fromleft+1]
-    if ((nextcase!=4)
-        && (((isDimRed)&&(nextcase!=3))||((!isDimRed)&&(nextcase!=2)))){
+
+function dest_rigthward(){
+    if(boards[actual_board][fromtop][fromleft+1]!=2){
         fromleft++;
         playStoneFootstep();
     }else{
@@ -54,3 +47,4 @@ function dest_dim_right(){
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
+
