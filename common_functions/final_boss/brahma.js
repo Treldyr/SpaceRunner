@@ -59,6 +59,7 @@ function respawnFromBrahma(){
     restartMiniBosses1()
     delete_shuriken(6)
     stopBrahmaArm()
+    stopEyesAttack()
     stopPhysicalBrahma()
     brahma_life = 10
     for(let j= 1; j < 11; j++)
@@ -136,10 +137,10 @@ function startAttacksBrahma() {
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    hitwithArms(100+(15*brahma_life))
+                    hitwithEyes(brahma_life,200)
                 break;
                 case 1:
-                    hitwithArms(100+(15*brahma_life))
+                    hitwithEyes(brahma_life,200)
                 break;
                 case 2:
                     spawnBrahma()
