@@ -137,10 +137,10 @@ function startAttacksBrahma() {
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    hitwithEyes(brahma_life,200)
+                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
                 break;
                 case 1:
-                    hitwithEyes(brahma_life,200)
+                    if(getRandomIntMax(2)==0){hitwithEyesFromLeft(brahma_life,200,true)}else{hitwithEyesFromLeft(brahma_life,200,false)}
                 break;
                 case 2:
                     spawnBrahma()
@@ -198,7 +198,7 @@ function spawnBrahma(){
         if(brahma_move==10){
             stopPhysicalBrahma()
         }
-    }, 200);
+    }, 400);
 }
 
 function stopPhysicalBrahma(){

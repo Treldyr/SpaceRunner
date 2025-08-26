@@ -283,6 +283,9 @@
     // var for the dimensions
     var isDimRed = true
 
+    // List of the eyes coordonates
+    var eyeCoordList = Array.from({ length: 50 }, () => [0, 0]);
+
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";
@@ -331,6 +334,12 @@
                 } else if(boards[actual_board][fromtop][fromleft]==18){
                     playLava();
                     reset_player();
+                } else if(actual_board==18){
+                    for (k=0;k<eyeCoordList.length;k++){
+                        if((eyeCoordList[k][0]==fromtop)&&(eyeCoordList[k][1]==fromleft)){
+                            respawnFromBrahma()
+                        }
+                    }
                 }
             }
         }
