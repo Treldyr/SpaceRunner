@@ -1,3 +1,5 @@
+var hitEyesId
+
 function create_Brahma_eye(numboard,pos_top,pos_left, idEye) {
     let the_image = document.createElement('img');
     the_image.setAttribute('src', "../../../images/specific/brahma_eye.png");
