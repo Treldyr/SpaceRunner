@@ -78,6 +78,8 @@ function dest_downward(){
         }else{
             playWallHit()
         }
+        checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -156,6 +158,8 @@ function dest_leftward(){
         }else{
             playWallHit()
         }
+        checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
@@ -234,6 +238,8 @@ function dest_upward(){
         }else{
             playWallHit()
         }
+        checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -312,6 +318,8 @@ function dest_rigthward(){
         }else{
             playWallHit()
         }
+        checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
+        checkHitBrahma()
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
