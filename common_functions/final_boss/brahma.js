@@ -53,6 +53,12 @@ function reset_player(){
 //                                                   //
 // --------------------------------------------------//
 
+function checkIsAlign(left1, top1, left2, top2){
+    if((left1==left2)&&(top1==top2)){
+        respawnFromBrahma()
+    }
+}
+
 
 function respawnFromBrahma(){
     reset_player();
@@ -74,7 +80,7 @@ function respawnFromBrahma(){
         stopEyesAttack()
         stopPhysicalBrahma()
         brahma_life = 5
-        for(let j= 1; j < 11; j++)
+        for(let j= 1; j < 6; j++)
         {
             document.getElementById('heart'+j).style.display = "block";
         }
@@ -90,10 +96,8 @@ function loseAHeart(){
     if(brahma_life==0){
         finish_final_boss()
     } else if(brahma_life==5){
-        brahma_anger = 2
         finish_labyrinth()
     } else if (brahma_life==1){
-        brahma_anger = 3
         finish_labyrinth()
     }
 }
@@ -136,6 +140,10 @@ var bossDarkId;
 var bossDarkTop = coords_begin_boss[2][0];;
 var bossDarkLeft = coords_begin_boss[2][1];
 var isCatMoved = false;
+
+var BossPapyId;
+var bossPapyTop = 0;
+var bossPapyLeft = 0;
 
 function startMiniBosses2(){
     initializeMiniBosses2()

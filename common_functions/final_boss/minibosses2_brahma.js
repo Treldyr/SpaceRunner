@@ -9,6 +9,10 @@ function initializeMiniBosses2() {
     bossDarkTop = coords_begin_boss[2][0];
     bossDarkLeft = coords_begin_boss[2][1];
     create_element(actual_board+1, 3, 2, "p16down.png", "boss16", coords_begin_boss[2][0], coords_begin_boss[2][1])
+
+    bossPapyTop = coords_begin_boss[3][0];
+    bossPapyLeft = coords_begin_boss[3][1];
+    create_element(actual_board+1, 3, 2, "p18down.png", "papy20", coords_begin_boss[3][0], coords_begin_boss[3][1])
 }
 
 
@@ -16,6 +20,10 @@ function restartMiniBosses2() {
     bossDarkTop = coords_begin_boss[2][0];
     bossDarkLeft = coords_begin_boss[2][1];
     document.getElementById('boss16').setAttribute('style',"position: fixed;top : "+(3*coords_begin_boss[2][0]+5)+"vh;left : "+(2*coords_begin_boss[2][1]+5)+"vw;");
+
+    bossPapyTop = coords_begin_boss[3][0];
+    bossPapyLeft = coords_begin_boss[3][1];
+    document.getElementById('papy20').setAttribute('style',"position: fixed;top : "+(3*coords_begin_boss[3][0]+5)+"vh;left : "+(2*coords_begin_boss[3][1]+5)+"vw;");
 }
 
 // --------------------------------------------------//
@@ -50,7 +58,7 @@ function moveBossDark(number_boss) {
                 } else {
                     moveBossDarkVertically(number_boss);
                 }
-                // TODO if same place
+                checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
             }
         }
     }, 300);
@@ -131,4 +139,54 @@ function areCoordinatesClose() {
 //                                                   //
 // --------------------------------------------------//
 
-//TODO
+function spawn_papy(){
+    if(!isCatMoved){
+        isCatMoved = true
+        movePapy("d")
+    }
+}
+
+function movePapy(direction){
+    let papy = document.getElementById('papy'+actual_board);
+    switch(direction){
+        case "u":
+            bossPapyTop--;
+            papy.setAttribute('src',"../../../images/p18up.png");
+        break;
+        case "d":
+            bossPapyTop++;
+            papy.setAttribute('src',"../../../images/p18down.png");
+        break;
+        case "l":
+            bossPapyLeft--;
+            papy.setAttribute('src',"../../../images/p18left.png");
+        break;
+        case "r":
+            bossPapyLeft++;
+            papy.setAttribute('src',"../../../images/p18right.png");
+        break;
+        default:
+            console.log('erreur direction')
+    }
+    papy.setAttribute('style',"position: fixed;top : "+(3*bossPapyTop+5)+"vh;left : "+(2*bossPapyLeft+5)+"vw;");
+    checkPapy(bossPapyLeft,fromleft,bossPapyTop,fromtop)
+}
+
+const timeouts = new Set();
+
+function delayMovePapy(direction) {
+    return new Promise((resolve, reject) => {
+        const timeoutId = setTimeout(() => {
+            resolve(direction);
+            timeouts.delete(timeoutId);
+        }, 1000); // he is one second late 
+        timeouts.add(timeoutId);
+    }).then(movePapy);
+}
+
+
+function checkPapy(bossPapyLeft,fromleft,bossPapyTop,fromtop){
+    if ((bossPapyLeft == fromleft) && (bossPapyTop == fromtop) && (!game_ended)){
+        reset_level() //TODO
+    }
+}

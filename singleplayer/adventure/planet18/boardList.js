@@ -258,5 +258,6 @@ var coords_begin_ghost = [
 var coords_begin_boss = [
     [15,30],
     [20,30],
-    [18,30]
+    [18,30],
+    [0,1]
 ]

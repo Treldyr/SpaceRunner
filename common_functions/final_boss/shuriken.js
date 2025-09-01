@@ -30,12 +30,6 @@ function delete_shuriken(idshuriken) {
     }
 }
 
-function checkIsAlign(left1, top1, left2, top2){
-    if((left1==left2)&&(top1==top2)){
-        respawnFromBrahma()
-    }
-}
-
 function checkShuriken(idshuriken){
     if(!game_ended){
         if(idshuriken==6){
