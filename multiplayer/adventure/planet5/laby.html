@@ -106,6 +106,7 @@
 <script src="../../../common_functions/background_music.js"></script>
 <script>
     var nbCoups = 0;
+    var game_ended = false
     document.onkeydown = checkKey;
     var p1_won = false;
     var p2_won = false;
@@ -140,7 +141,7 @@
         }else {
             set_new_positions(e,3,2)
 
-            if((p1_won)&&(p2_won))
+            if((p1_won)&&(p2_won)&&(!game_ended))
             {
                 finish_labyrinth();
             }
@@ -159,6 +160,7 @@
             construct_board_with_2_ghosts(actual_board+2)
         } else {
             stopTimer();
+            game_ended = true
             UnlockPlanet2pMode(6);
             playEndLevel()
             let number = actual_board+1;

@@ -116,6 +116,7 @@
     checkIfLevelIsEnough(6,lvl,'../carte.html')
     
     var nbCoups = 0;
+    var game_ended = false
     document.onkeydown = checkKey;
     var p1_won = false;
     var p2_won = false;
@@ -148,7 +149,7 @@
                 playLava();
                 reset_level(3,2);
             }
-            if((p1_won)&&(p2_won))
+            if((p1_won)&&(p2_won)&&(!game_ended))
             {
                 finish_labyrinth();
             }
@@ -166,6 +167,7 @@
             construct_board_2p_with_many_pows(actual_board+2,3,2)
         } else {
             stopTimer();
+            game_ended = true
             UnlockPlanet2pMode(7);
             playEndLevel()
             let number = actual_board+1;
