@@ -30,7 +30,7 @@ function die_from_ghost(){
 }
 
 function reset_ghost_and_player(){
-    reset_player()
+    reset_player(5,3.5)
     ghostTop = coords_begin_ghost[actual_board][0];
     ghostLeft = coords_begin_ghost[actual_board][1];
     
@@ -38,12 +38,12 @@ function reset_ghost_and_player(){
     ghost.setAttribute('style',"position: fixed;top : "+(5*ghostTop+5)+"vh;left : "+(3.5*ghostLeft+5)+"vw;");
 }
 
-function reset_player(){
+function reset_player(case_height,case_width){
     fromtop = coords_begin[actual_board][0];
     fromleft = coords_begin[actual_board][1];
     
     let cat = document.getElementById('character'+actual_board)
-    cat.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
+    cat.setAttribute('style',"position: fixed;top : "+(case_height*fromtop+5)+"vh;left : "+(case_width*fromleft+5)+"vw;");
     cat.setAttribute('src',"../../../images/"+chara+"down.png");
 }
 
@@ -61,7 +61,7 @@ function checkIsAlign(left1, top1, left2, top2){
 
 
 function respawnFromBrahma(){
-    reset_player();
+    reset_player(3,2);
     if(brahma_anger==1){
         restartMiniBosses1()
         delete_shuriken(6)
@@ -75,6 +75,7 @@ function respawnFromBrahma(){
             document.getElementById('heart'+j).style.display = "block";
         }
     }else if(brahma_anger==2){
+        stopPapyBoss()
         restartMiniBosses2()
         stopBrahmaArm()
         stopEyesAttack()

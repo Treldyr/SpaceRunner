@@ -70,6 +70,8 @@ function dest_downward(){
         if(boards[actual_board][fromtop+1][fromleft]!=2){ // TODO update this
             fromtop++;
             playMove();
+            spawn_papy();
+            delayMovePapy("d");
         }else{
             playWallHit()
         }
@@ -143,6 +145,8 @@ function dest_leftward(){
         if(boards[actual_board][fromtop][fromleft-1]!=2){ // TODO update this
             fromleft--;
             playMove();
+            spawn_papy();
+            delayMovePapy("l");
         }else{
             playWallHit()
         }
@@ -216,6 +220,8 @@ function dest_upward(){
         if(boards[actual_board][fromtop-1][fromleft]!=2){ // TODO update this
             fromtop--;
             playMove();
+            spawn_papy();
+            delayMovePapy("u");
         }else{
             playWallHit()
         }
@@ -289,6 +295,8 @@ function dest_rigthward(){
         if(boards[actual_board][fromtop][fromleft+1]!=2){ // TODO update this
             fromleft++;
             playMove();
+            spawn_papy();
+            delayMovePapy("r");
         }else{
             playWallHit()
         }

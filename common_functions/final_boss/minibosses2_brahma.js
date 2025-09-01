@@ -169,7 +169,7 @@ function movePapy(direction){
             console.log('erreur direction')
     }
     papy.setAttribute('style',"position: fixed;top : "+(3*bossPapyTop+5)+"vh;left : "+(2*bossPapyLeft+5)+"vw;");
-    checkPapy(bossPapyLeft,fromleft,bossPapyTop,fromtop)
+    checkIsAlign(fromleft,fromtop,bossPapyLeft,bossPapyTop)
 }
 
 const timeouts = new Set();
@@ -185,8 +185,11 @@ function delayMovePapy(direction) {
 }
 
 
-function checkPapy(bossPapyLeft,fromleft,bossPapyTop,fromtop){
-    if ((bossPapyLeft == fromleft) && (bossPapyTop == fromtop) && (!game_ended)){
-        reset_level() //TODO
+function stopPapyBoss(){
+    isCatMoved = false
+
+    for (const timeoutId of timeouts) {
+        clearTimeout(timeoutId);
     }
+    timeouts.clear();
 }
