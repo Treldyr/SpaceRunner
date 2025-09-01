@@ -199,7 +199,7 @@
 
             <div class="page" id="page20">
                 <div class="god-dialog god-talk">
-                    <p>You fool</p> <!-- TODO -->
+                    <p>go second phase</p> <!-- TODO -->
                     <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
                 </div>
             </div>
@@ -226,7 +226,24 @@
                 </div>
             </div>
 
-            <div class="page" id="page21">
+            <div class="page" id="page22">
+                <div class="god-dialog god-talk">
+                    <p>go third phase</p> <!-- TODO -->
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page23">
+                <div id="laby23">
+                </div>
+                <div class="power-bottom-bar">
+                    <div class="power-item">
+                        <img src="../../../images/heart.png" alt="Coeur 1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="page24">
                 <div class="god-dialog character-talk">
                     <button class="btn btn-outline-light" onclick="window.location.href='end.html'" data-lang-key="continue">Continuer</button>
                 </div>
@@ -438,6 +455,10 @@
             stopBossDark()
             updateBackground('../../../images/backgrounds/planete_open_brahma.png');
             actual_board++;
+        } else if (actual_board==21){
+            brahma_anger = 3
+            updateBackground('../../../images/backgrounds/planete_open.png');
+            construct_board(actual_board+2,3,2);
         }
     }
 

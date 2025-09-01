@@ -67,11 +67,14 @@ function dest_downward(){
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
     } else if(actual_board==20){
-        if(boards[actual_board][fromtop+1][fromleft]!=2){ // TODO update this
+        if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
             playMove();
             spawn_papy();
             delayMovePapy("d");
+            if(boards[actual_board][fromtop][fromleft]==18){
+                respawnFromBrahma()
+            }
         }else{
             playWallHit()
         }
@@ -142,11 +145,14 @@ function dest_leftward(){
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
     } else if(actual_board==20){
-        if(boards[actual_board][fromtop][fromleft-1]!=2){ // TODO update this
+        if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
             playMove();
             spawn_papy();
             delayMovePapy("l");
+            if(boards[actual_board][fromtop][fromleft]==18){
+                respawnFromBrahma()
+            }
         }else{
             playWallHit()
         }
@@ -217,11 +223,14 @@ function dest_upward(){
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
     } else if(actual_board==20){
-        if(boards[actual_board][fromtop-1][fromleft]!=2){ // TODO update this
+        if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
             playMove();
             spawn_papy();
             delayMovePapy("u");
+            if(boards[actual_board][fromtop][fromleft]==18){
+                respawnFromBrahma()
+            }
         }else{
             playWallHit()
         }
@@ -292,11 +301,14 @@ function dest_rigthward(){
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
     } else if(actual_board==20){
-        if(boards[actual_board][fromtop][fromleft+1]!=2){ // TODO update this
+        if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
             playMove();
             spawn_papy();
             delayMovePapy("r");
+            if(boards[actual_board][fromtop][fromleft]==18){
+                respawnFromBrahma()
+            }
         }else{
             playWallHit()
         }
