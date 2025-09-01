@@ -114,6 +114,7 @@
     document.onkeydown = checkKey;
     var p1_won = false;
     var p2_won = false;
+    var game_ended = false
     var actual_board = 0;
     var chara = "p0";
     var charap2 = "p0";
@@ -143,7 +144,7 @@
         }else {
             set_new_positions(e,5,3.5)
             checkIsItem2Players();            
-            if((p1_won)&&(p2_won)&&(found_b1)&&(found_b2)&&(found_b0))
+            if((p1_won)&&(p2_won)&&(found_b1)&&(found_b2)&&(found_b0)&&(!game_ended))
             {
                 finish_labyrinth();
             }
@@ -159,6 +160,7 @@
             construct_board_2p_with_gaz(actual_board+2,"fish")
         } else {
             stopTimer();
+            game_ended = true
             UnlockPlanet2pMode(3);
             playEndLevel()
             let number = actual_board+1;
