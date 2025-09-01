@@ -56,16 +56,32 @@ function reset_player(){
 
 function respawnFromBrahma(){
     reset_player();
-    restartMiniBosses1()
-    delete_shuriken(6)
-    stopBrahmaArm()
-    stopEyesAttack()
-    stopPhysicalBrahma()
-    brahma_life = 10
-    for(let j= 1; j < 11; j++)
-    {
-        document.getElementById('heart'+j).style.display = "block";
+    if(brahma_anger==1){
+        restartMiniBosses1()
+        delete_shuriken(6)
+        shurikenBoss1Available = true
+        stopBrahmaArm()
+        stopEyesAttack()
+        stopPhysicalBrahma()
+        brahma_life = 10
+        for(let j= 1; j < 11; j++)
+        {
+            document.getElementById('heart'+j).style.display = "block";
+        }
+    }else if(brahma_anger==2){
+        restartMiniBosses2()
+        stopBrahmaArm()
+        stopEyesAttack()
+        stopPhysicalBrahma()
+        brahma_life = 5
+        for(let j= 1; j < 11; j++)
+        {
+            document.getElementById('heart'+j).style.display = "block";
+        }
+    }else{ // if anger = 3
+        
     }
+    
 }
 
 function loseAHeart(){
@@ -73,6 +89,12 @@ function loseAHeart(){
     brahma_life--;
     if(brahma_life==0){
         finish_final_boss()
+    } else if(brahma_life==5){
+        brahma_anger = 2
+        finish_labyrinth()
+    } else if (brahma_life==1){
+        brahma_anger = 3
+        finish_labyrinth()
     }
 }
 
@@ -102,6 +124,46 @@ function startMiniBosses1() {
 }
 
 
+// ---------------------------------------------------//
+//                                                    //
+//                FUNCTIONS MINI-BOSS 2               //
+//                                                    //
+// ---------------------------------------------------//
+
+// mini-boss 2 variables
+var nbTourBossDark = 0;
+var bossDarkId;
+var bossDarkTop = coords_begin_boss[2][0];;
+var bossDarkLeft = coords_begin_boss[2][1];
+var isCatMoved = false;
+
+function startMiniBosses2(){
+    initializeMiniBosses2()
+    moveBossDark(16)
+}
+
+
+// ---------------------------------------------------//
+//                                                    //
+//                   FUNCTIONS SHURIKEN               //
+//                                                    //
+// ---------------------------------------------------//
+
+var powshurikenPlayerId;
+var shurikenPlayerAvailable = false;
+var fromtopShurikenPlayer = 0;
+var fromleftShurikenPlayer = 0;
+
+
+function checkBrahmaShuriken(){
+    if(!game_ended){
+        if((fromtopShurikenPlayer==brahmaTop)&&(fromleftShurikenPlayer==brahmaLeft)){
+            respawnFromBrahma()
+        }
+    }   
+}
+
+
 // --------------------------------------------------//
 //                                                   //
 //             FUNCTIONS STOPS ATTACKS               //
@@ -118,6 +180,9 @@ function stopBrahma() {
 //             FUNCTIONS ATTACKS BRAHMA              //
 //                                                   //
 // --------------------------------------------------//
+
+// boss phase (1,2,3)
+var brahma_anger = 1
 
 // boss variables
 var brahma_life = 10;

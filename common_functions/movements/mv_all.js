@@ -57,7 +57,7 @@ function dest_downward(){
             playWallHit()
         }
     } else if(actual_board==18){
-        if(boards[actual_board][fromtop+1][fromleft]!=2){ // TODO update this
+        if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
             playMove();
         }else{
@@ -66,6 +66,13 @@ function dest_downward(){
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
+    } else if(actual_board==20){
+        if(boards[actual_board][fromtop+1][fromleft]!=2){ // TODO update this
+            fromtop++;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -123,7 +130,7 @@ function dest_leftward(){
             playWallHit()
         }
     } else if(actual_board==18){
-        if(boards[actual_board][fromtop][fromleft-1]!=2){ // TODO update this
+        if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
             playMove();
         }else{
@@ -132,6 +139,13 @@ function dest_leftward(){
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
+    } else if(actual_board==20){
+        if(boards[actual_board][fromtop][fromleft-1]!=2){ // TODO update this
+            fromleft--;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
@@ -189,7 +203,7 @@ function dest_upward(){
             playWallHit()
         }
     } else if(actual_board==18){
-        if(boards[actual_board][fromtop-1][fromleft]!=2){ // TODO update this
+        if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
             playMove();
         }else{
@@ -198,6 +212,13 @@ function dest_upward(){
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
+    } else if(actual_board==20){
+        if(boards[actual_board][fromtop-1][fromleft]!=2){ // TODO update this
+            fromtop--;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -255,7 +276,7 @@ function dest_rigthward(){
             playWallHit()
         }
     } else if(actual_board==18){
-        if(boards[actual_board][fromtop][fromleft+1]!=2){ // TODO update this
+        if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
             playMove();
         }else{
@@ -264,6 +285,13 @@ function dest_rigthward(){
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
         checkHitBrahma()
+    } else if(actual_board==20){
+        if(boards[actual_board][fromtop][fromleft+1]!=2){ // TODO update this
+            fromleft++;
+            playMove();
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }

@@ -45,46 +45,6 @@ function moveBossVertically(number_boss, bossTop, bossLeft){
     theboss.setAttribute('style', "position: fixed;top : " + (3*bossTop+5) + "vh;left : " + (2*bossLeft+5) + "vw;");
 }
 
-function updateImageShuriken(idshuriken, fromtopShuriken, fromleftShuriken){
-    let shuri = document.getElementById('shuriken'+idshuriken);
-    shuri.setAttribute('style',"position: fixed;top : "+(3*fromtopShuriken+5)+"vh;left : "+(2*fromleftShuriken+5)+"vw;");
-}
-
-function create_shuriken(fromtopShuriken,fromleftShuriken,idshuriken) {
-    let the_image = document.createElement('img');
-    the_image.setAttribute('src', "../../../images/shuriken.png");
-    the_image.setAttribute('style', "position: fixed;top : " + (3 * fromtopShuriken + 5) + "vh;left : " + (2 * fromleftShuriken + 5) + "vw;");
-    the_image.className = "img_of_laby";
-    the_image.setAttribute('id', "shuriken"+idshuriken);
-    document.getElementById('laby19').appendChild(the_image);
-}
-
-function delete_shuriken(idshuriken) {
-    clearInterval(powshurikenBoss1Id);
-    let shuri = document.getElementById('shuriken'+idshuriken);
-    if(shuri!==null){
-        shuri.remove()
-    } 
-    if (idshuriken==6){
-        fromtopShurikenBoss1 = 0
-        fromleftShurikenBoss1 = 0
-    }
-}
-
-function checkIsAlign(left1, top1, left2, top2){
-    if((left1==left2)&&(top1==top2)){
-        respawnFromBrahma()
-    }
-}
-
-function checkShuriken(idshuriken){
-    if(!game_ended){
-        if(idshuriken==6){
-            checkIsAlign(fromleft, fromtop, fromleftShurikenBoss1, fromtopShurikenBoss1)
-        }
-    }   
-}
-
 function initializeMiniBosses1() {
     boss1Top = coords_begin_boss[0][0];
     boss1Left = coords_begin_boss[0][1];
@@ -154,8 +114,8 @@ function launchShurikenFromBoss1(directionLaunched){
         updateImageShuriken(6,fromtopShurikenBoss1,fromleftShurikenBoss1)
         checkShuriken(6)
         if((fromtopShurikenBoss1<=0)||(fromleftShurikenBoss1<=0)||(fromtopShurikenBoss1>boards[actual_board].length-1)||(fromleftShurikenBoss1>boards[actual_board][0].length-1)){
-            shurikenBoss1Available = true
             delete_shuriken(6)
+            shurikenBoss1Available = true
         }
     }, 100); // run the function after 0.1 second (100 milliseconds)
 }
