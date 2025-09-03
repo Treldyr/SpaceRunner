@@ -86,7 +86,8 @@ function respawnFromBrahma(){
             document.getElementById('heart'+j).style.display = "block";
         }
     }else{ // if anger = 3
-        
+        stopLastAttacksBrahma()
+        startLastAttacksBrahma()
     }
     
 }
@@ -204,7 +205,7 @@ var brahmaLeft = 0;
 var attackHitWithArmId;
 var physicalBrahmaId;
 
-function startAttacksBrahma() {
+function startAttacksBrahma(time_interval_attack) {
     let brahmaPhase = 0;
     brahmaId = setInterval(() => {
         if(!game_ended){
@@ -214,13 +215,13 @@ function startAttacksBrahma() {
                     if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
                 break;
                 case 1:
-                    if(getRandomIntMax(2)==0){hitwithEyesFromLeft(brahma_life,200,true)}else{hitwithEyesFromLeft(brahma_life,200,false)}
+                    hitwithArms(100+(15*brahma_life))
                 break;
                 case 2:
                     spawnBrahma()
                 break;
                 case 3:
-                    hitwithArms(100+(15*brahma_life))
+                    if(getRandomIntMax(2)==0){hitwithEyesFromLeft(brahma_life,200,true)}else{hitwithEyesFromLeft(brahma_life,200,false)}
                 break;
                 case 4:
                     spawnBrahma()
@@ -230,7 +231,7 @@ function startAttacksBrahma() {
             }
             brahmaLoop++;
         }
-    }, 10000); // all 10 secs
+    }, time_interval_attack);
 }
 
 function spawnBrahma(){

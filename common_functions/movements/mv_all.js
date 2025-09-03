@@ -73,6 +73,7 @@ function dest_downward(){
             spawn_papy();
             delayMovePapy("d");
             if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
                 respawnFromBrahma()
             }
         }else{
@@ -80,6 +81,17 @@ function dest_downward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
+    } else if(actual_board==22){
+        if(boards[actual_board][fromtop+1][fromleft]!=20){
+            fromtop++;
+            playMove();
+            if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
+                respawnFromBrahma()
+            }
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"down.png");
 }
@@ -153,6 +165,7 @@ function dest_leftward(){
             spawn_papy();
             delayMovePapy("l");
             if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
                 respawnFromBrahma()
             }
         }else{
@@ -160,6 +173,17 @@ function dest_leftward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
+    } else if(actual_board==22){
+        if(boards[actual_board][fromtop][fromleft-1]!=20){
+            fromleft--;
+            playMove();
+            if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
+                respawnFromBrahma()
+            }
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"left.png");
 }
@@ -233,6 +257,7 @@ function dest_upward(){
             spawn_papy();
             delayMovePapy("u");
             if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
                 respawnFromBrahma()
             }
         }else{
@@ -240,6 +265,17 @@ function dest_upward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
+    } else if(actual_board==22){
+        if(boards[actual_board][fromtop-1][fromleft]!=20){
+            fromtop--;
+            playMove();
+            if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
+                respawnFromBrahma()
+            }
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"up.png");
 }
@@ -313,6 +349,7 @@ function dest_rigthward(){
             spawn_papy();
             delayMovePapy("r");
             if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
                 respawnFromBrahma()
             }
         }else{
@@ -320,6 +357,17 @@ function dest_rigthward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
+    } else if(actual_board==22){
+        if(boards[actual_board][fromtop][fromleft+1]!=20){
+            fromleft++;
+            playMove();
+            if(boards[actual_board][fromtop][fromleft]==18){
+                playLava()
+                respawnFromBrahma()
+            }
+        }else{
+            playWallHit()
+        }
     }
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }

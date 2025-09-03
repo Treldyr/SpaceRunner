@@ -199,7 +199,8 @@
 
             <div class="page" id="page20">
                 <div class="god-dialog god-talk">
-                    <p>go second phase</p> <!-- TODO -->
+                    <p>Tu te débats bien HAHAHAHAHAHA</p> <!-- TODO -->
+                    <p>Regarde ce qui arrive ...</p>
                     <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
                 </div>
             </div>
@@ -228,7 +229,8 @@
 
             <div class="page" id="page22">
                 <div class="god-dialog god-talk">
-                    <p>go third phase</p> <!-- TODO -->
+                    <p>Quoi ?!?</p> <!-- TODO -->
+                    <p>Il est temps d'en finir !</p>
                     <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
                 </div>
             </div>
@@ -384,9 +386,15 @@
                 } else if(boards[actual_board][fromtop][fromleft]==18){
                     playLava();
                     reset_player();
-                } else if(actual_board>17){
+                } else if((actual_board==18)||(actual_board==20)){
                     for (k=0;k<eyeCoordList.length;k++){
                         if((eyeCoordList[k][0]==fromtop)&&(eyeCoordList[k][1]==fromleft)){
+                            respawnFromBrahma()
+                        }
+                    }
+                } else if(actual_board==22){
+                    for (k=0;k<lastEyeCoordList.length;k++){
+                        if((lastEyeCoordList[k][0]==fromtop)&&(lastEyeCoordList[k][1]==fromleft)){
                             respawnFromBrahma()
                         }
                     }
@@ -434,7 +442,7 @@
         } else if (actual_board==17){
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,3,2);
-            startAttacksBrahma();
+            startAttacksBrahma(10000);
             startMiniBosses1();
         } else if (actual_board==18){
             stopBrahma()
@@ -447,7 +455,7 @@
             brahma_anger = 2
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,3,2);
-            startAttacksBrahma();
+            startAttacksBrahma(7000);
             startMiniBosses2();
         } else if (actual_board==20){
             stopPapyBoss()
@@ -457,6 +465,7 @@
             actual_board++;
         } else if (actual_board==21){
             brahma_anger = 3
+            startLastAttacksBrahma()
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,3,2);
         }
