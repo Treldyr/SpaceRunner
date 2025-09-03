@@ -68,11 +68,12 @@ function lastLaunchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter){
     let eye_top = 0;
     let nbLoopEye = 0;
     let launchId = setInterval(() => {
-        if(!inpause){
+        let eye = document.getElementById(idEye)
+        if((!inpause)&&(eye!=null)){
             nbLoopEye++;
             eye_top++;
             lastEyeCoordList[eyeCounter] = [eye_top,eye_left]
-            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            eye.setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
@@ -88,11 +89,12 @@ function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
     let eye_left = 0;
     let nbLoopEye = 0;
     let launchId = setInterval(() => {
-        if(!inpause){
+        let eye = document.getElementById(idEye)
+        if((!inpause)&&(eye!=null)){
             nbLoopEye++;
             eye_left++;
             lastEyeCoordList[eyeCounter] = [eye_top,eye_left]
-            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            eye.setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
