@@ -86,7 +86,7 @@
                 <p data-lang-key="text432">Quoi ? C'est vrai ?</p>
                 <p data-lang-key="text433">Depuis tout ce temps, tu étais de leur coté ?</p>
                 <br>
-                <button class="btn btn-outline-light" onclick="goNextPage()" data-lang-key="continue">Continuer</button>
+                <button class="btn btn-outline-light" onclick="changeMusic()" data-lang-key="continue">Continuer</button>
             </div>
         </div>
 
@@ -126,7 +126,6 @@
     <script src="../../../common_functions/navigation.js"></script>
     <script src="../../../common_functions/get_data.js"></script>
     <script src="../../../common_functions/animation.js"></script>
-    <script src="../../../common_functions/index_planet.js"></script>
     <script src="../../../common_functions/translation.js"></script>
     <script src="../../../common_functions/languages.js"></script>
     <script src="../../../common_functions/basic.js"></script>
@@ -136,10 +135,19 @@
         var lvl = 1;
         retrieveLevel();
         checkIfLevelIsEnough(16,lvl,'../warning_cheating.html')
-
+        var actualPage = 1
+        document.onkeydown = checkKey;
+        retrievePlayer()
         var nbPage = 10
 
-        reInitMusic('fire'); // Initialise the music
+        reInitMusic('storm');
+
+        function changeMusic(){
+            goNextPage()
+            backgroundMusic.pause();
+            backgroundMusic = null
+            reInitMusic('fire');
+        }
 
         // write the name in the dialogue
         const storedName = localStorage.getItem("pseudo");
@@ -160,6 +168,35 @@
 
         function goNextAnimation(){
             goIntro()
+        }
+
+        function goNextPage(){
+            let nextPage = actualPage+1
+            document.getElementById('page'+actualPage).style.display = "none";
+            document.getElementById('page'+nextPage).style.display = "block";
+            actualPage = nextPage
+        }
+
+        for (i=0;i<document.getElementsByClassName("page").length;i++){
+            document.getElementsByClassName("page")[i].style.display = "none";
+        }
+        document.getElementById('page1').style.display = "block";
+
+
+        function checkKey(e) {
+            e = e || window.event;
+            if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
+                if(actualPage!=nbPage){
+                    goNextPage();
+                    if(actualPage==8){
+                        backgroundMusic.pause();
+                        backgroundMusic = null
+                        reInitMusic('fire');
+                    }
+                } else {
+                    goNextAnimation();
+                } 
+            }
         }
     </script>
 </body>
