@@ -85,6 +85,7 @@
 <script src="../../../common_functions/powers_battle_mode/shuriken.js"></script>
 <script src="../javascript/movements.js"></script>
 <script src="../javascript/shuriken.js"></script>
+<script src="../../../common_functions/background_music.js"></script>
 <script>
     game_ended = false
     document.onkeydown = checkKey;
@@ -109,6 +110,8 @@
     // shuriken powerItem variables
     var powerItemLeft = 0
     var powerItemTop = 0
+
+    initializeMusic('stranger');
 
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
