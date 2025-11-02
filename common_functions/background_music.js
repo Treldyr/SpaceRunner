@@ -23,6 +23,10 @@ function initializeMusic(musicName) {
     }
 }
 
+function setLowMusicVolume() {
+    backgroundMusic.volume = backgroundMusic.volume*0.1;
+}
+
 function reInitMusic(musicName) {
     if (!backgroundMusic) {
         backgroundMusicName = musicName

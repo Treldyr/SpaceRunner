@@ -337,6 +337,9 @@
     // List of the eyes coordonates
     var eyeCoordList = Array.from({ length: 50 }, () => [0, 0]);
 
+    // Initialise the music
+    reInitMusic('forest');
+
 
     for (i=0;i<document.getElementsByClassName("page").length;i++){
         document.getElementsByClassName("page")[i].style.display = "none";
@@ -416,26 +419,35 @@
             current_size_top = 5
             current_size_left = 3.5
             updateStylesheet("board_tiny","board_medium")
+            updateNewMusic('beach')
             construct_board(actual_board+2,5,3.5);
         } else if(actual_board==1) {
             construct_board(actual_board+2,5,3.5);
+            updateNewMusic('ice')
         } else if(actual_board==2){
             construct_board_with_parameters(actual_board+2,5,3.5,true,null,false,0,false);
             moveGhost(6); // the ghost start following the player
+            updateNewMusic('desert')
         } else if(actual_board==3){
             stopGhost();
             current_size_top = 3
             current_size_left = 2
             updateStylesheet("board_medium","board_large")
             construct_board(actual_board+2,3,2);
+            updateNewMusic('defaillance')
         } else if(actual_board==4){
             construct_board_in_darkness(actual_board+2,3,2)
+            updateNewMusic('sadness')
         } else if (actual_board==5){
             construct_board(actual_board+2,3,2);
+            updateNewMusic('volcano')
         } else if(actual_board==6){
             actual_board++;
+            updateNewMusic('spaceship')
+            setLowMusicVolume()
         } else if (actual_board==7){
             updateBackground('../../../images/backgrounds/planete_open_brahma.png');
+            updateNewMusic('final_boss_dialog')
             actual_board++;
         } else if (actual_board<17) {
              actual_board++;
@@ -497,6 +509,12 @@
         } else {
             window.location.href='../warning_cheating.html';
         }
+    }
+
+    function updateNewMusic(musicName){
+        backgroundMusic.pause();
+        backgroundMusic = null
+        reInitMusic(musicName);
     }
 
 </script>
