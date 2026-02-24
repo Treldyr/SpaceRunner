@@ -168,12 +168,12 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
+            document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
             setHighScorePlanet('cadalan');
             if(nbCoups >= 100){
                 const storedName = localStorage.getItem("teamName");
                 if (storedName) {
-                    sendBestTime('p2Cadalan',totalSeconds,storedName)
+                    sendBestTime('p2Cadalan',totalCentiSeconds,storedName)
                 }
             }
         }

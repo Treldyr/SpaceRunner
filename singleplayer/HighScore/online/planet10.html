@@ -71,7 +71,7 @@
     
                 const tdScore = document.createElement("td");
                 let nbTemps = data.bestTime;
-                tdScore.textContent =  pad(parseInt(nbTemps / 60)) + " : "+pad(nbTemps % 60);
+                tdScore.textContent =  pad(parseInt(nbTemps / 6000)) + " : "+pad(Math.floor((nbTemps/100) % 60))+ " : "+pad((nbTemps) % 100);
     
                 const tdDate = document.createElement("td");
                 tdDate.textContent = data.date;

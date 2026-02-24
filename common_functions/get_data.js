@@ -91,9 +91,9 @@ function retrievePlanet(number_planet,name_planet) {
     }
     // Display the data in the page
     if(nbTemps==null){
-        stringTemps = " - : - ";
+        stringTemps = " - : - : - ";
     }else {
-        stringTemps = pad(parseInt(nbTemps / 60)) + " : "+pad(nbTemps % 60);
+        stringTemps = pad(parseInt(nbTemps / 6000)) + " : "+pad(Math.floor((nbTemps/100) % 60))+ " : "+pad((nbTemps) % 100);
     }
     document.getElementById("c"+number_planet).innerHTML = nbCoups;
     document.getElementById("t"+number_planet).innerHTML = stringTemps;  

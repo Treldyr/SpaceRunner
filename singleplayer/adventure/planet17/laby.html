@@ -207,13 +207,13 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
+            document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
             UnlockPlanet(18)
             setHighScorePlanet('trantor')
             if(nbCoups >= 100){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
-                    sendBestTime('pTrantor',totalSeconds,storedName)
+                    sendBestTime('pTrantor',totalCentiSeconds,storedName)
                 }
             } else {
                 window.location.href='../warning_cheating.html';

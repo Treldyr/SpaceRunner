@@ -78,34 +78,34 @@ function checkIsAir(time_to_add){
         found_b0 = true;
         document.getElementById("air"+idGaz).style.display = "none";
         playSuccess()
-        totalSeconds = totalSeconds+time_to_add
+        totalCentiSeconds = totalCentiSeconds+time_to_add
     }
     if((gaz[actual_board][1][0]==fromtop)&&(gaz[actual_board][1][1]==fromleft)&&(!found_b1)){
         idGaz = (actual_board)*10 + 1
         found_b1 = true;
         document.getElementById("air"+idGaz).style.display = "none";
         playSuccess()
-        totalSeconds = totalSeconds+time_to_add
+        totalCentiSeconds = totalCentiSeconds+time_to_add
     }
     if((gaz[actual_board][2][0]==fromtop)&&(gaz[actual_board][2][1]==fromleft)&&(!found_b2)){
         idGaz = (actual_board)*10 + 2
         found_b2 = true;
         document.getElementById("air"+idGaz).style.display = "none";
         playSuccess()
-        totalSeconds = totalSeconds+time_to_add
+        totalCentiSeconds = totalCentiSeconds+time_to_add
     }
     if((gaz[actual_board][3][0]==fromtop)&&(gaz[actual_board][3][1]==fromleft)&&(!found_b3)){
         idGaz = (actual_board)*10 + 3
         found_b3 = true;
         document.getElementById("air"+idGaz).style.display = "none";
         playSuccess()
-        totalSeconds = totalSeconds+time_to_add
+        totalCentiSeconds = totalCentiSeconds+time_to_add
     }
     if((gaz[actual_board][4][0]==fromtop)&&(gaz[actual_board][4][1]==fromleft)&&(!found_b4)){
         idGaz = (actual_board)*10 + 4
         found_b4 = true;
         document.getElementById("air"+idGaz).style.display = "none";
         playSuccess()
-        totalSeconds = totalSeconds+time_to_add
+        totalCentiSeconds = totalCentiSeconds+time_to_add
     }
 }

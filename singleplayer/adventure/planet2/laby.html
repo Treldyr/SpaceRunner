@@ -186,12 +186,12 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
+            document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
             setHighScorePlanet('katshyk');
             if(nbCoups >= 380){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
-                    sendBestTime('pKatshyk',totalSeconds,storedName)
+                    sendBestTime('pKatshyk',totalCentiSeconds,storedName)
                 }
             } else {
                 window.location.href='../warning_cheating.html';

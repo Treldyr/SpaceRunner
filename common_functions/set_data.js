@@ -9,8 +9,8 @@ function setHighScorePlanet(planet_name) {
         } else {
             newcoups = terre.coups;
         }
-        if(terre.temps > totalSeconds){
-            newtemps = totalSeconds;
+        if(terre.temps > totalCentiSeconds){
+            newtemps = totalCentiSeconds;
         }else{
             newtemps = terre.temps;
         }
@@ -23,7 +23,7 @@ function setHighScorePlanet(planet_name) {
     } else {
         var terre = {
             coups: nbCoups,
-            temps: totalSeconds
+            temps: totalCentiSeconds
         };
         var dataString = JSON.stringify(terre);
         localStorage.setItem(planet_name, dataString);

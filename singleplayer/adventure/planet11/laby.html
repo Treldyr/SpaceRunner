@@ -112,8 +112,8 @@
 <script>
     initializeMusic('crazy'); // Initialise the music
     
-    // countdown vars
-    var CountDownSeconds = 20
+    // countdown var : start with 2000 centiseconds (20 sec)
+    var CountDownSeconds = 2000 
 
     // ghost vars
     var ghostId;
@@ -202,7 +202,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            checkIsAir(8);
+            checkIsAir(800); // Add 8 seconds of air
             if(countdownFinished){
                 goIntro()
             }
@@ -220,18 +220,18 @@
         playEndLevel()
         let number = actual_board+1;
         let number2 = actual_board+2
-        totalSeconds = totalTimePlayed;
+        totalCentiSeconds = totalTimePlayed;
         setHighScorePlanet('atrebois');
         UnlockPlanet(12)
         UnlockGhost(4)
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('nbHits').innerHTML = nbCoups;
-        document.getElementById('nbTime').innerHTML = totalSeconds;
+        document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
         if(nbCoups >= 50){
             const storedName = localStorage.getItem("pseudo");
             if (storedName) {
-                sendBestTime('pAtrebois',totalSeconds,storedName)
+                sendBestTime('pAtrebois',totalCentiSeconds,storedName)
             }
         } else {
             window.location.href='../warning_cheating.html';

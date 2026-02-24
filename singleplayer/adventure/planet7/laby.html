@@ -204,12 +204,12 @@
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('nbHits').innerHTML = nbCoups;
-        document.getElementById('nbTime').innerHTML = totalSeconds;
+        document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
         setHighScorePlanet('letranger');
         if(nbCoups >= 30){
             const storedName = localStorage.getItem("pseudo");
             if (storedName) {
-                sendBestTime('pLetranger',totalSeconds,storedName)
+                sendBestTime('pLetranger',totalCentiSeconds,storedName)
             }
         } else {
             window.location.href='../warning_cheating.html';

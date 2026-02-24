@@ -162,12 +162,12 @@
         document.getElementById('page'+number).style.display = "none";
         document.getElementById('page'+number2).style.display = "block";
         document.getElementById('nbHits').innerHTML = nbCoups;
-        document.getElementById('nbTime').innerHTML = totalSeconds;
+        document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
         setHighScorePlanet('zorath');
         if(nbCoups >= 10){
             const storedName = localStorage.getItem("teamName");
             if (storedName) {
-                sendBestTime('p2Zorath',totalSeconds,storedName)
+                sendBestTime('p2Zorath',totalCentiSeconds,storedName)
             }
         }
     }

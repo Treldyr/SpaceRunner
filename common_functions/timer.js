@@ -9,7 +9,7 @@
 
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
+var totalCentiSeconds = 0;
 var intervalId;
 
 // --------------------------------------------------//
@@ -29,12 +29,16 @@ startTimer();
 // --------------------------------------------------//
 
 function startTimer() {
+    let secondsCount;
+    let minutesCount;
     // Update the timer display every second
     intervalId = setInterval(() => {
-        ++totalSeconds;
-        secondsLabel.innerHTML = pad(totalSeconds % 60);
-        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-    }, 1000); // run the function every second (1000 milliseconds)
+        ++totalCentiSeconds;
+        secondsCount = Math.floor((totalCentiSeconds /100)% 60)
+        minutesCount = Math.floor(totalCentiSeconds / 6000)
+        secondsLabel.innerHTML = pad(secondsCount);
+        minutesLabel.innerHTML = pad(minutesCount);
+    }, 10); // run the function every 10 milliseconds (0.01 seconds)
 }
 
 function stopTimer() {
@@ -45,6 +49,6 @@ function stopTimer() {
 function resetTimer(){
     secondsLabel.innerHTML = pad(0);
     minutesLabel.innerHTML = pad(0);
-    totalSeconds = 0;
+    totalCentiSeconds = 0;
 }
 

@@ -113,7 +113,8 @@
     initializeMusic('toxicity'); // Initialise the music
     
     var game_ended = false
-    var CountDownSeconds = 18
+    // var for countdown : start with 1800 centiseconds (18 sec)
+    var CountDownSeconds = 1800
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0;
@@ -159,7 +160,7 @@
                 dest_rigthward();
             }
             nbCoups++;
-            checkIsAir(11);
+            checkIsAir(1100); // Add 8 seconds of air
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(countdownFinished){
@@ -187,18 +188,18 @@
             stopCountDown();
             playEndLevel()
             UnlockPlanet(11);
-            totalSeconds = totalTimePlayed;
+            totalCentiSeconds = totalTimePlayed;
             setHighScorePlanet("felucia");
             let number = actual_board+1;
             let number2 = actual_board+2
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
+            document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
             if(nbCoups >= 100){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
-                    sendBestTime('pFelucia',totalSeconds,storedName)
+                    sendBestTime('pFelucia',totalCentiSeconds,storedName)
                 }
             } else {
                 window.location.href='../warning_cheating.html';

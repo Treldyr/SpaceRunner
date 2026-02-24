@@ -136,12 +136,12 @@
             set_new_positions(e,5,3.5)
             if(e.keyCode ==  '69') { // E key
                 if(shurikenAvailableP1){
-                    launchShurikenMeleeMode(directionP1,true,totalSeconds);
+                    launchShurikenMeleeMode(directionP1,true,totalCentiSeconds/100);
                 }
             }
             else if(e.keyCode ==  '76') { // L key
                 if(shurikenAvailableP2){
-                    launchShurikenMeleeMode(directionP2,false,totalSeconds);
+                    launchShurikenMeleeMode(directionP2,false,totalCentiSeconds/100);
                 }
             }
             checkShurikenMeleeMode()

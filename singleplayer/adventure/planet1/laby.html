@@ -187,12 +187,12 @@
             document.getElementById('page'+number).style.display = "none";
             document.getElementById('page'+number2).style.display = "block";
             document.getElementById('nbHits').innerHTML = nbCoups;
-            document.getElementById('nbTime').innerHTML = totalSeconds;
+            document.getElementById('nbTime').innerHTML = totalCentiSeconds/100;
             setHighScorePlanet('terre');
             if(nbCoups >= 184){
                 const storedName = localStorage.getItem("pseudo");
                 if (storedName) {
-                    sendBestTime('pTerre',totalSeconds,storedName)
+                    sendBestTime('pTerre',totalCentiSeconds,storedName)
                 }
             } else {
                 window.location.href='../warning_cheating.html';

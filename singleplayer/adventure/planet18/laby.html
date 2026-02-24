@@ -503,7 +503,7 @@
         if(nbCoups >= 200){
             const storedName = localStorage.getItem("pseudo");
             if (storedName) {
-                sendBestTime('pCatmageddon',totalSeconds,storedName)
+                sendBestTime('pCatmageddon',totalCentiSeconds,storedName)
             }
             finish_labyrinth()
         } else {
