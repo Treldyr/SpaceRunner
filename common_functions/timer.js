@@ -29,16 +29,20 @@ startTimer();
 // --------------------------------------------------//
 
 function startTimer() {
-    let secondsCount;
-    let minutesCount;
     // Update the timer display every second
     intervalId = setInterval(() => {
         ++totalCentiSeconds;
-        secondsCount = Math.floor((totalCentiSeconds /100)% 60)
-        minutesCount = Math.floor(totalCentiSeconds / 6000)
+        displayScore()
+    }, 10); // run the function every 10 milliseconds (0.01 seconds)
+}
+
+function displayScore(){
+    if(totalCentiSeconds%100==0){
+        let secondsCount = Math.floor((totalCentiSeconds /100)% 60)
+        let minutesCount = Math.floor(totalCentiSeconds / 6000)
         secondsLabel.innerHTML = pad(secondsCount);
         minutesLabel.innerHTML = pad(minutesCount);
-    }, 10); // run the function every 10 milliseconds (0.01 seconds)
+    }
 }
 
 function stopTimer() {
