@@ -182,6 +182,7 @@
             construct_board(actual_board+2,5,3.5);
             place_levers(actual_board+1,5,3.5)
         } else {
+        totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()

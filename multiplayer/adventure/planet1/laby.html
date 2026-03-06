@@ -151,6 +151,7 @@
             p2_won = false;
             construct_board_2_players(actual_board+2,5,3.5)
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             stopTimer();
             game_ended = true
             UnlockPlanet2pMode(2);

@@ -183,6 +183,7 @@
             goNext(actual_board+1);
             construct_board(actual_board+2,5,3.5);
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()

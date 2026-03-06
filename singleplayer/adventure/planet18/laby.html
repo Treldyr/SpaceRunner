@@ -495,6 +495,7 @@
     }
 
     function finish_final_boss(){
+        totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
         game_ended = true
         stopTimer()
         playEndLevel()

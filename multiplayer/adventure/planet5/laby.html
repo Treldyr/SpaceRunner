@@ -159,6 +159,7 @@
             moveGhost()
             construct_board_with_2_ghosts(actual_board+2)
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             stopTimer();
             game_ended = true
             UnlockPlanet2pMode(6);

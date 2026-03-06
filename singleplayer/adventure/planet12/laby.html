@@ -216,6 +216,7 @@
             construct_board(actual_board+2,3,2);
             initializeSwaps();
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()

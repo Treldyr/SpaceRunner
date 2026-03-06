@@ -187,6 +187,7 @@
             moveGhost(7)
             construct_board_with_parameters(actual_board+2,3,2,true,null,false,0,false);
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()

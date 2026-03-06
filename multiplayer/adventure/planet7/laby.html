@@ -152,6 +152,7 @@
     }
 
     function finish_labyrinth(){
+        totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
         stopBoss()
         stopTimer();
         game_ended = true

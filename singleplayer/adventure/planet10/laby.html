@@ -113,8 +113,8 @@
     initializeMusic('toxicity'); // Initialise the music
     
     var game_ended = false
-    // var for countdown : start with 1800 centiseconds (18 sec)
-    var CountDownSeconds = 1800
+    // var for countdown : start with 18 seconds
+    var CountDownSeconds = 18
     var nbCoups = 0;
     document.onkeydown = checkKey;
     var fromtop =0;
@@ -160,7 +160,7 @@
                 dest_rigthward();
             }
             nbCoups++;
-            checkIsAir(1100); // Add 8 seconds of air
+            checkIsAir(11); // Add 11 seconds of air
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(3*fromtop+5)+"vh;left : "+(2*fromleft+5)+"vw;");
             if(countdownFinished){
@@ -184,11 +184,11 @@
             stopCountDown()
             startCountDown(CountDownSeconds)
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopCountDown();
             playEndLevel()
             UnlockPlanet(11);
-            totalCentiSeconds = totalTimePlayed;
             setHighScorePlanet("felucia");
             let number = actual_board+1;
             let number2 = actual_board+2

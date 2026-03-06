@@ -199,6 +199,7 @@
             goNext(actual_board+1);
             construct_board_with_pows(actual_board+2,3,2);
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()

@@ -2,6 +2,19 @@
 
 // --------------------------------------------------//
 //                                                   //
+//            DATABASE TIMESTAMP MANAGEMENT          //
+//                                                   //
+// --------------------------------------------------//
+
+
+var startingTime = performance.now();
+
+function diffEnCentiemes(t1, t2) {
+    return Math.round((t2 - t1) / 10); // 10 ms = 1 centième
+}
+
+// --------------------------------------------------//
+//                                                   //
 //             VARIABLE INITIALIZATION               //
 //                                                   //
 // --------------------------------------------------//
@@ -9,7 +22,8 @@
 
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
-var totalCentiSeconds = 0;
+var totalSeconds = 0;
+var totalCentiSeconds = Infinity;
 var intervalId;
 
 // --------------------------------------------------//
@@ -29,21 +43,15 @@ startTimer();
 // --------------------------------------------------//
 
 function startTimer() {
+    startingTime = performance.now();
     // Update the timer display every second
     intervalId = setInterval(() => {
-        ++totalCentiSeconds;
-        displayScore()
-    }, 10); // run the function every 10 milliseconds (0.01 seconds)
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }, 1000); // run the function every 1000 milliseconds (1 seconds)
 }
 
-function displayScore(){
-    if(totalCentiSeconds%100==0){
-        let secondsCount = Math.floor((totalCentiSeconds /100)% 60)
-        let minutesCount = Math.floor(totalCentiSeconds / 6000)
-        secondsLabel.innerHTML = pad(secondsCount);
-        minutesLabel.innerHTML = pad(minutesCount);
-    }
-}
 
 function stopTimer() {
     clearInterval(intervalId);
@@ -53,6 +61,6 @@ function stopTimer() {
 function resetTimer(){
     secondsLabel.innerHTML = pad(0);
     minutesLabel.innerHTML = pad(0);
-    totalCentiSeconds = 0;
+    totalSeconds = 0;
 }
 

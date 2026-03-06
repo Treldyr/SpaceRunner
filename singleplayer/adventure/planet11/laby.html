@@ -112,8 +112,8 @@
 <script>
     initializeMusic('crazy'); // Initialise the music
     
-    // countdown var : start with 2000 centiseconds (20 sec)
-    var CountDownSeconds = 2000 
+    // countdown var : start with 20 seconds
+    var CountDownSeconds = 20
 
     // ghost vars
     var ghostId;
@@ -202,7 +202,7 @@
             nbCoups++;
             let chara = document.getElementById('character'+actual_board);
             chara.setAttribute('style',"position: fixed;top : "+(5*fromtop+5)+"vh;left : "+(3.5*fromleft+5)+"vw;");
-            checkIsAir(800); // Add 8 seconds of air
+            checkIsAir(8); // Add 8 seconds of air
             if(countdownFinished){
                 goIntro()
             }
@@ -213,14 +213,14 @@
     }
 
     function finish_labyrinth(){
+        totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
         stopBoss()
         stopGhost()
         game_ended = true
         stopCountDown();
         playEndLevel()
         let number = actual_board+1;
-        let number2 = actual_board+2
-        totalCentiSeconds = totalTimePlayed;
+        let number2 = actual_board+2;
         setHighScorePlanet('atrebois');
         UnlockPlanet(12)
         UnlockGhost(4)

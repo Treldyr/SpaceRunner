@@ -156,6 +156,7 @@
             p2_won = false;
             construct_board_2p_with_levers(actual_board+2)
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             stopTimer();
             game_ended = true
             UnlockPlanet2pMode(4);

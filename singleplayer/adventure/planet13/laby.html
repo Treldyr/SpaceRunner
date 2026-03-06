@@ -172,6 +172,7 @@
                 set_light_all_around(actual_board+1,13,20)
             }
         } else {
+            totalCentiSeconds = diffEnCentiemes(startingTime, performance.now())
             game_ended = true
             stopTimer();
             playEndLevel()
