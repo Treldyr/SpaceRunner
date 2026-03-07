@@ -8,6 +8,7 @@ const db = getFirestore(app);
 /**
  * Registers the best time in Firestore with the player's pseudo.
  * Before sending, it checks if the new score is better than the current largest time in all levels.
+ * @param {string} collectionName - The level name
  * @param {number} time - The player's best time in seconds.
  * @param {string} pseudo - The player's pseudo.
  */
@@ -23,14 +24,23 @@ export async function sendBestTime(collectionName, time, pseudo) {
 
         let highestScoreDoc = null;
         let highestScore = -Infinity;  // Start with the lowest possible value
+        let found_pseudo = false;
 
         // Iterate through all the documents in the collection to find the highest (largest) score
         querySnapshot.forEach((doc) => {
             const data = doc.data();
             const currentBestTime = data.bestTime;
-            if (currentBestTime > highestScore) {
+            if(highestScore == -Infinity){
                 highestScore = currentBestTime;
                 highestScoreDoc = doc.id; // Keep track of the document with the highest score
+            }
+            if (!found_pseudo && (currentBestTime > highestScore)) {
+                highestScore = currentBestTime;
+                highestScoreDoc = doc.id;
+            } else if (pseudo == data.pseudo){
+                highestScore = currentBestTime;
+                highestScoreDoc = doc.id;
+                found_pseudo = true;
             }
         });
 
