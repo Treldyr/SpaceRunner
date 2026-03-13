@@ -22,31 +22,31 @@ function hitwithArms(attackSpeed){
     switch(spawnFromWhere){
         case 0:
             img_src = "../../../images/specific/brahma_arm_left.png"
-            pos_left = -83
-            pos_top = 8
-            blast_left = -1
-            blast_top = 14
+            pos_left = -86.5
+            pos_top = 5
+            blast_left = -2
+            blast_top = 7
         break;
         case 1:
             img_src = "../../../images/specific/brahma_arm_right.png"
-            pos_left = 93
-            pos_top = 8
-            blast_left = 45
-            blast_top = 14
+            pos_left = 96
+            pos_top = 5
+            blast_left = 26
+            blast_top = 7
         break;
         case 2:
             img_src = "../../../images/specific/brahma_arm_left.png"
-            pos_left = -83
-            pos_top = 50
-            blast_left = -1
-            blast_top = 15
+            pos_left = -86.5
+            pos_top = 45
+            blast_left = -2
+            blast_top = 8
         break;
         case 3:
             img_src = "../../../images/specific/brahma_arm_right.png"
-            pos_left = 93
-            pos_top = 50
-            blast_left = 45
-            blast_top = 15
+            pos_left = 96
+            pos_top = 45
+            blast_left = 26
+            blast_top = 8
         break;
         default:
             console.log('error spawnFromWhere Random int')
@@ -56,33 +56,33 @@ function hitwithArms(attackSpeed){
     let nbLoopAttack = 0;
     attackHitWithArmId = setInterval(() => {
         if(!game_ended){
-            if(nbLoopAttack<19){
-                nbLoopAttack++;
+            nbLoopAttack++;
+            if(nbLoopAttack<20){
                 switch(spawnFromWhere){
                     case 0:
-                        pos_left = pos_left+4
-                        blast_left = blast_left+2
+                        pos_left = pos_left+3.5
+                        blast_left = blast_left+1
                         if((fromleft<=blast_left)&&(fromtop<=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 1:
-                        pos_left = pos_left-4
-                        blast_left = blast_left-2
+                        pos_left = pos_left-3.5
+                        blast_left = blast_left-1
                         if((fromleft>=blast_left)&&(fromtop<=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 2:
-                        pos_left = pos_left+4
-                        blast_left = blast_left+2
+                        pos_left = pos_left+3.5
+                        blast_left = blast_left+1
                         if((fromleft<=blast_left)&&(fromtop>=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 3:
-                        pos_left = pos_left-4
-                        blast_left = blast_left-2
+                        pos_left = pos_left-3.5
+                        blast_left = blast_left-1
                         if((fromleft>=blast_left)&&(fromtop>=blast_top)){
                             respawnFromBrahma()
                         }
@@ -91,33 +91,32 @@ function hitwithArms(attackSpeed){
                         console.log('error spawnFromWhere Random int')
                 }
                 arm_element.setAttribute('style', "position: fixed;top : " + (pos_top) + "vh;left : " + (pos_left) + "vw;");
-            } else if(nbLoopAttack<38){
-                nbLoopAttack++;
+            } else if(nbLoopAttack<40){
                 switch(spawnFromWhere){
                     case 0:
-                        pos_left = pos_left-4
-                        blast_left = blast_left-2
+                        pos_left = pos_left-3.5
+                        blast_left = blast_left-1
                         if((fromleft<=blast_left)&&(fromtop<=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 1:
-                        pos_left = pos_left+4
-                        blast_left = blast_left+2
+                        pos_left = pos_left+3.5
+                        blast_left = blast_left+1
                         if((fromleft>=blast_left)&&(fromtop<=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 2:
-                        pos_left = pos_left-4
-                        blast_left = blast_left-2
+                        pos_left = pos_left-3.5
+                        blast_left = blast_left-1
                         if((fromleft<=blast_left)&&(fromtop>=blast_top)){
                             respawnFromBrahma()
                         }
                     break;
                     case 3:
-                        pos_left = pos_left+4
-                        blast_left = blast_left+2
+                        pos_left = pos_left+3.5
+                        blast_left = blast_left+1
                         if((fromleft>=blast_left)&&(fromtop>=blast_top)){
                             respawnFromBrahma()
                         }
@@ -130,7 +129,7 @@ function hitwithArms(attackSpeed){
                 stopBrahmaArm()
             }
         }
-    }, attackSpeed); // 5 secs / 19 tiles to go
+    }, attackSpeed); // 5 secs / 20 tiles to go
 }
 
 function stopBrahmaArm() {

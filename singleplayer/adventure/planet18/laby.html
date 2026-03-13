@@ -286,7 +286,7 @@
 <script src="../../../common_functions/final_boss/shuriken.js"></script>
 <script src="../../../common_functions/final_boss/minibosses1_brahma.js"></script>
 <script src="../../../common_functions/final_boss/minibosses2_brahma.js"></script>
-<script src="../../../common_functions/final_boss/final_part_brahma.js"></script> <!-- TODO -->
+<script src="../../../common_functions/final_boss/final_part_brahma.js"></script>
 <script src="../../../common_functions/animation.js"></script>
 <script src="../../../common_functions/translation.js"></script>
 <script src="../../../common_functions/languages.js"></script>
@@ -377,6 +377,9 @@
                 else if ((e.keyCode ==  '69')&&(actual_board==4)){ // change dimension
                     isDimRed = !isDimRed
                 }
+                else if ((e.keyCode ==  '69')&&(actual_board==18)){ // try launch shuriken
+                    playerThrowShuriken()
+                }
                 nbCoups++;
                 let chara = document.getElementById('character'+actual_board);
                 chara.setAttribute('style',"position: fixed;top : "+(current_size_top*fromtop+5)+"vh;left : "+(current_size_left*fromleft+5)+"vw;");
@@ -388,7 +391,7 @@
                     }
                 } else if(boards[actual_board][fromtop][fromleft]==18){
                     playLava();
-                    reset_player();
+                    reset_player(current_size_top,current_size_left);
                 } else if((actual_board==18)||(actual_board==20)){
                     for (k=0;k<eyeCoordList.length;k++){
                         if((eyeCoordList[k][0]==fromtop)&&(eyeCoordList[k][1]==fromleft)){
@@ -408,6 +411,9 @@
                     } else {
                         hide_boss_dark()
                     }
+                }
+                if((fromtopShurikenPOW==fromtop)&&(fromleftShurikenPOW==fromleft)){
+                    take_pow_shuriken()
                 }
             }
         }
@@ -452,9 +458,12 @@
         } else if (actual_board<17) {
              actual_board++;
         } else if (actual_board==17){
+            current_size_top = 5
+            current_size_left = 3.5
+            updateStylesheet("board_large","board_medium")
             updateBackground('../../../images/backgrounds/planete_open.png');
-            construct_board(actual_board+2,3,2);
-            startAttacksBrahma(10000);
+            construct_board(actual_board+2,current_size_top,current_size_left);
+            startAttacksBrahma(8000);
             startMiniBosses1();
         } else if (actual_board==18){
             stopBrahma()
@@ -466,8 +475,8 @@
         } else if (actual_board==19){
             brahma_anger = 2
             updateBackground('../../../images/backgrounds/planete_open.png');
-            construct_board(actual_board+2,3,2);
-            startAttacksBrahma(7000);
+            construct_board(actual_board+2,current_size_top,current_size_left);
+            startAttacksBrahma(5000);
             startMiniBosses2();
         } else if (actual_board==20){
             stopPapyBoss()
@@ -479,19 +488,21 @@
             brahma_anger = 3
             startLastAttacksBrahma()
             updateBackground('../../../images/backgrounds/planete_open.png');
-            construct_board(actual_board+2,3,2);
+            construct_board(actual_board+2,current_size_top,current_size_left);
         }
     }
 
     function skipIntro(){
-        current_size_top = 3
-        current_size_left = 2
-        updateStylesheet("board_tiny","board_large")
+        current_size_top = 5
+        current_size_left = 3.5
+        updateStylesheet("board_tiny","board_medium")
         document.getElementById('page1').style.display = "none";
         document.getElementById('page19').style.display = "block";
         actual_board = 17
         updateBackground('../../../images/backgrounds/planete_open.png');
-        construct_board(actual_board+2,3,2);
+        construct_board(actual_board+2,current_size_top,current_size_left);
+        startAttacksBrahma(8000);
+        startMiniBosses1();
     }
 
     function finish_final_boss(){

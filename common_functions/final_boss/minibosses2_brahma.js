@@ -8,22 +8,22 @@
 function initializeMiniBosses2() {
     bossDarkTop = coords_begin_boss[2][0];
     bossDarkLeft = coords_begin_boss[2][1];
-    create_element(actual_board+1, 3, 2, "p16down.png", "boss16", coords_begin_boss[2][0], coords_begin_boss[2][1])
+    create_element(actual_board+1, 5, 3.5, "p16down.png", "boss16", coords_begin_boss[2][0], coords_begin_boss[2][1])
 
     bossPapyTop = coords_begin_boss[3][0];
     bossPapyLeft = coords_begin_boss[3][1];
-    create_element(actual_board+1, 3, 2, "p18down.png", "papy20", coords_begin_boss[3][0], coords_begin_boss[3][1])
+    create_element(actual_board+1, 5, 3.5, "p18down.png", "papy20", coords_begin_boss[3][0], coords_begin_boss[3][1])
 }
 
 
 function restartMiniBosses2() {
     bossDarkTop = coords_begin_boss[2][0];
     bossDarkLeft = coords_begin_boss[2][1];
-    document.getElementById('boss16').setAttribute('style',"position: fixed;top : "+(3*coords_begin_boss[2][0]+5)+"vh;left : "+(2*coords_begin_boss[2][1]+5)+"vw;");
+    document.getElementById('boss16').setAttribute('style',"position: fixed;top : "+(5*coords_begin_boss[2][0]+5)+"vh;left : "+(3.5*coords_begin_boss[2][1]+5)+"vw;");
 
     bossPapyTop = coords_begin_boss[3][0];
     bossPapyLeft = coords_begin_boss[3][1];
-    document.getElementById('papy20').setAttribute('style',"position: fixed;top : "+(3*coords_begin_boss[3][0]+5)+"vh;left : "+(2*coords_begin_boss[3][1]+5)+"vw;");
+    document.getElementById('papy20').setAttribute('style',"position: fixed;top : "+(5*coords_begin_boss[3][0]+5)+"vh;left : "+(3.5*coords_begin_boss[3][1]+5)+"vw;");
 }
 
 // --------------------------------------------------//
@@ -81,14 +81,14 @@ function moveBossDarkHorizontally(number_boss){
         if(areCoordinatesClose()){
             let ghost = document.getElementById('boss16');
             ghost.setAttribute('src',"../../../images/p"+number_boss+"left.png");
-            ghost.setAttribute('style', "position: fixed;top : " + (3*bossDarkTop+5) + "vh;left : " + (2*bossDarkLeft+5) + "vw;");
+            ghost.setAttribute('style', "position: fixed;top : " + (5*bossDarkTop+5) + "vh;left : " + (3.5*bossDarkLeft+5) + "vw;");
         }
     }else{
         bossDarkLeft++;
         if(areCoordinatesClose()){
             let ghost = document.getElementById('boss16');
             ghost.setAttribute('src',"../../../images/p"+number_boss+"right.png");
-            ghost.setAttribute('style', "position: fixed;top : " + (3*bossDarkTop+5) + "vh;left : " + (2*bossDarkLeft+5) + "vw;");
+            ghost.setAttribute('style', "position: fixed;top : " + (5*bossDarkTop+5) + "vh;left : " + (3.5*bossDarkLeft+5) + "vw;");
         }
     }
 }
@@ -100,14 +100,14 @@ function moveBossDarkVertically(number_boss){
         if(areCoordinatesClose()){
             let ghost = document.getElementById('boss16');
             ghost.setAttribute('src',"../../../images/p"+number_boss+"up.png");
-            ghost.setAttribute('style', "position: fixed;top : " + (3*bossDarkTop+5) + "vh;left : " + (2*bossDarkLeft+5) + "vw;");
+            ghost.setAttribute('style', "position: fixed;top : " + (5*bossDarkTop+5) + "vh;left : " + (3.5*bossDarkLeft+5) + "vw;");
         }
     }else{
         bossDarkTop++;
         if(areCoordinatesClose()){
             let ghost = document.getElementById('boss16');
             ghost.setAttribute('src',"../../../images/p"+number_boss+"down.png");
-            ghost.setAttribute('style', "position: fixed;top : " + (3*bossDarkTop+5) + "vh;left : " + (2*bossDarkLeft+5) + "vw;");
+            ghost.setAttribute('style', "position: fixed;top : " + (5*bossDarkTop+5) + "vh;left : " + (3.5*bossDarkLeft+5) + "vw;");
         }
     }
     
@@ -115,7 +115,7 @@ function moveBossDarkVertically(number_boss){
 
 function show_boss_dark(){
     let boss = document.getElementById('boss16');
-    boss.setAttribute('style', "position: fixed;top : " + (3*bossDarkTop+5) + "vh;left : " + (2*bossDarkLeft+5) + "vw;");
+    boss.setAttribute('style', "position: fixed;top : " + (5*bossDarkTop+5) + "vh;left : " + (3.5*bossDarkLeft+5) + "vw;");
 }
 
 function hide_boss_dark(){
@@ -168,7 +168,7 @@ function movePapy(direction){
         default:
             console.log('erreur direction')
     }
-    papy.setAttribute('style',"position: fixed;top : "+(3*bossPapyTop+5)+"vh;left : "+(2*bossPapyLeft+5)+"vw;");
+    papy.setAttribute('style',"position: fixed;top : "+(5*bossPapyTop+5)+"vh;left : "+(3.5*bossPapyLeft+5)+"vw;");
     checkIsAlign(fromleft,fromtop,bossPapyLeft,bossPapyTop)
 }
 

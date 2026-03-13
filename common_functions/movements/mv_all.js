@@ -4,6 +4,8 @@
 //                                                   //
 // --------------------------------------------------//
 
+var directionFaced = "d"
+
 
 function dest_downward(){
     if(actual_board<2){
@@ -57,6 +59,7 @@ function dest_downward(){
             playWallHit()
         }
     } else if(actual_board==18){
+        directionFaced = "d"
         if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
             playMove();
@@ -149,6 +152,7 @@ function dest_leftward(){
             playWallHit()
         }
     } else if(actual_board==18){
+        directionFaced = "l"
         if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
             playMove();
@@ -241,6 +245,7 @@ function dest_upward(){
             playWallHit()
         }
     } else if(actual_board==18){
+        directionFaced = "u"
         if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
             playMove();
@@ -333,6 +338,7 @@ function dest_rigthward(){
             playWallHit()
         }
     } else if(actual_board==18){
+        directionFaced = "r"
         if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
             playMove();
@@ -372,3 +378,8 @@ function dest_rigthward(){
     document.getElementById('character'+actual_board).setAttribute('src',"../../../images/"+chara+"right.png");
 }
 
+function playerThrowShuriken(){
+    if(shurikenPlayerAvailable){
+        launchShurikenFromPlayer(directionFaced)
+    }
+}

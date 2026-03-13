@@ -61,11 +61,20 @@ function checkIsAlign(left1, top1, left2, top2){
 
 
 function respawnFromBrahma(){
-    reset_player(3,2);
+    reset_player(5,3.5);
     if(brahma_anger==1){
         restartMiniBosses1()
         delete_shuriken(6)
+        delete_shuriken(1)
         shurikenBoss1Available = true
+        shurikenPlayerAvailable = false
+        fromtopShurikenPOW = 0
+        fromleftShurikenPOW = 0
+        fromtopShurikenPlayer = 0;
+        fromleftShurikenPlayer = 0;
+        if(document.getElementById("shurikenPOW")!=null){
+            document.getElementById("shurikenPOW").remove()
+        }
         stopBrahmaArm()
         stopEyesAttack()
         stopPhysicalBrahma()
@@ -161,8 +170,11 @@ function startMiniBosses2(){
 
 var powshurikenPlayerId;
 var shurikenPlayerAvailable = false;
+var shurikenPlayerPowerItemAvailable = true;
 var fromtopShurikenPlayer = 0;
 var fromleftShurikenPlayer = 0;
+var fromtopShurikenPOW = 0;
+var fromleftShurikenPOW = 0;
 
 
 function checkBrahmaShuriken(){
@@ -212,19 +224,27 @@ function startAttacksBrahma(time_interval_attack) {
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                    hitwithArms(15*brahma_life)
                 break;
                 case 1:
-                    hitwithArms(100+(15*brahma_life))
+                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
                 break;
                 case 2:
-                    spawnBrahma()
+                    if(brahma_anger==1){
+                        spawnBrahma_anger1()
+                    }else{
+                        spawnBrahma()
+                    }
                 break;
                 case 3:
-                    if(getRandomIntMax(2)==0){hitwithEyesFromLeft(brahma_life,200,true)}else{hitwithEyesFromLeft(brahma_life,200,false)}
+                    hitwithArms(15*brahma_life)
                 break;
                 case 4:
-                    spawnBrahma()
+                    if(brahma_anger==1){
+                        place_pow_shuriken()
+                    }else{
+                        if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                    }
                 break;
                 default:
                     console.log('error phase number')
@@ -234,10 +254,29 @@ function startAttacksBrahma(time_interval_attack) {
     }, time_interval_attack);
 }
 
+
+function spawnBrahma_anger1(){
+    brahmaTop = 0;
+    brahmaLeft = 0;
+    create_element(actual_board+1, 5, 3.5, "p20right.png", "physicalBrahma", brahmaTop, brahmaLeft)
+    physicalBrahmaId = setInterval(() => {
+        if(!game_ended){
+            brahmaLeft = brahmaLeft+1
+            document.getElementById('physicalBrahma').setAttribute('style', "position: fixed;top : " + (5*brahmaTop+5) + "vh;left : " + (3.5*brahmaLeft+5) + "vw;");
+            checkBrahmaShuriken()
+        }
+        if(brahmaTop==26){
+            stopPhysicalBrahma()
+        }
+    }, 300);
+}
+
+
+
 function spawnBrahma(){
-    brahmaTop = getRandomIntMax(20)+1;
-    brahmaLeft = getRandomIntMax(40)+1;
-    create_element(actual_board+1, 3, 2, "p20down.png", "physicalBrahma", brahmaTop, brahmaLeft)
+    brahmaTop = getRandomIntMax(15)+1;
+    brahmaLeft = getRandomIntMax(25)+1;
+    create_element(actual_board+1, 5, 3.5, "p20down.png", "physicalBrahma", brahmaTop, brahmaLeft)
     let brahma_move = 0
     physicalBrahmaId = setInterval(() => {
         if(!game_ended){
@@ -268,7 +307,7 @@ function spawnBrahma(){
                 default:
                     console.log('error physic number')
             }
-            physic.setAttribute('style', "position: fixed;top : " + (3*brahmaTop+5) + "vh;left : " + (2*brahmaLeft+5) + "vw;");
+            physic.setAttribute('style', "position: fixed;top : " + (5*brahmaTop+5) + "vh;left : " + (3.5*brahmaLeft+5) + "vw;");
         }
         if(brahma_move==10){
             stopPhysicalBrahma()

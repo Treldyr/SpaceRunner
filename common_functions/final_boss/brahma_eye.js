@@ -3,7 +3,7 @@ var hitEyesId
 function create_Brahma_eye(numboard,pos_top,pos_left, idEye) {
     let the_image = document.createElement('img');
     the_image.setAttribute('src', "../../../images/specific/brahma_eye.png");
-    the_image.setAttribute('style', "position: fixed;top : " + (3*pos_top+5) + "vh;left : " + (2*pos_left+5) + "vw;");
+    the_image.setAttribute('style', "position: fixed;top : " + (5*pos_top+5) + "vh;left : " + (3.5*pos_left+5) + "vw;");
     the_image.className = "img_of_laby";
     the_image.setAttribute('id', idEye);
     document.getElementById('laby' + numboard).appendChild(the_image);
@@ -21,7 +21,7 @@ function launchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter,areEyesfromtop){
     if(areEyesfromtop){
         eye_top = 0
     } else {
-        eye_top = 30
+        eye_top = 16
     }
     let nbLoopEye = 0;
     let launchEyeId = setInterval(() => {
@@ -33,12 +33,12 @@ function launchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter,areEyesfromtop){
                 eye_top--;
             }
             eyeCoordList[eyeCounter] = [eye_top,eye_left]
-            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (5*eye_top+5) + "vh;left : " + (3.5*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
         }
-        if(nbLoopEye==35){
+        if(nbLoopEye==20){
             stopBrahmaEye(idEye)
             clearInterval(launchEyeId)
         }
@@ -51,7 +51,7 @@ function launchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter,areEyesfromleft){
     if(areEyesfromleft){
         eye_left = 0
     } else {
-        eye_left = 42
+        eye_left = 26
     }
     let nbLoopEye = 0;
     let launchEyeId = setInterval(() => {
@@ -63,12 +63,12 @@ function launchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter,areEyesfromleft){
                 eye_left--; 
             }
             eyeCoordList[eyeCounter] = [eye_top,eye_left]
-            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            document.getElementById(idEye).setAttribute('style', "position: fixed;top : " + (5*eye_top+5) + "vh;left : " + (3.5*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
         }
-        if(nbLoopEye==45){
+        if(nbLoopEye==30){
             stopBrahmaEye(idEye)
             clearInterval(launchEyeId)
         }
@@ -80,16 +80,16 @@ function hitwithEyesFromTop(attackSpeed,eyeSpeed,areEyesfromtop){
     let nbLoopAttack = 0;
     hitEyesId = setInterval(() => {
         if(!inpause){
-            let spawnFromWhere = getRandomIntMax(42)+1
+            let spawnFromWhere = getRandomIntMax(26)+1
             // 1 => Leftest case
-            // 42 => Rightest case
+            // 26 => Rightest case
             eyeCounter++;
             let idEye = "eye" + eyeCounter;
             create_Brahma_eye(actual_board+1,0,spawnFromWhere,idEye);
             launchEyeFromTop(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromtop)
             nbLoopAttack++;
         }
-        if(nbLoopAttack==50){
+        if(nbLoopAttack==30){
             clearInterval(hitEyesId)
         }
     }, attackSpeed);
@@ -114,16 +114,16 @@ function hitwithEyesFromLeft(attackSpeed,eyeSpeed,areEyesfromleft){
     let nbLoopAttack = 0;
     hitEyesId = setInterval(() => {
         if(!inpause){
-            let spawnFromWhere = getRandomIntMax(30)+1
+            let spawnFromWhere = getRandomIntMax(16)+1
             // 1 => Topest case
-            // 30 => Bottomest case
+            // 16 => Bottomest case
             eyeCounter++;
             let idEye = "eye" + eyeCounter;
             create_Brahma_eye(actual_board+1,spawnFromWhere,0,idEye);
             launchEyeFromLeft(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromleft)
             nbLoopAttack++;
         }
-        if(nbLoopAttack==50){
+        if(nbLoopAttack==30){
             clearInterval(hitEyesId)
         }
     }, attackSpeed);

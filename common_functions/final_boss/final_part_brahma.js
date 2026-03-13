@@ -73,7 +73,7 @@ function lastLaunchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter){
             nbLoopEye++;
             eye_top++;
             lastEyeCoordList[eyeCounter] = [eye_top,eye_left]
-            eye.setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            eye.setAttribute('style', "position: fixed;top : " + (5*eye_top+5) + "vh;left : " + (3.5*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
@@ -94,7 +94,7 @@ function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
             nbLoopEye++;
             eye_left++;
             lastEyeCoordList[eyeCounter] = [eye_top,eye_left]
-            eye.setAttribute('style', "position: fixed;top : " + (3*eye_top+5) + "vh;left : " + (2*eye_left+5) + "vw;");
+            eye.setAttribute('style', "position: fixed;top : " + (5*eye_top+5) + "vh;left : " + (3.5*eye_left+5) + "vw;");
             if((eye_top==fromtop)&&(eye_left==fromleft)){
                 respawnFromBrahma()
             }
@@ -118,16 +118,16 @@ function finalHitwithEyesFromTop(attackSpeed,eyeSpeed){
     let nbLoopAttack = 0;
     lastEyesTopId = setInterval(() => {
         if(!inpause){
-            let spawnFromWhere = getRandomIntMax(42)+1
+            let spawnFromWhere = getRandomIntMax(26)+1
             // 1 => Leftest case
-            // 42 => Rightest case
+            // 26 => Rightest case
             let idEye = "eye" + eyeCounter;
             create_Brahma_eye(actual_board+1,0,spawnFromWhere,idEye);
             lastLaunchEyeFromTop(idEye,spawnFromWhere,eyeSpeed,eyeCounter)
             nbLoopAttack++;
             eyeCounter++;
         }
-        if(nbLoopAttack==100){
+        if(nbLoopAttack==60){
             clearInterval(lastEyesTopId)
         }
     }, attackSpeed);
@@ -135,20 +135,20 @@ function finalHitwithEyesFromTop(attackSpeed,eyeSpeed){
 
 
 function finalHitwithEyesFromLeft(attackSpeed,eyeSpeed){
-    let eyeCounter = 100;
+    let eyeCounter = 60;
     let nbLoopAttack = 0;
     lastEyesLeftId = setInterval(() => {
         if(!inpause){
-            let spawnFromWhere = getRandomIntMax(30)+1
+            let spawnFromWhere = getRandomIntMax(16)+1
             // 1 => Topest case
-            // 30 => Bottomest case
+            // 16 => Bottomest case
             let idEye = "eye" + eyeCounter;
             create_Brahma_eye(actual_board+1,spawnFromWhere,0,idEye);
             lastLaunchEyeFromLeft(idEye,spawnFromWhere,eyeSpeed,eyeCounter)
             nbLoopAttack++;
             eyeCounter++;
         }
-        if(nbLoopAttack==100){
+        if(nbLoopAttack==60){
             clearInterval(lastEyesLeftId)
         }
     }, attackSpeed);

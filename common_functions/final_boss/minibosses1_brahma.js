@@ -21,7 +21,7 @@ function moveBossHorizontally(number_boss, bossTop, bossLeft){
         }
         theboss.setAttribute('src',"../../../images/p"+number_boss+"right.png");
     }
-    theboss.setAttribute('style', "position: fixed;top : " + (3*bossTop+5) + "vh;left : " + (2*bossLeft+5) + "vw;");
+    theboss.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 
@@ -42,28 +42,49 @@ function moveBossVertically(number_boss, bossTop, bossLeft){
         }
         theboss.setAttribute('src',"../../../images/p"+number_boss+"down.png");
     }
-    theboss.setAttribute('style', "position: fixed;top : " + (3*bossTop+5) + "vh;left : " + (2*bossLeft+5) + "vw;");
+    theboss.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 function initializeMiniBosses1() {
+    initMiniBoss1_1()
+    initMiniBoss1_2()
+}
+
+function initMiniBoss1_1(){
     boss1Top = coords_begin_boss[0][0];
     boss1Left = coords_begin_boss[0][1];
-    create_element(actual_board+1, 3, 2, "p6down.png", "boss6", coords_begin_boss[0][0], coords_begin_boss[0][1])
+    create_element(actual_board+1, 5, 3.5, "p6down.png", "boss6", coords_begin_boss[0][0], coords_begin_boss[0][1])
+}
 
+function initMiniBoss1_2(){
     boss2Top = coords_begin_boss[1][0];
     boss2Left = coords_begin_boss[1][1];
-    create_element(actual_board+1, 3, 2, "p9down.png", "boss9", coords_begin_boss[1][0], coords_begin_boss[1][1])
+    create_element(actual_board+1, 5, 3.5, "p9down.png", "boss9", coords_begin_boss[1][0], coords_begin_boss[1][1])
 }
 
 
 function restartMiniBosses1() {
-    boss1Top = coords_begin_boss[0][0];
-    boss1Left = coords_begin_boss[0][1];
-    document.getElementById('boss6').setAttribute('style',"position: fixed;top : "+(3*boss1Top+5)+"vh;left : "+(2*boss1Left+5)+"vw;");
+    let boss6 = document.getElementById('boss6')
+    let boss9 = document.getElementById('boss9')
 
-    boss2Top = coords_begin_boss[1][0];
-    boss2Left = coords_begin_boss[1][1];
-    document.getElementById('boss9').setAttribute('style',"position: fixed;top : "+(3*boss2Top+5)+"vh;left : "+(2*boss2Left+5)+"vw;");
+    if(boss6!=null){
+        boss1Top = coords_begin_boss[0][0];
+        boss1Left = coords_begin_boss[0][1];
+        document.getElementById('boss6').setAttribute('style',"position: fixed;top : "+(5*boss1Top+5)+"vh;left : "+(3.5*boss1Left+5)+"vw;");
+    } else {
+        initMiniBoss1_1()
+        moveMiniBoss1()
+    }
+
+    if(boss9!=null){
+        boss2Top = coords_begin_boss[1][0];
+        boss2Left = coords_begin_boss[1][1];
+        document.getElementById('boss9').setAttribute('style',"position: fixed;top : "+(5*boss2Top+5)+"vh;left : "+(3.5*boss2Left+5)+"vw;");
+    } else {
+        initMiniBoss1_2()
+        moveMiniBoss2()
+    }
+    
 }
 
 // --------------------------------------------------//
