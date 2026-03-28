@@ -168,6 +168,7 @@ function startMiniBosses2(){
 //                                                    //
 // ---------------------------------------------------//
 
+var brahmaTouchedByShuriken = false
 var powshurikenPlayerId;
 var shurikenPlayerAvailable = false;
 var shurikenPlayerPowerItemAvailable = true;
@@ -180,6 +181,7 @@ var fromleftShurikenPOW = 0;
 function checkBrahmaShuriken(){
     if(!game_ended){
         if((fromtopShurikenPlayer==brahmaTop)&&(fromleftShurikenPlayer==brahmaLeft)){
+            brahmaTouchedByShuriken = true
             respawnFromBrahma()
         }
     }   
@@ -224,7 +226,7 @@ function startAttacksBrahma(time_interval_attack) {
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    hitwithArms(15*brahma_life)
+                    hitwithArms(10*brahma_life)
                 break;
                 case 1:
                     if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
@@ -237,7 +239,7 @@ function startAttacksBrahma(time_interval_attack) {
                     }
                 break;
                 case 3:
-                    hitwithArms(15*brahma_life)
+                    hitwithArms(10*brahma_life)
                 break;
                 case 4:
                     if(brahma_anger==1){
@@ -258,9 +260,10 @@ function startAttacksBrahma(time_interval_attack) {
 function spawnBrahma_anger1(){
     brahmaTop = 0;
     brahmaLeft = 0;
+    brahmaTouchedByShuriken = false
     create_element(actual_board+1, 5, 3.5, "p20right.png", "physicalBrahma", brahmaTop, brahmaLeft)
     physicalBrahmaId = setInterval(() => {
-        if(!game_ended){
+        if(!game_ended && !brahmaTouchedByShuriken){
             brahmaLeft = brahmaLeft+1
             document.getElementById('physicalBrahma').setAttribute('style', "position: fixed;top : " + (5*brahmaTop+5) + "vh;left : " + (3.5*brahmaLeft+5) + "vw;");
             checkBrahmaShuriken()
@@ -307,6 +310,7 @@ function spawnBrahma(){
                 default:
                     console.log('error physic number')
             }
+            checkHitBrahma()
             physic.setAttribute('style', "position: fixed;top : " + (5*brahmaTop+5) + "vh;left : " + (3.5*brahmaLeft+5) + "vw;");
         }
         if(brahma_move==10){
