@@ -89,7 +89,7 @@ function respawnFromBrahma(){
         stopBrahmaArm()
         stopEyesAttack()
         stopPhysicalBrahma()
-        brahma_life = 5
+        brahma_life = 6
         for(let j= 1; j < 6; j++)
         {
             document.getElementById('heart'+j).style.display = "block";
@@ -97,6 +97,7 @@ function respawnFromBrahma(){
     }else{ // if anger = 3
         stopLastAttacksBrahma()
         startLastAttacksBrahma()
+        brahma_life = 2
     }
     
 }
@@ -106,9 +107,7 @@ function loseAHeart(){
     brahma_life--;
     if(brahma_life==0){
         finish_final_boss()
-    } else if(brahma_life==5){
-        finish_labyrinth()
-    } else if (brahma_life==1){
+    } else if(brahma_life==6 || brahma_life==2){
         finish_labyrinth()
     }
 }
@@ -182,7 +181,8 @@ function checkBrahmaShuriken(){
     if(!game_ended){
         if((fromtopShurikenPlayer==brahmaTop)&&(fromleftShurikenPlayer==brahmaLeft)){
             brahmaTouchedByShuriken = true
-            respawnFromBrahma()
+            loseAHeart()
+            stopPhysicalBrahma()
         }
     }   
 }
@@ -226,10 +226,14 @@ function startAttacksBrahma(time_interval_attack) {
             brahmaPhase = brahmaLoop%5;
             switch(brahmaPhase){
                 case 0:
-                    hitwithArms(10*brahma_life)
+                    if(brahma_anger==1){
+                        place_pow_shuriken()
+                    }else{
+                        if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                    }
                 break;
                 case 1:
-                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                    hitwithArms(10*brahma_life)
                 break;
                 case 2:
                     if(brahma_anger==1){
@@ -242,11 +246,7 @@ function startAttacksBrahma(time_interval_attack) {
                     hitwithArms(10*brahma_life)
                 break;
                 case 4:
-                    if(brahma_anger==1){
-                        place_pow_shuriken()
-                    }else{
-                        if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
-                    }
+                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
                 break;
                 default:
                     console.log('error phase number')

@@ -107,6 +107,9 @@ function place_pow_shuriken(){
     if(shurikenPlayerPowerItemAvailable){
         fromtopShurikenPOW = getRandomIntMax(14)+1
         fromleftShurikenPOW = getRandomIntMax(24)+1
+        if(boards[actual_board][fromtopShurikenPOW][fromleftShurikenPOW]!=19){
+            fromleftShurikenPOW = fromleftShurikenPOW+1;
+        }
         create_element(19, 5, 3.5, "items/powshuriken.png", "shurikenPOW",fromtopShurikenPOW,fromleftShurikenPOW);
         shurikenPlayerPowerItemAvailable = false
     }
