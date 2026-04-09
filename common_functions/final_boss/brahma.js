@@ -233,7 +233,7 @@ function startAttacksBrahma(time_interval_attack) {
                     }
                 break;
                 case 1:
-                    hitwithArms(10*brahma_life)
+                    hitwithArms(15*brahma_life)
                 break;
                 case 2:
                     if(brahma_anger==1){
