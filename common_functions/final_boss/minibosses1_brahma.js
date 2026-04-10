@@ -206,6 +206,8 @@ function moveMiniBoss1() {
 
 function stopBoss1() {
     clearInterval(Boss1Id);
+    boss1Top = 0;
+    boss1Left = 0;
 }
 
 // --------------------------------------------------//
@@ -216,6 +218,8 @@ function stopBoss1() {
 
 function stopBoss2() {
     clearInterval(Boss2Id);
+    boss2Top = 0;
+    boss2Left = 0;
 }
 
 function moveMiniBoss2() {
