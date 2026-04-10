@@ -243,7 +243,7 @@ function startAttacksBrahma(time_interval_attack) {
                     }
                 break;
                 case 3:
-                    hitwithArms(10*brahma_life)
+                    hitwithArms(20*brahma_life)
                 break;
                 case 4:
                     if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
@@ -276,8 +276,8 @@ function spawnBrahma_anger1(){
 
 
 function spawnBrahma(){
-    brahmaTop = getRandomIntMax(15)+1;
-    brahmaLeft = getRandomIntMax(25)+1;
+    brahmaTop = getRandomIntMax(13)+1;
+    brahmaLeft = getRandomIntMax(23)+1;
     create_element(actual_board+1, 5, 3.5, "p20down.png", "physicalBrahma", brahmaTop, brahmaLeft)
     let brahma_move = 0
     physicalBrahmaId = setInterval(() => {
