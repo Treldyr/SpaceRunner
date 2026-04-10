@@ -258,8 +258,7 @@ function startAttacksBrahma(time_interval_attack) {
 
 
 function spawnBrahma_anger1(){
-    brahmaTop = 0;
-    brahmaLeft = 0;
+    stopPhysicalBrahma()
     brahmaTouchedByShuriken = false
     create_element(actual_board+1, 5, 3.5, "p20right.png", "physicalBrahma", brahmaTop, brahmaLeft)
     physicalBrahmaId = setInterval(() => {
@@ -320,9 +319,9 @@ function spawnBrahma(){
 }
 
 function stopPhysicalBrahma(){
+    clearInterval(physicalBrahmaId);
     let physic = document.getElementById('physicalBrahma')
     if(physic!=null){
-        clearInterval(physicalBrahmaId);
         physic.remove()
     }
     brahmaTop = 0
