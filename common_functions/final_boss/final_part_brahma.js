@@ -32,7 +32,7 @@ function startLastAttacksBrahma() {
             }
             brahmaLoop++;
         }
-    }, 10000);
+    }, 8000);
 }
 
 
