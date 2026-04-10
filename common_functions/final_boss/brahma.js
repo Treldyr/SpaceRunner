@@ -90,7 +90,7 @@ function respawnFromBrahma(){
         stopEyesAttack()
         stopPhysicalBrahma()
         brahma_life = 6
-        for(let j= 1; j < 6; j++)
+        for(let j= 1; j < 7; j++)
         {
             document.getElementById('heart'+j).style.display = "block";
         }
