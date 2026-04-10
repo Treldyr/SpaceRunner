@@ -5,6 +5,7 @@
 // --------------------------------------------------//
 
 function moveBossHorizontally(number_boss, bossTop, bossLeft){
+    let newLeftValue = bossLeft;
     let theboss = document.getElementById('boss'+number_boss);
     if(bossLeft > fromleft){
         if(number_boss==6){
@@ -12,6 +13,7 @@ function moveBossHorizontally(number_boss, bossTop, bossLeft){
         } else {
             boss2Left--; 
         }
+        newLeftValue--;
         theboss.setAttribute('src',"../../../images/p"+number_boss+"left.png");
     }else{
         if(number_boss==6){
@@ -19,13 +21,15 @@ function moveBossHorizontally(number_boss, bossTop, bossLeft){
         } else {
             boss2Left++;
         }
+        newLeftValue++;
         theboss.setAttribute('src',"../../../images/p"+number_boss+"right.png");
     }
-    theboss.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
+    theboss.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*newLeftValue+5) + "vw;");
 }
 
 
 function moveBossVertically(number_boss, bossTop, bossLeft){
+    let newTopValue = bossTop;
     let theboss = document.getElementById('boss'+number_boss);
     if(bossTop > fromtop){
         if(number_boss==6){
@@ -33,6 +37,7 @@ function moveBossVertically(number_boss, bossTop, bossLeft){
         } else {
             boss2Top--;
         }
+        newTopValue--;
         theboss.setAttribute('src',"../../../images/p"+number_boss+"up.png");
     }else{
         if(number_boss==6){
@@ -40,9 +45,10 @@ function moveBossVertically(number_boss, bossTop, bossLeft){
         } else {
             boss2Top++;
         }
+        newTopValue++;
         theboss.setAttribute('src',"../../../images/p"+number_boss+"down.png");
     }
-    theboss.setAttribute('style', "position: fixed;top : " + (5*bossTop+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
+    theboss.setAttribute('style', "position: fixed;top : " + (5*newTopValue+5) + "vh;left : " + (3.5*bossLeft+5) + "vw;");
 }
 
 function initializeMiniBosses1() {
