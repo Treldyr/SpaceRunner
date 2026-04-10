@@ -114,6 +114,7 @@ function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
 // --------------------------------------------------//
 
 function finalHitwithEyesFromTop(attackSpeed,eyeSpeed){
+    clearInterval(lastEyesTopId)
     let eyeCounter = 0;
     let nbLoopAttack = 0;
     lastEyesTopId = setInterval(() => {
@@ -135,6 +136,7 @@ function finalHitwithEyesFromTop(attackSpeed,eyeSpeed){
 
 
 function finalHitwithEyesFromLeft(attackSpeed,eyeSpeed){
+    clearInterval(lastEyesLeftId)
     let eyeCounter = 60;
     let nbLoopAttack = 0;
     lastEyesLeftId = setInterval(() => {
