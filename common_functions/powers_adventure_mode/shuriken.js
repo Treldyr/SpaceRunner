@@ -4,11 +4,14 @@
 //                                                   //
 // --------------------------------------------------//
 
+var powshurikenId;
+
 function get_powshuriken(){
     shurikenAvailable = true;
 }
 
 function launchShurikenFromPlayer(directionLaunched){
+    delete_shuriken()
     shurikenAvailable = false
     fromtopShuriken = fromtop
     fromleftShuriken = fromleft
@@ -35,7 +38,6 @@ function launchShurikenFromPlayer(directionLaunched){
             check_lever_superposition(fromleftShuriken, fromtopShuriken,3,2);
             updateImageShuriken()
             if((fromtopShuriken<=0)||(fromleftShuriken<=0)||(fromtopShuriken>boards[actual_board].length-1)||(fromleftShuriken>boards[actual_board][0].length-1)){
-                clearInterval(powshurikenId);
                 delete_shuriken()
             }
         }
@@ -58,6 +60,7 @@ function create_shuriken(fromtopShuriken,fromleftShuriken) {
 }
 
 function delete_shuriken() {
+    clearInterval(powshurikenId)
     let shuri = document.getElementById('shuriken'+actual_board);
     if(shuri!==null){
         shuri.remove()
