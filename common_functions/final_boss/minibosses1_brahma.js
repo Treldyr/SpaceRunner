@@ -200,6 +200,7 @@ function moveMiniBoss1() {
             } else {
                 moveBossVertically(6, boss1Top, boss1Left);
             }
+            checkKillBoss2()
         }
     }, 500);
 }
@@ -244,7 +245,8 @@ function moveMiniBoss2() {
             } else {
                 moveBossVertically(9, boss2Top, boss2Left);
             }
-            checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
+            checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)  
+            checkKillBoss2()
         }
     }, 250);
 }

@@ -90,11 +90,19 @@ function checkBossesShurikenPlayer(){
         delete_shuriken(6)
         // TODO do sound clank ?
     }
+    checkKillBoss1()
+    checkKillBoss2()
+}
+
+function checkKillBoss1(){
     if((fromtopShurikenPlayer==boss1Top)&&(fromleftShurikenPlayer==boss1Left)){
         delete_shuriken(1)
         stopBoss1()
         document.getElementById('boss6').remove()
     }
+}
+
+function checkKillBoss2(){
     if((fromtopShurikenPlayer==boss2Top)&&(fromleftShurikenPlayer==boss2Left)){
         delete_shuriken(1)
         stopBoss2()
