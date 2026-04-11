@@ -1,5 +1,5 @@
 var lastHitEyesId;
-
+var eyeIntervals = []
 var lastEyesTopId;
 var lastEyesLeftId;
 
@@ -10,10 +10,11 @@ function startLastAttacksBrahma() {
     let brahmaPhase = 0;
     lastHitEyesId = setInterval(() => {
         if(!game_ended){
-            brahmaPhase = brahmaLoop%5;
+            brahmaPhase = brahmaLoop%4;
             switch(brahmaPhase){
                 case 0:
                     finalHitwithEyesFromTop(100,150)
+                    spawnBrahma()
                 break;
                 case 1:
                     finalHitwithEyesFromLeft(100,150)
@@ -23,9 +24,6 @@ function startLastAttacksBrahma() {
                 break;
                 case 3:
                     finalHitwithEyesFromLeft(100,150)
-                break;
-                case 4:
-                    spawnBrahma()
                 break;
                 default:
                     console.log('error phase number')
@@ -54,6 +52,10 @@ function stopLastAttacksBrahma(){
         lastEyeCoordList[k][1] = 0
         stopBrahmaEye("eye" + k)
     }
+    for(let i = 0; i < eyeIntervals.length; i++){
+        clearInterval(eyeIntervals[i])
+    }
+    eyeIntervals = []
 }
 
 
@@ -83,6 +85,7 @@ function lastLaunchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter){
             clearInterval(launchId)
         }
     }, eyeSpeed);
+    eyeIntervals.push(launchId)
 }
 
 function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
@@ -104,6 +107,7 @@ function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
             clearInterval(launchId)
         }
     }, eyeSpeed);
+    eyeIntervals.push(launchId)
 }
 
 
