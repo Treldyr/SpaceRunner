@@ -78,7 +78,7 @@ function lastLaunchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter){
                 respawnFromBrahma()
             }
         }
-        if(nbLoopEye==35){
+        if(nbLoopEye==30){
             stopBrahmaEye(idEye)
             clearInterval(launchId)
         }
@@ -99,7 +99,7 @@ function lastLaunchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter){
                 respawnFromBrahma()
             }
         }
-        if(nbLoopEye==45){
+        if(nbLoopEye==30){
             stopBrahmaEye(idEye)
             clearInterval(launchId)
         }
