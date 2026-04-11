@@ -343,7 +343,8 @@
     var isDimRed = true
 
     // List of the eyes coordonates
-    var eyeCoordList = Array.from({ length: 50 }, () => [0, 0]);
+    var eyeCoordList1 = Array.from({ length: 50 }, () => [0, 0]);
+    var eyeCoordList2 = Array.from({ length: 50 }, () => [0, 0]);
 
     // Initialise the music
     reInitMusic('forest');
@@ -401,8 +402,8 @@
                     playLava();
                     reset_player(current_size_top,current_size_left);
                 } else if((actual_board==18)||(actual_board==20)){
-                    for (k=0;k<eyeCoordList.length;k++){
-                        if((eyeCoordList[k][0]==fromtop)&&(eyeCoordList[k][1]==fromleft)){
+                    for (k=0;k<eyeCoordList1.length;k++){
+                        if(((eyeCoordList1[k][0]==fromtop)&&(eyeCoordList1[k][1]==fromleft))||((eyeCoordList2[k][0]==fromtop)&&(eyeCoordList2[k][1]==fromleft))){
                             respawnFromBrahma()
                         }
                     }

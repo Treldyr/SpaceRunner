@@ -230,7 +230,7 @@ function startAttacksBrahma(time_interval_attack) {
                     if(brahma_anger==1){
                         place_pow_shuriken()
                     }else{
-                        if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                        if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true,true)}else{hitwithEyesFromTop(brahma_life,200,false,true)}
                     }
                 break;
                 case 1:
@@ -247,7 +247,7 @@ function startAttacksBrahma(time_interval_attack) {
                     hitwithArms(20*brahma_life)
                 break;
                 case 4:
-                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true)}else{hitwithEyesFromTop(brahma_life,200,false)}
+                    if(getRandomIntMax(2)==0){hitwithEyesFromTop(brahma_life,200,true,false)}else{hitwithEyesFromTop(brahma_life,200,false,false)}
                 break;
                 default:
                     console.log('error phase number')

@@ -16,7 +16,7 @@ function stopBrahmaEye(idEye) {
     }
 }
 
-function launchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter,areEyesfromtop){
+function launchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter,areEyesfromtop,eyeCoordList){
     let eye_top
     if(areEyesfromtop){
         eye_top = 0
@@ -46,7 +46,7 @@ function launchEyeFromTop(idEye,eye_left,eyeSpeed,eyeCounter,areEyesfromtop){
 }
 
 
-function launchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter,areEyesfromleft){
+function launchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter,areEyesfromleft,eyeCoordList){
     let eye_left
     if(areEyesfromleft){
         eye_left = 0
@@ -75,18 +75,25 @@ function launchEyeFromLeft(idEye,eye_top,eyeSpeed,eyeCounter,areEyesfromleft){
     }, eyeSpeed);
 }
 
-function hitwithEyesFromTop(attackSpeed,eyeSpeed,areEyesfromtop){
+function hitwithEyesFromTop(attackSpeed,eyeSpeed,areEyesfromtop,isFirstHit){
+    clearInterval(hitEyesId)
     let eyeCounter = 0;
     let nbLoopAttack = 0;
+    let eyeCoordList = eyeCoordList2
+    let fillingId = "sh"
+    if(isFirstHit){
+        eyeCoordList = eyeCoordList1
+        fillingId = "fh"
+    }
     hitEyesId = setInterval(() => {
         if(!inpause){
             let spawnFromWhere = getRandomIntMax(26)+1
             // 1 => Leftest case
             // 26 => Rightest case
             eyeCounter++;
-            let idEye = "eye" + eyeCounter;
+            let idEye = "eye" + eyeCounter + fillingId;
             create_Brahma_eye(actual_board+1,0,spawnFromWhere,idEye);
-            launchEyeFromTop(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromtop)
+            launchEyeFromTop(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromtop,eyeCoordList)
             nbLoopAttack++;
         }
         if(nbLoopAttack==30){
@@ -108,19 +115,26 @@ function stopEyesAttack(){
 //                                                   //
 // --------------------------------------------------//
 
-
-function hitwithEyesFromLeft(attackSpeed,eyeSpeed,areEyesfromleft){
+// TODO this function is not used anymore ??
+function hitwithEyesFromLeft(attackSpeed,eyeSpeed,areEyesfromleft,isFirstHit){
+    clearInterval(hitEyesId)
     let eyeCounter = 0;
     let nbLoopAttack = 0;
+    let eyeCoordList = eyeCoordList2
+    let fillingId = "sh"
+    if(isFirstHit){
+        eyeCoordList = eyeCoordList1
+        fillingId = "fh"
+    }
     hitEyesId = setInterval(() => {
         if(!inpause){
             let spawnFromWhere = getRandomIntMax(16)+1
             // 1 => Topest case
             // 16 => Bottomest case
             eyeCounter++;
-            let idEye = "eye" + eyeCounter;
+            let idEye = "eye" + eyeCounter + fillingId;
             create_Brahma_eye(actual_board+1,spawnFromWhere,0,idEye);
-            launchEyeFromLeft(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromleft)
+            launchEyeFromLeft(idEye,spawnFromWhere,eyeSpeed,eyeCounter,areEyesfromleft,eyeCoordList)
             nbLoopAttack++;
         }
         if(nbLoopAttack==30){
