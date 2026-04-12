@@ -99,6 +99,7 @@ function respawnFromBrahma(){
         startLastAttacksBrahma()
         brahma_life = 2
         document.getElementById('heart2').style.display = "block";
+        stopPhysicalBrahma()
     }
     
 }
