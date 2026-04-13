@@ -79,3 +79,7 @@ tr {
 .avatar-img, .trophy-img{
     height: 30px;
 }
+
+.text-black {
+    color: #000000;
+}
