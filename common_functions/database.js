@@ -46,12 +46,21 @@ export async function sendBestTime(collectionName, time, pseudo) {
 
         // Compare the new time with the highest score across all levels
         if (time < highestScore) {
+            // get the player avatar
+            var chara = 'p1'
+            var storedData = localStorage.getItem('charChosen');
+            if (storedData !== null) {
+                var charChosen = JSON.parse(storedData);
+                chara = charChosen.char;
+            }
+
             // If the new time is lower (better), update the document with the highest score
             const levelDoc = doc(db, collectionName, highestScoreDoc);
             await setDoc(levelDoc, {
                 bestTime: time,
                 pseudo: pseudo,
                 date: new Date().toISOString(), // Timestamp
+                img: chara,
             });
         }
     } catch (error) {

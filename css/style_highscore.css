@@ -47,3 +47,35 @@ tr {
 }
 
 
+.highscore-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.highscore-title::before,
+.highscore-title::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 4px;
+    background-color: #f39c12;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+}
+
+.highscore-title::before {
+    left: -160px;
+}
+
+.highscore-title::after {
+    right: -160px;
+}
+
+.avatar-img, .trophy-img{
+    height: 30px;
+}
