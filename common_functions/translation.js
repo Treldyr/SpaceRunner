@@ -812,7 +812,8 @@ const languageData = {
         unlockAll2PLevels: "Vous venez de débloquer tous les niveaux de l'aventure 2 joueurs",
         unlockAllGhosts: "Vous venez de débloquer tous les fantômes",
         adventureInit: "Progression remise à 0",
-        getfancy: "Vous avez débloqué des personnages exclusifs"
+        getfancy: "Vous avez débloqué des personnages exclusifs",
+        attribute5: "Avatar"
     },
     en: {
         mainTitle: "Space Runner",
@@ -1627,7 +1628,8 @@ const languageData = {
         unlockAll2PLevels: "You unlocked all the 2 players adventure levels",
         unlockAllGhosts: "You unlocked all the ghosts",
         adventureInit: "Progression set to 0",
-        getfancy: "You unlocked exclusive characters"
+        getfancy: "You unlocked exclusive characters",
+        attribute5: "Avatar"
     },
     pt:{
         mainTitle: "Space Runner",
@@ -2442,7 +2444,8 @@ const languageData = {
         unlockAll2PLevels: "Acabou de desbloquear todos os níveis da aventura para 2 jogadores",
         unlockAllGhosts: "Acabou de desbloquear todos os fantasmas",
         adventureInit: "Progresso reiniciado",
-        getfancy: "Desbloqueou personagens exclusivas"
+        getfancy: "Desbloqueou personagens exclusivas",
+        attribute5: "Avatar"
     },
     es : {
         mainTitle: "Corredor Espacial",
@@ -3257,7 +3260,8 @@ const languageData = {
         unlockAll2PLevels: "Acaban de desbloquear todos los niveles de la aventura para 2 jugadores",
         unlockAllGhosts: "Acaban de desbloquear todos los fantasmas",
         adventureInit: "Progreso reiniciado",
-        getfancy: "Han desbloqueado personajes exclusivos"
+        getfancy: "Han desbloqueado personajes exclusivos",
+        attribute5: "Avatar"
     },
     ar : {
         mainTitle: "عداء الفضاء",
@@ -4007,5 +4011,6 @@ const languageData = {
         text2p68: "رائع! كانت هذه الأشباح مرعبة جدًا!",
         text2p69: "آمل من أجل سكان",
         text2p70: "أن تتم السيطرة عليهم بسرعة.",
+        attribute5: "أفاتار"
     }
 }
