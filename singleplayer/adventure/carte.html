@@ -83,8 +83,25 @@
         </div>
     </div>
     <div class="btn-back">
-        <a onclick="window.location.href = 'insertName.html'">
+        <a onclick="exitSinglePlayerAdventure()">
             <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
+        </a>
+    </div>
+    <div class="btn-avatar">
+        <input 
+            type="text" 
+            id="playerPseudo"
+            class="playerNameMapInput"
+            readonly
+            onclick="openInputSelector(pseudo)"
+        >
+        <a onclick="goSelectCharFromMap()">
+            <img 
+                id="playerAvatar"
+                class="arrow_back" 
+                src="../../images/head/p1head.png" 
+                alt="Player Avatar"
+            >
         </a>
     </div>
 </body>
@@ -93,8 +110,16 @@
 <script src="../../common_functions/navigation.js"></script>
 <script src="../../common_functions/background_music.js"></script>
 <script src="../../common_functions/maps.js"></script>
+<script src="../../common_functions/component_factory.js"></script>
+<script src="../../common_functions/translation.js"></script>
+<script src="../../common_functions/languages.js"></script>
 <script>
     ambianceMusic(); // Put some ambiance sound for the map
+    
+    var pseudo = localStorage.getItem("pseudo")
+    document.getElementById("playerPseudo").value = pseudo;
+    retrievePlayer()
+    document.getElementById("playerAvatar").src = "../../images/head/"+chara+"head.png";
 
     var lvl = 1;
     retrieveLevel();

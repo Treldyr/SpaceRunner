@@ -14,7 +14,7 @@
 #planet7 { top: 460px; left: 980px; }
 #planet8 { top: 300px; left: 1080px; }
 #planet9 { top: 140px; left: 1200px;}
-#planet10{ top: 40px; left: 1400px;}
+#planet10{ top: 180px; left: 1400px;}
 #planet11{ top: 420px; left: 1480px;}
 #planet12{ top: 300px; left: 1640px;}
 #planet13{ top: 120px; left: 1840px;}
@@ -22,7 +22,7 @@
 #planet15{ top: 200px; left: 2120px;}
 #planet16{ top: 440px; left: 2260px;}
 #planet17{ top: 380px; left: 2420px;}
-#planet18{ top: 30px; left: 2500px;}
+#planet18{ top: 70px; left: 2500px;}
 
 
 .planet:hover {
@@ -72,4 +72,128 @@
 
 body{
     overflow-y:hidden;
+}
+
+.btn-avatar {
+    position: fixed;
+    top : 10px;
+    right : 10px;
+    z-index:100;
+}
+
+/* Overlay sombre */
+#overlayPseudo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85); /* plus sombre */
+    backdrop-filter: blur(5px); /* effet moderne */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+/* Boîte centrale */
+#overlayPseudo .popup-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #f39c12;
+    border-radius: 20px;
+
+    padding: 40px;
+    text-align: center;
+
+    box-shadow: 0 0 20px #f39c12;
+    animation: popupAppear 0.3s ease-out;
+}
+
+/* Animation apparition */
+@keyframes popupAppear {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Input pseudo */
+.playerName {
+    width: 100%;
+}
+
+.playerName:focus {
+    box-shadow: 0 0 10px #f39c12;
+    border-color: #f39c12;
+}
+
+.playerNameMapInput, 
+.playerName
+ {
+    padding: 12px;
+    margin-bottom: 25px;
+
+    border-radius: 50px;
+    border: 2px solid #f39c12;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1.2rem;
+
+    text-align: center;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.playerNameMapInput:hover{
+    transform: scale(1.1);
+}
+
+.playerNameMapInput{
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+#overlayPseudo button {
+    width: 100px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+#overlayPseudo button:first-of-type {
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#overlayPseudo button:first-of-type:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+/* Bouton Annuler */
+#overlayPseudo button:last-of-type {
+    margin-left: 10px;
+    background-color: #f44336;
+    color: white;
+}
+
+#overlayPseudo button:last-of-type:hover {
+    transform: scale(1.1);
+    background-color: #da190b;
 }

@@ -29,8 +29,8 @@ var fromleft1 = 0;
 var fromtop2 =0;
 var fromleft2 = 0;
 var actual_board = 0;
-var chara = "p0";
-var charap2 = "p0";
+var chara = "p1";
+var charap2 = "p2";
 var inpause = false;
 
 

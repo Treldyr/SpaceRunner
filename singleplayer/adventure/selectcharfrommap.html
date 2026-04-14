@@ -26,15 +26,15 @@
 <body>
     <div class="background-image"></div>
     <div class="content">
-        <h1 class="custom-title">Space Runner</h1>
-        <h1><a data-lang-key="choseThePlayer">Choisissez le joueur</a> 2</h1>
+        <h1 class="custom-title" data-lang-key="adventureMode">Mode Aventure</h1>
+        <h1 data-lang-key="chosecharacter">Choisissez votre personnage</h1>
         <div class="container">
             <div class="row" id="listChar1">
                 <div class="col-md-3">
-                    <img src="../../images/p1down.png" class="img-thumbnail selected" id='p1' onclick="selectImage('p1')">
+                    <img src="../../images/p1down.png" class="img-thumbnail selected" id='p1'  onclick="selectImage('p1')">
                 </div>
                 <div class="col-md-3">
-                    <img src="../../images/p2down.png" class="img-thumbnail" id='p2' onclick="selectImage('p2')">
+                    <img src="../../images/p2down.png" class="img-thumbnail" id='p2'  onclick="selectImage('p2')">
                 </div>
                 <div class="col-md-3">
                     <img src="../../images/locked.png" class="img-thumbnail locked" id='p3'>
@@ -118,27 +118,31 @@
                     <img src="../../images/locked.png" class="img-thumbnail locked" id='p0'>
                 </div>
             </div>
+
             <!-- Champ caché pour stocker l'image sélectionnée -->
             <input type="hidden" id="selected-image" name="selected-image">
         </div>
-        <button class="btn-start" onclick="acceptPlayer('charChosen2','insertTeamName.html')" data-lang-key="next">Suivant</button>
+        <button class="btn-start" onclick="acceptPlayer('charChosen','carte.html')" data-lang-key="validate">Valider</button>
         <div class="btn-back">
-            <a onclick="window.location.href = 'selectchar1.html'">
+            <a onclick="goMapFromMenu()">
                 <img class="arrow_back" src="../../images/arrow_back.png" alt="Go backs">
             </a>
         </div>
     </div>
     <script src="../../common_functions/get_data.js"></script>
+    <script src="../../common_functions/navigation.js"></script>
     <script src="../../common_functions/unlocks.js"></script>
     <script src="../../common_functions/sounds.js"></script>
     <script src="../../common_functions/select_characters.js"></script>
     <script src="../../common_functions/translation.js"></script>
     <script src="../../common_functions/languages.js"></script>
 	<script>
-        var char = "p2"
+        var char = "p1"
         var lvl = 1
         retrieveLevel()
         hideLockedCharacters();
+        retrievePlayer()
+        selectImage(chara)
 	</script>
 </body>
 </html>

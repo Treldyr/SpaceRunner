@@ -36,3 +36,11 @@ function createCursor(){
     cursor_text.style.fontSize = "20px";
     document.getElementById('click_cursor').appendChild(cursor_text);
 }
+
+function openInputSelector() {
+    // Empêche doublon
+    if (document.getElementById("overlayPseudo")) return;
+
+    // Créé le choix de l'input
+    createInputMap()
+}

@@ -52,7 +52,27 @@ function goMultiplayerAdventure(){
 
 
 function goSinglePlayerAdventure(){
-    window.location.href='adventure/selectchar.html'
+    if(localStorage.getItem('charChosen')==null){
+        window.location.href='adventure/selectchar.html'
+    } else if(localStorage.getItem("pseudo")==null){
+        window.location.href='adventure/insertName.html'
+    } else {
+        window.location.href='adventure/carte.html'
+    }
+}
+
+function exitSinglePlayerAdventure(){
+    if(localStorage.getItem("pseudo")==null){
+        window.location.href='insertName.html'
+    } else if(localStorage.getItem('charChosen')==null){
+        window.location.href='selectchar.html'
+    } else {
+    window.location.href = '../'
+    }
+}
+
+function goSelectCharFromMap(){
+    window.location.href='selectcharfrommap.html'
 }
 
 function goRules(){
