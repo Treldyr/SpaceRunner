@@ -64,7 +64,21 @@
     
                 // Create the <td> elements and insert the data
                 const tdRanking = document.createElement("td");
-                tdRanking.textContent = index + 1; // Ranking based on the index (1 for first)
+                let rank = index + 1  // Ranking based on the index (1 for first)
+                if(rank > 3){
+                    tdRanking.textContent = index + 1;
+                } else {
+                    const img = document.createElement("img");
+                    img.classList.add("trophy-img");
+                    if(rank == 3){
+                        img.src = "../../../images/trophy/third.png";
+                    } else if(rank == 2){
+                        img.src = "../../../images/trophy/second.png";
+                    } else {
+                        img.src = "../../../images/trophy/first.png";
+                    }
+                    tdRanking.appendChild(img);
+                }
     
                 const tdPseudo = document.createElement("td");
                 tdPseudo.textContent = data.pseudo;
@@ -94,7 +108,7 @@
 <body>
     <div class="highscore-background-image"></div>
     <div class="content">
-        <h1 class="custom-title text-black"><a data-lang-key="scoresPlanet">Scores planète</a> : Vega IX</h1>
+        <h1 class="highscore-title text-black"><a data-lang-key="scoresPlanet">Scores planète</a> : Vega IX</h1>
         <table>
             <thead>
                 <tr>
