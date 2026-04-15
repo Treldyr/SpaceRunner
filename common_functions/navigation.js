@@ -51,8 +51,8 @@ function goMultiplayerAdventure(){
         window.location.href='adventure/selectchar1.html'
     } else if(localStorage.getItem("charChosen2")==null){
         window.location.href='adventure/selectchar2.html'
-    } else if(localStorage.getItem("pseudo")==null){
-        window.location.href='adventure/insertName.html'
+    } else if(localStorage.getItem("teamName")==null){
+        window.location.href='adventure/insertTeamName.html'
     } else {
         window.location.href='adventure/carte.html'
     }
