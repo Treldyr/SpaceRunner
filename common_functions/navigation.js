@@ -63,8 +63,8 @@ function exitMultiPlayerAdventure(){
         window.location.href='selectchar1.html'
     } else if(localStorage.getItem("charChosen2")==null){
         window.location.href='selectchar2.html'
-    } else if(localStorage.getItem("pseudo")==null){
-        window.location.href='insertName.html'
+    } else if(localStorage.getItem("teamName")==null){
+        window.location.href='insertTeamName.html'
     } else {
         window.location.href='../'
     }
