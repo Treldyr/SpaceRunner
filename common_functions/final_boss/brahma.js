@@ -107,6 +107,7 @@ function respawnFromBrahma(){
 function loseAHeart(){
     document.getElementById('heart'+brahma_life).style.display = "none";
     brahma_life--;
+    playSuccess()
     if(brahma_life==0){
         finish_final_boss()
     } else if(brahma_life==6 || brahma_life==2){
