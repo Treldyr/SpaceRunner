@@ -47,7 +47,27 @@ function goGhost1v1(){
 }
 
 function goMultiplayerAdventure(){
-    window.location.href='adventure/selectchar1.html'
+    if(localStorage.getItem('charChosen')==null){
+        window.location.href='adventure/selectchar1.html'
+    } else if(localStorage.getItem("charChosen2")==null){
+        window.location.href='adventure/selectchar2.html'
+    } else if(localStorage.getItem("pseudo")==null){
+        window.location.href='adventure/insertName.html'
+    } else {
+        window.location.href='adventure/carte.html'
+    }
+}
+
+function exitMultiPlayerAdventure(){
+    if(localStorage.getItem('charChosen')==null){
+        window.location.href='selectchar1.html'
+    } else if(localStorage.getItem("charChosen2")==null){
+        window.location.href='selectchar2.html'
+    } else if(localStorage.getItem("pseudo")==null){
+        window.location.href='insertName.html'
+    } else {
+        window.location.href='../'
+    }
 }
 
 
@@ -67,12 +87,20 @@ function exitSinglePlayerAdventure(){
     } else if(localStorage.getItem('charChosen')==null){
         window.location.href='selectchar.html'
     } else {
-    window.location.href = '../'
+        window.location.href = '../'
     }
 }
 
 function goSelectCharFromMap(){
     window.location.href='selectcharfrommap.html'
+}
+
+function goSelectCharFromMap1(){
+    window.location.href='selectcharfrommap1.html'
+}
+
+function goSelectCharFromMap2(){
+    window.location.href='selectcharfrommap2.html'
 }
 
 function goRules(){

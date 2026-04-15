@@ -37,10 +37,10 @@ function createCursor(){
     document.getElementById('click_cursor').appendChild(cursor_text);
 }
 
-function openInputSelector() {
+function openInputSelector(datakey, itemname) {
     // Empêche doublon
     if (document.getElementById("overlayPseudo")) return;
 
     // Créé le choix de l'input
-    createInputMap()
+    createInputMap(datakey, itemname)
 }

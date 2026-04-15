@@ -1,4 +1,4 @@
-function createInputMap() {
+function createInputMap(datakey, itemname) {
     // Empêche doublon
     if (document.getElementById("overlayPseudo")) return;
 
@@ -19,7 +19,7 @@ function createInputMap() {
         if (input.value.trim() !== "") {
             pseudo = input.value;
             document.getElementById("playerPseudo").value = pseudo;
-            localStorage.setItem("pseudo", pseudo);
+            localStorage.setItem(itemname, pseudo);
             overlay.remove();
         }
     };
@@ -51,7 +51,7 @@ function createInputMap() {
     // Titre
     const title = document.createElement("h1");
     title.textContent = "Choisissez votre pseudo";
-    title.setAttribute("data-lang-key", "choosePseudo");
+    title.setAttribute("data-lang-key", datakey);
     title.style.color = "white"
 
     // Br Espace
