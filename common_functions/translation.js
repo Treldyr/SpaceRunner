@@ -7,7 +7,7 @@ const languageData = {
         credits: "Crédits",
         author: "Auteur - Youenn GASC",
         creation: "Création - Novembre 2023",
-        lastupdate: "Dernière mise à jour - Février 2026",
+        lastupdate: "Dernière mise à jour - Avril 2026",
         back: "Retour",
         planet: "Planètes",
         moves: "Coups",
@@ -813,7 +813,8 @@ const languageData = {
         unlockAllGhosts: "Vous venez de débloquer tous les fantômes",
         adventureInit: "Progression remise à 0",
         getfancy: "Vous avez débloqué des personnages exclusifs",
-        attribute5: "Avatar"
+        attribute5: "Avatar",
+        version: "Version"
     },
     en: {
         mainTitle: "Space Runner",
@@ -823,7 +824,7 @@ const languageData = {
         credits: "Credits",
         author: "Author - Youenn GASC",
         creation: "Creation - November 2023",
-        lastupdate: "Last update - February 2026",
+        lastupdate: "Last update - April 2026",
         back: "Back",
         planet: "Planets",
         moves: "Moves",
@@ -1629,7 +1630,8 @@ const languageData = {
         unlockAllGhosts: "You unlocked all the ghosts",
         adventureInit: "Progression set to 0",
         getfancy: "You unlocked exclusive characters",
-        attribute5: "Avatar"
+        attribute5: "Avatar",
+        version: "Version"
     },
     pt:{
         mainTitle: "Space Runner",
@@ -1639,7 +1641,7 @@ const languageData = {
         credits: "Créditos",
         author: "Autor - Youenn GASC",
         creation: "Criação - Novembro 2023",
-        lastupdate: "Última atualização - Fevereiro 2026",
+        lastupdate: "Última atualização - Abril 2026",
         back: "Voltar",
         planet: "Planetas",
         moves: "Jogadas",
@@ -2445,7 +2447,8 @@ const languageData = {
         unlockAllGhosts: "Acabou de desbloquear todos os fantasmas",
         adventureInit: "Progresso reiniciado",
         getfancy: "Desbloqueou personagens exclusivas",
-        attribute5: "Avatar"
+        attribute5: "Avatar",
+        version: "Versão"
     },
     es : {
         mainTitle: "Corredor Espacial",
@@ -2455,7 +2458,7 @@ const languageData = {
         credits: "Créditos",
         author: "Autor - Youenn GASC",
         creation: "Creación - Noviembre 2023",
-        lastupdate: "Última actualización - Febrero de 2026",
+        lastupdate: "Última actualización - Abril de 2026",
         back: "Volver",
         planet: "Planetas",
         moves: "Movimientos",
@@ -3261,7 +3264,8 @@ const languageData = {
         unlockAllGhosts: "Acaban de desbloquear todos los fantasmas",
         adventureInit: "Progreso reiniciado",
         getfancy: "Han desbloqueado personajes exclusivos",
-        attribute5: "Avatar"
+        attribute5: "Avatar",
+        version: "Versión"
     },
     ar : {
         mainTitle: "عداء الفضاء",
@@ -3271,7 +3275,7 @@ const languageData = {
         credits: "شكر وتقدير",
         author: "المؤلف - Youenn GASC",
         creation: "الإنشاء - نوفمبر ٢٠٢٣",
-        lastupdate: "آخر تحديث - فبراير ٢٠٢٦",
+        lastupdate: "آخر تحديث - أبريل ٢٠٢٦",
         back: "رجوع",
         planet: "الكواكب",
         moves: "الحركات",
@@ -4011,6 +4015,7 @@ const languageData = {
         text2p68: "رائع! كانت هذه الأشباح مرعبة جدًا!",
         text2p69: "آمل من أجل سكان",
         text2p70: "أن تتم السيطرة عليهم بسرعة.",
-        attribute5: "أفاتار"
+        attribute5: "أفاتار",
+        version: "إصدار"
     }
 }
