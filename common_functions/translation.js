@@ -124,7 +124,7 @@ const languageData = {
         text27: "Promets-moi de continuer à les aider.",
         text28: "Je le promet.",
         text29: "Merci de ton encouragement.",
-        text30: "Bien joué, jeune héros. Ta rapidié pour le trouver a été impressionnante.",
+        text30: "Bien joué, jeune héros. Ta rapidité pour le trouver a été impressionnante.",
         text31: "Merci beaucoup de ton aide.",
         text32: "Une autre alerte vient de nous parvenir...",
         text33: "Cette fois, sur la planète",
