@@ -18,6 +18,7 @@ function check_get_powswitch(height,length){
 }
 
 function switch_players(height,length){
+    playSuccess();
     let temptop = fromtop2
     let templeft = fromleft2
     fromtop2 = fromtop1

@@ -14,6 +14,7 @@ function check_get_powItem(){
 }
 
 function getPowItem(isPlayerOne){
+    playSuccess();
     document.getElementById('actualPowItem').remove();
     playSuccess()
     if(isNextItemBrain){
