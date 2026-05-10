@@ -47,6 +47,7 @@ function delayMovePapy(direction) {
 function checkPapy(bossLeft,fromleft,bossTop,fromtop){
     if ((bossLeft == fromleft) && (bossTop == fromtop) && (!game_ended)){
         reset_level()
+        playBlade()
     }
 }
 
@@ -68,8 +69,6 @@ function reset_level(){
         clearTimeout(timeoutId);
     }
     timeouts.clear();
-
-    playLava()
     
     for(let j= 0; j < levers[actual_board].length; j++)
     {

@@ -95,12 +95,15 @@ function treatment_arrival_case(){
             }
         } else if(boards[actual_board][fromtop][fromleft]==3){
             reset_level();
+            playLava()
         } else if((hasClone)&&(boards[actual_board][fromtop_clone][fromleft_clone]==3)){
             reset_level();
+            playLava()
         }
     }
     if((fromtop<0)||(fromleft<0)||(fromleft_clone<0)||(fromtop_clone<0)){
         reset_level();
+        playBlade()
     }
     
 }
@@ -168,8 +171,6 @@ function get_power_item(){
 }
 
 function reset_level(){
-    playLava()
-
     isAlive = true
     if(hasClone){
         delete_mirror_clone();
