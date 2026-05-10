@@ -250,6 +250,7 @@ function checkIsBomb(){
                 stopBoss()
                 moveFelix(60+felix_life*60)
                 freezeCharacter("boss0");
+                playBomb();
             }
         }
     }
