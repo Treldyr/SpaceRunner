@@ -70,7 +70,7 @@ function playLava() {
 
 function playBomb() {
     var audio = new Audio('../../../sons/bomb.mp3');
-    audio.volume = globalVolume;
+    audio.volume = globalVolume *0.4;
     audio.play();
 }
 
