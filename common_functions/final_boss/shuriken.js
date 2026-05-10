@@ -129,4 +129,5 @@ function take_pow_shuriken(){
     document.getElementById("shurikenPOW").remove()
     fromtopShurikenPOW = 0
     fromleftShurikenPOW = 0
+    playSuccess();
 }

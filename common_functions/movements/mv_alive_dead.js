@@ -117,6 +117,7 @@ function get_power_item(){
                     document.getElementById('pow'+idPow).remove();
                     pow_alive[actual_board][j][2] = false;
                     get_powalive();
+                    playSuccess();
             }
         }
     }
@@ -132,6 +133,7 @@ function get_power_item(){
                     document.getElementById('pow'+idPow).remove();
                     pow_death[actual_board][j][2] = false;
                     get_powdeath();
+                    playSuccess();
             }
         }
     }
@@ -144,6 +146,7 @@ function get_power_item(){
             document.getElementById('pow'+idPow).remove();
             pow_duplication[actual_board][j][2] = false;
             get_powduplication();
+            playSuccess();
         }
     }
 
@@ -158,6 +161,7 @@ function get_power_item(){
                     document.getElementById('pow'+idPow).remove();
             pow_shuriken[actual_board][j][2] = false;
             get_powshuriken();
+            playSuccess();
             }
         }
     }
