@@ -48,7 +48,7 @@ function dest_upward_p1(height,length){
     let chara2 = document.getElementById('character'+actual_board);
     chara2.setAttribute('src',"../../../images/"+chara+"up.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop1+5)+"vh;left : "+(length*fromleft1+5)+"vw;");
-    if(boards[actual_board][fromtop1][fromleft1]==0)
+    if(boards[actual_board][fromtop1][fromleft1]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p1_won = true;
         chara2.style.display = "none";
@@ -70,7 +70,7 @@ function dest_upward_p2(height,length){
     let chara2 = document.getElementById('characterp2'+actual_board);
     chara2.setAttribute('src',"../../../images/"+charap2+"up.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;");
-    if(boards[actual_board][fromtop2][fromleft2]==0)
+    if(boards[actual_board][fromtop2][fromleft2]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p2_won = true;
         chara2.style.display = "none";
@@ -91,7 +91,7 @@ function dest_downward_p1(height,length){
     let chara2 = document.getElementById('character'+actual_board);
     chara2.setAttribute('src',"../../../images/"+chara+"down.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop1+5)+"vh;left : "+(length*fromleft1+5)+"vw;");
-    if(boards[actual_board][fromtop1][fromleft1]==0)
+    if(boards[actual_board][fromtop1][fromleft1]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p1_won = true;
         chara2.style.display = "none";
@@ -113,7 +113,7 @@ function dest_downward_p2(height,length){
     let chara2 = document.getElementById('characterp2'+actual_board);
     chara2.setAttribute('src',"../../../images/"+charap2+"down.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;");
-    if(boards[actual_board][fromtop2][fromleft2]==0)
+    if(boards[actual_board][fromtop2][fromleft2]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p2_won = true;
         chara2.style.display = "none";
@@ -135,7 +135,7 @@ function dest_leftward_p1(height,length){
     let chara2 = document.getElementById('character'+actual_board);
     chara2.setAttribute('src',"../../../images/"+chara+"left.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop1+5)+"vh;left : "+(length*fromleft1+5)+"vw;");
-    if(boards[actual_board][fromtop1][fromleft1]==0)
+    if(boards[actual_board][fromtop1][fromleft1]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p1_won = true;
         chara2.style.display = "none";
@@ -157,7 +157,7 @@ function dest_leftward_p2(height,length){
     let chara2 = document.getElementById('characterp2'+actual_board);
     chara2.setAttribute('src',"../../../images/"+charap2+"left.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;");
-    if(boards[actual_board][fromtop2][fromleft2]==0)
+    if(boards[actual_board][fromtop2][fromleft2]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p2_won = true;
         chara2.style.display = "none";
@@ -178,7 +178,7 @@ function dest_rigthward_p1(height,length){
     let chara2 = document.getElementById('character'+actual_board);
     chara2.setAttribute('src',"../../../images/"+chara+"right.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop1+5)+"vh;left : "+(length*fromleft1+5)+"vw;");
-    if(boards[actual_board][fromtop1][fromleft1]==0)
+    if(boards[actual_board][fromtop1][fromleft1]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p1_won = true;
         chara2.style.display = "none";
@@ -200,7 +200,7 @@ function dest_rigthward_p2(height,length){
     let chara2 = document.getElementById('characterp2'+actual_board);
     chara2.setAttribute('src',"../../../images/"+charap2+"right.png");
     chara2.setAttribute('style',"position: fixed;top : "+(height*fromtop2+5)+"vh;left : "+(length*fromleft2+5)+"vw;");
-    if(boards[actual_board][fromtop2][fromleft2]==0)
+    if(boards[actual_board][fromtop2][fromleft2]==0 &&(found_b1)&&(found_b2)&&(found_b0))
     {
         p2_won = true;
         chara2.style.display = "none";
