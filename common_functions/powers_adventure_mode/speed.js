@@ -10,11 +10,13 @@ function check_get_powspeed(){
                 document.getElementById('pow'+idPow).remove();
                 pow_speed[actual_board][j][2] = false;
                 p1_speed = true
+                playSuccess();
             }
             else if((pow_speed[actual_board][j][0]==fromtop2)&&(pow_speed[actual_board][j][1]==fromleft2)){
                 document.getElementById('pow'+idPow).remove();
                 pow_speed[actual_board][j][2] = false;
                 p2_speed = true
+                playSuccess();
             }
         }
     }

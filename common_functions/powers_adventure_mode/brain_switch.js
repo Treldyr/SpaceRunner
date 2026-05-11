@@ -14,6 +14,7 @@ function check_get_powItem(){
 }
 
 function getPowItem(isPlayerOne){
+    playSuccess();
     document.getElementById('actualPowItem').remove();
     playSuccess()
     if(isNextItemBrain){
@@ -27,7 +28,7 @@ function generatePowItem(){
     isNextItemBrain = !isNextItemBrain
     powerItemTop = getRandomIntMax(13)+1
     powerItemLeft = getRandomIntMax(22)+1
-    if(boards[actual_board][powerItemTop][powerItemLeft]==2){
+    while(boards[actual_board][powerItemTop][powerItemLeft]==2){
         powerItemLeft++;
     }
     let powitem = document.createElement('img');

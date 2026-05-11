@@ -29,6 +29,7 @@
         <div class="content">
             <div id="pause">
                 <button class="btn-start" onclick="closePause()" data-lang-key="continue">Continuer</button>
+                <button class="btn-start" onclick="reset_mug_level()" data-lang-key="restart">Recommencer</button>
                 <button class="btn-start" onclick="returnToMapFromPlanet()" data-lang-key="map">Carte</button>
                 <button class="btn-start" onclick="returnToMenu()" data-lang-key="menu">Menu</button>
             </div>
@@ -175,6 +176,37 @@
                 }
             }
         }
+    }
+
+    function reset_mug_level(){
+        fromtop1 = coords_begin[actual_board][0];
+        fromleft1 = coords_begin[actual_board][1];
+
+        fromtop2 = coords_begin2[actual_board][0];
+        fromleft2 = coords_begin2[actual_board][1];
+
+        let cat = document.getElementById('character'+actual_board)
+        cat.setAttribute('style',"position: fixed;top : "+(5*fromtop1+5)+"vh;left : "+(3.5*fromleft1+5)+"vw;");
+        cat.setAttribute('src',"../../../images/"+chara+"down.png");
+
+        let cat2 = document.getElementById('characterp2'+actual_board)
+        cat2.setAttribute('style',"position: fixed;top : "+(5*fromtop2+5)+"vh;left : "+(3.5*fromleft2+5)+"vw;");
+        cat2.setAttribute('src',"../../../images/"+charap2+"down.png");
+    
+        for(let j= 0; j < levers[actual_board].length; j++)
+        {
+            let idLevers = j + (actual_board)*100
+            if(levers[actual_board][j][6] == "off" && levers[actual_board][j][2] == "on"){
+                turn_off_lever(j,idLevers,5,3.5);
+            } else if(levers[actual_board][j][6] == "on" && levers[actual_board][j][2] == "off") {
+                turn_on_lever(j,idLevers,5,3.5);
+            }
+        }
+
+        p1_won = false;
+        p2_won = false;
+
+        closePause()
     }
 
 </script>

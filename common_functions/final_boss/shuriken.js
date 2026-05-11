@@ -88,7 +88,7 @@ function checkBossesShurikenPlayer(){
     if((fromtopShurikenPlayer==fromtopShurikenBoss1)&&(fromleftShurikenPlayer==fromleftShurikenBoss1)){
         delete_shuriken(1)
         delete_shuriken(6)
-        // TODO do sound clank ?
+        playBlade()
     }
     checkKillBoss1()
     checkKillBoss2()
@@ -99,6 +99,7 @@ function checkKillBoss1(){
         delete_shuriken(1)
         stopBoss1()
         document.getElementById('boss6').remove()
+        playBlade()
     }
 }
 
@@ -107,6 +108,7 @@ function checkKillBoss2(){
         delete_shuriken(1)
         stopBoss2()
         document.getElementById('boss9').remove()
+        playBlade()
     }
 }
 
@@ -129,4 +131,5 @@ function take_pow_shuriken(){
     document.getElementById("shurikenPOW").remove()
     fromtopShurikenPOW = 0
     fromleftShurikenPOW = 0
+    playSuccess();
 }

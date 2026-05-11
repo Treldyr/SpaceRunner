@@ -68,9 +68,22 @@ function playLava() {
     audio.play();
 }
 
+function playBomb() {
+    var audio = new Audio('../../../sons/bomb.mp3');
+    audio.volume = globalVolume *0.4;
+    audio.play();
+}
+
+function playBlade() {
+    var audio = new Audio('../../../sons/blade.mp3');
+    audio.volume = globalVolume;
+    audio.play();
+}
+
+
 function playWaterFootstep() {
     var audio = new Audio('../../../sons/water_footstep.wav');
-    audio.volume = globalVolume *0.7;
+    audio.volume = globalVolume *0.5;
     audio.play();
 }
 
