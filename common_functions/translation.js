@@ -3272,7 +3272,7 @@ const languageData = {
         getfancy: "Han desbloqueado personajes exclusivos",
         attribute5: "Avatar",
         version: "Versión",
-        voirplus: "Ver Mais",
+        voirplus: "Ver Más",
         voirmoins: "Ver Menos"
     },
     ar : {
@@ -4025,7 +4025,7 @@ const languageData = {
         text2p70: "أن تتم السيطرة عليهم بسرعة.",
         attribute5: "أفاتار",
         version: "إصدار",
-        voirplus: "Ver Mais",
-        voirmoins: "Ver Menos"
+        voirplus: "عرض المزيد",
+        voirmoins: "عرض أقل"
     }
 }
