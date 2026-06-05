@@ -94,7 +94,7 @@
                 const tdImg = document.createElement("td");
                 const img = document.createElement("img");
                 img.classList.add("avatar-img");
-                img.src = data.img ? "../../../images/head/" + data.img + "head.png" : "../../../images/head/p1head.png";
+                img.src = data.img ? "../../../images/head/" + data.img + "head.png" : "../../../images/head/unknownhead.png";
                 tdImg.appendChild(img);
     
                 // Append the <td> elements to the <tr>
@@ -103,6 +103,11 @@
                 tr.appendChild(tdImg); 
                 tr.appendChild(tdScore);
                 tr.appendChild(tdDate);
+
+                if(rank>10){
+                    tr.classList.add("hiddenScore")
+                    tr.style.display = "none";
+                }
     
                 // Append the <tr> to the <tbody> with the id "bestTimes"
                 document.getElementById("bestTimes").appendChild(tr);
@@ -115,7 +120,7 @@
 </head>
 <body>
     <div class="highscore-background-image"></div>
-    <div class="content">
+    <div class="content-highscore">
         <h1 class="highscore-title"><a data-lang-key="scoresPlanet">Scores planète</a> : Deep Space Nine</h1>
         <table>
             <thead>
@@ -130,6 +135,16 @@
             <tbody id="bestTimes">
             </tbody>
         </table>
+        <div class="show-more-container" id="PlusButton">
+            <button  class="trapezoid-btn" onclick="showMoreScores()" data-lang-key="voirplus">
+                Voir Plus
+            </button>
+        </div>
+        <div class="show-more-container" id="LessButton"  style="display: none;">
+            <button  class="trapezoid-btn" onclick="showLessScores()" data-lang-key="voirmoins">
+                Voir Moins
+            </button>
+        </div>
         <div class="container-arrows">
             <p></p>
             <button class="btn btn-outline-light" onclick="goHighScoresOnline('1')">1</button>
