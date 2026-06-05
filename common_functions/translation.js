@@ -814,7 +814,9 @@ const languageData = {
         adventureInit: "Progression remise à 0",
         getfancy: "Vous avez débloqué des personnages exclusifs",
         attribute5: "Avatar",
-        version: "Version"
+        version: "Version",
+        voirplus: "Voir Plus",
+        voirmoins: "Voir Moins"
     },
     en: {
         mainTitle: "Space Runner",
@@ -1631,7 +1633,9 @@ const languageData = {
         adventureInit: "Progression set to 0",
         getfancy: "You unlocked exclusive characters",
         attribute5: "Avatar",
-        version: "Version"
+        version: "Version",
+        voirplus: "See  More",
+        voirmoins: "See Less"
     },
     pt:{
         mainTitle: "Space Runner",
@@ -2448,7 +2452,9 @@ const languageData = {
         adventureInit: "Progresso reiniciado",
         getfancy: "Desbloqueou personagens exclusivas",
         attribute5: "Avatar",
-        version: "Versão"
+        version: "Versão",
+        voirplus: "Ver Mais",
+        voirmoins: "Ver Menos"
     },
     es : {
         mainTitle: "Corredor Espacial",
@@ -3265,7 +3271,9 @@ const languageData = {
         adventureInit: "Progreso reiniciado",
         getfancy: "Han desbloqueado personajes exclusivos",
         attribute5: "Avatar",
-        version: "Versión"
+        version: "Versión",
+        voirplus: "Ver Mais",
+        voirmoins: "Ver Menos"
     },
     ar : {
         mainTitle: "عداء الفضاء",
@@ -4016,6 +4024,8 @@ const languageData = {
         text2p69: "آمل من أجل سكان",
         text2p70: "أن تتم السيطرة عليهم بسرعة.",
         attribute5: "أفاتار",
-        version: "إصدار"
+        version: "إصدار",
+        voirplus: "Ver Mais",
+        voirmoins: "Ver Menos"
     }
 }
