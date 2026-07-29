@@ -58,7 +58,7 @@ function dest_downward(){
         }else{
             playWallHit()
         }
-    } else if(actual_board==18){
+    } else if(actual_board==19){
         directionFaced = "d"
         if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
@@ -68,7 +68,7 @@ function dest_downward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
-    } else if(actual_board==20){
+    } else if(actual_board==22){
         if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
             playMove();
@@ -83,7 +83,7 @@ function dest_downward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
-    } else if(actual_board==22){
+    } else if(actual_board==25){
         if(boards[actual_board][fromtop+1][fromleft]!=20){
             fromtop++;
             playMove();
@@ -151,7 +151,7 @@ function dest_leftward(){
         }else{
             playWallHit()
         }
-    } else if(actual_board==18){
+    } else if(actual_board==19){
         directionFaced = "l"
         if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
@@ -161,7 +161,7 @@ function dest_leftward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
-    } else if(actual_board==20){
+    } else if(actual_board==22){
         if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
             playMove();
@@ -176,7 +176,7 @@ function dest_leftward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
-    } else if(actual_board==22){
+    } else if(actual_board==25){
         if(boards[actual_board][fromtop][fromleft-1]!=20){
             fromleft--;
             playMove();
@@ -244,7 +244,7 @@ function dest_upward(){
         }else{
             playWallHit()
         }
-    } else if(actual_board==18){
+    } else if(actual_board==19){
         directionFaced = "u"
         if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
@@ -254,7 +254,7 @@ function dest_upward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
-    } else if(actual_board==20){
+    } else if(actual_board==22){
         if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
             playMove();
@@ -269,7 +269,7 @@ function dest_upward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
-    } else if(actual_board==22){
+    } else if(actual_board==25){
         if(boards[actual_board][fromtop-1][fromleft]!=20){
             fromtop--;
             playMove();
@@ -337,7 +337,7 @@ function dest_rigthward(){
         }else{
             playWallHit()
         }
-    } else if(actual_board==18){
+    } else if(actual_board==19){
         directionFaced = "r"
         if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
@@ -347,7 +347,7 @@ function dest_rigthward(){
         }
         checkShuriken(6)
         checkIsAlign(fromleft,fromtop,boss2Left,boss2Top)
-    } else if(actual_board==20){
+    } else if(actual_board==22){
         if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
             playMove();
@@ -362,7 +362,7 @@ function dest_rigthward(){
         }
         checkIsAlign(fromleft,fromtop,bossDarkLeft,bossDarkTop)
         checkHitBrahma()
-    } else if(actual_board==22){
+    } else if(actual_board==25){
         if(boards[actual_board][fromtop][fromleft+1]!=20){
             fromleft++;
             playMove();
