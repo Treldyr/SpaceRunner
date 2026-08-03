@@ -13,7 +13,7 @@ function setPodium(player, avatarId, nameId, scoreId, dateId){
     document.getElementById(avatarId).src =
         player.img ?
         "../../../images/" + player.img + "down.png"
-        : "../../../images/p1down.png";
+        : "../../../images/unknowndown.png";
 
     document.getElementById(nameId).textContent = player.pseudo;
 
