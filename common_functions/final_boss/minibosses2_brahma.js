@@ -12,7 +12,7 @@ function initializeMiniBosses2() {
 
     bossPapyTop = coords_begin_boss[3][0];
     bossPapyLeft = coords_begin_boss[3][1];
-    create_element(actual_board+1, 5, 3.5, "p18down.png", "papy20", coords_begin_boss[3][0], coords_begin_boss[3][1])
+    create_element(actual_board+1, 5, 3.5, "p18down.png", "papy22", coords_begin_boss[3][0], coords_begin_boss[3][1])
 }
 
 
@@ -23,7 +23,7 @@ function restartMiniBosses2() {
 
     bossPapyTop = coords_begin_boss[3][0];
     bossPapyLeft = coords_begin_boss[3][1];
-    document.getElementById('papy20').setAttribute('style',"position: fixed;top : "+(5*coords_begin_boss[3][0]+5)+"vh;left : "+(3.5*coords_begin_boss[3][1]+5)+"vw;");
+    document.getElementById('papy22').setAttribute('style',"position: fixed;top : "+(5*coords_begin_boss[3][0]+5)+"vh;left : "+(3.5*coords_begin_boss[3][1]+5)+"vw;");
 }
 
 // --------------------------------------------------//

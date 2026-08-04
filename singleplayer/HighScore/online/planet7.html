@@ -56,62 +56,7 @@
                 });
             });
     
-            // Sort the times array by bestTime in ascending order
-            timesArray.sort((a, b) => a.bestTime - b.bestTime);
-    
-            // Display the sorted times in the table
-            timesArray.forEach((data, index) => {
-                const tr = document.createElement("tr");
-    
-                // Create the <td> elements and insert the data
-                const tdRanking = document.createElement("td");
-                let rank = index + 1  // Ranking based on the index (1 for first)
-                if(rank > 3){
-                    tdRanking.textContent = index + 1;
-                } else {
-                    const img = document.createElement("img");
-                    img.classList.add("trophy-img");
-                    if(rank == 3){
-                        img.src = "../../../images/trophy/third.png";
-                    } else if(rank == 2){
-                        img.src = "../../../images/trophy/second.png";
-                    } else {
-                        img.src = "../../../images/trophy/first.png";
-                    }
-                    tdRanking.appendChild(img);
-                }
-    
-                const tdPseudo = document.createElement("td");
-                tdPseudo.textContent = data.pseudo;
-    
-                const tdScore = document.createElement("td");
-                let nbTemps = data.bestTime;
-                tdScore.textContent =  pad(parseInt(nbTemps / 6000)) + " : "+pad(Math.floor((nbTemps/100) % 60))+ " : "+pad((nbTemps) % 100);
-    
-                const tdDate = document.createElement("td");
-                tdDate.textContent = data.date;
-
-                const tdImg = document.createElement("td");
-                const img = document.createElement("img");
-                img.classList.add("avatar-img");
-                img.src = data.img ? "../../../images/head/" + data.img + "head.png" : "../../../images/head/unknownhead.png";
-                tdImg.appendChild(img);
-    
-                // Append the <td> elements to the <tr>
-                tr.appendChild(tdRanking);  // Ranking first
-                tr.appendChild(tdPseudo);
-                tr.appendChild(tdImg); 
-                tr.appendChild(tdScore);
-                tr.appendChild(tdDate);
-
-                if(rank>10){
-                    tr.classList.add("hiddenScore")
-                    tr.style.display = "none";
-                }
-    
-                // Append the <tr> to the <tbody> with the id "bestTimes"
-                document.getElementById("bestTimes").appendChild(tr);
-            });
+            setScoreBoardAndPodium(timesArray)
         }
     
         // Call the function to display the best times when the page loads
@@ -122,6 +67,45 @@
     <div class="highscore-background-image"></div>
     <div class="content-highscore">
         <h1 class="highscore-title"><a data-lang-key="scoresPlanet">Scores planète</a> : <a data-lang-key="planet5">L'Étranger</a></h1>
+        <div class="podium-container" id="podium">
+
+            <div class="podium-player third">
+                <div class="podium-name" id="podiumName3">---</div>
+                <div class="podium-score" id="podiumScore3">--:--:--</div>
+                <div class="podium-date" id="podiumDate3">--/--/--</div>
+
+                <img class="podium-avatar" id="podiumAvatar3" src="../../../images/unknowndown.png">
+            </div>
+
+            <div class="podium-player first">
+                
+                <div class="sparkles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <img class="crown" src="../../../images/podium/crown.png">
+                <div class="podium-name" id="podiumName1">---</div>
+                <div class="podium-score" id="podiumScore1" >--:--:--</div>
+                <div class="podium-date" id="podiumDate1">--/--/--</div>
+
+                <img class="podium-avatar" id="podiumAvatar1" src="../../../images/unknowndown.png">
+            </div>
+
+            <div class="podium-player second">
+                <div class="podium-name" id="podiumName2">---</div>
+                <div class="podium-score" id="podiumScore2">--:--:--</div>
+                <div class="podium-date" id="podiumDate2">--/--/--</div>
+
+                <img class="podium-avatar" id="podiumAvatar2" src="../../../images/unknowndown.png">
+            </div>
+        </div>
+        
+        <img class="podium-img" src="../../../images/podium/5.png">
+
         <table>
             <thead>
                 <tr>
@@ -135,36 +119,26 @@
             <tbody id="bestTimes">
             </tbody>
         </table> 
-        <div class="show-more-container" id="PlusButton">
-            <button  class="trapezoid-btn" onclick="showMoreScores()" data-lang-key="voirplus">
-                Voir Plus
-            </button>
-        </div>
-        <div class="show-more-container" id="LessButton"  style="display: none;">
-            <button  class="trapezoid-btn" onclick="showLessScores()" data-lang-key="voirmoins">
-                Voir Moins
-            </button>
-        </div>
         <div class="container-arrows">
             <p></p>
             <button class="btn btn-outline-light" onclick="goHighScoresOnline('1')">1</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('2')">2</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('3')">3</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('4')">4</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('5')">5</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('6')">6</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('2')">2</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('3')">3</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('4')">4</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('5')">5</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('6')">6</button>
             <button class="btn btn-outline-dark disabled">7</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('8')">8</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('9')">9</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('10')">10</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('11')">11</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('12')">12</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('13')">13</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('14')">14</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('15')">15</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('16')">16</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('17')">17</button>
-            <button class="btn  btn-outline-light hgs" onclick="goHighScoresOnline('18')">18</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('8')">8</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('9')">9</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('10')">10</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('11')">11</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('12')">12</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('13')">13</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('14')">14</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('15')">15</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('16')">16</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('17')">17</button>
+            <button class="btn btn-outline-light hgs" onclick="goHighScoresOnline('18')">18</button>
             <p></p>
         </div>
     </div>

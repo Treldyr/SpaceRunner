@@ -162,7 +162,17 @@
             </div>
 
             <div class="page" id="page19">
-                <div id="laby19">
+                <div class="final-game-description">
+                    <p data-lang-key="text550">Esquive les attaques de tes ennemis sur le terrain.</p>
+                    <p data-lang-key="text551">Esquive également Brahma. Il ne faut toucher ni ses griffes ni ses yeux.</p>
+                    <p data-lang-key="text552">Récupère les shurikens et utilise les pour toucher Brahma quand il apparait.</p>
+                    <p><a data-lang-key="text317">Un shuriken est représenté par :</a><img src="../../../images/items/powshuriken.png" width="40px" class="img-thumbnail"></p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page20">
+                <div id="laby20">
                 </div>
                 <div class="power-bottom-bar">
                     <div class="power-item">
@@ -198,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="page" id="page20">
+            <div class="page" id="page21">
                 <div class="god-dialog god-talk">
                     <p data-lang-key="text545">Tu te débats bien HAHAHAHAHAHA</p>
                     <p data-lang-key="text546">Maintenant essaie de m'attraper !</p>
@@ -207,8 +217,17 @@
                 </div>
             </div>
 
-            <div class="page" id="page21">
-                <div id="laby21">
+            <div class="page" id="page22">
+                <div class="final-game-description">
+                    <p data-lang-key="text550">Esquive les attaques de tes ennemis sur le terrain.</p>
+                    <p data-lang-key="text551">Esquive également Brahma. Il ne faut toucher ni ses griffes ni ses yeux.</p>
+                    <p data-lang-key="text553">Touche Brahma lorsqu'il apparaît. Ne le rate pas, il disparait rapidement !</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page23">
+                <div id="laby23">
                 </div>
                 <div class="power-bottom-bar">
                     <div class="power-item">
@@ -232,7 +251,7 @@
                 </div>
             </div>
 
-            <div class="page" id="page22">
+            <div class="page" id="page24">
                 <div class="god-dialog god-talk">
                     <p  data-lang-key="text548">Quoi ?!?</p>
                     <p  data-lang-key="text549">Il est temps d'en finir !</p>
@@ -240,8 +259,18 @@
                 </div>
             </div>
 
-            <div class="page" id="page23">
-                <div id="laby23">
+            <div class="page" id="page25">
+                <div class="final-game-description">
+                    <p data-lang-key="text550">Esquive les attaques de tes ennemis sur le terrain.</p>
+                    <p data-lang-key="text551">Esquive également Brahma. Il ne faut toucher ni ses griffes ni ses yeux.</p>
+                    <p data-lang-key="text443">Attention ! Il y a de la lave sur cette planète ! Il ne faut pas la toucher !</p>
+                    <p data-lang-key="text553">Touche Brahma lorsqu'il apparaît. Ne le rate pas, il disparait rapidement !</p>
+                    <button class="btn btn-outline-light" onclick="finish_labyrinth()" data-lang-key="continue">Continuer</button>
+                </div>
+            </div>
+
+            <div class="page" id="page26">
+                <div id="laby26">
                 </div>
                 <div class="power-bottom-bar">
                     <div class="power-item" id="heart1">
@@ -253,7 +282,7 @@
                 </div>
             </div>
 
-            <div class="page" id="page24">
+            <div class="page" id="page27">
                 <div class="god-dialog character-talk">
                     <button class="btn btn-outline-light" onclick="window.location.href='end.html'" data-lang-key="continue">Continuer</button>
                 </div>
@@ -366,7 +395,7 @@
                 showPause()
             }
         }else if(!inpause) { 
-            if(((actual_board>6)&&(actual_board<18))||(actual_board==19)||(actual_board==21)){ // If it is during a dialog
+            if(((actual_board>6)&&(actual_board<19))||(actual_board==20)||(actual_board==21)||(actual_board==23)||(actual_board==24)){ // If it is during a dialog
                 if ((e.keyCode == '32')||(e.keyCode == '13')) { // Space key or Enter key
                     finish_labyrinth();
                 }
@@ -386,7 +415,7 @@
                 else if ((e.keyCode ==  '69')&&(actual_board==4)){ // change dimension
                     isDimRed = !isDimRed
                 }
-                else if ((e.keyCode ==  '69')&&(actual_board==18)){ // try launch shuriken
+                else if ((e.keyCode ==  '69')&&(actual_board==19)){ // try launch shuriken
                     playerThrowShuriken()
                 }
                 nbCoups++;
@@ -401,20 +430,20 @@
                 } else if(boards[actual_board][fromtop][fromleft]==18){
                     playLava();
                     reset_player(current_size_top,current_size_left);
-                } else if((actual_board==18)||(actual_board==20)){
+                } else if((actual_board==19)||(actual_board==22)){
                     for (k=0;k<eyeCoordList1.length;k++){
                         if(((eyeCoordList1[k][0]==fromtop)&&(eyeCoordList1[k][1]==fromleft))||((eyeCoordList2[k][0]==fromtop)&&(eyeCoordList2[k][1]==fromleft))){
                             respawnFromBrahma()
                         }
                     }
-                } else if(actual_board==22){
+                } else if(actual_board==25){
                     for (k=0;k<lastEyeCoordList.length;k++){
                         if((lastEyeCoordList[k][0]==fromtop)&&(lastEyeCoordList[k][1]==fromleft)){
                             respawnFromBrahma()
                         }
                     }
                 }
-                if (actual_board==20){
+                if (actual_board==22){
                     if(areCoordinatesClose()){
                         show_boss_dark()
                     } else {
@@ -465,9 +494,9 @@
             updateBackground('../../../images/backgrounds/planete_open_brahma.png');
             updateNewMusic('final_boss_dialog')
             actual_board++;
-        } else if (actual_board<17) {
+        } else if (actual_board<18) {
              actual_board++;
-        } else if (actual_board==17){
+        } else if (actual_board==18){
             current_size_top = 5
             current_size_left = 3.5
             updateStylesheet("board_large","board_medium")
@@ -475,30 +504,32 @@
             construct_board(actual_board+2,current_size_top,current_size_left);
             startAttacksBrahma(5000);
             startMiniBosses1();
-        } else if (actual_board==18){
+        } else if (actual_board==19){
             stopBrahma()
             stopBoss1()
             stopBoss2()
             delete_shuriken(6)
             updateBackground('../../../images/backgrounds/planete_open_brahma.png');
             actual_board++;
-        } else if (actual_board==19){
+        } else if (actual_board==21){
             brahma_anger = 2
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,current_size_top,current_size_left);
             startAttacksBrahma(3000);
             startMiniBosses2();
-        } else if (actual_board==20){
+        } else if (actual_board==22){
             stopPapyBoss()
             stopBrahma()
             stopBossDark()
             updateBackground('../../../images/backgrounds/planete_open_brahma.png');
             actual_board++;
-        } else if (actual_board==21){
+        } else if (actual_board==24){
             brahma_anger = 3
             startLastAttacksBrahma()
             updateBackground('../../../images/backgrounds/planete_open.png');
             construct_board(actual_board+2,current_size_top,current_size_left);
+        } else {
+            actual_board++;
         }
     }
 

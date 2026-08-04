@@ -15,7 +15,7 @@ function create_shuriken(fromtopShuriken,fromleftShuriken,idshuriken) {
     the_image.setAttribute('style', "position: fixed;top : " + (5 * fromtopShuriken + 5) + "vh;left : " + (3.5 * fromleftShuriken + 5) + "vw;");
     the_image.className = "img_of_laby";
     the_image.setAttribute('id', "shuriken"+idshuriken);
-    document.getElementById('laby19').appendChild(the_image);
+    document.getElementById('laby20').appendChild(the_image);
 }
 
 function delete_shuriken(idshuriken) {
@@ -120,7 +120,7 @@ function place_pow_shuriken(){
         if(boards[actual_board][fromtopShurikenPOW][fromleftShurikenPOW]!=19){
             fromleftShurikenPOW = fromleftShurikenPOW+1;
         }
-        create_element(19, 5, 3.5, "items/powshuriken.png", "shurikenPOW",fromtopShurikenPOW,fromleftShurikenPOW);
+        create_element(20, 5, 3.5, "items/powshuriken.png", "shurikenPOW",fromtopShurikenPOW,fromleftShurikenPOW);
         shurikenPlayerPowerItemAvailable = false
     }
 }
